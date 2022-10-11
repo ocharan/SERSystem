@@ -37,7 +37,7 @@
                                     <input type="submit" asp-route-id="@org.OrganizacionId" value="Editar" class="btn btn-primary" id="btn_editarOrg"/>
                                 </td>
                                 <td>
-                                    <input type="Button" value="Eliminar" class="btn btn-danger"/>
+                                    <input type="Button" value="Eliminar" onclick="eliminarOrg()" class="btn btn-danger"/>
                                 </td>
                             </tr>
                         </form>     
@@ -78,6 +78,10 @@
                 $("#modal").modal('show');
             })
         })
+        
+        function eliminarOrg(){
+            console.log("Eliminar");
+        }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script guardar>
@@ -96,7 +100,6 @@
                     }else if (response == 1){
                          window.location.reload();
                     }else if (response == 2){
-                         document.getElementById("modal").
                     }
                 }
             })                              
