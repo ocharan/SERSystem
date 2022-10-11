@@ -11366,11 +11366,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/SER.csproj",
+      "projectUniqueName": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/SER.csproj",
       "projectName": "SER",
-      "projectPath": "/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/SER.csproj",
+      "projectPath": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/SER.csproj",
       "packagesPath": "/home/josuecg/.nuget/packages/",
-      "outputPath": "/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/obj/",
+      "outputPath": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/josuecg/.nuget/NuGet/NuGet.Config"

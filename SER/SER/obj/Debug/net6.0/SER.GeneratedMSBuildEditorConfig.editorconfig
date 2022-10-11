@@ -8,137 +8,137 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SER
 build_property.RootNamespace = SER
-build_property.ProjectDir = /home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/
+build_property.ProjectDir = /home/josuecg/Documentos/Repo/SERSystem/SER/SER/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = /home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER
+build_property.MSBuildProjectDirectory = /home/josuecg/Documentos/Repo/SERSystem/SER/SER
 build_property._RazorSourceGeneratorDebug = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/Error.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/Index.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/Menus/UIAdministración.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Menus/UIAdministración.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWVudXMvVUlBZG1pbmlzdHJhY2nDs24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/Menus/UICoordinador.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Menus/UICoordinador.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWVudXMvVUlDb29yZGluYWRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/Menus/UIMaestro.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Menus/UIMaestro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTWVudXMvVUlNYWVzdHJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/Privacy.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/RegistrarDocumentoProyectoGuiado.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/RegistrarDocumentoProyectoGuiado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0cmFyRG9jdW1lbnRvUHJveWVjdG9HdWlhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UIAdministrador/Docentes.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/Docentes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0RvY2VudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UIAdministrador/RegistrarDocente.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarDocente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL1JlZ2lzdHJhckRvY2VudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vQ3VlcnBvc0FjYWRlbWljb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/LGAC.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/LGAC.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vTEdBQy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/Organizaciones.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/Organizaciones.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vT3JnYW5pemFjaW9uZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/ProyectosdeInvestigacion.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/ProyectosdeInvestigacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUHJveWVjdG9zZGVJbnZlc3RpZ2FjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarCuerpoAcademico.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarCuerpoAcademico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cmFyQ3VlcnBvQWNhZGVtaWNvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarIntegrantesCA.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarIntegrantesCA.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cmFySW50ZWdyYW50ZXNDQS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarLgac.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarLgac.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cmFyTGdhYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarProyecto.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarProyecto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cmFyUHJveWVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/RegistroPLADEA.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistroPLADEA.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cm9QTEFERUEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/RegistroProyectoDeInvestigacion.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistroProyectoDeInvestigacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cm9Qcm95ZWN0b0RlSW52ZXN0aWdhY2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/CuerpoAcademico/RegistroVinculacion.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistroVinculacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cm9WaW5jdWxhY2lvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0V4cGVkaWVudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/ExperienciaRecepcional/NuevoTrabajoRecepcional.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/NuevoTrabajoRecepcional.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL051ZXZvVHJhYmFqb1JlY2VwY2lvbmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1JlZ2lzdHJhclNpbm9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1Npbm9kYWxlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/ExperienciaRecepcional/TrabajosRecepcionales.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/TrabajosRecepcionales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1RyYWJham9zUmVjZXBjaW9uYWxlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/UIAcademia.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/UIAcademia.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9VSUFjYWRlbWlhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/UICuerpoAcademico.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/UICuerpoAcademico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9VSUN1ZXJwb0FjYWRlbWljby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/UICoordinador/UIExperienciaRecepcional.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/UIExperienciaRecepcional.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9VSUV4cGVyaWVuY2lhUmVjZXBjaW9uYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/_ViewImports.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/_ViewStart.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/SER/SER/SER (1)/Implementación/SERWebApplication/SER/Pages/Shared/_Layout.cshtml]
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-t2tgxdw2lg
