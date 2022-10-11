@@ -1,0 +1,9 @@
+AJUSTES MODELO DE DOMINIO
+Clase documento
+-Archivo: File
+-NombreDocumento: String
+-Relacionarlo con experiencia educativa.
+
+MODULO DE ADMINISTRADOR
+-Eliminar registrar nueva sección.
+
