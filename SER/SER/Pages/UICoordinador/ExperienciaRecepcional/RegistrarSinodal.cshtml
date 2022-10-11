@@ -1,0 +1,60 @@
+﻿@page
+@model SER.Pages.RegistrarSinodalModel
+@{
+    ViewData["Title"] = "Registrar sinodal";
+}
+<h1>RegistrarSinodal</h1>
+
+<h4>SinodalDelTrabajo</h4>
+<hr />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+    <strong>Error </strong> @TempData["ErrorMessage"]
+    <button type="button" class="close" data-dismiss="alert">
+        <span>&times;</span>
+    </button>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form id="formRegistrarSinodal" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" />
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="inputNombres">Nombre completo del sinodal</label>
+                    <input type="text" asp-for="@Model.SinodalDelTrabajo.Nombre" id="inputNombres"
+                           placeholder="Ingrese el nombre" class="form-control" required />
+                    <span asp-validation-for="SinodalDelTrabajo.Nombre" class="text-danger"></span>
+                    <br />
+
+                    <label for="inputOrganizacion">Organización</label>
+                    <input type="text" asp-for="SinodalDelTrabajo.Organizacion" id="inputOrganizacion"
+                           placeholder="Ingrese la organización" class="form-control" required />
+                    <span asp-validation-for="SinodalDelTrabajo.Organizacion" class="text-danger"></span>
+                    <br />
+
+                    <label for="inputCorreo">Correo electrónico</label>
+                    <input type="email" asp-for="SinodalDelTrabajo.CorreoElectronico" id="inputCorreo"
+                           placeholder="Ingrese el correo electrónico" class="form-control" required />
+                    <span asp-validation-for="SinodalDelTrabajo.CorreoElectronico" class="text-danger"></span>
+                    <br />
+
+                    <label for="inputTelefono">Numero telefónico</label>
+                    <input type="tel" asp-for="SinodalDelTrabajo.Telefono" id="inputTelefono"
+                           placeholder="Ingrese el teléfono" class="form-control" required />
+                    <span asp-validation-for="SinodalDelTrabajo.Telefono" class="text-danger"></span>
+                    <br />
+                </div>
+
+                <div class="clearfix">
+                    <input class="btn btn-primary float-right" type="submit"
+                           id="btnRegistrarSinodal" value="Registrar sinodal" asp-page-handler="SinodalDelTrabajo"/>
+                </div>
+                <br />
+            </div>
+        </form>
+    </div>
+</div>

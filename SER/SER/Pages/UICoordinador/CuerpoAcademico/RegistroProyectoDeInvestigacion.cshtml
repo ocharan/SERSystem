@@ -1,0 +1,120 @@
+@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model SER.Pages.UICoordinador.CuerpoAcademico.RegistroProyectoDeInvestigacion
+
+@{
+    ViewData["Title"] = "Registrar proyecto de investigación";
+}
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<form id="registrarLgacform" method="post">
+    <div class="container p-2 h-100" style="margin-top: 40px">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <input type="text" id="input_nombreLgac" asp-for="@Model.ProyectoDeInvestigacion.Nombre" style="width: 348px;" placeholder="Nombre del proyecto" class="form-control" required="required"/>
+        </div>
+    </div>
+    <div class="container p-2 h-100" style="margin-top: 10px">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <label>Selecciona la fecha de inicio:</label>
+        </div>
+    </div>
+    <div class="container p-2 h-100">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <input class="form-control" id="datepicker"  onkeydown="return false" type="date" asp-for="ProyectoDeInvestigacion.FechaInicio" placeholder="dd-mm-yyyy" min="2010-01-01" max="2030-12-31" style="width: 348px; border-radius: 5px" required="required"/>
+        </div>
+    </div>
+    <div class="container p-2 h-50" style="margin-top: 5px">
+        <div class="d-flex justify-content-center align-content-center h-50">
+            <select id="cuerpos_list" class="form-select" asp-for="ProyectoDeInvestigacion.CuerpoAcademicoId" style="width: 300px; border-radius: 5px">
+                <option  selected disabled="disabled">Selecciona cuerpo academico</option>
+                @foreach (var cuerpo in @Model.CuerpoAcademicos)
+                {
+                    <option value="@cuerpo.CuerpoAcademicoId">@cuerpo.Nombre</option>
+                }
+            </select>
+            <input type="button" value="+" onclick="window.open('RegistrarCuerpoAcademico', '_self')" style="font-size: 20px; color: white; margin-left: 10px; align-items: center" class="btn btn-success"/>
+        </div>
+    </div>
+    <div class="container p-5 h-100">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <input type="submit" class="btn btn-success" id="btnGuardarPI" value="Guardar registro"/>
+        </div>
+    </div>
+</form>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        <strong>Registro completado </strong>
+        <div>@TempData["SuccessMessage"]  Redirigiendo...</div>
+    </div>
+    <script>
+        document.getElementById("btnGuardarPI").setAttribute('disabled', true)
+         setTimeout(() => { window.location.href = 'ProyectosdeInvestigacion' }, 2000);
+    </script>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error de registro</strong> @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (TempData["ExceptionMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Ha ocurrido un error</strong> @TempData["ExceptionMessage"]
+    </div>
+}
+
+@section Scripts
+{
+    <script dynamic>
+     let comboLgacs = document.getElementById('lgac_list');
+     let comboCuerpos = document.getElementById('cuerpos_list');
+     
+     comboCuerpos.addEventListener("change", function (){
+         console.log(comboCuerpos.value);
+     })
+    </script>
+    
+    <script show>
+                  let headerUV = document.getElementById("uv_header");
+                  let navPrincipal = document.getElementById("nav-principal");
+                  let sectionButtons = document.getElementById("section-buttons");
+                  let titleNav = document.getElementById("title-nav");
+                  let navigation = document.getElementById("navigation");
+                  let listaNavegacion = document.getElementById("element-list");
+                  
+                  window.onload = function (){
+                    navPrincipal.hidden = false;
+                    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                                      <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                                    </li>
+                                                    <li class="nav-item" style="font-size: 25px">
+                                                        <a class="nav-link">></a>
+                                                    </li>
+                                                        <li class="nav-item" style="font-size: 25px">
+                                                            <a class="nav-link" href="../UICuerpoAcademico">Cuerpo academico</a>
+                                                        </li>
+                                                    <li class="nav-item" style="font-size: 25px">
+                                                        <a class="nav-link">></a>
+                                                    </li>
+                                                    <li class="nav-item" style="font-size: 25px">
+                                                         <a class="nav-link" href="ProyectosdeInvestigacion">Ver proyectos de investigación</a>
+                                                    </li>
+                                                    <li class="nav-item" style="font-size: 25px">
+                                                        <a class="nav-link">></a>
+                                                    </li>
+                                                    <li class="nav-item active" style="font-size: 25px">
+                                                         <a class="nav-link" href="RegistrarProyecto">Registrar proyecto</a>
+                                                    </li>`
+                                                        
+                  }
+                  </script>
+    
+}

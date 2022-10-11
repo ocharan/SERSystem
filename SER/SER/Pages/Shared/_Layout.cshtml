@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+@{
+    string NOMBRE_DEL_SISTEMA = "Sistema de ER";
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @(NOMBRE_DEL_SISTEMA)</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SER.styles.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+<header id="uv_header">
+    <div class="uvheader">
+        <div class="halfheader2">
+            Universidad Veracruzana
+        </div>
+    </div>
+    <div class="serheader">
+        <div class="halfheader">
+            Experiencia recepcional
+        </div>
+    </div>
+</header>
+<nav id="nav-principal" class="navbar navbar-expand-lg navbar-light" style="border-bottom: solid 1px grey" hidden>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="element-list" style="margin-left: 50px" class="navbar-nav mr-auto">
+        </ul>
+    </div>
+    <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-danger my-2 my-sm-0" style="margin-right: 20px" type="submit">Cerrar sesión</button>
+    </form>
+</nav>
+
+
+<div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer mt-auto text-muted">
+        <div class="container">
+            &copy; 2022 - @(NOMBRE_DEL_SISTEMA)
+        </div>
+        <div class="container">
+            Universidad Veracruzana
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

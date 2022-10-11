@@ -1,0 +1,39 @@
+@page
+@model SER.Pages.Menus.UIAdministración
+
+@{
+  ViewData["Title"] = "Administración";
+}
+<div class="mainbody">
+  <div class="mainpaneler container text-center">
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btnPanel" onclick="window.open('../UICoordinador/UIExperienciaRecepcional', '_self')">Experiencias educativas</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btnPanel" onclick="window.open('../UIAdministrador/Docentes','_self')">Docentes</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btnPanel" onclick="window.open('../UICoordinador/UIAcademia','_self')">Registrar tipo de documento</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btnPanel" onclick="window.open('../UICoordinador/UIAcademia','_self')">Coordinadores</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@section Scripts
+{
+  <script show>
+  let panelPrincipal = document.getElementById("panelacceso");
+  let tituloPanel = document.getElementById("nombreModulo");
+  window.onload = function (){
+    panelPrincipal.hidden = false;
+    tituloPanel.innerText = "ADMINISTRADOR";
+  }
+  </script>
+}
+
+

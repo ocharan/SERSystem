@@ -1,0 +1,36 @@
+@page
+@model SER.Pages.UIAdministrador.RegistrarDocente
+
+@{
+    ViewData["Title"] = "Registrar Docente";
+}
+
+<div class="container">
+    <form id="registrarLgacform" method="post">
+        <div class="container p-2 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="text" id="input_nombreProfesor" asp-for="@Model.profesorNuevo.Nombre" style="width: 348px;"placeholder="Nombre completo" class="form-control" required="required"/>
+            </div>
+        </div>
+        <div class="container p-2 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="number" maxlength="5" id="input_numeroPersonal" asp-for="@Model.profesorNuevo.NumeroDePersonal" style="width: 348px;"placeholder="Numero de personal" class="form-control" required="required"/>
+            </div>
+        </div>
+        <div class="container p-2 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="password" id="input_Contraseña" asp-for="@Model.usuarioNuevo.Contra" style="width: 348px;"placeholder="Contraseña" class="form-control" required="required"/>
+            </div>
+        </div>
+        <div class="container p-2 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="password" id="input_ContraseñaRepeat" asp-for="@Model.contraseña" style="width: 348px;"placeholder="Repetir contraseña" class="form-control" required="required"/>
+            </div>
+        </div>
+        <div class="container p-5 h-100">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="submit" class="btn btn-success" value="Guardar registro"/>
+            </div>
+        </div>
+    </form>
+</div>

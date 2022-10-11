@@ -1,0 +1,98 @@
+@page
+@using System.Collections.Specialized
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model SER.Pages.UICoordinador.CuerpoAcademico.CuerposAcademicos
+
+@{
+    ViewData["Title"] = "Cuerpos académicos";
+}
+
+<div class="container">
+    <div class="container">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar sinodal">
+            <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+            <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarCuerpoAcademico','_self')" type="button">Registrar cuerpo academico</button>
+        </div>
+    </div>
+    
+    <div id="seleccionarAlumnos">
+        <hr />
+        <div class="form-group">
+            <div class="table-responsive table-bordered">
+                <table id="tbltrabajosrecepcionales" style="max-height: 500px" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Cuerpo académico</th>
+                        <th>Añadir integrante</th>
+                        <th>Modificar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var cuerpo in @Model.CuerpoAcademicos)
+                    {                                       
+                        <tr>
+                            <td>@cuerpo.Nombre</td>
+                            <form method="post">
+                                <td>
+                                    <input type="submit" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Asignar integrantes" class="btn btn-info" id="btn_añadirIntegrante"/>
+                                </td>
+                            </form>
+                            <form method="post" asp-page-handler="modificarCuerpo">
+                                <td>
+                                    <input type="submit" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Modificar" class="btn btn-primary" id="btn_añadirIntegrante"/>
+                                </td>
+                            </form>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@if (TempData["ExceptionMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Ha ocurrido un error </strong> @TempData["ExceptionMessage"]
+    </div>
+}
+
+@section Scripts
+{
+    <script manager>
+        function AñadirIntegrantes(idCuerpoAcademico){
+            localStorage.setItem("idCuerpo", idCuerpoAcademico);
+            window.open("RegistrarIntegrantesCA","_self");
+        }
+    </script>
+    
+     <script show>
+      let headerUV = document.getElementById("uv_header");
+      let navPrincipal = document.getElementById("nav-principal");
+      let sectionButtons = document.getElementById("section-buttons");
+      let titleNav = document.getElementById("title-nav");
+      let navigation = document.getElementById("navigation");
+      let listaNavegacion = document.getElementById("element-list");
+      
+      window.onload = function (){
+        navPrincipal.hidden = false;
+        listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                          <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                        </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                            <a class="nav-link">></a>
+                                        </li>
+                                            <li class="nav-item" style="font-size: 25px">
+                                                <a class="nav-link" href="../UICuerpoAcademico">Cuerpo academico</a>
+                                            </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                            <a class="nav-link">></a>
+                                        </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                             <a class="nav-link" href="CuerposAcademicos">Ver cuerpos academicos</a>
+                                        </li>`
+                                            
+      }
+      </script>
+}
