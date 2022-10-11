@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  SER_DB:
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
+    ports:
+      - 1433:1433
+    env_file:
+      - .dev.env
+    volumes:
+      - ./data:/var/opt/mssql/data 
+      - ./logs:/var/opt/mssql/log

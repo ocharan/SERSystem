@@ -1,0 +1,77 @@
+@page
+@model SER.Pages.UICoordinador.ExperienciaRecepcional.Sinodales
+
+@{
+    ViewData["Title"] = "Sinodales";
+}
+
+<div class="container">
+    <div class="container">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar sinodal">
+            <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+            <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarSinodal', '_self')" type="button">Registrar sinodal</button>
+            <button class="btn btn-primary" style="float: right; border-radius: 5px; margin-left: 5px" type="button">Modificar info</button>
+        </div>
+    </div>
+    
+    <div id="seleccionarAlumnos">
+        <hr />
+        <div class="form-group">
+            <div class="table-responsive">
+                <table id="tbltrabajosrecepcionales" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Contacto</th>
+                        <th>Trabajos</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var sinodal in @Model.sinodales)
+                    {
+                        <tr>
+                            <td>@sinodal.Nombre</td>
+                            <td>@sinodal.CorreoElectronico</td>
+                            <td>0</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                      <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                            <a class="nav-link" href="../UIExperienciaRecepcional">Experiencia recepcional</a>
+                                        </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" href="Sinodales">Sinodales</a>
+                                    </li>`
+                                        
+  }
+  </script>
+}
+

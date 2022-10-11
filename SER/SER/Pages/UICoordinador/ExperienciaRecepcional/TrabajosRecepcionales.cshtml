@@ -1,0 +1,90 @@
+@page
+@model SER.Pages.UICoordinador.ExperienciaRecepcional.TrabajosRecepcionales
+
+@{
+    ViewData["Title"] = "Trabajos recepcionales";
+}
+
+<div class="container">
+    <div class="container">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar trabajo recepcional">
+            <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+            <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('NuevoTrabajoRecepcional', '_self')" type="button">Registrar trabajo</button>
+        </div>
+    </div>
+    
+    <div id="seleccionarAlumnos">
+        <hr />
+        <div class="form-group">
+            <div class="table-responsive">
+                <table id="tbltrabajosrecepcionales" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Modalidad</th>
+                        <th>Estado</th>
+                        <th>Fecha de inicio</th>
+                        <th>Documentos</th>
+                        <th>Modificar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var trabajo in @Model.trabajoRecepcionals)
+                    {
+                        <tr>
+                            <td>@trabajo.Nombre</td>
+                            <td>@trabajo.Modalidad</td>
+                            <td>@trabajo.Estado</td>
+                            <td>
+                                @if (trabajo.Fechadeinicio != null)
+                                {
+                                    @trabajo.Fechadeinicio.Value.Date.ToString("d");
+                                }
+                            </td>
+                            <td>
+                                <button class="btn btn-success">Registrar documento</button>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary">Modificar</button>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                      <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                            <a class="nav-link" href="../UIExperienciaRecepcional">Experiencia recepcional</a>
+                                        </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" href="TrabajosRecepcionales">Trabajos recepcionales</a>
+                                    </li>`
+                                        
+  }
+  </script>
+}

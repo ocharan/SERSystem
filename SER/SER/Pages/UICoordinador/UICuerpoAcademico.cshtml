@@ -1,0 +1,51 @@
+@page
+@model SER.Pages.UICoordinador.UICuerpoAcademico
+
+@{
+    ViewData["Title"] = "Cuerpo académico";
+}
+
+<div>
+  <div class="mainpaneler container text-center">
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btnPanel" onclick="window.open('CuerpoAcademico/CuerposAcademicos', '_self')">Cuerpos academicos</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btnPanel" onclick="window.open('CuerpoAcademico/LGAC','_self')">LGAC registrados</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btnPanel" onclick="window.open('CuerpoAcademico/ProyectosdeInvestigacion', '_self')">Proyectos de investigación</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btnPanel" onclick="window.open('CuerpoAcademico/Organizaciones', '_self')">Organizaciones</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts
+{
+  <script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                      <a class="nav-link" href="../Menus/UICoordinador">Coordinación</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                        <li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link" href="UICuerpoAcademico">Cuerpo Academico</a>
+                                        </li>`
+                                        
+  }
+  </script>
+}

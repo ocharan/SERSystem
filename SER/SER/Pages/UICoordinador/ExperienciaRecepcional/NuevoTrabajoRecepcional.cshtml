@@ -1,0 +1,102 @@
+@page
+@model SER.Pages.UICoordinador.ExperienciaRecepcional.NuevoTrabajoRecepcional
+
+@{
+    ViewData["Title"] = "Registrar nuevo trabajo recepcional";
+}
+
+<div class="container">
+    <div class="container">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Nombre del trabajo recepcional">
+            <select class="form-select" style="float: right; border-radius: 5px; margin-left: 15px" >
+                <option selected>Seleccionar duración</option>
+            </select>
+            <select class="form-select" style="border-radius: 5px; margin-left: 15px" >
+                <option selected>Fecha de inicio</option>
+            </select>
+            <input type="text" class="form-control" style="float: left; margin-left: 15px; min-width: 50px; border-radius: 5px;" placeholder="Linea de investigación">
+        </div>
+    </div>
+    <div class="container">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <select class="form-select" style="float: left; min-width: 50px; border-radius: 5px;" >
+                <option selected>Seleccionar modalidad</option>
+                <option>Tesina</option>
+                <option>Tesis</option>
+                <option>Monografía</option>
+                <option>Memoria</option>
+                <option>Trabajo práctico-técnico</option>
+                <option>RSL</option>
+                <option>RML</option>
+            </select>
+            <select class="form-select" style="border-radius: 5px; margin-left: 15px" >
+                <option selected>Seleccionar tipo</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <select class="form-select" style="border-radius: 5px;" >
+                <option selected>Seleccionar proyecto de investigación</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <select class="form-select" style="border-radius: 5px;" >
+                <option selected>Seleccionar LGAC</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <input class="form-control" type="file" id="formFile">
+        </div>
+    </div>
+    <div class="container" style="align-content: center">
+        <div class="input-group mb-3" style="align-content: center; margin-top: 50px">
+            <button class="btn btn-success">Continuar</button>
+        </div>
+    </div>
+    
+</div>
+
+
+@section Scripts
+{
+    <script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                      <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                            <a class="nav-link" href="../UIExperienciaRecepcional">Experiencia recepcional</a>
+                                        </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" href="TrabajosRecepcionales">Trabajos recepcionales</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" href="NuevoTrabajoRecepcional">Registrar trabajo</a>
+                                    </li>`
+                                        
+  }
+  </script>
+}
