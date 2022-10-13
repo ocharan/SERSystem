@@ -58,10 +58,6 @@ namespace SER.Pages
                 }
                 
             }
-            else
-            {
-                
-            }
             return Page();
         }
     }

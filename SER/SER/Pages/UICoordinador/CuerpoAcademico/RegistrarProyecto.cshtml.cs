@@ -17,16 +17,24 @@ public class RegistrarProyecto : PageModel
 
     public IActionResult OnPost()
     {
-        if (tipoRegistro.Equals("Proyecto de investigación"))
+        try
         {
-            return RedirectToPage("RegistroProyectoDeInvestigacion");
-        }else if (tipoRegistro.Equals("pladea"))
-        {
-            return RedirectToPage("RegistroPLADEA");
+            if (tipoRegistro.Equals("Proyecto de investigación"))
+            {
+                return RedirectToPage("RegistroProyectoDeInvestigacion");
+            }else if (tipoRegistro.Equals("pladea"))
+            {
+                return RedirectToPage("RegistroPLADEA");
+            }
+            else
+            {
+                return RedirectToPage("RegistroVinculacion");
+            }
         }
-        else
+        catch (Exception e)
         {
-            return RedirectToPage("RegistroVinculacion");
+            ViewData["ErrorMessage"] = "Debe seleccionar un tipo de proyecto";
+            return Page();
         }
     }
 }

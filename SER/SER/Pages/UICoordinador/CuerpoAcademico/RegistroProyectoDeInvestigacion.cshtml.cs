@@ -38,7 +38,6 @@ public class RegistroProyectoDeInvestigacion : PageModel
             bool existe = proyectos.Any(e => e.Nombre.Equals(ProyectoDeInvestigacion.Nombre) && e.CuerpoAcademicoId==ProyectoDeInvestigacion.CuerpoAcademicoId);
             if (!existe)
             {
-                Console.WriteLine("CUERPO ACADEMICO: "+ProyectoDeInvestigacion.CuerpoAcademicoId);
                 if (ProyectoDeInvestigacion.CuerpoAcademicoId == 0)
                 {
                     TempData["ErrorMessage"] = "Debe de seleccionar un cuerpo academico";

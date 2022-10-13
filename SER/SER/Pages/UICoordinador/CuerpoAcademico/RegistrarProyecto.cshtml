@@ -11,7 +11,7 @@
 <form id="seleccionRegistro" method="post" style="margin-top: 50px">
     <div id="registroSeleccion" class="container">
         <div class="container p-2 h-100" style="margin-top: 40px">
-                <h2 class="card-title" style="text-align: center; margin-bottom: 40px">Tipo de proyecto a registrar</h2>
+            <h2 class="card-title" style="text-align: center; margin-bottom: 40px">Tipo de proyecto a registrar</h2>
             <div class="d-flex justify-content-center align-content-center h-100">
                 <select id="select_tipo" asp-for="@Model.tipoRegistro" class="form-select" style="border-radius: 5px; width: 50%">
                     <option selected disabled="disabled">Selecciona tipo de proyecto</option>
@@ -28,6 +28,13 @@
         </div>
     </div>
 </form>
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["ErrorMessage"]
+    </div>
+}
 
 @section Scripts
 {

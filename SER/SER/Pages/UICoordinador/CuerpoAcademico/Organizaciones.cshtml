@@ -55,9 +55,15 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nombre de la organización" id="inputNombre" required>
-                        <div id="alert" class="alert alert-danger" hidden>
-                            <strong>Debe de ingresar un nombre</strong> 
+                        <input type="text" class="form-control" placeholder="Nombre de la organización" id="inputNombre" style="margin-bottom: 20px" required>
+                        <div id="alertNombre" class="alert alert-danger" role="alert" style="display:none;">
+                            <strong>El nombre ingresado ya existe</strong> 
+                        </div>
+                        <div id="alertExcepcion" class="alert alert-danger" role="alert" style="display:none;">
+                            <strong>Error al registrar la organización</strong> 
+                        </div>
+                        <div id="alertRequired" class="alert alert-danger" role="alert" style="display:none;">
+                            <strong>Debe ingresar un nombre</strong> 
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -87,22 +93,29 @@
     <script guardar>
         function guardarRegistro(){
             let nombre = document.getElementById("inputNombre").value;
-            $.ajax({
-            url: "?handler=GuardarOrganizacion",
-            type: "POST",
-            data: {NombreOrg: nombre},
-            headers: {
-                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
-                },
-                success: function (response){
-                    if (response == -1){
-                        $("#alert").show();
-                    }else if (response == 1){
-                         window.location.reload();
-                    }else if (response == 2){
-                    }
-                }
-            })                              
+            if (nombre != ""){
+                $.ajax({
+                            url: "?handler=GuardarOrganizacion",
+                            type: "POST",
+                            data: {NombreOrg: nombre},
+                            headers: {
+                                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                                },
+                                success: function (response){
+                                    if (response == -1){
+                                        $('#alertExcepcion').show();
+                                    }else if (response == 1){
+                                         window.location.reload();
+                                    }else if (response == 2){
+                                        $('#alertNombre').show();
+                                        $('#alertRequired').hide();
+                                    }
+                                }
+                            })                   
+            }else{
+                $('#alertNombre').hide();
+                $('#alertRequired').show();
+            }     
         }
     </script>
     <script show>

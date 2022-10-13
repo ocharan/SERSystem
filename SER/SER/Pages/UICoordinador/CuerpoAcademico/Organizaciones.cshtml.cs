@@ -36,7 +36,6 @@ public class Organizaciones : PageModel
             }
             else
             {
-                ViewData["ErrorMessage"] = "La organización ya existe";
                 result = 2;
                 return new JsonResult(result);
             }
@@ -44,8 +43,6 @@ public class Organizaciones : PageModel
         catch (Exception e)
         {
             result = -1;
-            Console.WriteLine(e.StackTrace);
-            ViewData["ExceptionMessage"] = e.Message;
             return new JsonResult(result);
         }
     }

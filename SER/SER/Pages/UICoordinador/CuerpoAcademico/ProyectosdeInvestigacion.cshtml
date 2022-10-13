@@ -10,16 +10,19 @@
         <div class="input-group mb-3" style="margin-top: 50px">
             <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar proyecto de investigación">
             <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+            <select id="selectProyecto" class="form-select" style="float: right; border-radius: 5px; margin-left: 5px" >
+                <option value="1" >Proyetos de investigación</option>
+                <option value="2" >PLADEA</option>
+                <option value="3" >Vinculación</option>
+            </select>
             <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarProyecto', '_self')" type="button">Registrar proyecto</button>
-            <button class="btn btn-primary" style="float: right; border-radius: 5px; margin-left: 5px" type="button">Modificar info</button>
         </div>
     </div>
     
-    <div id="seleccionarAlumnos">
-        <hr />
+    <div id="tablaProyectos">
         <div class="form-group">
             <div class="table-responsive">
-                <table id="tbltrabajosrecepcionales" class="table table-hover">
+                <table id="tblproyectos" class="table table-hover">
                     <thead>
                     <tr>
                         <th>Nombre</th>
@@ -28,24 +31,176 @@
                     </tr>
                     </thead>
                     <tbody>
-                            @foreach (var proyecto in @Model.listaProyectos)
-                            {
-                                <tr>
-                                    <td>@proyecto.nombreProyecto</td>
-                                    <td>@proyecto.tipoProyecto</td>
-                                    <td>@proyecto.fechaInicio</td>
-                                </tr>
-                            }
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    
+    <div id="tablaPladea" hidden>
+        <div class="form-group">
+            <div class="table-responsive">
+                <table id="tblpladeas" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th style="width: 30%">Acción</th>
+                        <th>Periodo</th>
+                        <th style="width: 30%">Objetivo general</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div id="tablaVinculacion" hidden>
+        <div class="form-group">
+            <div class="table-responsive">
+                <table id="tblvinculacion" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Fecha de convencio</th>
+                        <th>Organización vinculada</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div id="alertError" class="alert alert-danger" hidden>
+        Ha ocurrido un error al cargar la información
+    </div>
 </div>
 
 @section Scripts
 {
-     <script show>
+    <script logica>
+        let comboProyectos = document.getElementById("selectProyecto");
+        let tablaProyectos = document.getElementById("tablaProyectos");
+        let tablaPladea = document.getElementById("tablaPladea");
+        let tablaVinculacion = document.getElementById("tablaVinculacion");
+        let tblPladeas = document.getElementById("tblpladeas");
+        let tblProyectos = document.getElementById("tblproyectos");
+        let tblVinculacion = document.getElementById("tblvinculacion");
+        let alert = document.getElementById("alertError");
+        let listaPladeas;
+        let listaProyectos;
+        let listaVinculacion;
+        cargarProyectos();
+        
+        comboProyectos.addEventListener('change', function handleChange(event){
+            if (comboProyectos.value == 1){
+                cargarProyectos();
+                tablaProyectos.hidden = false;
+                tablaVinculacion.hidden = true;
+                tablaPladea.hidden = true;
+            }else if (comboProyectos.value == 2){
+                cargarPladea();
+                tablaProyectos.hidden = true;
+                tablaVinculacion.hidden = true;
+                tablaPladea.hidden = false;
+            }else{
+                cargarVinculacion();
+                tablaProyectos.hidden = true;
+                tablaVinculacion.hidden = false;
+                tablaPladea.hidden = true;
+            }
+        });
+        
+        function cargarProyectos(){
+            $.ajax({
+                url: "?handler=ObtenerProyectos",
+                type: "GET",
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },  
+                success: function (data){
+                    listaProyectos = JSON.parse(data);
+                    console.log(listaProyectos);
+                    llenarProyectos(listaProyectos);
+                },
+                error: function (data){
+                    alert.hidden = false;
+                }
+            }) 
+        }
+        
+        function cargarPladea(){
+            $.ajax({
+                url: "?handler=ObtenerPladea",
+                type: "GET",
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },  
+                success: function (data){
+                    listaPladeas = JSON.parse(data);
+                    llenarPladeas(listaPladeas);
+                    },
+                error: function (data){
+                    alert.hidden = false;
+                }
+            }) 
+        }
+        
+        function cargarVinculacion(){
+            $.ajax({
+                url: "?handler=ObtenerVinculacion",
+                type: "GET",
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },  
+                success: function (data){
+                    listaVinculacion = JSON.parse(data);
+                    llenarVinculacion(listaVinculacion);
+                },
+                error: function (data){
+                    alert.hidden = false;
+                }
+            }) 
+        }
+        
+        function llenarVinculacion(listaVinculacion){
+            $('#tblvinculacion > tbody').empty();
+                for (var i=0; i<listaVinculacion.length;i++){
+                    let row = `<tr>
+                                <td>${listaVinculacion[i].fechaConvenio}</td>
+                                <td>${listaVinculacion[i].organizacion}</td>
+                                </tr>`
+                            tblVinculacion.innerHTML += row;
+                        }
+        }
+        
+        function llenarPladeas(listaPladeas){
+            $('#tblpladeas > tbody').empty();
+            for (var i=0; i<listaPladeas.length;i++){
+                let row = `<tr>
+                            <td>${listaPladeas[i].Accion}</td>
+                            <td>${listaPladeas[i].Periodo}</td>
+                            <td>${listaPladeas[i].ObjetivoGeneral}<td>
+                            </tr>`
+                tblPladeas.innerHTML += row;
+            }  
+        }
+        
+        function llenarProyectos(listaProyectos){
+            $('#tblproyectos > tbody').empty();
+            for (var i=0; i<listaProyectos.length;i++){
+                let row = `<tr>
+                            <td>${listaProyectos[i].nombreProyecto}</td>
+                            <td>${listaProyectos[i].tipoProyecto}</td>
+                            <td>${listaProyectos[i].fechaInicio}<td>
+                            </tr>`
+                tblProyectos.innerHTML += row;
+            }  
+        }
+    </script>
+
+    <script show>
           let headerUV = document.getElementById("uv_header");
           let navPrincipal = document.getElementById("nav-principal");
           let sectionButtons = document.getElementById("section-buttons");
