@@ -19,34 +19,7 @@ public class Organizaciones : PageModel
         OrganizacionesList = new List<Organizacion>();
     }
 
-    public JsonResult OnPostGuardarOrganizacion(string NombreOrg)
-    {
-        Organizacion.Nombre = NombreOrg;
-        var result = 0;
-        try
-        {
-            var listaOrganizaciones = _context.Organizacions.ToList();
-            bool existeOrg = listaOrganizaciones.Any(o => o.Nombre == Organizacion.Nombre);
-            if (!existeOrg)
-            {
-                result = 1;
-                _context.Organizacions.Add(Organizacion);
-                _context.SaveChanges();
-                return new JsonResult(result);
-            }
-            else
-            {
-                result = 2;
-                return new JsonResult(result);
-            }
-        }
-        catch (Exception e)
-        {
-            result = -1;
-            return new JsonResult(result);
-        }
-    }
-
+    
     public void OnGet()
     {
         CargarOrganizaciones();

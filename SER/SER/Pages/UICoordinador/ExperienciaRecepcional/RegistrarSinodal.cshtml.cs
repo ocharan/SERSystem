@@ -7,38 +7,29 @@ namespace SER.Pages
 {
     public class RegistrarSinodalModel : PageModel
     {
-        private readonly MySERContext _context;
+        [BindProperty] public string tipoRegistro { get; set; }
 
-        [BindProperty]
-        public SinodalDelTrabajo SinodalDelTrabajo { get; set; }
-
-        public RegistrarSinodalModel(MySERContext context)
-        {
-            _context = context;
-        }
         public void OnGet()
         {
         }
 
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+            try
             {
-                var sinodalesExistentes = _context.SinodalDelTrabajos.ToList();
-                bool sinodalYaExiste = sinodalesExistentes.Any(s => s.CorreoElectronico.Equals(SinodalDelTrabajo.CorreoElectronico));
-                if (sinodalYaExiste)
+                if (tipoRegistro.Equals("Interno"))
                 {
-                    TempData["ErrorMessage"] = "Sinodal Existente";
-                    return Page();
+                    return RedirectToPage("RegistrarSinodalInterno");
+                }else
+                {
+                    return RedirectToPage("RegistrarSinodalExterno");
                 }
-                else
-                {
-                    _context.SinodalDelTrabajos.Add(SinodalDelTrabajo);
-                    _context.SaveChanges();
-                    return RedirectToPage("Sinodales");
-                }                              
             }
-            return Page();
+            catch (Exception e)
+            {
+                ViewData["ErrorMessage"] = "Debe seleccionar un tipo de proyecto";
+                return Page();
+            }
         }
     }
 }

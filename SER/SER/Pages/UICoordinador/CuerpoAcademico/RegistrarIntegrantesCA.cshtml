@@ -260,22 +260,21 @@
    function guardarRegistro(){
         if (cambios){
             for (let i = 0;i<listaIntegrantes.length;i++){
-                                                       $.ajax({
-                                                          url: "?handler=GuardarRegistro",
-                                                          type: "POST",
-                                                          data: {NumeroDePersonal: listaIntegrantes[i].NumeroDePersonal, 
-                                                              Nombre: listaIntegrantes[i].Nombre, Tipo: listaIntegrantes[i].Tipo, idProfesor: listaIntegrantes[i].ProfesorId, cuerpoID: idAcademia},
-                                                          headers: {
-                                                              RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
-                                                              },
-                                                          success: function (){
-                                                              $("#modal").modal('show');
-                                                          },
-                                                          error: function (){
+                $.ajax({
+                url: "?handler=GuardarRegistro",
+                type: "POST",
+                data: {NumeroDePersonal: listaIntegrantes[i].NumeroDePersonal, 
+                Nombre: listaIntegrantes[i].Nombre, Tipo: listaIntegrantes[i].Tipo, idProfesor: listaIntegrantes[i].ProfesorId, cuerpoID: idAcademia},
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },
+                success: function (){
+                    $("#modal").modal('show');
+                },
+                error: function (){
                                                               
-                                                          }
-                                                          })
-                                                   }
+                }
+                })}
         }else{
             document.getElementById("cambiosFalse").hidden = false;
         }

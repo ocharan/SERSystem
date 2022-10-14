@@ -83,6 +83,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cmFyTGdhYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarOrganización.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cmFyT3JnYW5pemFjacOzbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarProyecto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vUmVnaXN0cmFyUHJveWVjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -109,6 +113,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1JlZ2lzdHJhclNpbm9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalExterno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1JlZ2lzdHJhclNpbm9kYWxFeHRlcm5vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalInterno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1JlZ2lzdHJhclNpbm9kYWxJbnRlcm5vLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml]
