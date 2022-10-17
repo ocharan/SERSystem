@@ -10,6 +10,9 @@
 
 <div class="container">
     <form id="registrarLgacform" method="post">
+        <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px; margin-top: 50px">
+            <h3 style="font-size: 20px">REGISTRO LGAC</h3>
+        </div>
         <div class="container p-2 h-100" style="margin-top: 40px">
             <div class="d-flex justify-content-center align-content-center h-100">
                 <input type="text" id="input_nombreLgac" asp-for="@Model.lgacNuevo.Nombre" style="width: 348px;"placeholder="Nombre LGAC" class="form-control" required="required"/>
@@ -17,8 +20,8 @@
         </div>
         <div class="container p-2 h-50" style="margin-top: 20px">
             <div class="d-flex justify-content-center align-content-center h-50">
-                <select id="cuerpos_list" class="form-select"  asp-for="lgacNuevo.CuerpoAcademicoId" style="width: 300px; border-radius: 5px">
-                    <option selected disabled="disabled">Selecciona cuerpo academico</option>
+                <select id="cuerpos_list" class="form-select"  asp-for="lgacNuevo.CuerpoAcademicoId" style="width: 300px; border-radius: 5px" required>
+                    <option value="" selected disabled="disabled">Selecciona cuerpo academico</option>
                     @foreach (var cuerpo in @Model.CuerpoAcademicos)
                     {
                         <option value="@cuerpo.CuerpoAcademicoId">@cuerpo.Nombre</option>
@@ -36,11 +39,33 @@
         <textarea itemid="id_LgacDescripcion" class="form-control" asp-for="lgacNuevo.Descripcion" style="width: 100%" placeholder="Descripción" id="input_descripcion" rows="8"></textarea>
         <div class="container p-5 h-100">
             <div class="d-flex justify-content-center align-content-center h-100">
-                <input type="submit" class="btn btn-success" value="Guardar registro"/>
+                <input id="btnGuardarLgac" type="submit" class="btn btn-success" value="Guardar registro"/>
             </div>
         </div>
     </form>
 </div>
+
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"], redirigiendo...
+    </div>
+    
+    <script>
+        document.getElementById("btnGuardarLgac").setAttribute('disabled', true)
+         setTimeout(() => { window.location.href = 'LGAC' }, 2000);
+    </script>
+}
+
+
 
 @section Scripts
 {

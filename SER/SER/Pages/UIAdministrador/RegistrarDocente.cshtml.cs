@@ -31,6 +31,7 @@ public class RegistrarDocente : PageModel
     public async Task<IActionResult> OnPost()
     {
         var listaDocentes = _context.Profesors.ToList();
+        profesorNuevo.Nombre = profesorNuevo.Nombre.ToUpper();
         bool existeDocente = listaDocentes.Any(d => d.NumeroDePersonal.Equals(profesorNuevo.NumeroDePersonal));
         if (contraseña.Equals(usuarioNuevo.Contra))
         {

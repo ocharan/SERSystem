@@ -35,7 +35,7 @@ public class RegistrarSinodalInterno : PageModel
             SinodalDelTrabajo.OrganizacionId = Convert.ToInt32(Request.Form["OrgId"]);
             var sinodalesExistentes = _context.SinodalDelTrabajos.ToList();
             SinodalDelTrabajo.Nombre = SinodalDelTrabajo.Nombre?.ToUpper();
-            bool sinodalYaExiste = sinodalesExistentes.Any(s => s.NumeroDePersonal == SinodalDelTrabajo.NumeroDePersonal);
+            bool sinodalYaExiste = sinodalesExistentes.Any(s => s.NumeroDePersonal == SinodalDelTrabajo.NumeroDePersonal && s.CorreoElectronico == SinodalDelTrabajo.CorreoElectronico);
             if (sinodalYaExiste)
             {
                 TempData["ErrorMessage"] = "El profesor seleccionado ya se encuentra registrado como sinodal";

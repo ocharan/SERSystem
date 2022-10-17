@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.DBContext;
 using SER.DTO;
 using SER.Entidades;
+using Lgac = SER.Entidades.Lgac;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -12,16 +13,18 @@ public class RegistroPLADEA : PageModel
 
     private readonly MySERContext _context;
 
-    [BindProperty]
-    public Pladeafei pladeaRegistrar { get; set; }
+    public List<Lgac> Lgacs { get; set; }
+
+    [BindProperty] public Pladeafei pladeaRegistrar { get; set; }
 
     public RegistroPLADEA(MySERContext context)
     {
         _context = context;
+        Lgacs = new List<Lgac>();
     }
+
     public void OnGet()
     {
-        
     }
 
     public void OnPost()
@@ -37,7 +40,7 @@ public class RegistroPLADEA : PageModel
             Console.WriteLine(Int32.Parse(fechaInicio));
             if (Int32.Parse(fechaInicio) < Int32.Parse(fechaFinalizacion))
             {
-                pladeaRegistrar.Periodo = fechaInicio + " - " +fechaFinalizacion;
+                pladeaRegistrar.Periodo = fechaInicio + " - " + fechaFinalizacion;
                 bool existe = _context.Pladeafeis.ToList().Any(p => p.Accion.Equals(pladeaRegistrar.Accion)
                                                                     && p.Periodo.Equals(pladeaRegistrar.Periodo));
                 if (existe)

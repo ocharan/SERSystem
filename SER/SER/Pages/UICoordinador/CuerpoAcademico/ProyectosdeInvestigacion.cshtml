@@ -21,13 +21,13 @@
     
     <div id="tablaProyectos">
         <div class="form-group">
-            <div class="table-responsive">
+            <div class="table-responsive table-bordered">
                 <table id="tblproyectos" class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Tipo</th>
+                        <th style="width: 30%">Nombre</th>
                         <th>Fecha de inicio</th>
+                        <th>Modificar</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,13 +39,14 @@
     
     <div id="tablaPladea" hidden>
         <div class="form-group">
-            <div class="table-responsive">
+            <div class="table-responsive table-bordered">
                 <table id="tblpladeas" class="table table-bordered">
                     <thead>
                     <tr>
                         <th style="width: 30%">Acción</th>
                         <th>Periodo</th>
                         <th style="width: 30%">Objetivo general</th>
+                        <th>Modificar</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -57,12 +58,13 @@
     
     <div id="tablaVinculacion" hidden>
         <div class="form-group">
-            <div class="table-responsive">
+            <div class="table-responsive table-bordered">
                 <table id="tblvinculacion" class="table table-bordered">
                     <thead>
                     <tr>
                         <th>Fecha de convencio</th>
                         <th>Organización vinculada</th>
+                        <th>Modificar</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -170,6 +172,9 @@
                     let row = `<tr>
                                 <td>${listaVinculacion[i].fechaConvenio}</td>
                                 <td>${listaVinculacion[i].organizacion}</td>
+                                <td>
+                                    <button class="btn btn-primary">Modificar</button>
+                                </td>
                                 </tr>`
                             tblVinculacion.innerHTML += row;
                         }
@@ -181,7 +186,10 @@
                 let row = `<tr>
                             <td>${listaPladeas[i].Accion}</td>
                             <td>${listaPladeas[i].Periodo}</td>
-                            <td>${listaPladeas[i].ObjetivoGeneral}<td>
+                            <td>${listaPladeas[i].ObjetivoGeneral}</td>
+                            <td>
+                                <button class="btn btn-primary">Modificar</button>
+                            </td>
                             </tr>`
                 tblPladeas.innerHTML += row;
             }  
@@ -192,8 +200,10 @@
             for (var i=0; i<listaProyectos.length;i++){
                 let row = `<tr>
                             <td>${listaProyectos[i].nombreProyecto}</td>
-                            <td>${listaProyectos[i].tipoProyecto}</td>
-                            <td>${listaProyectos[i].fechaInicio}<td>
+                            <td>${listaProyectos[i].fechaInicio}</td>
+                            <td>
+                                <button class="btn btn-primary">Modificar</button>
+                            </td>
                             </tr>`
                 tblProyectos.innerHTML += row;
             }  

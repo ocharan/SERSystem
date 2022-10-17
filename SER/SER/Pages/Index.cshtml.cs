@@ -29,11 +29,11 @@ namespace SER.Pages
         [HttpPost]
         public async Task<IActionResult> OnPost()
         {
-            if (ModelState.IsValid)
+            var usuarios = _context.Usuarios.ToList();
+            var usuarioObtenido = usuarios.FirstOrDefault(usr => usr.NombreUsuario == Usuario.NombreUsuario && usr.Contra == Usuario.Contra);
+            Console.WriteLine(Usuario.NombreUsuario);
+            if (Usuario.NombreUsuario != "" || Usuario.Contra != "")
             {
-                var usuarios = _context.Usuarios.ToList();
-                var usuarioObtenido = usuarios.FirstOrDefault(usr => usr.NombreUsuario == Usuario.NombreUsuario && usr.Contra == Usuario.Contra);
-                
                 if (usuarioObtenido!=null)
                 {
                     var claims = new List<Claim>
@@ -54,9 +54,14 @@ namespace SER.Pages
                 }
                 else
                 {
+                    TempData["Error"] = "Credenciales incorrectas";
                     return Page();
                 }
-                
+            }
+            else
+            {
+                TempData["Error"] = "Debe ingresar el usuario y contraseña";
+                return Page();
             }
             return Page();
         }

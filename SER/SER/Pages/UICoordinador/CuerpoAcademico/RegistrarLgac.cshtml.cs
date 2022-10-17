@@ -28,12 +28,12 @@ public class RegistrarLgac : PageModel
         }
         catch (Exception ex)
         {
-            
+            TempData["Error"] = "Ha ocurrido un error al cargar los cuerpos academicos";
         }
     }
 
     [HttpPost]
-    public async Task<IActionResult> OnPost()
+    public void OnPost()
     {
         if (ModelState.IsValid)
         {
@@ -43,15 +43,14 @@ public class RegistrarLgac : PageModel
             {
                 _context.Lgacs.Add(lgacNuevo);
                 _context.SaveChanges();
-                return RedirectToPage("LGAC");
+                TempData["Success"] = "LGAC registrado correctamente";
             }
             else
             {
-                return Page();
+                TempData["Error"] = "El LGAC que intenta registrar ya existe";
             }
 
         }
-        return Page();
     }
 
     public void getCuerposAcademicos()

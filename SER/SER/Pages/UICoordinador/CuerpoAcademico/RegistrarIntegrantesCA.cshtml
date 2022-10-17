@@ -64,9 +64,13 @@
             </table>
         </div>
     </div>
-    <span id="seleccionInvalid" class="text-danger" style="width: 100%; text-align: center" hidden>El profesor que intentas asignar ya es integrante de un cuerpo academico, puedes asignarlo solo como colaborador</span>
     <div style="width: 30%; margin-left: 80px; float: left">
-        <span id="seleccionError" class="text-danger" style="width: 100%; text-align: center" hidden>Debe seleccionar un tipo de integrante</span>
+        <div id="seleccionInvalid" class="alert alert-danger" hidden>
+            El profesor que intenta asignar ya es integrante de un cuerpo academico, puedes asignarlo solo como colaborador
+        </div>
+        <div id="seleccionError"  class="alert alert-danger" hidden>
+            Debe seleccionar un tipo de integrante
+        </div>
         <select id="select_tipo" asp-for="integranteNuevo.Tipo" class="form-select" style="border-radius: 5px; float: left">
             <option selected disabled="disabled">Selecciona tipo de integrante</option>
             <option value="Integrante">Integrante</option>
@@ -75,13 +79,16 @@
     </div>
     <br/>
     <br/>
+    <br/>
     <div class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
             <input type="button" id="btn_Guardar" onclick="guardarRegistro()" class="btn btn-success" value="Guardar registro"/>
         </div>
-        <span id="cambiosFalse" class="text-danger" style="margin-top: 30px; width: 100%; text-align: center" hidden>No hay cambios por guardar</span>
     </div>
-    
+    <div id="cambiosFalse"  class="alert alert-danger" hidden>
+        No hay cambios por guardar
+    </div>
+
     <div id="modal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

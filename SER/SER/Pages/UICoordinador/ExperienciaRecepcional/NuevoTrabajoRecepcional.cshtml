@@ -5,66 +5,164 @@
     ViewData["Title"] = "Registrar nuevo trabajo recepcional";
 }
 
-<div class="container">
-    <div class="container">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Nombre del trabajo recepcional">
-            <select class="form-select" style="float: right; border-radius: 5px; margin-left: 15px" >
-                <option selected>Seleccionar duración</option>
-            </select>
-            <select class="form-select" style="border-radius: 5px; margin-left: 15px" >
-                <option selected>Fecha de inicio</option>
-            </select>
-            <input type="text" class="form-control" style="float: left; margin-left: 15px; min-width: 50px; border-radius: 5px;" placeholder="Linea de investigación">
+<form id="registrarTrabajoForm" method="post">
+    <div class="tab">
+        <div class="container">
+            <div class="input-group mb-3" style="margin-top: 50px">
+                <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Nombre del trabajo recepcional" required>
+                <select class="form-select" style="float: right; border-radius: 5px; margin-left: 15px" required>
+                    <option value="" disabled selected>Seleccionar duración</option>
+                    <option value="6 meses">6 meses</option>
+                    <option value="12 meses">12 meses</option>
+                </select>
+                <input class="form-control" id="datepicker"  onkeydown="return false" type="date" placeholder="dd-mm-yyyy" min="2010-01-01" max="2030-12-31" style="margin-left: 15px; border-radius: 5px" required="required"/>
+                <input type="text" class="form-control" style="float: left; margin-left: 15px; min-width: 50px; border-radius: 5px;" placeholder="Linea de investigación" required>
+            </div>
+        </div>
+        <div class="container">
+            <div class="input-group mb-3" style="margin-top: 50px">
+                <select class="form-select" style="float: left; min-width: 50px; border-radius: 5px;" required>
+                    <option value="" disabled selected>Seleccionar modalidad</option>
+                    <option value="Tesina" >Tesina</option>
+                    <option value="Tesis" >Tesis</option>
+                    <option value="Monografía" >Monografía</option>
+                    <option value="Memoria">Memoria</option>
+                    <option value="Trabajo práctico-técnico">Trabajo práctico-técnico</option>
+                    <option value="RSL">RSL</option>
+                    <option value="RML">RML</option>
+                </select>
+                <select id="selectTipo" class="form-select" style="border-radius: 5px; margin-left: 15px" required>
+                    <option value="" disabled="disabled" selected>Seleccionar tipo</option>
+                    <option value="vinculacion">Vinculación</option>
+                    <option value="pladea">PLADEAFEI</option>
+                    <option value="investigacion">Proyecto de investigación</option>
+                </select>
+            </div>
+        </div>
+        <div class="container">
+            <div class="input-group mb-3" style="margin-top: 50px">
+                <select id="selectProyecto" class="form-select" style="border-radius: 5px;" >
+                </select>
+            </div>
+        </div>
+        <div class="container">
+            <div class="input-group mb-3" style="margin-top: 50px">
+                <input class="form-control" type="file" id="formFile">
+            </div>
+        </div>
+        <div class="container" style="align-content: center">
+            <div class="input-group mb-3" style="align-content: center; margin-top: 50px">
+                <button class="btn btn-success">Continuar</button>
+            </div>
         </div>
     </div>
-    <div class="container">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <select class="form-select" style="float: left; min-width: 50px; border-radius: 5px;" >
-                <option selected>Seleccionar modalidad</option>
-                <option>Tesina</option>
-                <option>Tesis</option>
-                <option>Monografía</option>
-                <option>Memoria</option>
-                <option>Trabajo práctico-técnico</option>
-                <option>RSL</option>
-                <option>RML</option>
-            </select>
-            <select class="form-select" style="border-radius: 5px; margin-left: 15px" >
-                <option selected>Seleccionar tipo</option>
-            </select>
-        </div>
-    </div>
-    <div class="container">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <select class="form-select" style="border-radius: 5px;" >
-                <option selected>Seleccionar proyecto de investigación</option>
-            </select>
-        </div>
-    </div>
-    <div class="container">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <select class="form-select" style="border-radius: 5px;" >
-                <option selected>Seleccionar LGAC</option>
-            </select>
-        </div>
-    </div>
-    <div class="container">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <input class="form-control" type="file" id="formFile">
-        </div>
-    </div>
-    <div class="container" style="align-content: center">
-        <div class="input-group mb-3" style="align-content: center; margin-top: 50px">
-            <button class="btn btn-success">Continuar</button>
-        </div>
-    </div>
-    
-</div>
+</form>
 
 
 @section Scripts
 {
+
+    <script combos>
+        let selectTipo = document.getElementById("selectTipo");
+        let selectProyecto = document.getElementById("selectProyecto");
+        let listaInvestigacion;
+        let listaVinculacion;
+        let listaPladea;
+        
+        
+        selectTipo.addEventListener('change', function (){
+            obtenerProyecto(selectTipo.value)
+        })
+        
+        
+        function obtenerProyecto(tipo){
+            if (tipo == "pladea"){
+                cargarPladea();    
+            }else if (tipo == "vinculacion"){
+                cargarVinculacion();
+            }else if (tipo == "investigacion"){
+                cargarInvestigacion();
+            }
+        }
+        
+        function cargarInvestigacion(){
+            $.ajax({
+                url: "?handler=ObtenerInvestigacion",
+                type: "GET",
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },  
+                success: function (data){
+                    listaInvestigacion = JSON.parse(data);
+                    llenarInvestigaciones(listaInvestigacion);
+                },
+                error: function (data){
+                    console.log("Error");
+                }
+            }); 
+        }
+        
+        function cargarPladea(){
+            $.ajax({
+                url: "?handler=ObtenerPladea",
+                type: "GET",
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },  
+                success: function (data){
+                    listaPladeas = JSON.parse(data);
+                    llenarPladea(listaPladeas);
+                },
+                error: function (data){
+                    console.log("Error");
+                }
+            });             
+        }
+        
+        function cargarVinculacion(){
+             $.ajax({
+                 url: "?handler=ObtenerVinculacion",
+                 type: "GET",
+                 headers: {
+                     RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                 },  
+                 success: function (data){
+                     listaVinculaciones = JSON.parse(data);
+                     llenarVinculacion(listaVinculaciones);
+                 },
+                 error: function (data){
+                     console.log("Error");
+                 }
+             });            
+        }
+        
+        function llenarPladea(pladeas){
+            $("#selectProyecto option").remove();
+            for (let i=0; i<pladeas.length; i++){
+                let row = `<option value="${pladeas[i].PladeafeiId}" >${pladeas[i].Accion}</option>`;
+                selectProyecto.innerHTML += row;
+            }
+        }
+        
+        function llenarVinculacion(vinculaciones){
+            $("#selectProyecto option").remove();
+            for (let i=0; i<vinculaciones.length; i++){
+                let row = `<option value="${vinculaciones[i].id}" >${vinculaciones[i].nombre}</option>`;
+                selectProyecto.innerHTML += row;
+            }
+        }
+        
+        function llenarInvestigaciones(investigaciones){
+            $("#selectProyecto option").remove();
+            for (let i=0; i<investigaciones.length; i++){
+                let row = `<option value="${investigaciones[i].ProyectoDeInvestigacionId}" >${investigaciones[i].Nombre}</option>`;
+                selectProyecto.innerHTML += row;
+            }
+        }
+        
+    </script>
+
+
     <script show>
   let headerUV = document.getElementById("uv_header");
   let navPrincipal = document.getElementById("nav-principal");
