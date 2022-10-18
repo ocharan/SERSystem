@@ -8,9 +8,9 @@
 <div class="container">
     <div class="container">
         <div class="input-group mb-3" style="margin-top: 50px">
-            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar alumno">
-            <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
-            <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarAlumno', '_self')"  type="button">Registrar alumno</button>
+            <input id="inputBuscar" type="text" name="queryAlumno" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar alumno">
+            <button class="btn btn-primary" type="button" onclick="buscarAlumno()" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+            <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarAlumno', '_self')" type="button">Registrar alumno</button>
         </div>
     </div>
     
@@ -18,7 +18,7 @@
         <hr />
         <div class="form-group">
             <div class="table-responsive">
-                <table id="tbltrabajosrecepcionales" class="table table-hover">
+                <table id="tblalumnos" class="table table-hover">
                     <thead>
                     <tr>
                         <th>Nombre</th>
@@ -33,6 +33,15 @@
                             <td>@alumno.Matricula</td>
                         </tr>
                     }
+                    <div id="alertSinResultados"  class="alert alert-danger" hidden>
+                        Búsqueda sin resultados
+                    </div>
+                    <div id="alertError"  class="alert alert-danger" hidden>
+                        Búsqueda sin resultados
+                    </div>
+                    <div id="progress" class="progress" hidden>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" style="width: 100%"></div>
+                    </div>
                     </tbody>
                 </table>
             </div>
@@ -42,6 +51,56 @@
 
 @section Scripts
 {
+
+    <script buscador>
+        $("#inputBuscar").keypress(function (event){
+            if (event.keyCode == 13){
+                buscarAlumno();
+            }
+        })
+    
+        function buscarAlumno(){
+            document.getElementById("alertSinResultados").hidden = true;
+            document.getElementById("alertError").hidden = true;
+            let queryAlumno = document.getElementById("inputBuscar").value;
+            document.getElementById("progress"). hidden = false;
+            $.ajax({
+                url: "?handler=BuscarAlumno",
+                type: "GET",
+                data: {queryAlumno: queryAlumno},
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },  
+                success: function (data){
+                    let resultado = JSON.parse(data);
+                    document.getElementById("progress"). hidden = true;
+                    if (resultado == "1"){
+                        document.getElementById("alertSinResultados").hidden = false;
+                    }else if (resultado == "0"){
+                        document.getElementById("alertError").hidden = false;
+                    }else{
+                        llenarTabla(resultado);
+                    }
+                },
+                error: function (data){
+                    console.log("Error");
+                }
+            })
+        }
+        
+        function llenarTabla(data){
+            $('#tblalumnos > tbody').empty();
+            let tablaAlumnos = document.getElementById("tblalumnos");
+           for (let i=0; i<data.length; i++){
+                let row = `<tr>
+                            <td>${data[i].Nombre}</td>
+                            <td>${data[i].Matricula}</td>
+                            </tr>`
+                tablaAlumnos.innerHTML += row;
+           }
+        }
+    </script>
+
     <script show>
   let headerUV = document.getElementById("uv_header");
   let navPrincipal = document.getElementById("nav-principal");

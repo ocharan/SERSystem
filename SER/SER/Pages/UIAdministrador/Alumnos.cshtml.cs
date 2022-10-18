@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NuGet.Protocol;
 using SER.DBContext;
 using SER.Entidades;
 
@@ -20,6 +22,45 @@ public class Alumnos : PageModel
     public void OnGet()
     {
         cargarAlumnos();
+    }
+
+    public JsonResult OnGetBuscarAlumno(string queryAlumno)
+    {
+        try
+        {
+            IQueryable<Alumno> resultadoBusqueda;
+            if (queryAlumno == null )
+            {
+                resultadoBusqueda = _context.Alumnos;
+            }
+            else
+            {
+                resultadoBusqueda = _context.Alumnos.Where(a => a.Nombre.Contains(queryAlumno));
+            }
+            if (resultadoBusqueda.Count() > 0)
+            {
+                AlumnosLista.Clear();
+                foreach (var resultado in resultadoBusqueda)
+                {
+                    Alumno alumnoRegistrado = new Alumno()
+                    {
+                        Nombre = resultado.Nombre,
+                        Matricula = resultado.Matricula,
+                        CorreoElectronico = resultado.CorreoElectronico
+                    };
+                    AlumnosLista.Add(alumnoRegistrado);
+                }
+                return new JsonResult(AlumnosLista.ToJson());
+            }
+            else
+            {
+                return new JsonResult("1".ToJson());
+            }
+        }
+        catch (Exception e)
+        {
+            return new JsonResult("0".ToJson());
+        }
     }
 
     public void cargarAlumnos()
