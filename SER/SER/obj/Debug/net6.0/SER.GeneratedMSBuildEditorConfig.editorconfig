@@ -47,12 +47,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/Alumnos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0FsdW1ub3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/Docentes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0RvY2VudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0V4cGVyaWVuY2lhc0VkdWNhdGl2YXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarAlumno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL1JlZ2lzdHJhckFsdW1uby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarDocente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL1JlZ2lzdHJhckRvY2VudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL1JlZ2lzdHJhckV4cGVyaWVuY2lhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarTipoDocumento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL1JlZ2lzdHJhclRpcG9Eb2N1bWVudG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml]

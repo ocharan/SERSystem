@@ -130,6 +130,9 @@
         </div>
     </div>
     <textarea itemid="idPladeaObjetivo" asp-for="@Model.pladeaRegistrar.ObjetivoGeneral" class="form-control" style="width: 100%; margin-top: 20px" placeholder="Objetivo general" rows="8" required></textarea>
+    <div class="input-group mb-3" style="margin-top: 50px">
+        <input class="form-control" type="file" id="formFile">
+    </div>
     <div class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
             <input type="submit" class="btn btn-success" id="btnGuardarPladea" value="Guardar registro"/>
@@ -182,18 +185,20 @@
                                                             </li>
                                                         <li class="nav-item" style="font-size: 25px">
                                                             <a class="nav-link">></a>
-                                                        </li>                            <li class="nav-item" style="font-size: 25px">
-                                                                                                                         <a class="nav-link">></a>
-                                                                                                                     </li>
-                                                                                                                     <li class="nav-item active" style="font-size: 25px">
-                                                                                                                          <a class="nav-link" href="RegistrarProyecto">Registrar proyecto</a>
-                                                                                                                     </li>`
+                                                        </li>                          
+                                                        <li class="nav-item" style="font-size: 25px">
+                                                             <a class="nav-link" href="ProyectosdeInvestigacion">Ver proyectos de investigación</a>
+                                                        </li>
+                                                        <li class="nav-item" style="font-size: 25px">
+                                                            <a class="nav-link">></a>
+                                                        </li>
+                                                        <li class="nav-item active" style="font-size: 25px">
+                                                            <a class="nav-link" href="RegistrarProyecto">Registrar proyecto</a>
+                                                        </li>`
                                                                                                                          
                                                                                    }
                                                                                    </script>
                                                              }
 
-                                                        <li class="nav-item" style="font-size: 25px">
-                                                             <a class="nav-link" href="ProyectosdeInvestigacion">Ver proyectos de investigación</a>
-                                                        </li>
+                                                        
                             

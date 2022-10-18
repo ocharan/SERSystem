@@ -43,3 +43,29 @@
         </div>
     </div>
 </div>
+
+
+@section Scripts
+{
+    <script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link" href="../Menus/UIAdministración">Administración</a>
+                                        </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                        <li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link" href="Docentes">Docentes</a>
+                                        </li>`
+  }
+  </script>
+}

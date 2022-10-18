@@ -126,5 +126,4 @@ public class RegistrarIntegrantesCA : PageModel
         return null;
     }
     
-    
 }

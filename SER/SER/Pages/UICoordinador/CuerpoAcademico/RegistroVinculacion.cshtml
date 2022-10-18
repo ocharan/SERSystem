@@ -34,9 +34,12 @@
             <input class="form-control" id="datepicker"  onkeydown="return false" type="date" name="fechaInicio" placeholder="dd-mm-yyyy" min="2010-01-01" max="2030-12-31" style="width: 348px; border-radius: 5px" required="required"/>
         </div>
     </div>
+    <div class="input-group mb-3" style="margin-top: 50px">
+        <input class="form-control" type="file" id="formFile">
+    </div>
     <div class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
-            <input type="submit" class="btn btn-success" id="btnGuardarPladea" value="Guardar registro"/>
+            <input type="submit" class="btn btn-success" id="btnGuardarVinculacion" value="Guardar registro"/>
         </div>
     </div>
 </form>
@@ -48,7 +51,7 @@
     </div>
     
     <script>
-        document.getElementById("btnGuardarPladea").setAttribute('disabled', true)
+        document.getElementById("btnGuardarVinculacion").setAttribute('disabled', true)
          setTimeout(() => { window.location.href = 'ProyectosdeInvestigacion' }, 2000);
     </script>
 }
