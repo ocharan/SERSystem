@@ -28,32 +28,40 @@ public class RegistrarDocente : PageModel
         
     }
 
-    public async Task<IActionResult> OnPost()
+    public void OnPost()
     {
-        var listaDocentes = _context.Profesors.ToList();
-        profesorNuevo.Nombre = profesorNuevo.Nombre.ToUpper();
-        bool existeDocente = listaDocentes.Any(d => d.NumeroDePersonal.Equals(profesorNuevo.NumeroDePersonal));
-        if (contraseña.Equals(usuarioNuevo.Contra))
+        try
         {
-            if (!existeDocente)
+            var listaDocentes = _context.Profesors.ToList();
+            profesorNuevo.Nombre = Request.Form["nombreProfesor"] + " " + Request.Form["apellidoPaterno"] + " " +
+                                   Request.Form["apellidoMaterno"];
+            profesorNuevo.Nombre = profesorNuevo.Nombre.ToUpper();
+            bool existeDocente = listaDocentes.Any(d => d.NumeroDePersonal.Equals(profesorNuevo.NumeroDePersonal));
+            if (contraseña.Equals(usuarioNuevo.Contra))
             {
-                usuarioNuevo.NombreUsuario = profesorNuevo.NumeroDePersonal;
-                usuarioNuevo.Tipo = "Maestro";
-                _context.Profesors.Add(profesorNuevo);
-                _context.Usuarios.Add(usuarioNuevo);
-                _context.SaveChanges();
-                return RedirectToPage("Docentes");
+                if (!existeDocente)
+                {
+                    usuarioNuevo.NombreUsuario = profesorNuevo.NumeroDePersonal;
+                    usuarioNuevo.Tipo = "Maestro";
+                    _context.Profesors.Add(profesorNuevo);
+                    _context.Usuarios.Add(usuarioNuevo);
+                    _context.SaveChanges();
+                    TempData["Success"] = "Docente registrado correctámente";
+                }
+                else
+                {
+                    TempData["Error"] = "El docente que inténtas registrar ya existe";
+                }
             }
             else
             {
-                return Page();
+                TempData["Error"] = "Las contraseñas deben ser iguales";
             }
         }
-        else
+        catch (Exception e)
         {
-            return Page();
+            TempData["Error"] = "Ha ocurrido un error durante el registro " + e.Message;
         }
-        return Page();
     }
 
 

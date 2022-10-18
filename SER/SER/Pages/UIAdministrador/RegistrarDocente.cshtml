@@ -12,9 +12,21 @@
         </div>
         <div class="container p-2 h-100" style="margin-top: 40px">
             <div class="d-flex justify-content-center align-content-center h-100">
-                <input type="text" id="input_nombreProfesor" asp-for="@Model.profesorNuevo.Nombre" style="width: 348px;"placeholder="Nombre completo" class="form-control" required="required"/>
+                <input type="text" id="inputNombre" name="nombreProfesor" style="width: 348px;"placeholder="Nombre completo" class="form-control" required="required"/>
             </div>
         </div>
+        <div class="container p-2 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="text" id="inputApellidoPaterno" name="apellidoPaterno" style="width: 348px;"placeholder="Apellido paterno" class="form-control" required="required"/>
+            </div>
+        </div>
+        
+        <div class="container p-2 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="text" id="inputApellidoMaterno" name="apellidoMaterno" style="width: 348px;"placeholder="Apellido materno" class="form-control" required="required"/>
+            </div>
+        </div>
+
         <div class="container p-2 h-100" style="margin-top: 40px">
             <div class="d-flex justify-content-center align-content-center h-100">
                 <input type="number" maxlength="5" id="input_numeroPersonal" asp-for="@Model.profesorNuevo.NumeroDePersonal" style="width: 348px;"placeholder="Numero de personal" class="form-control" required="required"/>
@@ -32,12 +44,31 @@
         </div>
         <div class="container p-5 h-100">
             <div class="d-flex justify-content-center align-content-center h-100">
-                <input type="submit" class="btn btn-success" value="Guardar registro"/>
+                <input id="btnGuardarDocente" type="submit" class="btn btn-success" value="Guardar registro"/>
             </div>
         </div>
     </form>
 </div>
 
+@if(TempData["Success"] !=null)
+{
+     <div class="alert alert-success">
+         @TempData["Success"], redirigiendo...
+     </div>
+     
+     <script>
+         document.getElementById("btnGuardarDocente").setAttribute('disabled', true)
+          setTimeout(() => { window.location.href = 'Docentes' }, 1500);
+     </script>   
+ }
+
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
 
 
 @section Scripts

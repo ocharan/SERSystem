@@ -7,8 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9f0def88-da15-4586-9adc-5db840f06807" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Alumnos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Alumnos.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Alumnos.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Alumnos.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarDocente.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarDocente.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarDocente.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarDocente.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarTipoDocumento.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarTipoDocumento.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" afterDir="false" />
@@ -16,7 +17,7 @@
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/ref/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/ref/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/master.mdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/SER_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/SER_log.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/mastlog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/log_32.trc" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log_32.trc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/system_health_0_133105583391300000.xel" beforeDir="false" afterPath="$PROJECT_DIR$/logs/system_health_0_133105583391300000.xel" afterDir="false" />
@@ -96,7 +97,7 @@
       <workItem from="1665739514601" duration="8661000" />
       <workItem from="1665748261153" duration="5411000" />
       <workItem from="1665998798405" duration="16427000" />
-      <workItem from="1666085006144" duration="15610000" />
+      <workItem from="1666085006144" duration="16708000" />
     </task>
     <servers />
   </component>
