@@ -24,6 +24,8 @@ namespace SER.Entidades
         public int? PladeafeiId { get; set; }
         public int? ProyectoDeInvestigacionId { get; set; }
         public int? VinculacionId { get; set; }
+        
+        public  string? Duracion { get; set; }
 
         public virtual Academium? Academia { get; set; }
         public virtual Pladeafei? Pladeafei { get; set; }

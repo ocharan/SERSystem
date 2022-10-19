@@ -9,19 +9,19 @@
     <div class="tab">
         <div class="container">
             <div class="input-group mb-3" style="margin-top: 50px">
-                <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Nombre del trabajo recepcional" required>
-                <select class="form-select" style="float: right; border-radius: 5px; margin-left: 15px" required>
+                <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" asp-for="TrabajoRecepcional.Nombre" placeholder="Nombre del trabajo recepcional" required>
+                <select class="form-select" style="float: right; border-radius: 5px; margin-left: 15px" asp-for="TrabajoRecepcional.Duracion" required>
                     <option value="" disabled selected>Seleccionar duración</option>
                     <option value="6 meses">6 meses</option>
                     <option value="12 meses">12 meses</option>
                 </select>
-                <input class="form-control" id="datepicker"  onkeydown="return false" type="date" placeholder="dd-mm-yyyy" min="2010-01-01" max="2030-12-31" style="margin-left: 15px; border-radius: 5px" required="required"/>
-                <input type="text" class="form-control" style="float: left; margin-left: 15px; min-width: 50px; border-radius: 5px;" placeholder="Linea de investigación" required>
+                <input class="form-control" id="datepicker" asp-for="TrabajoRecepcional.Fechadeinicio" onkeydown="return false" type="date" placeholder="dd-mm-yyyy" min="2010-01-01" max="2030-12-31" style="margin-left: 15px; border-radius: 5px" required="required"/>
+                <input type="text" class="form-control" style="float: left; margin-left: 15px; min-width: 50px; border-radius: 5px;" asp-for="TrabajoRecepcional.LineaDeInvestigacion" placeholder="Linea de investigación" required>
             </div>
         </div>
         <div class="container">
             <div class="input-group mb-3" style="margin-top: 50px">
-                <select class="form-select" style="float: left; min-width: 50px; border-radius: 5px;" required>
+                <select class="form-select" style="float: left; min-width: 50px; border-radius: 5px;" asp-for="TrabajoRecepcional.Modalidad" required>
                     <option value="" disabled selected>Seleccionar modalidad</option>
                     <option value="Tesina" >Tesina</option>
                     <option value="Tesis" >Tesis</option>
@@ -31,7 +31,7 @@
                     <option value="RSL">RSL</option>
                     <option value="RML">RML</option>
                 </select>
-                <select id="selectTipo" class="form-select" style="border-radius: 5px; margin-left: 15px" required>
+                <select id="selectTipo" class="form-select" asp-for="proyectoAsociado" style="border-radius: 5px; margin-left: 15px" required>
                     <option value="" disabled="disabled" selected>Seleccionar tipo</option>
                     <option value="vinculacion">Vinculación</option>
                     <option value="pladea">PLADEAFEI</option>
@@ -41,7 +41,7 @@
         </div>
         <div class="container">
             <div class="input-group mb-3" style="margin-top: 50px">
-                <select id="selectProyecto" class="form-select" style="border-radius: 5px;" >
+                <select id="selectProyecto" name="idProyecto" class="form-select" style="border-radius: 5px;" >
                 </select>
             </div>
         </div>
@@ -52,12 +52,31 @@
         </div>
         <div class="container" style="align-content: center">
             <div class="input-group mb-3" style="align-content: center; margin-top: 50px">
-                <button class="btn btn-success">Continuar</button>
+                <button id="btnGuardarProyecto" class="btn btn-success">Guardar registro</button>
             </div>
         </div>
     </div>
 </form>
 
+@if(TempData["Success"] !=null)
+{
+     <div class="alert alert-success">
+         @TempData["Success"], redirigiendo...
+     </div>
+     
+     <script>
+         document.getElementById("btnGuardarProyecto").setAttribute('disabled', true)
+          setTimeout(() => { window.location.href = 'TrabajosRecepcionales' }, 1500);
+     </script>   
+ }
+
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
 
 @section Scripts
 {

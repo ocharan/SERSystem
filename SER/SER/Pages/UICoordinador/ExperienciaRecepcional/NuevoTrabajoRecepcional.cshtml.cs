@@ -11,11 +11,17 @@ public class NuevoTrabajoRecepcional : PageModel
 
     private readonly MySERContext _context;
     
+    [BindProperty]
+    public TrabajoRecepcional TrabajoRecepcional { get; set; }
+    
+    [BindProperty]
+    public string proyectoAsociado { get; set; }
     public List<Pladeafei> Pladeafeis { get; set; }
     
     public List<Vinculacion> Vinculacions { get; set; }
     
     public List<ProyectoDeInvestigacion> ProyectoDeInvestigacions { get; set; }
+    
     public NuevoTrabajoRecepcional(MySERContext context)
     {
         _context = context;
@@ -26,6 +32,40 @@ public class NuevoTrabajoRecepcional : PageModel
     
     public void OnGet()
     {
+    }
+
+    public void OnPost()
+    {
+        if (proyectoAsociado == "vinculacion")
+        {
+            TrabajoRecepcional.VinculacionId = (int?)Int64.Parse(Request.Form["idProyecto"]);
+        }else if (proyectoAsociado == "pladea")
+        {
+            TrabajoRecepcional.PladeafeiId = (int?)Int64.Parse(Request.Form["idProyecto"]);
+        }
+        else
+        {
+            TrabajoRecepcional.ProyectoDeInvestigacionId = (int?)Int64.Parse(Request.Form["idProyecto"]);
+        }
+        try
+        {
+            TrabajoRecepcional.Estado = "Activo";
+            bool existe = _context.TrabajoRecepcionals.Any(t => t.Nombre == TrabajoRecepcional.Nombre);
+            if (!existe)
+            {
+                _context.TrabajoRecepcionals.Add(TrabajoRecepcional);
+                _context.SaveChanges();
+                TempData["Success"] = "Trabajo recepcional registrado correctamente";
+            }
+            else
+            {
+                TempData["Error"] = "El trabajo recepcional que intentas registrar ya existe";
+            }
+        }
+        catch (Exception e)
+        {
+            TempData["Error"] = "Ha ocurrido un error durante el registro " + e.Message;
+        }
     }
 
     public JsonResult OnGetObtenerPladea()

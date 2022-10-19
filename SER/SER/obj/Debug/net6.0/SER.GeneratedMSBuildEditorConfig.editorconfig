@@ -75,6 +75,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL1JlZ2lzdHJhclRpcG9Eb2N1bWVudG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/TiposDeDocumento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL1RpcG9zRGVEb2N1bWVudG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vQ3VlcnBvc0FjYWRlbWljb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
