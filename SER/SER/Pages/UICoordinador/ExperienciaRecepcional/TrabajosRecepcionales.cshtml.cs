@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.DBContext;
 using SER.Entidades;
@@ -29,6 +30,24 @@ public class TrabajosRecepcionales : PageModel
         }
     }
 
+    public void OnPost()
+    {
+        
+    }
+    
+    public void OnPostBuscar()
+    {
+        Console.WriteLine("Buscar");
+    }
+ 
+    public IActionResult OnPostEstudiantes()
+    {
+        Console.WriteLine(Request.Query["id"]);
+        var id = Request.Query["id"];
+        return Redirect("AsignarAlumnos?id="+id);
+    }
+
+
     public void getTrabajosRecepcionales()
     {
         var trabajosRegistrados = _context.TrabajoRecepcionals.ToList();
@@ -40,10 +59,10 @@ public class TrabajosRecepcionales : PageModel
                 Modalidad = trabajo.Modalidad,
                 Estado = trabajo.Estado,
                 Fechadeinicio = trabajo.Fechadeinicio,
-                Duracion = trabajo.Duracion
+                Duracion = trabajo.Duracion,
+                TrabajoRecepcionalId = trabajo.TrabajoRecepcionalId
             };
             trabajoRecepcionals.Add(trabajoRecepcional);
         }
     }
-    
 }

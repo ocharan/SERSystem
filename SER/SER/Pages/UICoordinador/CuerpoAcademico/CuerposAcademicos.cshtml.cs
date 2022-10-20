@@ -38,7 +38,6 @@ public class CuerposAcademicos : PageModel
 
     public void OnGet(int currentPage)
     {
-        Console.WriteLine(isSearch);
         if (!isSearch)
         {
             getCuerposAcademicos();
@@ -60,9 +59,15 @@ public class CuerposAcademicos : PageModel
        
     }
 
-    [HttpGet]
+    public IActionResult OnPostModificar()
+    {
+        Console.WriteLine("Modificar");
+        return Page();
+    }
+    
     public void OnPostBuscar()
     {
+        Console.WriteLine("Buscar");
         isSearch = true;
         var query = Request.Form["query"];
         try
@@ -105,12 +110,13 @@ public class CuerposAcademicos : PageModel
     }
 
 
-    [HttpPost]
-    public IActionResult OnPost()
+    public IActionResult OnPostRegistrar()
     {
+        Console.WriteLine("Registrar integrantes");
         var id = Request.Query["id"];
         return Redirect("RegistrarIntegrantesCA?id="+id);
     }
+    
     public void getCuerposAcademicos()
     {
         isSearch = false;

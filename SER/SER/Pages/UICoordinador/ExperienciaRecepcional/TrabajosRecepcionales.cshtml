@@ -6,61 +6,85 @@
 }
 
 <div class="container">
-    <div class="container">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar trabajo recepcional">
-            <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
-            <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('NuevoTrabajoRecepcional', '_self')" type="button">Registrar trabajo</button>
-        </div>
-    </div>
-    
-    <div id="seleccionarAlumnos">
-        <hr />
-        <div class="form-group">
-            <div class="table-responsive">
-                <table id="tbltrabajosrecepcionales" class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Modalidad</th>
-                        <th>Estado</th>
-                        <th>Duración</th>
-                        <th>Fecha de inicio</th>
-                        <th>Asignar estudiantes</th>
-                        <th>Documentos</th>
-                        <th>Modificar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var trabajo in @Model.trabajoRecepcionals)
-                    {
+    <form method="post">
+        <div class="container">
+                <div class="input-group mb-3" style="margin-top: 50px">
+                    <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar trabajo recepcional">
+                    <button asp-page-handler="buscar" class="btn btn-primary" type="submit" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+                    <label class="form-label">Filtrar por: </label>
+                    <select id="selectModalidad" class="form-select" style="float: right; border-radius: 5px; margin-left: 5px" >
+                        <option value="" disabled selected>Modalidad</option>
+                        <option value="Tesina" >Tesina</option>
+                        <option value="Tesis" >Tesis</option>
+                        <option value="Monografía" >Monografía</option>
+                        <option value="Memoria">Memoria</option>
+                        <option value="Trabajo práctico-técnico">Trabajo práctico-técnico</option>
+                        <option value="RSL">RSL</option>
+                        <option value="RML">RML</option>
+                    </select>
+                    <select id="selectEstado" class="form-select" style="float: right; border-radius: 5px; margin-left: 5px">
+                        <option value="" disabled selected>Estado</option>
+                        <option value="enProceso" >En proceso</option>
+                        <option value="abandonado">Abandonado</option>
+                        <option value="completado">Completado</option>
+                        <option value="enTramite">En tramite</option>
+                    </select>
+                    <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('NuevoTrabajoRecepcional', '_self')" type="button">Registrar trabajo</button>
+                </div>
+            </div>
+            
+        <div id="seleccionarAlumnos">
+            <hr />
+            <div class="form-group">
+                <div class="table-responsive">
+                    <table id="tbltrabajosrecepcionales" class="table table-hover">
+                        <thead>
                         <tr>
-                            <td>@trabajo.Nombre</td>
-                            <td>@trabajo.Modalidad</td>
-                            <td>@trabajo.Estado</td>
-                            <td>@trabajo.Duracion</td>
-                            <td>
-                                @if (trabajo.Fechadeinicio != null)
-                                {
-                                    @trabajo.Fechadeinicio.Value.Date.ToString("d");
-                                }
-                            </td>
-                            <td>
-                                <button class="btn btn-primary">Asignar estudiante/s</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-success">Registrar documento</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-primary">Modificar</button>
-                            </td>
+                            <th style="width: 15%">Nombre</th>
+                            <th>Modalidad</th>
+                            <th>Estado</th>
+                            <th>Duración</th>
+                            <th>Fecha de inicio</th>
+                            <th>Asignar estudiantes</th>
+                            <th>Asignar sinodales</th>
+                            <th>Documentos</th>
+                            <th>Modificar</th>
                         </tr>
-                    }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        @foreach (var trabajo in @Model.trabajoRecepcionals)
+                        {
+                            <tr>
+                                <td>@trabajo.Nombre</td>
+                                <td>@trabajo.Modalidad</td>
+                                <td>@trabajo.Estado</td>
+                                <td>@trabajo.Duracion</td>
+                                <td>
+                                    @if (trabajo.Fechadeinicio != null)
+                                    {
+                                        @trabajo.Fechadeinicio.Value.Date.ToString("d");
+                                    }
+                                </td>
+                                <td>
+                                    <button asp-page-handler="estudiantes" type="submit" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Asignar estudiantes</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary">Asignar sinodales</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success">Registrar documento</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary">Modificar</button>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 @section Scripts
