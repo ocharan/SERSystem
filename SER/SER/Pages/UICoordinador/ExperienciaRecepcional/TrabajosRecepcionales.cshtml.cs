@@ -39,7 +39,8 @@ public class TrabajosRecepcionales : PageModel
                 Nombre = trabajo.Nombre,
                 Modalidad = trabajo.Modalidad,
                 Estado = trabajo.Estado,
-                Fechadeinicio = trabajo.Fechadeinicio
+                Fechadeinicio = trabajo.Fechadeinicio,
+                Duracion = trabajo.Duracion
             };
             trabajoRecepcionals.Add(trabajoRecepcional);
         }

@@ -24,7 +24,9 @@
                         <th>Nombre</th>
                         <th>Modalidad</th>
                         <th>Estado</th>
+                        <th>Duración</th>
                         <th>Fecha de inicio</th>
+                        <th>Asignar estudiantes</th>
                         <th>Documentos</th>
                         <th>Modificar</th>
                     </tr>
@@ -36,11 +38,15 @@
                             <td>@trabajo.Nombre</td>
                             <td>@trabajo.Modalidad</td>
                             <td>@trabajo.Estado</td>
+                            <td>@trabajo.Duracion</td>
                             <td>
                                 @if (trabajo.Fechadeinicio != null)
                                 {
                                     @trabajo.Fechadeinicio.Value.Date.ToString("d");
                                 }
+                            </td>
+                            <td>
+                                <button class="btn btn-primary">Asignar estudiante/s</button>
                             </td>
                             <td>
                                 <button class="btn btn-success">Registrar documento</button>

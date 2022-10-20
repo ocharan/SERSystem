@@ -11,7 +11,8 @@ public class Alumnos : PageModel
     private readonly MySERContext _context;
 
     public List<Alumno> AlumnosLista { get; set; }
-
+    
+    
     public Alumnos(MySERContext context)
     {
         _context = context;
@@ -19,7 +20,7 @@ public class Alumnos : PageModel
     }
     
     
-    public void OnGet()
+    public void OnGet(int currentPage)
     {
         cargarAlumnos();
     }
@@ -29,7 +30,7 @@ public class Alumnos : PageModel
         try
         {
             IQueryable<Alumno> resultadoBusqueda;
-            if (queryAlumno == null )
+            if (queryAlumno == "" )
             {
                 resultadoBusqueda = _context.Alumnos;
             }

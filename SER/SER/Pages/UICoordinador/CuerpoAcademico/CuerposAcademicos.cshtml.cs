@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.DBContext;
+using SER.Entidades;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -12,6 +13,22 @@ public class CuerposAcademicos : PageModel
     [BindProperty] public string idAcademico { get; set; }
     public List<Entidades.CuerpoAcademico> CuerpoAcademicos { get; set; }
     
+    //Paginación
+    
+    public int CurrentPage { get; set; } = 1;
+
+    public int Count { get; set; }
+
+    public int PageSize { get; set; } = 1;
+
+    public int TotalPages => (int)Math.Ceiling(decimal.Divide(Count, PageSize));
+
+    public bool EnablePrevious => CurrentPage > 1;
+
+    public bool EnableNext => CurrentPage < TotalPages;
+
+    public bool isSearch { get; set; }
+    
     public CuerposAcademicos(MySERContext context)
     {
         _context = context;
@@ -19,9 +36,72 @@ public class CuerposAcademicos : PageModel
 
     }
 
-    public void OnGet()
+    public void OnGet(int currentPage)
     {
-        getCuerposAcademicos();
+        Console.WriteLine(isSearch);
+        if (!isSearch)
+        {
+            getCuerposAcademicos();
+            CurrentPage = currentPage == 0 ? 1 : currentPage;
+            Count = CuerpoAcademicos.Count;
+            if (CurrentPage > TotalPages)
+                CurrentPage = TotalPages;
+            CuerpoAcademicos = CuerpoAcademicos.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+        }
+        else
+        {
+            CurrentPage = currentPage == 0 ? 1 : currentPage;
+            Count = CuerpoAcademicos.Count;
+            if (CurrentPage > TotalPages)
+                CurrentPage = TotalPages;
+            CuerpoAcademicos = CuerpoAcademicos.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+        }
+        
+       
+    }
+
+    [HttpGet]
+    public void OnPostBuscar()
+    {
+        isSearch = true;
+        var query = Request.Form["query"];
+        try
+        {
+            IQueryable<Entidades.CuerpoAcademico> resultadoBusqueda;
+            if (query == "" )
+            {
+                resultadoBusqueda = _context.CuerpoAcademicos;
+            }
+            else
+            {
+                resultadoBusqueda = _context.CuerpoAcademicos.Where(a => a.Nombre.Contains(query));
+            }
+            if (resultadoBusqueda.Count() > 0)
+            {
+                CuerpoAcademicos.Clear();
+                foreach (var cuerpoCA in resultadoBusqueda)
+                {
+                    Entidades.CuerpoAcademico cuerpo = new Entidades.CuerpoAcademico()
+                    {
+                        Nombre = cuerpoCA.Nombre,
+                        CuerpoAcademicoId = cuerpoCA.CuerpoAcademicoId,
+                    };
+                    CuerpoAcademicos.Add(cuerpo);
+                }
+                Count = CuerpoAcademicos.Count;
+                if (CurrentPage > TotalPages)
+                    CurrentPage = TotalPages;
+                CuerpoAcademicos = CuerpoAcademicos.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+            }
+            else
+            {
+                TempData["Error"] = "No se encontraron resultados relacionados con tú búsqueda";
+            }
+        }
+        catch (Exception e)
+        {
+            TempData["Error"] = "Error al establecer conexión";
+        }
     }
 
 
@@ -33,6 +113,7 @@ public class CuerposAcademicos : PageModel
     }
     public void getCuerposAcademicos()
     {
+        isSearch = false;
         try
         {
             var listaCuerpos = _context.CuerpoAcademicos.ToList();

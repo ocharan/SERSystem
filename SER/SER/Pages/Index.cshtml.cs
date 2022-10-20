@@ -29,40 +29,49 @@ namespace SER.Pages
         [HttpPost]
         public async Task<IActionResult> OnPost()
         {
-            var usuarios = _context.Usuarios.ToList();
-            var usuarioObtenido = usuarios.FirstOrDefault(usr => usr.NombreUsuario == Usuario.NombreUsuario && usr.Contra == Usuario.Contra);
-            Console.WriteLine(Usuario.NombreUsuario);
-            if (Usuario.NombreUsuario != "" || Usuario.Contra != "")
+            try
             {
-                if (usuarioObtenido!=null)
+                var usuarios = _context.Usuarios.ToList();
+                var usuarioObtenido = usuarios.FirstOrDefault(usr => usr.NombreUsuario == Usuario.NombreUsuario && usr.Contra == Usuario.Contra);
+                if (Usuario.NombreUsuario != null || Usuario.Contra != null)
                 {
-                    var claims = new List<Claim>
+                    if (usuarioObtenido!=null)
                     {
-                        new Claim(ClaimTypes.Name, usuarioObtenido.NombreUsuario)
-                    };
-                    claims.Add(new Claim(ClaimTypes.Role, usuarioObtenido.Tipo));
-                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(claimsIdentity));
-                    if (usuarioObtenido.Tipo.Equals("Coordinador"))
+                        var claims = new List<Claim>
+                        {
+                            new Claim(ClaimTypes.Name, usuarioObtenido.NombreUsuario)
+                        };
+                        claims.Add(new Claim(ClaimTypes.Role, usuarioObtenido.Tipo));
+                        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(claimsIdentity));
+                        if (usuarioObtenido.Tipo.Equals("Coordinador"))
+                        {
+                            return RedirectToPage("/Menus/UICoordinador");
+                        }else if (usuarioObtenido.Tipo.Equals("Administrador"))
+                        {
+                            return RedirectToPage("/Menus/UIAdministración");
+                        }
+                    }
+                    else
                     {
-                        return RedirectToPage("/Menus/UICoordinador");
-                    }else if (usuarioObtenido.Tipo.Equals("Administrador"))
-                    {
-                        return RedirectToPage("/Menus/UIAdministración");
+                        TempData["Error"] = "Credenciales incorrectas";
+                        return Page();
                     }
                 }
                 else
                 {
-                    TempData["Error"] = "Credenciales incorrectas";
+                    TempData["Error"] = "Debe ingresar el usuario y contraseña";
                     return Page();
                 }
+
             }
-            else
+            catch (Exception e)
             {
-                TempData["Error"] = "Debe ingresar el usuario y contraseña";
+                TempData["Error"] = "Error al tratar de establecer conexón con el servidor";
                 return Page();
             }
+
             return Page();
         }
     }
