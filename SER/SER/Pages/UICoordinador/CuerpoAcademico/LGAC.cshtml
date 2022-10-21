@@ -6,42 +6,44 @@
 }
 
 <div class="container">
-    <div class="container">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar lgac">
-            <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
-            <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarLgac', '_self')"  type="button">Registrar LGAC</button>
-        </div>
-    </div>
-    
-    <div id="seleccionarAlumnos">
-        <hr />
-        <div class="form-group">
-            <div class="table-responsive table-bordered">
-                <table id="tbltrabajosrecepcionales" class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Cuerpo académico</th>
-                        <th>Modificar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var lgac in Model.Lgacs)
-                    {
+    <form method="post">
+        <div class="container">
+                <div class="input-group mb-3" style="margin-top: 50px">
+                    <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar lgac">
+                    <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+                    <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarLgac', '_self')"  type="button">Registrar LGAC</button>
+                </div>
+            </div>
+            
+        <div id="seleccionarAlumnos">
+            <hr />
+            <div class="form-group">
+                <div class="table-responsive table-bordered">
+                    <table id="tbltrabajosrecepcionales" class="table table-hover">
+                        <thead>
                         <tr>
-                            <td>@lgac.lgacNombre</td>
-                            <td>@lgac.cuerpoAcademico</td>
-                            <td>
-                                <button value="@lgac.lgacId" class="btn btn-primary" style="border-radius: 5px; margin-left: 5px" type="button">Modificar info</button>
-                            </td>
+                            <th>Nombre</th>
+                            <th>Cuerpo académico</th>
+                            <th>Modificar</th>
                         </tr>
-                    }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        @foreach (var lgac in Model.Lgacs)
+                        {
+                            <tr>
+                                <td>@lgac.lgacNombre</td>
+                                <td>@lgac.cuerpoAcademico</td>
+                                <td>
+                                    <button asp-page-handler="modificar" type="submit" asp-route-id="@lgac.lgacId" class="btn btn-primary" style="border-radius: 5px; margin-left: 5px" type="button">Editar</button>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 @section Scripts

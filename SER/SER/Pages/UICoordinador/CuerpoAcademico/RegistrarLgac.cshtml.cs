@@ -28,7 +28,7 @@ public class RegistrarLgac : PageModel
         }
         catch (Exception ex)
         {
-            TempData["Error"] = "Ha ocurrido un error al cargar los cuerpos academicos";
+            TempData["Error"] = "Ha ocurrido un error al cargar la información";
         }
     }
 
@@ -52,7 +52,7 @@ public class RegistrarLgac : PageModel
 
         }
     }
-
+    
     public void getCuerposAcademicos()
     {
         var cuerposRegistrados = _context.CuerpoAcademicos.ToList();

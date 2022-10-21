@@ -29,7 +29,7 @@
                         <tr>
                             <th>Cuerpo académico</th>
                             <th style="width: 20%">Añadir integrante</th>
-                            <th style="width: 20%">Modificar</th>
+                            <th style="width: 20%">Editar</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -47,7 +47,7 @@
                                     <input asp-page-handler="registrar" type="submit" style="color: white" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Asignar integrantes" class="btn btn-primary" id="btn_añadirIntegrante"/>
                                 </td>
                                 <td>
-                                    <input asp-page-handler="modificar" type="submit" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Modificar" class="btn btn-primary" id="btnModificarIntegrante"/>
+                                    <input asp-page-handler="modificar" type="submit" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Editar" class="btn btn-primary" id="btnModificarIntegrante"/>
                                 </td>
                             </tr>
                         }

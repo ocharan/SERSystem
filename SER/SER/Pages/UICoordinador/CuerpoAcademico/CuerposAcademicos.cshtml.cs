@@ -19,7 +19,7 @@ public class CuerposAcademicos : PageModel
 
     public int Count { get; set; }
 
-    public int PageSize { get; set; } = 1;
+    public int PageSize { get; set; } = 5;
 
     public int TotalPages => (int)Math.Ceiling(decimal.Divide(Count, PageSize));
 
@@ -61,8 +61,8 @@ public class CuerposAcademicos : PageModel
 
     public IActionResult OnPostModificar()
     {
-        Console.WriteLine("Modificar");
-        return Page();
+        var id = Request.Query["id"];
+        return Redirect("EditarCuerpoAcademico?id="+id);
     }
     
     public void OnPostBuscar()
@@ -112,7 +112,6 @@ public class CuerposAcademicos : PageModel
 
     public IActionResult OnPostRegistrar()
     {
-        Console.WriteLine("Registrar integrantes");
         var id = Request.Query["id"];
         return Redirect("RegistrarIntegrantesCA?id="+id);
     }

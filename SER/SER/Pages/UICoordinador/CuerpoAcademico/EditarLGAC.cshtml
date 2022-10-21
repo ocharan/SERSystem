@@ -2,18 +2,103 @@
 @model SER.Pages.UICoordinador.CuerpoAcademico.EditarLGAC
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Editar LGAC";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
+
+<div class="container">
+    <form id="registrarLgacform" method="post">
+        <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px; margin-top: 50px">
+            <h3 style="font-size: 20px">EDITAR LGAC</h3>
+        </div>
+        <div class="container p-2 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="text" id="input_nombreLgac" asp-for="@Model.lgacNuevo.Nombre" style="width: 348px;"placeholder="Nombre LGAC" class="form-control" required="required"/>
+            </div>
+        </div>
+        <div class="container p-2 h-50" style="margin-top: 20px">
+            <div class="d-flex justify-content-center align-content-center h-50">
+                <select id="cuerpos_list" class="form-select"  asp-for="lgacNuevo.CuerpoAcademicoId" style="width: 300px; border-radius: 5px" required>
+                    <option value="" disabled="disabled">Selecciona cuerpo academico</option>
+                    @foreach (var cuerpo in @Model.CuerpoAcademicos)
+                    {
+                        <option value="@cuerpo.CuerpoAcademicoId">@cuerpo.Nombre</option>
+                    }
+                </select>
+                <input type="button" value="+" onclick="window.open('RegistrarCuerpoAcademico', '_self')" style="font-size: 20px; color: white; margin-left: 10px; align-items: center" class="btn btn-success"/>
+            </div>
+        </div>
+        <div class="container p-1 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <span asp-validation-for="lgacNuevo.CuerpoAcademicoId" class="text-danger"></span>
+            </div>
+        </div>
+        
+        <textarea itemid="id_LgacDescripcion" class="form-control" asp-for="lgacNuevo.Descripcion" style="width: 100%" placeholder="Descripción" id="input_descripcion" rows="8"></textarea>
+        <div class="container p-5 h-100">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input id="btnGuardarLgac" type="submit" class="btn btn-success" value="Guardar registro"/>
+            </div>
+        </div>
+    </form>
 </div>
-</body>
-</html>
+
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"], redirigiendo...
+    </div>
+    
+    <script>
+        document.getElementById("btnGuardarLgac").setAttribute('disabled', true)
+         setTimeout(() => { window.location.href = 'LGAC' }, 2000);
+    </script>
+}
+
+
+@section Scripts
+{
+    <script show>
+           let headerUV = document.getElementById("uv_header");
+           let navPrincipal = document.getElementById("nav-principal");
+           let sectionButtons = document.getElementById("section-buttons");
+           let titleNav = document.getElementById("title-nav");
+           let navigation = document.getElementById("navigation");
+           let listaNavegacion = document.getElementById("element-list");
+           
+           window.onload = function (){
+             navPrincipal.hidden = false;
+             listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                               <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                             </li>
+                                             <li class="nav-item" style="font-size: 25px">
+                                                 <a class="nav-link">></a>
+                                             </li>
+                                                 <li class="nav-item" style="font-size: 25px">
+                                                     <a class="nav-link" href="../UICuerpoAcademico">Cuerpo academico</a>
+                                                 </li>
+                                             <li class="nav-item" style="font-size: 25px">
+                                                 <a class="nav-link">></a>
+                                             </li>
+                                             <li class="nav-item" style="font-size: 25px">
+                                                  <a class="nav-link" href="LGAC">Ver LGACS</a>
+                                             </li>
+                                            <li class="nav-item" style="font-size: 25px">
+                                                 <a class="nav-link">></a>
+                                             </li>
+                                             <li class="nav-item" style="font-size: 25px">
+                                                  <a class="nav-link">Editar LGAC</a>
+                                             </li>`
+                                                 
+           }
+           </script>
+}

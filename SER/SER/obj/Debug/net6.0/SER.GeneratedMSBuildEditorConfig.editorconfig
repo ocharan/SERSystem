@@ -55,6 +55,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0RvY2VudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/EditarAlumno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0VkaXRhckFsdW1uby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/EditarDocente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0VkaXRhckRvY2VudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/EditarExperienciaEducativa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0VkaXRhckV4cGVyaWVuY2lhRWR1Y2F0aXZhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/EditarTipoDocumento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0VkaXRhclRpcG9Eb2N1bWVudG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0V4cGVyaWVuY2lhc0VkdWNhdGl2YXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -81,6 +97,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vQ3VlcnBvc0FjYWRlbWljb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarCuerpoAcademico.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vRWRpdGFyQ3VlcnBvQWNhZGVtaWNvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarLGAC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vRWRpdGFyTEdBQy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarOrganizacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vRWRpdGFyT3JnYW5pemFjaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarProyectoDeInvestigacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vRWRpdGFyUHJveWVjdG9EZUludmVzdGlnYWNpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/LGAC.cshtml]
@@ -129,6 +161,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0FzaWduYXJBbHVtbm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/EditarSinodal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0VkaXRhclNpbm9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/EditarTrabajoRecepcional.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0VkaXRhclRyYWJham9SZWNlcGNpb25hbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml]

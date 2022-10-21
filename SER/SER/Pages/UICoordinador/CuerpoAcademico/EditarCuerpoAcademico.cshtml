@@ -2,18 +2,94 @@
 @model SER.Pages.UICoordinador.CuerpoAcademico.EditarCuerpoAcademico
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Editar cuerpo académico";
 }
 
-<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<form id="registrarCAform" method="post" style="margin-top: 50px">
+    <div id="registro_pt1" class="container">
+        <div class="container p-2 h-100" style="margin-top: 40px">
+            <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
+                <h3 style="font-size: 20px">EDITAR CUERPO ACADEMICO</h3>
+            </div>
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="text" id="input_nombreCuerpo" asp-for="@Model._cuerpoAcademico.Nombre" style="width: 348px; margin-bottom: 30px" placeholder="Nombre cuerpo academico" class="form-control" required="required"/>
+                <span asp-validation-for="@Model._cuerpoAcademico.Nombre" class="text-danger"></span>
+            </div>
+        </div>
+        <textarea itemid="id_LgacDescripcion" asp-for="_cuerpoAcademico.Objetivogeneral" class="form-control" style="width: 100%" placeholder="Objetivo general" id="input_descripcion" rows="8"></textarea>
+        <div class="container p-5 h-100">
+            <div class="d-flex justify-content-center align-content-center h-100">
+                <input type="submit" id="btnGuardarCA" style="width: 100px" class="btn btn-success" value="Guardar"/>
+            </div>
+        </div>
+    </div>
+</form>
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
-</div>
-</body>
-</html>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error de registro</strong> @TempData["ErrorMessage"]
+    </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        <div>@TempData["SuccessMessage"] ,redirigiendo...</div>
+    </div>
+    <script>
+        document.getElementById("btnGuardarCA").setAttribute('disabled', true)
+         setTimeout(() => { window.location.href = 'CuerposAcademicos' }, 1200);
+    </script>
+}
+
+@if (TempData["ExceptionMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Ha ocurrido un error</strong> @TempData["ExceptionMessage"]
+    </div>
+}
+
+@section Scripts
+{
+
+    <script show>
+               let headerUV = document.getElementById("uv_header");
+               let navPrincipal = document.getElementById("nav-principal");
+               let sectionButtons = document.getElementById("section-buttons");
+               let titleNav = document.getElementById("title-nav");
+               let navigation = document.getElementById("navigation");
+               let listaNavegacion = document.getElementById("element-list");
+               window.onload = function (){
+                 navPrincipal.hidden = false;
+                 listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                                   <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                                 </li>
+                                                 <li class="nav-item" style="font-size: 25px">
+                                                     <a class="nav-link">></a>
+                                                 </li>
+                                                     <li class="nav-item" style="font-size: 25px">
+                                                         <a class="nav-link" href="../UICuerpoAcademico">Cuerpo academico</a>
+                                                     </li>
+                                                 <li class="nav-item" style="font-size: 25px">
+                                                     <a class="nav-link">></a>
+                                                 </li>
+                                                 <li class="nav-item" style="font-size: 25px">
+                                                      <a class="nav-link" href="CuerposAcademicos">Ver cuerpos academicos</a>
+                                                 </li>
+                                                <li class="nav-item" style="font-size: 25px">
+                                                     <a class="nav-link">></a>
+                                                 </li>
+                                                 <li class="nav-item" style="font-size: 25px">
+                                                      <a class="nav-link">Editar cuerpo academico</a>
+                                                 </li>`
+                                                     
+               }
+               </script>
+}
+
+
+
+

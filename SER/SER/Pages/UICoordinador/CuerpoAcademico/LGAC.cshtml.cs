@@ -1,4 +1,5 @@
 using System.Data.Entity.Core.Objects;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Internal;
 using SER.DBContext;
@@ -29,6 +30,12 @@ public class LGAC : PageModel
         {
             Console.WriteLine(ex.Message);
         }
+    }
+    
+    public IActionResult OnPostModificar()
+    {
+        var id = Request.Query["id"];
+        return Redirect("EditarLGAC?id="+id);
     }
 
     public void getLgacs()
