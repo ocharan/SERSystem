@@ -13,14 +13,11 @@ public class RegistroPLADEA : PageModel
 
     private readonly MySERContext _context;
 
-    public List<Lgac> Lgacs { get; set; }
-
     [BindProperty] public Pladeafei pladeaRegistrar { get; set; }
 
     public RegistroPLADEA(MySERContext context)
     {
         _context = context;
-        Lgacs = new List<Lgac>();
     }
 
     public void OnGet()
@@ -36,8 +33,7 @@ public class RegistroPLADEA : PageModel
             TempData["ErrorDateMessage"] = "Debe de seleccionar una fecha de inicio y finalización valida";
         }
         else
-        {
-            Console.WriteLine(Int32.Parse(fechaInicio));
+        { 
             if (Int32.Parse(fechaInicio) < Int32.Parse(fechaFinalizacion))
             {
                 pladeaRegistrar.Periodo = fechaInicio + " - " + fechaFinalizacion;

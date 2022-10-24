@@ -25,8 +25,6 @@ public class ProyectosdeInvestigacion : PageModel
     
     public void OnGet()
     { }
-
-
     public JsonResult OnGetObtenerProyectos()
     {
         getProyectos();
@@ -44,7 +42,7 @@ public class ProyectosdeInvestigacion : PageModel
         getVinculacion();
         return new JsonResult(VinculacionOrgs.ToJson());
     }
-
+    
     public void getVinculacion()
     {
         var listaVinculacion = _context.Vinculacions.ToList();

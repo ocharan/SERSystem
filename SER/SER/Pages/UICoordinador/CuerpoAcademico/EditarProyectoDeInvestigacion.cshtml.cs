@@ -1,11 +1,92 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SER.DBContext;
+using SER.Entidades;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
 public class EditarProyectoDeInvestigacion : PageModel
 {
+
+    private readonly MySERContext _context;
+    
+    public string idProyecto { get; set; }
+    public List<Entidades.CuerpoAcademico> CuerposAcademicosList { get; set; }
+
+    [BindProperty]
+    public ProyectoDeInvestigacion ProyectodeInvestigacion { get; set; }
+    public EditarProyectoDeInvestigacion(MySERContext context)
+    {
+        _context = context;
+        CuerposAcademicosList = new List<Entidades.CuerpoAcademico>();
+        ProyectodeInvestigacion = new ProyectoDeInvestigacion();
+    }
+
+    public void OnPost()
+    {
+        idProyecto = Request.Query["id"];
+        try
+        {
+            var proyectosExistentes = _context.ProyectoDeInvestigacions.ToList();
+            var proyecto = _context.ProyectoDeInvestigacions.First(c => c.ProyectoDeInvestigacionId == Int32.Parse(idProyecto));
+            bool existeProyecto = proyectosExistentes.Any(c => c.Nombre.Equals(ProyectodeInvestigacion.Nombre));
+            if (proyecto.Nombre == ProyectodeInvestigacion.Nombre)
+            {
+                proyecto.CuerpoAcademicoId = ProyectodeInvestigacion.CuerpoAcademicoId;
+                proyecto.FechaInicio = ProyectodeInvestigacion.FechaInicio;
+                _context.SaveChanges();
+                TempData["SuccessMessage"] = "Proyecto de investigación actualizado correctamente";
+            }
+            else
+            {
+                if (!existeProyecto)
+                {
+                    proyecto.Nombre = ProyectodeInvestigacion.Nombre;
+                    proyecto.FechaInicio = ProyectodeInvestigacion.FechaInicio;
+                    proyecto.CuerpoAcademicoId = ProyectodeInvestigacion.CuerpoAcademicoId;
+                    _context.SaveChanges();
+                    TempData["SuccessMessage"] = "Proyecto de investigación actualizado correctamente";
+                }else
+                {
+                    TempData["ErrorMessage"] = "El nombre del proyecto ya esta registrado";
+                }
+            }
+            
+        }
+        catch (Exception e)
+        {
+            TempData["ExceptionMessage"] = e.Message;
+        }
+    }
+    
     public void OnGet()
     {
-        
+        idProyecto = Request.Query["id"];
+        cargarCuerpos();
+        obtenerProyecto();
+    }
+
+    public void obtenerProyecto()
+    {
+        var proyecto =
+            _context.ProyectoDeInvestigacions.FirstOrDefault(
+                p => p.ProyectoDeInvestigacionId == Int32.Parse(idProyecto));
+        ProyectodeInvestigacion.Nombre = proyecto.Nombre;
+        ProyectodeInvestigacion.FechaInicio = proyecto.FechaInicio;
+        ProyectodeInvestigacion.CuerpoAcademicoId = proyecto.CuerpoAcademicoId;
+    }
+
+    public void cargarCuerpos()
+    {
+        var listaCuerpos = _context.CuerpoAcademicos.ToList();
+        foreach (var cuerpo in listaCuerpos)
+        {
+            Entidades.CuerpoAcademico cuerpoNuevo = new Entidades.CuerpoAcademico()
+            {
+                Nombre = cuerpo.Nombre,
+                CuerpoAcademicoId = cuerpo.CuerpoAcademicoId
+            };
+            CuerposAcademicosList.Add(cuerpoNuevo);
+        }
     }
 }

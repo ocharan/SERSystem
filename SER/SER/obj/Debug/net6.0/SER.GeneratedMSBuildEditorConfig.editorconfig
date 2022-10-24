@@ -111,8 +111,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vRWRpdGFyT3JnYW5pemFjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarPladea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vRWRpdGFyUGxhZGVhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarProyectoDeInvestigacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vRWRpdGFyUHJveWVjdG9EZUludmVzdGlnYWNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarVinculacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9DdWVycG9BY2FkZW1pY28vRWRpdGFyVmluY3VsYWNpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/LGAC.cshtml]

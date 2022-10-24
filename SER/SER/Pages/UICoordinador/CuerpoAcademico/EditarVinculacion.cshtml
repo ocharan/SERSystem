@@ -1,0 +1,99 @@
+@page
+@model SER.Pages.UICoordinador.CuerpoAcademico.EditarVinculacion
+
+@{
+    ViewData["Title"] = "Editar vinculación";
+}
+
+
+<form id="editarVinculacionForm" method="post">
+    <div class="container p-2 h-50" style="margin-top: 20px">
+        <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
+            <h3 style="font-size: 20px">EDITAR PROYECTO VINCULACIÓN</h3>
+        </div>
+        <div class="d-flex justify-content-center align-content-center h-50">
+            <select id="cuerpos_list" class="form-select" asp-for="Vinculacion.OrganizacionIid" name="orgId" style="width: 300px; border-radius: 5px" required>
+                <option value="" disabled="disabled" selected>Selecciona la organización vinculada</option>
+                @foreach (var organizacion in @Model.OrganizacionesList)
+                {
+                    <option value="@organizacion.OrganizacionId">@organizacion.Nombre</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="container p-2 h-100" style="margin-top: 10px">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <label>Selecciona la fecha de inicio del convencio:</label>
+        </div>
+    </div>
+    <div class="container p-2 h-100">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <input class="form-control" id="datepicker"  onkeydown="return false" type="date" name="fechaInicio" asp-for="Vinculacion.FechaDeInicioDeConvenio" placeholder="dd-mm-yyyy" min="2010-01-01" max="2030-12-31" style="width: 348px; border-radius: 5px" required="required"/>
+        </div>
+    </div>
+    <div class="input-group mb-3" style="margin-top: 50px">
+        <input class="form-control" type="file" id="formFile">
+    </div>
+    <div class="container p-5 h-100">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <input type="submit" class="btn btn-success" id="btnGuardarVinculacion" value="Guardar registro"/>
+        </div>
+    </div>
+</form>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"], redirigiendo...
+    </div>
+    
+    <script>
+        document.getElementById("btnGuardarVinculacion").setAttribute('disabled', true)
+         setTimeout(() => { window.location.href = 'ProyectosdeInvestigacion' }, 2000);
+    </script>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+@section Scripts
+{
+    <script show>
+        let headerUV = document.getElementById("uv_header");
+        let navPrincipal = document.getElementById("nav-principal");
+        let sectionButtons = document.getElementById("section-buttons");
+        let titleNav = document.getElementById("title-nav");
+        let navigation = document.getElementById("navigation");
+        let listaNavegacion = document.getElementById("element-list");
+                      
+                      window.onload = function (){
+                        navPrincipal.hidden = false;
+                        listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                                          <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                                        </li>
+                                                        <li class="nav-item" style="font-size: 25px">
+                                                            <a class="nav-link">></a>
+                                                        </li>
+                                                            <li class="nav-item" style="font-size: 25px">
+                                                                <a class="nav-link" href="../UICuerpoAcademico">Cuerpo academico</a>
+                                                            </li>
+                                                        <li class="nav-item" style="font-size: 25px">
+                                                            <a class="nav-link">></a>
+                                                        </li>
+                                                        <li class="nav-item" style="font-size: 25px">
+                                                             <a class="nav-link" href="ProyectosdeInvestigacion">Ver proyectos de investigación</a>
+                                                        </li>
+                                                        <li class="nav-item" style="font-size: 25px">
+                                                            <a class="nav-link">></a>
+                                                        </li>
+                                                        <li class="nav-item active" style="font-size: 25px">
+                                                             <a class="nav-link" href="EditarVinculacion">Editar proyecto</a>
+                                                        </li>`
+                                                            
+                      }
+                      </script>
+}

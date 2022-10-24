@@ -25,6 +25,13 @@ public class Organizaciones : PageModel
         CargarOrganizaciones();
     }
 
+    
+    public IActionResult OnPostModificar()
+    {
+        var id = Request.Query["id"];
+        return Redirect("EditarOrganizacion?id="+id);
+    }
+    
     public void CargarOrganizaciones()
     {
         var listaOrganizaciones = _context.Organizacions.ToList();
