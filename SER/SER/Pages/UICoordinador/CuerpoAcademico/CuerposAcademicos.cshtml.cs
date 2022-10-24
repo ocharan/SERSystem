@@ -26,8 +26,7 @@ public class CuerposAcademicos : PageModel
     public bool EnablePrevious => CurrentPage > 1;
 
     public bool EnableNext => CurrentPage < TotalPages;
-
-    public bool isSearch { get; set; }
+    
     
     public CuerposAcademicos(MySERContext context)
     {
@@ -35,28 +34,15 @@ public class CuerposAcademicos : PageModel
         CuerpoAcademicos = new List<Entidades.CuerpoAcademico>();
 
     }
-
+    
     public void OnGet(int currentPage)
     {
-        if (!isSearch)
-        {
-            getCuerposAcademicos();
-            CurrentPage = currentPage == 0 ? 1 : currentPage;
-            Count = CuerpoAcademicos.Count;
-            if (CurrentPage > TotalPages)
-                CurrentPage = TotalPages;
-            CuerpoAcademicos = CuerpoAcademicos.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
-        }
-        else
-        {
-            CurrentPage = currentPage == 0 ? 1 : currentPage;
-            Count = CuerpoAcademicos.Count;
-            if (CurrentPage > TotalPages)
-                CurrentPage = TotalPages;
-            CuerpoAcademicos = CuerpoAcademicos.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
-        }
-        
-       
+        getCuerposAcademicos();
+        CurrentPage = currentPage == 0 ? 1 : currentPage;
+        Count = CuerpoAcademicos.Count;
+        if (CurrentPage > TotalPages)
+            CurrentPage = TotalPages;
+        CuerpoAcademicos = CuerpoAcademicos.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
     }
 
     public IActionResult OnPostModificar()
@@ -67,8 +53,6 @@ public class CuerposAcademicos : PageModel
     
     public void OnPostBuscar()
     {
-        Console.WriteLine("Buscar");
-        isSearch = true;
         var query = Request.Form["query"];
         try
         {
@@ -118,7 +102,6 @@ public class CuerposAcademicos : PageModel
     
     public void getCuerposAcademicos()
     {
-        isSearch = false;
         try
         {
             var listaCuerpos = _context.CuerpoAcademicos.ToList();

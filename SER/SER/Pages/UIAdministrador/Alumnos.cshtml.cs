@@ -36,7 +36,7 @@ public class Alumnos : PageModel
             }
             else
             {
-                resultadoBusqueda = _context.Alumnos.Where(a => a.Nombre.Contains(queryAlumno));
+                resultadoBusqueda = _context.Alumnos.Where(a => a.Nombre.Contains(queryAlumno) || a.Matricula.Contains(queryAlumno));
             }
             if (resultadoBusqueda.Count() > 0)
             {
@@ -62,6 +62,11 @@ public class Alumnos : PageModel
         {
             return new JsonResult("0".ToJson());
         }
+    }
+
+    public IActionResult OnPostModificar()
+    {
+        return Redirect("EditarAlumno?id=" + Request.Query["id"]);
     }
 
     public void cargarAlumnos()

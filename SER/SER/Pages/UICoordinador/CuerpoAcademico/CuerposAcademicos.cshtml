@@ -15,7 +15,7 @@
             </div>
             <div class="input-group mb-3" style="margin-top: 50px">
                 <input type="text" class="form-control" name="query" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar cuerpo académico">
-                <button asp-page-handler="buscar" class="btn btn-primary" type="sumbit" style="border-radius: 5px; margin-left: 5px;">Búscar</button>
+                <button asp-page-handler="buscar" class="btn btn-primary" onclick="buscar()" type="sumbit" style="border-radius: 5px; margin-left: 5px;">Búscar</button>
                 <div style="margin-right: 50%"></div>
                 <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarCuerpoAcademico','_self')" type="button">Registrar cuerpo academico</button>
             </div>
@@ -98,9 +98,13 @@
             localStorage.setItem("idCuerpo", idCuerpoAcademico);
             window.open("RegistrarIntegrantesCA","_self");
         }
+        
+        function buscar(){
+            @TempData["Search"] = "Search";
+        }
     </script>
-    
-     <script show>
+
+    <script show>
       let headerUV = document.getElementById("uv_header");
       let navPrincipal = document.getElementById("nav-principal");
       let sectionButtons = document.getElementById("section-buttons");

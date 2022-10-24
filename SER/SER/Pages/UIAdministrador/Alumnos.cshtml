@@ -6,47 +6,52 @@
 }
 
 <div class="container">
-    <div class="container">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <input id="inputBuscar" type="text" name="query" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar alumno">
-            <button class="btn btn-primary" type="submit" onclick="buscarAlumno()" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
-            <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarAlumno', '_self')" type="button">Registrar alumno</button>
-        </div>
-    </div>
-    
-    <div>
-        <hr />
-        <div class="form-group">
-            <div class="table-responsive">
-                <table id="tblalumnos" class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Matricula</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach (var alumno in Model.AlumnosLista)
-                    {
+    <form method="post">
+        <div class="container">
+                <div class="input-group mb-3" style="margin-top: 50px">
+                    <input id="inputBuscar" type="text" name="query" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar alumno">
+                    <button class="btn btn-primary" type="submit" onclick="buscarAlumno()" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+                    <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarAlumno', '_self')" type="button">Registrar alumno</button>
+                </div>
+            </div>
+            
+        <div>
+            <hr />
+            <div class="form-group">
+                <div class="table-responsive">
+                    <table id="tblalumnos" class="table table-hover">
+                        <thead>
                         <tr>
-                            <td>@alumno.Nombre</td>
-                            <td>@alumno.Matricula</td>
+                            <th>Nombre</th>
+                            <th>Matricula</th>
                         </tr>
-                    }
-                    <div id="alertSinResultados"  class="alert alert-danger" hidden>
-                        Búsqueda sin resultados
-                    </div>
-                    <div id="alertError"  class="alert alert-danger" hidden>
-                        Búsqueda sin resultados
-                    </div>
-                    <div id="progress" class="progress" hidden>
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" style="width: 100%"></div>
-                    </div>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        @foreach (var alumno in Model.AlumnosLista)
+                        {
+                            <tr>
+                                <td>@alumno.Nombre</td>
+                                <td>@alumno.Matricula</td>
+                                <td>
+                                    <button asp-page-handler="modificar" asp-route-id="@alumno.Matricula" class="btn btn-primary" type="submit">Modificar</button>
+                                </td>
+                            </tr>
+                        }
+                        <div id="alertSinResultados"  class="alert alert-danger" hidden>
+                            Búsqueda sin resultados
+                        </div>
+                        <div id="alertError"  class="alert alert-danger" hidden>
+                            Búsqueda sin resultados
+                        </div>
+                        <div id="progress" class="progress" hidden>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" style="width: 100%"></div>
+                        </div>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
 @section Scripts
