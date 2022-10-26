@@ -51,6 +51,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0FsdW1ub3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/AsignarAlumnos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0FzaWduYXJBbHVtbm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIAdministrador/Docentes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlBZG1pbmlzdHJhZG9yL0RvY2VudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

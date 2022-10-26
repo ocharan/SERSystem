@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.DBContext;
 using SER.Entidades;
@@ -25,6 +26,11 @@ public class Docentes : PageModel
         {
             Console.WriteLine(ex.Message);
         }
+    }
+
+    public IActionResult OnPostModificar()
+    {
+        return Redirect("EditarDocente?id=" + Request.Query["id"]);
     }
 
 

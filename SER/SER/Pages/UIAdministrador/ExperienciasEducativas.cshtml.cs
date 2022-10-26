@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.DBContext;
 using SER.Entidades;
@@ -23,6 +24,16 @@ public class ExperienciasEducativas : PageModel
         cargarExperiencias();
     }
 
+    public IActionResult OnPostAsignar()
+    {
+        return Redirect("AsignarAlumnos?id=" + Request.Query["id"]);
+    }
+
+    public IActionResult OnPostEditar()
+    {
+        return Redirect("EditarExperienciaEducativa?id=" + Request.Query["id"]);
+    }
+    
     public void cargarExperiencias()
     {
         var experiencias = _context.ExperienciaEducativas.ToList();
