@@ -25,6 +25,7 @@ namespace SER.Entidades
         public int? ProyectoDeInvestigacionId { get; set; }
         public int? VinculacionId { get; set; }
         
+        public string? ExperienciaActual { get; set; }
         public  string? Duracion { get; set; }
 
         public virtual Academium? Academia { get; set; }

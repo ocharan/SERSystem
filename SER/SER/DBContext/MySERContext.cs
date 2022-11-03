@@ -628,6 +628,10 @@ namespace SER.DBContext
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
+                entity.Property(e => e.ExperienciaActual)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.PladeafeiId).HasColumnName("PladeafeiID");
 
                 entity.Property(e => e.ProyectoDeInvestigacionId).HasColumnName("ProyectoDeInvestigacionID");

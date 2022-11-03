@@ -42,12 +42,30 @@ public class TrabajosRecepcionales : PageModel
  
     public IActionResult OnPostEstudiantes()
     {
-        Console.WriteLine(Request.Query["id"]);
         var id = Request.Query["id"];
         return Redirect("AsignarAlumnos?id="+id);
     }
 
+    public IActionResult OnPostSinodales()
+    {
+        return Redirect("AsignarSinodales?id=" + Request.Query["id"]);
+    }
 
+    public IActionResult OnPostDocumento()
+    {
+        var id = Request.Query["id"];
+        var experiencia = Request.Query["experiencia"];
+        if (experiencia.Equals("pg"))
+        {
+            return Redirect("RegistrarDocumentoProyectoGuiado?id="+id);
+        }
+        else
+        {
+            return Redirect("RegistrarDocumentoExperiencia?id="+id);
+        }
+    }
+
+    
     public void getTrabajosRecepcionales()
     {
         var trabajosRegistrados = _context.TrabajoRecepcionals.ToList();
@@ -60,7 +78,8 @@ public class TrabajosRecepcionales : PageModel
                 Estado = trabajo.Estado,
                 Fechadeinicio = trabajo.Fechadeinicio,
                 Duracion = trabajo.Duracion,
-                TrabajoRecepcionalId = trabajo.TrabajoRecepcionalId
+                TrabajoRecepcionalId = trabajo.TrabajoRecepcionalId,
+                ExperienciaActual = trabajo.ExperienciaActual
             };
             trabajoRecepcionals.Add(trabajoRecepcional);
         }

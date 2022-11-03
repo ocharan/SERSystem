@@ -1,78 +1,68 @@
-2022-09-02 23:53:40.02 Server      Microsoft SQL Server 2017 (RTM-CU30) (KB5013756) - 14.0.3451.2 (X64) 
+2022-09-19 10:10:52.04 Server      Microsoft SQL Server 2017 (RTM-CU30) (KB5013756) - 14.0.3451.2 (X64) 
 	Jun 22 2022 18:20:15 
 	Copyright (C) 2017 Microsoft Corporation
 	Developer Edition (64-bit) on Linux (Ubuntu 18.04.6 LTS)
-2022-09-02 23:53:40.03 Server      UTC adjustment: 0:00
-2022-09-02 23:53:40.03 Server      (c) Microsoft Corporation.
-2022-09-02 23:53:40.03 Server      All rights reserved.
-2022-09-02 23:53:40.04 Server      Server process ID is 368.
-2022-09-02 23:53:40.04 Server      Logging SQL Server messages in file '/var/opt/mssql/log/errorlog'.
-2022-09-02 23:53:40.05 Server      Registry startup parameters: 
+2022-09-19 10:10:52.06 Server      UTC adjustment: 0:00
+2022-09-19 10:10:52.07 Server      (c) Microsoft Corporation.
+2022-09-19 10:10:52.07 Server      All rights reserved.
+2022-09-19 10:10:52.08 Server      Server process ID is 376.
+2022-09-19 10:10:52.08 Server      Logging SQL Server messages in file '/var/opt/mssql/log/errorlog'.
+2022-09-19 10:10:52.09 Server      Registry startup parameters: 
 	 -d /var/opt/mssql/data/master.mdf
 	 -l /var/opt/mssql/data/mastlog.ldf
 	 -e /var/opt/mssql/log/errorlog
-2022-09-02 23:53:40.06 Server      SQL Server detected 1 sockets with 4 cores per socket and 4 logical processors per socket, 4 total logical processors; using 4 logical processors based on SQL Server licensing. This is an informational message; no user action is required.
-2022-09-02 23:53:40.08 Server      SQL Server is starting at normal priority base (=7). This is an informational message only. No user action is required.
-2022-09-02 23:53:40.09 Server      Detected 2861 MB of RAM. This is an informational message; no user action is required.
-2022-09-02 23:53:40.09 Server      Using conventional memory in the memory manager.
-2022-09-02 23:53:40.10 Server      Page exclusion bitmap is enabled.
-2022-09-02 23:53:40.19 Server      Buffer pool extension is already disabled. No action is necessary. 
-2022-09-02 23:53:40.31 Server      InitializeExternalUserGroupSid failed. Implied authentication will be disabled.
-2022-09-02 23:53:40.31 Server      Implied authentication manager initialization failed. Implied authentication will be disabled.
-2022-09-02 23:53:40.32 Server      Successfully initialized the TLS configuration. Allowed TLS protocol versions are ['1.0 1.1 1.2']. Allowed TLS ciphers are ['ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:!DHE-RSA-AES256-GCM-SHA384:!DHE-RSA-AES128-GCM-SHA256:!DHE-RSA-AES256-SHA:!DHE-RSA-AES128-SHA'].
-2022-09-02 23:53:40.34 Server      Query Store settings initialized with enabled = 1, 
-2022-09-02 23:53:40.36 Server      The maximum number of dedicated administrator connections for this instance is '1'
-2022-09-02 23:53:40.36 Server      Node configuration: node 0: CPU mask: 0x000000000000000f:0 Active CPU mask: 0x000000000000000f:0. This message provides a description of the NUMA configuration for this computer. This is an informational message only. No user action is required.
-2022-09-02 23:53:40.37 Server      Using dynamic lock allocation.  Initial allocation of 2500 Lock blocks and 5000 Lock Owner blocks per node.  This is an informational message only.  No user action is required.
-2022-09-02 23:53:40.39 Server      In-Memory OLTP initialized on lowend machine.
-2022-09-02 23:53:40.46 Server      Database Instant File Initialization: enabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.
-2022-09-02 23:53:40.50 Server      Software Usage Metrics is disabled.
-2022-09-02 23:53:40.50 spid6s      Starting up database 'master'.
-2022-09-02 23:53:41.57 spid6s      123 transactions rolled forward in database 'master' (1:0). This is an informational message only. No user action is required.
-2022-09-02 23:53:41.73 spid6s      0 transactions rolled back in database 'master' (1:0). This is an informational message only. No user action is required.
-2022-09-02 23:53:41.74 spid6s      Recovery is writing a checkpoint in database 'master' (1). This is an informational message only. No user action is required.
-2022-09-02 23:53:42.25 spid6s      Service Master Key could not be decrypted using one of its encryptions. See sys.key_encryptions for details.
-2022-09-02 23:53:42.27 spid6s      An error occurred during Service Master Key initialization. SQLErrorCode=33095, State=8, LastOsError=0.
-2022-09-02 23:53:42.46 spid6s      Resource governor reconfiguration succeeded.
-2022-09-02 23:53:42.46 spid6s      SQL Server Audit is starting the audits. This is an informational message. No user action is required.
-2022-09-02 23:53:42.46 spid6s      SQL Server Audit has started the audits. This is an informational message. No user action is required.
-2022-09-02 23:53:42.66 spid6s      SQL Trace ID 1 was started by login "sa".
-2022-09-02 23:53:42.79 spid6s      Server name is '25632255366e'. This is an informational message only. No user action is required.
-2022-09-02 23:53:42.81 spid10s     Starting up database 'mssqlsystemresource'.
-2022-09-02 23:53:42.81 spid23s     Starting up database 'SER'.
-2022-09-02 23:53:42.81 spid22s     Starting up database 'msdb'.
-2022-09-02 23:53:42.81 spid25s     Always On: The availability replica manager is starting. This is an informational message only. No user action is required.
-2022-09-02 23:53:42.82 spid10s     The resource database build version is 14.00.3451. This is an informational message only. No user action is required.
-2022-09-02 23:53:42.82 spid25s     Always On: The availability replica manager is waiting for the instance of SQL Server to allow client connections. This is an informational message only. No user action is required.
-2022-09-02 23:53:42.89 spid10s     Starting up database 'model'.
-2022-09-02 23:53:43.34 spid23s     Parallel redo is started for database 'SER' with worker pool size [2].
-2022-09-02 23:53:43.87 spid19s     A self-generated certificate was successfully loaded for encryption.
-2022-09-02 23:53:43.90 spid23s     193 transactions rolled forward in database 'SER' (5:0). This is an informational message only. No user action is required.
-2022-09-02 23:53:43.92 spid19s     Server is listening on [ 'any' <ipv6> 1433].
-2022-09-02 23:53:43.99 spid19s     Server is listening on [ 'any' <ipv4> 1433].
-2022-09-02 23:53:44.00 Server      Server is listening on [ ::1 <ipv6> 1434].
-2022-09-02 23:53:44.02 Server      Server is listening on [ 127.0.0.1 <ipv4> 1434].
-2022-09-02 23:53:44.04 Server      Dedicated admin connection support was established for listening locally on port 1434.
-2022-09-02 23:53:44.06 spid19s     SQL Server is now ready for client connections. This is an informational message; no user action is required.
-2022-09-02 23:53:44.12 spid6s      0 transactions rolled back in database 'SER' (5:0). This is an informational message only. No user action is required.
-2022-09-02 23:53:44.16 spid6s      Recovery is writing a checkpoint in database 'SER' (5). This is an informational message only. No user action is required.
-2022-09-02 23:53:44.16 spid10s     9 transactions rolled forward in database 'model' (3:0). This is an informational message only. No user action is required.
-2022-09-02 23:53:44.39 spid10s     0 transactions rolled back in database 'model' (3:0). This is an informational message only. No user action is required.
-2022-09-02 23:53:44.46 spid10s     Recovery is writing a checkpoint in database 'model' (3). This is an informational message only. No user action is required.
-2022-09-02 23:53:44.46 spid6s      Recovery completed for database SER (database ID 5) in 2 second(s) (analysis 62 ms, redo 468 ms, undo 135 ms.) This is an informational message only. No user action is required.
-2022-09-02 23:53:44.50 spid6s      Parallel redo is shutdown for database 'SER' with worker pool size [2].
-2022-09-02 23:53:44.74 spid22s     9 transactions rolled forward in database 'msdb' (4:0). This is an informational message only. No user action is required.
-2022-09-02 23:53:44.78 spid10s     Polybase feature disabled.
-2022-09-02 23:53:44.80 spid10s     Clearing tempdb database.
-2022-09-02 23:53:44.92 spid6s      0 transactions rolled back in database 'msdb' (4:0). This is an informational message only. No user action is required.
-2022-09-02 23:53:44.93 spid6s      Recovery is writing a checkpoint in database 'msdb' (4). This is an informational message only. No user action is required.
-2022-09-02 23:53:45.55 spid10s     Starting up database 'tempdb'.
-2022-09-02 23:53:45.75 spid10s     The tempdb database has 1 data file(s).
-2022-09-02 23:53:45.79 spid25s     The Service Broker endpoint is in disabled or stopped state.
-2022-09-02 23:53:45.82 spid25s     The Database Mirroring endpoint is in disabled or stopped state.
-2022-09-02 23:53:45.95 spid6s      Recovery is complete. This is an informational message only. No user action is required.
-2022-09-02 23:53:45.95 spid25s     Service Broker manager has started.
-2022-09-02 23:55:21.81 spid6s      Always On: The availability replica manager is going offline because SQL Server is shutting down. This is an informational message only. No user action is required.
-2022-09-02 23:55:21.82 spid6s      SQL Server is terminating in response to a 'stop' request from Service Control Manager. This is an informational message only. No user action is required.
-2022-09-02 23:55:21.93 spid25s     Service Broker manager has shut down.
-2022-09-02 23:55:23.45 spid6s      SQL Trace was stopped due to server shutdown. Trace ID = '1'. This is an informational message only; no user action is required.
+2022-09-19 10:10:52.10 Server      SQL Server detected 1 sockets with 4 cores per socket and 4 logical processors per socket, 4 total logical processors; using 4 logical processors based on SQL Server licensing. This is an informational message; no user action is required.
+2022-09-19 10:10:52.11 Server      SQL Server is starting at normal priority base (=7). This is an informational message only. No user action is required.
+2022-09-19 10:10:52.11 Server      Detected 2861 MB of RAM. This is an informational message; no user action is required.
+2022-09-19 10:10:52.12 Server      Using conventional memory in the memory manager.
+2022-09-19 10:10:52.12 Server      Page exclusion bitmap is enabled.
+2022-09-19 10:10:52.23 Server      Buffer pool extension is already disabled. No action is necessary. 
+2022-09-19 10:10:52.36 Server      InitializeExternalUserGroupSid failed. Implied authentication will be disabled.
+2022-09-19 10:10:52.37 Server      Implied authentication manager initialization failed. Implied authentication will be disabled.
+2022-09-19 10:10:52.37 Server      Successfully initialized the TLS configuration. Allowed TLS protocol versions are ['1.0 1.1 1.2']. Allowed TLS ciphers are ['ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-ECDSA-AES128-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:!DHE-RSA-AES256-GCM-SHA384:!DHE-RSA-AES128-GCM-SHA256:!DHE-RSA-AES256-SHA:!DHE-RSA-AES128-SHA'].
+2022-09-19 10:10:52.41 Server      Query Store settings initialized with enabled = 1, 
+2022-09-19 10:10:52.42 Server      The maximum number of dedicated administrator connections for this instance is '1'
+2022-09-19 10:10:52.42 Server      Node configuration: node 0: CPU mask: 0x000000000000000f:0 Active CPU mask: 0x000000000000000f:0. This message provides a description of the NUMA configuration for this computer. This is an informational message only. No user action is required.
+2022-09-19 10:10:52.44 Server      Using dynamic lock allocation.  Initial allocation of 2500 Lock blocks and 5000 Lock Owner blocks per node.  This is an informational message only.  No user action is required.
+2022-09-19 10:10:52.46 Server      In-Memory OLTP initialized on lowend machine.
+2022-09-19 10:10:52.59 Server      Database Instant File Initialization: enabled. For security and performance considerations see the topic 'Database Instant File Initialization' in SQL Server Books Online. This is an informational message only. No user action is required.
+2022-09-19 10:10:52.63 Server      Software Usage Metrics is disabled.
+2022-09-19 10:10:52.64 spid6s      Starting up database 'master'.
+2022-09-19 10:10:54.71 spid6s      Service Master Key could not be decrypted using one of its encryptions. See sys.key_encryptions for details.
+2022-09-19 10:10:54.71 spid6s      An error occurred during Service Master Key initialization. SQLErrorCode=33095, State=8, LastOsError=0.
+2022-09-19 10:10:54.79 spid6s      Resource governor reconfiguration succeeded.
+2022-09-19 10:10:54.79 spid6s      SQL Server Audit is starting the audits. This is an informational message. No user action is required.
+2022-09-19 10:10:54.79 spid6s      SQL Server Audit has started the audits. This is an informational message. No user action is required.
+2022-09-19 10:10:55.08 spid6s      SQL Trace ID 1 was started by login "sa".
+2022-09-19 10:10:55.27 spid6s      Server name is '25632255366e'. This is an informational message only. No user action is required.
+2022-09-19 10:10:55.29 spid23s     Always On: The availability replica manager is starting. This is an informational message only. No user action is required.
+2022-09-19 10:10:55.29 spid23s     Always On: The availability replica manager is waiting for the instance of SQL Server to allow client connections. This is an informational message only. No user action is required.
+2022-09-19 10:10:55.29 spid11s     Starting up database 'mssqlsystemresource'.
+2022-09-19 10:10:55.30 spid24s     Starting up database 'msdb'.
+2022-09-19 10:10:55.30 spid25s     Starting up database 'SER'.
+2022-09-19 10:10:55.31 spid11s     The resource database build version is 14.00.3451. This is an informational message only. No user action is required.
+2022-09-19 10:10:55.35 spid11s     Starting up database 'model'.
+2022-09-19 10:10:56.25 spid25s     Parallel redo is started for database 'SER' with worker pool size [2].
+2022-09-19 10:10:56.51 spid20s     A self-generated certificate was successfully loaded for encryption.
+2022-09-19 10:10:56.52 spid20s     Server is listening on [ 'any' <ipv6> 1433].
+2022-09-19 10:10:56.59 spid20s     Server is listening on [ 'any' <ipv4> 1433].
+2022-09-19 10:10:56.80 Server      Server is listening on [ ::1 <ipv6> 1434].
+2022-09-19 10:10:56.84 Server      Server is listening on [ 127.0.0.1 <ipv4> 1434].
+2022-09-19 10:10:56.85 Server      Dedicated admin connection support was established for listening locally on port 1434.
+2022-09-19 10:10:56.91 spid6s      Parallel redo is shutdown for database 'SER' with worker pool size [2].
+2022-09-19 10:10:57.04 spid20s     SQL Server is now ready for client connections. This is an informational message; no user action is required.
+2022-09-19 10:10:57.92 spid11s     Polybase feature disabled.
+2022-09-19 10:10:58.04 spid11s     Clearing tempdb database.
+2022-09-19 10:10:58.66 spid11s     Starting up database 'tempdb'.
+2022-09-19 10:10:58.92 spid11s     The tempdb database has 1 data file(s).
+2022-09-19 10:10:58.97 spid16s     The Service Broker endpoint is in disabled or stopped state.
+2022-09-19 10:10:59.13 spid16s     The Database Mirroring endpoint is in disabled or stopped state.
+2022-09-19 10:10:59.95 spid16s     Service Broker manager has started.
+2022-09-19 10:11:00.55 spid6s      Recovery is complete. This is an informational message only. No user action is required.
+2022-09-19 10:15:56.63 spid53      Using 'dbghelp.dll' version '4.0.5'
+2022-09-19 10:17:58.95 spid53      Attempting to load library 'xplog70.dll' into memory. This is an informational message only. No user action is required.
+2022-09-19 10:17:58.99 spid53      Using 'xplog70.dll' version '2017.140.3451' to execute extended stored procedure 'xp_msver'. This is an informational message only; no user action is required.
+2022-09-19 12:40:20.26 spid6s      Always On: The availability replica manager is going offline because SQL Server is shutting down. This is an informational message only. No user action is required.
+2022-09-19 12:40:20.42 spid6s      SQL Server is terminating in response to a 'stop' request from Service Control Manager. This is an informational message only. No user action is required.
+2022-09-19 12:40:21.57 spid16s     Service Broker manager has shut down.
+2022-09-19 12:40:22.75 spid6s      SQL Trace was stopped due to server shutdown. Trace ID = '1'. This is an informational message only; no user action is required.

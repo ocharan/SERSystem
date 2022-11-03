@@ -1,0 +1,111 @@
+@page
+@model SER.Pages.UICoordinador.ExperienciaRecepcional.AsignarSinodales
+
+@{
+    ViewData["Title"] = "Asignar sinodales";
+}
+
+@Html.AntiForgeryToken()
+<div id="registro_pt2" class="container" style="width: 100%" >
+    <div class="container">
+        <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
+            <h3 style="font-size: 20px; margin-top: 40px">ASIGNAR SINODALES</h3>
+        </div>
+        <div class="input-group mb-2" style="margin-top: 50px; width: 50%">
+            <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px; margin-left: 80px" placeholder="Búscar sinodal">
+            <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
+        </div>
+    </div>
+    <div class="input-group mb-2" style="margin-top: 20px;">
+            
+        <div class="table-responsive" style="width: 50%; margin-right: 50px; margin-left: 60px; max-height: 500px">
+            <h3>Docentes disponibles</h3>
+            <table id="tbldocentes" class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Numero de personal</th>
+                    <th>Asignación</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive table-bordered" style="width: 35%; margin-left: 80px; max-height: 500px">
+            <h3>Integrantes</h3>
+            <table id="tbldocentesAsignados" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="width: 30%; margin-left: 80px; float: left">
+        <div id="seleccionInvalid" class="alert alert-danger" hidden>
+            El profesor que intenta asignar ya es integrante de un cuerpo academico, puedes asignarlo solo como colaborador
+        </div>
+        <div id="seleccionError"  class="alert alert-danger" hidden>
+            Debe seleccionar un tipo de integrante
+        </div>
+        <select id="select_tipo"  class="form-select" style="border-radius: 5px; float: left">
+            <option selected disabled="disabled">Selecciona tipo de integrante</option>
+            <option value="Integrante">Integrante</option>
+            <option value="Colaborador">Colaborador</option>
+        </select>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div style="margin-top: 40px" class="container p-5 h-100">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <input type="button" id="btn_Guardar" onclick="guardarRegistro()" class="btn btn-success" value="Guardar registro"/>
+        </div>
+    </div>
+    <div id="cambiosFalse"  class="alert alert-danger" hidden>
+        No hay cambios por guardar
+    </div>
+
+    <div id="modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Datos guardados</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Datos de los integrantes guardados correctamente</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="confirmarRegistro()" class="btn btn-success">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modalEliminar" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Eliminar integrante</h5>
+                </div>
+                <div class="modal-body">
+                    <p>¿Deseas confirmar la eliminación?</p>
+                    <p>Con esta acción se perderán los datos de los integrantes que aún no han sido registrados al cuerpo academico</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="confirmarEliminacion()" class="btn btn-danger">Comfirmar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -25,6 +25,7 @@ namespace SER.Pages
         public string NombreDocumento { get; set; }
         [BindProperty]
         public string NotaDocumento { get; set; }
+        
         public RegistrarDocumentoProyectoGuiadoModel(MySERContext context, IWebHostEnvironment _environment)
         {
             _context = context;
@@ -32,6 +33,7 @@ namespace SER.Pages
             AlumnosProyectoGuiado = new List<AlumnoProyectoGuiado>();
             Alumnos = new List<Alumno>();
         }
+        
         public IActionResult OnGet()
         {
             try

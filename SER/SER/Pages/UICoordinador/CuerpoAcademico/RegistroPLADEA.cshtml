@@ -5,7 +5,7 @@
     ViewData["Title"] = "Registro PLADEA";
 }
 
-<form id="registrarPladeaForm" method="post">
+<form id="registrarPladeaForm" enctype="multipart/form-data" method="post">
     <div class="container p-2 h-100" style="margin-top: 40px">
         <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
             <h3 style="font-size: 20px">REGISTRAR PROYECTO PLADEA</h3>
@@ -131,7 +131,8 @@
     </div>
     <textarea itemid="idPladeaObjetivo" asp-for="@Model.pladeaRegistrar.ObjetivoGeneral" class="form-control" style="width: 100%; margin-top: 20px" placeholder="Objetivo general" rows="8" required></textarea>
     <div class="input-group mb-3" style="margin-top: 50px">
-        <input class="form-control" type="file" id="formFile">
+        <input type="file" class="form-control" accept="application/msword, application/pdf, application/vnd.ms-powerpoint" 
+               name="file">
     </div>
     <div class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">

@@ -30,4 +30,8 @@
     <_ContentIncludedByDefault Remove="Pages\UICoordinador\CuerpoAcademico\CuerposAcademicos.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Archivos" />
+  </ItemGroup>
+
 </Project>

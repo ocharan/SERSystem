@@ -29,15 +29,16 @@ public class EditarVinculacion : PageModel
             idVinculacion = Request.Query["id"];
             var vinculacion = _context.Vinculacions.FirstOrDefault(v => v.VinculacionId == Int32.Parse(idVinculacion));
             bool existe = _context.Vinculacions.Any(v => v.OrganizacionIid == Int32.Parse(Request.Form["orgId"]));
-            if (Vinculacion.OrganizacionIid == vinculacion.OrganizacionIid)
+            Console.WriteLine(vinculacion.OrganizacionIid);
+            
+            if (Int32.Parse(Request.Form["orgId"]) == vinculacion.OrganizacionIid)
             {
-                vinculacion.FechaDeInicioDeConvenio = Vinculacion.FechaDeInicioDeConvenio;
+                vinculacion.FechaDeInicioDeConvenio = DateTime.Parse(Request.Form["fechaInicio"]);
                 _context.SaveChanges();
                 TempData["SuccessMessage"] = "Vinculación actualizada correctamente";
             }
             else
             {
-                Console.WriteLine(existe);
                 if (!existe)
                 {
                     vinculacion.OrganizacionIid = Int32.Parse(Request.Form["orgId"]);
@@ -50,6 +51,8 @@ public class EditarVinculacion : PageModel
                     TempData["ErrorMessage"] = "La organización vinculada ya existe";
                 }
             }
+            cargarOrganizaciones();
+            cargarVinculacion();
         }
         catch (Exception e)
         {
