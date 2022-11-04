@@ -1,3 +1,4 @@
+using System.Dynamic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.DBContext;
@@ -9,96 +10,80 @@ namespace SER.Pages
     [IgnoreAntiforgeryToken]
     public class RegistrarDocumentoProyectoGuiadoModel : PageModel
     {
-        /*private readonly MySERContext _context;
-        public List<ExperienciaEducativa> EEProyectoGuiado { get; set; }
-        public List<Alumno> Alumnos { get; set; }
-        public List<AlumnoProyectoGuiado> AlumnosProyectoGuiado { get; set; }
+        private readonly MySERContext _context;
         private IWebHostEnvironment Environment;
-
-        [BindProperty]
-        public string IDAlumnoSeleccionado { get; set; }
-        [BindProperty]
-        public Documento DocumentoProyectoGuiado { get; set; }
-        [BindProperty]
-        public IFormFile ArchivoDeProyectoGuiado { get; set; }
-        [BindProperty]
-        public string NombreDocumento { get; set; }
-        [BindProperty]
-        public string NotaDocumento { get; set; }
-        
+        public List<TipoDocumento> TipoDocumentos { get; set; }
+        public Archivo archivoPg { get; set; }
+        [BindProperty] public Documento documento { get; set; }
         public RegistrarDocumentoProyectoGuiadoModel(MySERContext context, IWebHostEnvironment _environment)
         {
             _context = context;
             Environment = _environment;
-            AlumnosProyectoGuiado = new List<AlumnoProyectoGuiado>();
-            Alumnos = new List<Alumno>();
+            TipoDocumentos = new List<TipoDocumento>();
+            documento = new Documento();
+            archivoPg = new Archivo();
         }
-        
-        public IActionResult OnGet()
+
+        public async Task<IActionResult> OnPost(IFormFile fileProyecto)
         {
             try
             {
-                getAlumnosProyectoGuiado();
-
-                if (!AlumnosProyectoGuiado.Any())
+                var id = Request.Query["id"];
+                bool existe = _context.Documentos.Any(d => d.TipoDocumentoId == documento.TipoDocumentoId && d.TrabajoRecepcionalId == Int32.Parse(id));
+                if (!existe)
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, "No hay aulumnos registrados en la EE Proyectio Guiado");
+                    if (fileProyecto != null)
+                    {
+                        documento.TrabajoRecepcionalId = Int32.Parse(id);
+                        string fecha = DateTime.Now.ToString().Replace("/", "");
+                        string fileName = "PG_" + fecha.Replace(" ", "").Replace(":", "") + id;
+                        var archivo = Path.Combine(Environment.ContentRootPath, "Archivos", fileName);
+                        using (var fileStream = new FileStream(archivo, FileMode.Create))
+                        {
+                            await fileProyecto.CopyToAsync(fileStream);
+                        }
+                        archivoPg.NombreArchivo = fileName;
+                        archivoPg.IdFuente = Int32.Parse(id);
+                        archivoPg.Direccion = archivo;
+                        _context.Documentos.Add(documento);
+                        _context.Archivos.Add(archivoPg);
+                        _context.SaveChanges();
+                        TempData["Success"] = "El documento se ha subido correctamente";
+                    }
+                    else
+                    {
+                        TempData["Error"] = "Debes de seleccionar un archivo";
+                    }
                 }
-                
+                else
+                {
+                    TempData["Error"] = "El documento que intentas subir ya esta registrado";
+                }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
-                return StatusCode(StatusCodes.Status500InternalServerError, "No se pudieron obtener los alumnos de la experiencia educativa de Proyecto Guiado.");
+                TempData["Error"] = "Ha ocurrido un error al registrar el documento "+e.Message;
             }
-
             return Page();
         }
 
-        [HttpPost]
-        public IActionResult OnPost()
+        public void OnGet()
         {
-            getAlumnosProyectoGuiado();
-            AlumnoProyectoGuiado alumnoSeleccionado = AlumnosProyectoGuiado.Where(a => a.Matricula.Equals(IDAlumnoSeleccionado)).FirstOrDefault();
-            DocumentoProyectoGuiado.TrabajoRecepcionalId = alumnoSeleccionado.TrabajoRecepcionalId;
-            DocumentoProyectoGuiado.ExperienciaEducativaId = alumnoSeleccionado.ExperienciaEducativaID;
-            if (ArchivoDeProyectoGuiado != null)
-            {
-                if (ArchivoDeProyectoGuiado.Length > 0)
-                {
-                    using (var memoryStream = new MemoryStream())
-                    {
-                        ArchivoDeProyectoGuiado.CopyTo(memoryStream);
-                        var fileBytes = memoryStream.ToArray();
-                        DocumentoProyectoGuiado.Archivo = fileBytes;
-                    }
-                }
-
-            }
-            _context.Documentos.Add(DocumentoProyectoGuiado);
-            _context.SaveChanges();
-            return new OkObjectResult("Documento de proyecto guiado guardado.");
+            getTiposDocumento();
         }
-
-        public void getAlumnosProyectoGuiado()
+        
+        public void getTiposDocumento()
         {
-            var alumnosProyectoGuiado = _context.AlumnoTrabajoRecepcionalProyectoGuiadoViews.ToList();
-
-            foreach (var alumno in alumnosProyectoGuiado)
+            var listaTipos = _context.TipoDocumentos.ToList().Where(t=> t.ExperienciaEducativa=="Proyecto guíado");
+            foreach (var tipo in listaTipos)
             {
-                AlumnoProyectoGuiado alumnoPG = new AlumnoProyectoGuiado()
+                TipoDocumento tipoDocumento = new TipoDocumento()
                 {
-                    Nombre = alumno.Nombre,
-                    CorreoElectronico = alumno.CorreoElectronico,
-                    Matricula = alumno.Matricula,
-                    Modalidad = alumno.Modalidad,
-                    Estado = alumno.Estado,
-                    Fechadeinicio = alumno.ShortDateTime(alumno.Fechadeinicio),
-                    ExperienciaEducativaID = alumno.ExperienciaEducativaId,
-                    TrabajoRecepcionalId = alumno.TrabajoRecepcionalId
+                    NombreDocumento = tipo.NombreDocumento,
+                    IdTipo = tipo.IdTipo
                 };
-                AlumnosProyectoGuiado.Add(alumnoPG);
+                TipoDocumentos.Add(tipoDocumento);
             }
-        }*/
+        }
     }
 }

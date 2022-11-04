@@ -13,7 +13,6 @@ public class RegistroPLADEA : PageModel
 {
 
     private readonly MySERContext _context;
-    [BindProperty] public IFormFile archivoPladea { get; set; }
     [BindProperty] public Pladeafei pladeaRegistrar { get; set; }
     private Archivo ArchivoPladea { get; set; }
     private IWebHostEnvironment Environment;

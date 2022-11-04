@@ -2,370 +2,92 @@
 @model SER.Pages.RegistrarDocumentoProyectoGuiadoModel
 @{
     ViewData["Title"] = "Registrar documento de proyecto guiado";
-    string URL_REGISTRAR_DOCUMENTO_PROYECTO_GUIADO = "https://" + Request.Host + Request.Path;
-    int MILISEGUNDOS_DE_ESPERA_TRAS_REGISTRAR = 3000;
 }
-<h1 class="mb-3">Registrar documento de proyecto guiado</h1>
 
-<!--<form id="formRegistrarDocumentoDeProyectoGuiado" method="post" name="formularioRegistrarDocumentoProyectoGuiado" 
-    novalidate enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger"/>
-
-    <div id="seleccionarAlumnos">
-        <h4>Selección de alumno</h4>
-        <hr />
-        <h2 class="form-text">Seleccione un alumno</h2>
-        <div class="form-group">
-            <div class="table-responsive">
-                <table id="tblAlumnos" class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Matrícula</th>
-                            <th>Correo electrónico</th>
-                            <th>Modalidad</th>
-                            <th>Estado</th>
-                            <th>Fecha de inicio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        foreach (var alumno in Model.AlumnosProyectoGuiado)
-                        {
-                            <tr>
-                                <td>alumno.Nombre</td>
-                                <td class="tdMatricula">alumno.Matricula</td>
-                                <td>alumno.CorreoElectronico</td>
-                                <td>alumno.Modalidad</td>
-                                <td>alumno.Estado</td>
-                                <td>alumno.Fechadeinicio</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-
-            <input id="inputAlumnoID" hidden asp-for="IDAlumnoSeleccionado" required="false"/>
-
-            <div class="clearfix">
-                <input class="btn btn-primary float-right" type="button" id="btnSeleccionarTipoDeDocumento" value="Seleccionar documento" disabled/>
-            </div>
+<form id="registrarProyectoForm" enctype="multipart/form-data" method="post">
+    <div class="container p-2 h-100" style="margin-top: 40px">
+        <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
+            <h3 style="font-size: 20px">REGISTRAR DOCUMENTO DE PROYECTO GUIADO</h3>
+        </div>
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <select id="nombreList" class="form-select" asp-for="documento.TipoDocumentoId" style="width: 348px; border-radius: 5px" required>
+                <option value="" required>Seleccionar un tipo de documento</option>
+                @foreach (var tipo in @Model.TipoDocumentos)
+                {
+                    <option value="@tipo.IdTipo">@tipo.NombreDocumento</option>
+                }
+            </select>
         </div>
     </div>
+    <textarea itemid="documentoNotas" class="form-control" asp-for="documento.Notas" style="width: 100%" placeholder="Notas" rows="8"></textarea>
+    
+    <div class="input-group mb-3" style="margin-top: 50px">
+        <input type="file" class="form-control" accept="application/msword, application/pdf, application/vnd.ms-powerpoint" 
+               name="fileProyecto">
+    </div>
 
-    <div id="seleccionarTipoDocumento" class="col-md-10">
-        <h4>Selección de documento</h4>
-        <hr />
-        <h2 class="form-text">Seleccione un documento a registrar</h2>
-        <div>
-            <div class="row flex-lg-row-reverse align-items-left ">
-                <div class="col-10 col-sm-8 col-lg-6">
-                    <input class="btn btn-outline-primary" id="btnAgregarTipoDeDocumento" type="button" value="Agregar tipo de documento" />
-                </div>
-
-                Ventana emergente para agregar un tipo de documento, unicamente desplegada al dar click en btnAgregarTipoDocumento 
-                <div class="modal fade" id="modalAgrgarTipoDeDocumento">
-                    <div class="modal-dialog modal-col-lg-6">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Agregar tipo de documento</h4>
-                            </div>
-                            <div class="modal-body">
-                                <form id="formAgregarTipoDeDocumento">
-                                    <div class="form-group">
-                                        <label for="inputNombres">Tipo de documento</label>
-                                        <input type="text"  id="inputNombreTipoDocumento" placeholder="Ingrese el tipo de documento" class="form-control" required />
-                                        <span asp-validation-for="DocumentoProyectoGuiado.NombreDocumento" class="text-danger"></span>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <div class="row flex-lg-row-reverse align-items-right">
-                                    <div class="clearfix">
-                                        <button type="button" id="btnCerrarVentanaModal" class="btn btn-secondary float-left">Cancelar</button>
-                                        <button type="button" id="btnAgregarTipoDeDocumentoModal" class="btn btn-primary float-right">Agregar tipo de documento</button>
-                                    </div>
-                                </div>   
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <select name="tipoDocumento" id="selectTipoDocumento" class="form-control">
-                        <option disabled selected>Seleccione el tipo de documento</option>
-                        <option>Anteproyecto</option>
-                        <option>Protocolo de investigación</option>
-                        <option>Protocolo de RSL o similar</option>
-                        <option>Reporte de RSL o similar</option>
-                        <option>Láminas de presentación en seminario</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="row flex-lg-row-reverse align-items-center ">
-                <div class="col-10 col-sm-8 col-lg-6 align-bottom">
-                    <label for="inputSeleccionarDocumento">Subir documento</label>
-                    <input type="file" asp-for="ArchivoDeProyectoGuiado" class="form-control" id="inputArchivo"  accept="application/msword, application/pdf, 
-                    application/vnd.ms-powerpoint"/>
-                    <span asp-validation-for="DocumentoProyectoGuiado.Archivo" class="text-danger"></span>
-                </div>
-                <div class="col-lg-6">
-                    <label for="inputNotas">Notas:</label> <br>
-                    <textarea asp-for="DocumentoProyectoGuiado.Notas"  class="form-control" name="notas" id="inputNotas" resizable="true"></textarea>
-                </div>
-            </div>
-        </div>
-        <input id="inputNombreDocumento" hidden asp-for="NombreDocumento" required="false"/>
-        <br /><br />
-        <div class="clearfix">
-            <input class="btn btn-secondary float-left" id="btnRegresarSeleccionarAlumno" type="button" value="Regresar" />
-            <input class="btn btn-primary float-right" type="button" id="btnRegistrarDocumento" value="Registrar documento"/>
+    <div class="container p-5 h-100">
+        <div class="d-flex justify-content-center align-content-center h-100">
+            <input type="submit" class="btn btn-success" id="btnGuardarDocumentoProyecto" value="Guardar registro"/>
         </div>
     </div>
 </form>
 
-<div class="d-flex justify-content-center" id="contenedorDePasoActual">
-    <div class="rounded-circle bg-primary p-3 m-1 d-inline bg-secondary indicadorDePaso" id="pasoActual1"></div>
-    <div class="rounded-circle bg-primary p-3 m-1 d-inline bg-secondary indicadorDePaso" id="pasoActual2"></div>
-</div>
 
-<div id="divMensajeDeError" class="clearfix mt-3"></div>
 
-@section scripts{
-    <script defer>
-        function mostrarMensajeEnPantalla(mensaje, esMensajeDeError = true) {
-            let divMensajeDeError = document.getElementById('divMensajeDeError');
-            let divError = document.createElement('div');
-            divError.classList.add('alert');
-            if (esMensajeDeError) {
-                divError.classList.add('alert-danger');
-            }
-            else {
-                divError.classList.add('alert-success');
-            }
-            divError.setAttribute('role', 'alert');
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
 
-            let labelError = document.createElement('label');
-            labelError.textContent = mensaje;
-            divError.appendChild(labelError);
-
-            let buttonDescartar = document.createElement('button');
-            buttonDescartar.classList.add('close');
-            buttonDescartar.setAttribute('type', 'button');
-            buttonDescartar.setAttribute('data-dismiss', 'alert');
-            buttonDescartar.setAttribute('aria-label', 'Close');
-            
-
-            let span = document.createElement('span');
-            span.setAttribute('aria-hidden', true);
-            span.innerHTML = '&times;';
-            buttonDescartar.appendChild(span);
-            divError.appendChild(buttonDescartar);
-
-            divMensajeDeError.appendChild(divError);
-        }
-
-        function eliminarClasesDeElemento(elemento, clases) {
-            for (let clase of clases) {
-                elemento.classList.remove(clase);
-            }
-        }
-
-        function agregarClasesAElemento(elemento, clases) {
-            for (let clase of clases) {
-                elemento.classList.add(clase);
-            }
-        }
-
-        const clasesParaMarcarFilasSeleccionadas = [ 'bg-primary', 'bg-gradient', 'text-light'];
-
-        function asignarClicDeFilaDeTblAlumnos() {
-            let filasTblAlumnos = document.querySelector('#tblAlumnos > tbody').rows;
-
-            for (let filaActual of filasTblAlumnos) {
-                filaActual.addEventListener('click', function (event) {
-                    let target = event.currentTarget;
-                    let idAlumno = target.querySelector('.tdMatricula').textContent;
-
-                    let inputAlumnoID = document.getElementById('inputAlumnoID');
-                    inputAlumnoID.setAttribute('value', idAlumno);
-                    for (let fila of filasTblAlumnos) {
-                        eliminarClasesDeElemento(fila, clasesParaMarcarFilasSeleccionadas);
-                    }
-
-                    agregarClasesAElemento(filaActual, clasesParaMarcarFilasSeleccionadas);
-                    var btnSeleccionarDocumento = document.getElementById('btnSeleccionarTipoDeDocumento');
-                    btnSeleccionarDocumento.disabled = false;
-                });
-            }            
-        }
-
-        function asignarClicASelectTipoDeDocumento() {
-            let selectTipoDeDocumento = document.getElementById('selectTipoDocumento');
-            selectTipoDeDocumento.addEventListener('change', (event) => {
-                let inputNombreDocumento = document.getElementById('inputNombreDocumento');
-                inputNombreDocumento.setAttribute('value', selectTipoDeDocumento.value);
-            });
-        }
-
-        function validarSeleccionDeTipoDeDocumento() {
-            let selectSeleccionarTipoDeDocumento = document.getElementById('selectTipoDocumento').value;
-            let notaDocumento =  document.getElementById('inputNotas').value;
-            let resultadoValidacion = false;
-            console.log(selectSeleccionarTipoDeDocumento);
-              
-            if (selectSeleccionarTipoDeDocumento != "Seleccione el tipo de documento") {                   
-                resultadoValidacion = true;
-            }
-            return resultadoValidacion;
-        }
-
-        function validarSeleccionDeArchivo() {
-            let archivoSeleccionado = document.getElementById('inputArchivo').value;
-            let notaDocumento =  document.getElementById('inputNotas').value;
-            let resultadoValidacion = false;
-
-            if (archivoSeleccionado != "") {              
-                resultadoValidacion = true
-            }
-            return resultadoValidacion;
-        }
-
-        function asignarClicARegistrarDocumentoDeProyectoGuiado() {
-            let btnRegistrarDocumentoProyectoGuiado = document.getElementById('btnRegistrarDocumento');
-            btnRegistrarDocumentoProyectoGuiado.addEventListener('click', () => {
-                console.log("Entro en evento clic registrar documento");
-                let existioUnErrorDeValidacion = false;
-                if (!validarSeleccionDeTipoDeDocumento()) {
-                    mostrarMensajeEnPantalla('Debe seleccionar un tipo de documento.');
-                    existioUnErrorDeValidacion = true;
-                }
-
-                if (!validarSeleccionDeArchivo()) {
-                    mostrarMensajeEnPantalla('Debe seleccionar un arhivo.');
-                    existioUnErrorDeValidacion = true;
-                }
-
-                if (!existioUnErrorDeValidacion) {
-                    console.log("No hubo error")
-                    let form = document.getElementById('formRegistrarDocumentoDeProyectoGuiado');
-                    let formData = new FormData(form);
-
-                    let url = new URL('@URL_REGISTRAR_DOCUMENTO_PROYECTO_GUIADO');
-                    console.log(url);
-                    console.log(formData);
-
-                    fetch(url, {
-                        method: 'post',
-
-                        body: formData
-                    })
-                    .then(function (response) {
-                        if (response.status !== 200) {
-                            console.log("Entro en primer if");
-                            console.log(response);
-                            alert("error:  status - " + error.status + " | text: " + error.statusText);
-                        }
-                        else {
-                            btnRegistrarDocumentoProyectoGuiado.setAttribute('disabled', true);
-                            mostrarMensajeEnPantalla('Documento de proyecto guiado registrado exitosamente!', false);
-                            setTimeout(() => { window.location.href = '/Menus/UIMaestro' }, @MILISEGUNDOS_DE_ESPERA_TRAS_REGISTRAR);
-                        }
-                    })
-                    .catch(function (err) {
-                        console.log("Entro en catch");
-                        console.log(`error: ${err}`);
-                    });           
-                }
-            });
-        }
-
-        asignarClicDeFilaDeTblAlumnos();
-        asignarClicASelectTipoDeDocumento();
-        asignarClicARegistrarDocumentoDeProyectoGuiado();
-    </script>
-
-    <script defer id="scriptAdministrarPasos">              
-        function asignarLogicaDeCambioDePasosAFormulario() {
-            let formRegistrarTrabajoRecepcional = document.getElementById('formRegistrarDocumentoDeProyectoGuiado');
-            for (const nodo of formRegistrarTrabajoRecepcional.children) {
-                nodo.setAttribute('hidden', true);
-            }
-
-            let panelSeleccionarAlumnos = document.getElementById('seleccionarAlumnos');
-            let panelSeleccionarTipoDeDocumento = document.getElementById('seleccionarTipoDocumento');
-            panelSeleccionarAlumnos.removeAttribute('hidden');
-
-            let indicadorDePasoActual1 = document.getElementById('pasoActual1');
-            indicadorDePasoActual1.classList.add('bg-primary');
-            indicadorDePasoActual1.classList.remove('bg-secondary');
-
-            let indicadorDePasoActual2 = document.getElementById('pasoActual2');
-
-            function marcarIndicadorDePasoActual(indicadorDePasoActual, esPasoActual) {
-                if (esPasoActual) {
-                    indicadorDePasoActual.classList.add('bg-primary');
-                    indicadorDePasoActual.classList.remove('bg-secondary');
-                }
-                else {
-                    indicadorDePasoActual.classList.add('bg-secondary');
-                    indicadorDePasoActual.classList.remove('bg-primary');
-                }
-            }
-
-            function asignarClicABtnSeleccionarTipoDeDocumento() {
-                let btnSeleccionarTipoDeDocumento = document.getElementById('btnSeleccionarTipoDeDocumento');
-                btnSeleccionarTipoDeDocumento.addEventListener('click', function (event) {
-                    panelSeleccionarAlumnos.setAttribute('hidden', true);
-                    panelSeleccionarTipoDeDocumento.removeAttribute('hidden');
-                    marcarIndicadorDePasoActual(indicadorDePasoActual1, false);
-                    marcarIndicadorDePasoActual(indicadorDePasoActual2, true);
-                });
-            }
-
-            function asignarClicABtnRegresarSeleccionarAlumno() {
-                let btnRegresarSeleccionarAlumno = document.getElementById('btnRegresarSeleccionarAlumno');
-                btnRegresarSeleccionarAlumno.addEventListener('click', function () {
-                    panelSeleccionarTipoDeDocumento.setAttribute('hidden', true);
-                    panelSeleccionarAlumnos.removeAttribute('hidden');
-
-                    marcarIndicadorDePasoActual(indicadorDePasoActual2, false);
-                    marcarIndicadorDePasoActual(indicadorDePasoActual1, true);
-                });
-            }
-
-            asignarClicABtnSeleccionarTipoDeDocumento();
-            asignarClicABtnRegresarSeleccionarAlumno();
-        }
-        asignarLogicaDeCambioDePasosAFormulario();
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" name="VentanamodalAgregarTipoDeDocumentoScript">
-        //Funcion para controlar ventana modal para agregar tipo de documento
-        $(document).ready(function () {
-            $("#btnAgregarTipoDeDocumento").click(function(){
-                $("#modalAgrgarTipoDeDocumento").modal('show');
-            });
-
-            $("#btnCerrarVentanaModal").click(function(){
-                $("#modalAgrgarTipoDeDocumento").modal('hide');
-            });
-
-            //Agregar la nueva opcion de tipo de documento al combobox desde la ventana modal
-            $("#btnAgregarTipoDeDocumentoModal").click(function(){
-                let tipoDeDocumento = document.getElementById("inputNombreTipoDocumento").value
-                var select = document.getElementById("selectTipoDocumento");
-                var option = document.createElement("option");
-                option.text = tipoDeDocumento;
-                select.add(option);
-                select.value = tipoDeDocumento;
-                let inputNombreDocumento = document.getElementById('inputNombreDocumento');
-                inputNombreDocumento.setAttribute('value', select.value);
-                $("#modalAgrgarTipoDeDocumento").modal('hide');
-            });
-        });
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"], redirigiendo...
+    </div>
+    
+    <script>
+        document.getElementById("btnGuardarDocumentoProyecto").setAttribute('disabled', true)
+         setTimeout(() => { window.location.href = 'TrabajosRecepcionales' }, 2000);
     </script>
 }
--->
+
+@section Scripts
+{
+    <script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                      <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                            <a class="nav-link" href="../UIExperienciaRecepcional">Experiencia recepcional</a>
+                                        </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" href="TrabajosRecepcionales">Trabajos recepcionales</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" onclick="window.location.reload()">Registrar documento proyecto guíado</a>
+                                    </li>`
+                                        
+  }
+  </script>
+}
