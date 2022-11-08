@@ -5,10 +5,10 @@
     ViewData["Title"] = "Editar pladea";
 }
 
-<form id="registrarPladeaForm" method="post">
+<form id="editarPladeaForm" enctype="multipart/form-data" method="post">
     <div class="container p-2 h-100" style="margin-top: 40px">
         <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
-            <h3 style="font-size: 20px">REGISTRAR PROYECTO PLADEA</h3>
+            <h3 style="font-size: 20px">EDITAR PROYECTO PLADEA</h3>
         </div>
         <div class="d-flex justify-content-center align-content-center h-100">
             <input type="text" id="input_nombreLgac" asp-for="@Model.pladeaRegistrar.Accion" style="width: 348px;" placeholder="Acción" class="form-control" required="required"/>
@@ -130,23 +130,21 @@
         </div>
     </div>
     <textarea itemid="idPladeaObjetivo" asp-for="@Model.pladeaRegistrar.ObjetivoGeneral" class="form-control" style="width: 100%; margin-top: 20px" placeholder="Objetivo general" rows="8" required></textarea>
-    <form method="get">
-        <div class="input-group mb-3" style="margin-top: 50px">
-            <label style="margin-right: 20px">Archivo subido:</label>
-            <a asp-page-handler="file" asp-route-id="@Request.Query["id"]">@Model.ArchivoPladea.NombreArchivo</a>
-        </div>
-    </form>
-
     <div class="input-group mb-3" style="margin-top: 50px">
-        <input class="form-control" asp-for="ArchivoPladea" type="file" id="formFile">
+        <label style="margin-top: 6px" for="btnFile">Archivo subido:</label>
+        <button id="btnFile" class="btn btn-link" asp-page-handler="file" type="submit" asp-route-id="@Request.Query["id"]">@Model.ArchivoPladea.NombreArchivo</button>
     </div>
+    <div class="input-group mb-3" style="margin-top: 50px">
+        <input type="file" class="form-control" accept="application/msword, application/pdf, application/vnd.ms-powerpoint" 
+               name="filePladea">
+    </div>
+    
     <div class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
-            <input type="submit" class="btn btn-success" id="btnGuardarPladea" value="Guardar registro"/>
+            <input type="submit" asp-page-handler="update" asp-route-id="@Request.Query["id"]" class="btn btn-success" id="btnGuardarPladea" value="Guardar registro"/>
         </div>
     </div>
 </form>
-
 
 @if (TempData["Error"] != null)
 {

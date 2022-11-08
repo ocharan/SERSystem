@@ -28,7 +28,7 @@ public class RegistroPLADEA : PageModel
     {
     }
     
-    public async Task<IActionResult> OnPost(IFormFile file)
+    public async Task<IActionResult> OnPost(IFormFile? file)
     {
         try
         {
@@ -48,7 +48,6 @@ public class RegistroPLADEA : PageModel
                     if (existe)
                     {
                         TempData["ErrorDateMessage"] = "El Proyecto PLADEA que intenta registrar ya existe";
-                        return Page();
                     }
                     else
                     {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Y6PhIcNOjp1Y+I7vnNhnx+ftlm3KtU5Ie9o1vEbHy3o=",
+  "Hash": "U8h+bZ7EM/6AtwNSILO3EolKNlbO1RYt4Vj80iBtYdY=",
   "Source": "SER",
   "BasePath": "_content/SER",
   "Mode": "Default",
@@ -814,6 +814,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/Archivos/PLADEA_07112022065446"
+    },
+    {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/PLADEA_08112022050143",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/PLADEA_08112022050143",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/PLADEA_08112022050143"
     },
     {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/css/site.css",

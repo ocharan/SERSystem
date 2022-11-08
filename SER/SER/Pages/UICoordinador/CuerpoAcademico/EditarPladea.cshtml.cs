@@ -1,7 +1,9 @@
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.DBContext;
 using SER.Entidades;
+using System.IO;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -17,13 +19,16 @@ public class EditarPladea : PageModel
     
     [BindProperty] public Archivo ArchivoPladea { get; set; }
 
-    public EditarPladea(MySERContext context)
+    private IWebHostEnvironment Environment;
+
+    public EditarPladea(MySERContext context, IWebHostEnvironment _environment)
     {
         _context = context;
         pladeaRegistrar = new Pladeafei();
         fechaInicio = "";
         fechaFin = "";
         ArchivoPladea = new Archivo();
+        Environment = _environment;
     }
 
     public void OnGet()
@@ -38,7 +43,7 @@ public class EditarPladea : PageModel
         }
     }
 
-    public void OnPost()
+    public async Task<IActionResult> OnPostUpdate(IFormFile? filePladea)
     {
         try
         {
@@ -77,24 +82,54 @@ public class EditarPladea : PageModel
                         TempData["Error"] = "La información del pladea ha modificar ya existe";
                     }
                 }
+                
+                if (filePladea != null)
+                {
+                    borrarArchivoPladea(Int32.Parse(idPladea));
+                    string fecha = DateTime.Now.ToString().Replace("/", "");
+                    string fileName = "PLADEA_" + fecha.Replace(" ", "").Replace(":", "");
+                    var archivo = Path.Combine(Environment.WebRootPath, "Archivos", fileName);
+                    using (var fileStream = new FileStream(archivo, FileMode.Create))
+                    {
+                        await filePladea.CopyToAsync(fileStream);
+                    }
+
+                    ArchivoPladea.NombreArchivo = fileName +"."+filePladea.ContentType.Split("/")[1];
+                    ArchivoPladea.IdFuente = Int32.Parse(idPladea);
+                    ArchivoPladea.Direccion = "Archivos/" + fileName;
+                    ArchivoPladea.TipoContenido = filePladea.ContentType;
+                    _context.Archivos.Add(ArchivoPladea);
+                    _context.SaveChanges();
+                    TempData["Success"] = "Pladea modificada correctamente con archivo";
+                }
             }
             else
             {
                 TempData["Error"] = "La fecha del periodo final no puede ser menor a la fecha de inicio";
+                return Page();
             }
         }
         catch (Exception e)
         {
-            TempData["Error"] = e.Message;
+            TempData["Error"] = e.StackTrace;
         }
+        return Page();
     }
 
-    public IActionResult OnGetFile()
-    {
+    public IActionResult OnPostFile()
+    { 
         var id = Request.Query["id"];
-        Console.WriteLine(id);
         var filePladea = _context.Archivos.FirstOrDefault(a => a.IdFuente == Int32.Parse(id));
         return File(filePladea.Direccion, filePladea.TipoContenido);
+    }
+    
+
+    public void borrarArchivoPladea(int idPladea)
+    {
+        var archivo = _context.Archivos.First(a => a.IdFuente == idPladea);
+        System.IO.File.Delete(Environment.WebRootPath+"/"+archivo.Direccion);
+        _context.Remove(archivo);
+        _context.SaveChanges();
     }
     public void obtenerPladea()
     {
