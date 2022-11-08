@@ -14,6 +14,8 @@ public class EditarPladea : PageModel
     [BindProperty] public string fechaFin { get; set;}
     public string idPladea { get; set; }
     [BindProperty] public Pladeafei pladeaRegistrar { get; set; }
+    
+    [BindProperty] public Archivo ArchivoPladea { get; set; }
 
     public EditarPladea(MySERContext context)
     {
@@ -21,11 +23,19 @@ public class EditarPladea : PageModel
         pladeaRegistrar = new Pladeafei();
         fechaInicio = "";
         fechaFin = "";
+        ArchivoPladea = new Archivo();
     }
 
     public void OnGet()
     {
-        obtenerPladea();
+        try
+        {
+            obtenerPladea();
+        }
+        catch (Exception e)
+        {
+            TempData["Error"] = "Ha ocurrido un error al cargar la información, " + e.Message;
+        }
     }
 
     public void OnPost()
@@ -79,14 +89,27 @@ public class EditarPladea : PageModel
         }
     }
 
+    public IActionResult OnGetFile()
+    {
+        var id = Request.Query["id"];
+        Console.WriteLine(id);
+        var filePladea = _context.Archivos.FirstOrDefault(a => a.IdFuente == Int32.Parse(id));
+        return File(filePladea.Direccion, filePladea.TipoContenido);
+    }
     public void obtenerPladea()
     {
         idPladea = Request.Query["id"];
         var pladea = _context.Pladeafeis.FirstOrDefault(p => p.PladeafeiId == Int32.Parse(idPladea));
+        var archivoPladea = _context.Archivos.FirstOrDefault(a => a.IdFuente == Int32.Parse(idPladea));
         pladeaRegistrar.Accion = pladea.Accion;
         string[] fecha = pladea.Periodo.Split("-");
         fechaInicio = fecha[0].Trim();
         fechaFin = fecha[1].Trim();
         pladeaRegistrar.ObjetivoGeneral = pladea.ObjetivoGeneral;
+        if (archivoPladea != null)
+        {
+            ArchivoPladea.NombreArchivo = archivoPladea.NombreArchivo;
+            ArchivoPladea.Direccion = archivoPladea.Direccion;
+        }
     }
 }

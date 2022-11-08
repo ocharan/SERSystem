@@ -171,6 +171,10 @@ namespace SER.DBContext
                 entity.Property(e => e.NombreArchivo)
                     .HasMaxLength(100)
                     .IsUnicode(false);
+                
+                entity.Property(e => e.TipoContenido)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<CuerpoAcademico>(entity =>

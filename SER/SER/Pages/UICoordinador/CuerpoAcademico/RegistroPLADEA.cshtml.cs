@@ -58,15 +58,16 @@ public class RegistroPLADEA : PageModel
                         {
                             string fecha = DateTime.Now.ToString().Replace("/", "");
                             string fileName = "PLADEA_" + fecha.Replace(" ", "").Replace(":", "");
-                            var archivo = Path.Combine(Environment.ContentRootPath, "Archivos", fileName);
+                            var archivo = Path.Combine(Environment.WebRootPath, "Archivos", fileName);
                             using (var fileStream = new FileStream(archivo, FileMode.Create))
                             {
                                 await file.CopyToAsync(fileStream);
                             }
 
-                            ArchivoPladea.NombreArchivo = fileName;
+                            ArchivoPladea.NombreArchivo = fileName +"."+file.ContentType.Split("/")[1];
                             ArchivoPladea.IdFuente = pladeaRegistrar.PladeafeiId;
-                            ArchivoPladea.Direccion = archivo;
+                            ArchivoPladea.Direccion = "Archivos/" + fileName;
+                            ArchivoPladea.TipoContenido = file.ContentType;
                             _context.Archivos.Add(ArchivoPladea);
                             _context.SaveChanges();
 
@@ -84,7 +85,7 @@ public class RegistroPLADEA : PageModel
         }
         catch (Exception e)
         {
-            TempData["ErrorDateMessage"] = "Ha ocurrido un error al registrar la información";
+            TempData["ErrorDateMessage"] = "Ha ocurrido un error al registrar la información, "+e.Message;
             return Page();
         }
         return Page();

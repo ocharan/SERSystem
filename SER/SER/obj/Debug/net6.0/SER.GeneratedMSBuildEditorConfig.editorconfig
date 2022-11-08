@@ -187,6 +187,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0V4cGVkaWVudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalExterno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL01vZGlmaWNhclNpbm9kYWxFeHRlcm5vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalInterno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL01vZGlmaWNhclNpbm9kYWxJbnRlcm5vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/NuevoTrabajoRecepcional.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL051ZXZvVHJhYmFqb1JlY2VwY2lvbmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <Folder Include="Archivos" />
+    <Folder Include="wwwroot\files" />
   </ItemGroup>
 
 </Project>

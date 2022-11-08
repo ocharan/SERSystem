@@ -34,6 +34,16 @@ public class Sinodales : PageModel
         }
     }
 
+    public IActionResult OnPostModificarInterno()
+    {
+        return Redirect("ModificarSinodalInterno?id="+Request.Query["id"]);
+    }
+    
+    public IActionResult OnPostModificarExterno()
+    {
+        return Redirect("ModificarSinodalExterno?id="+Request.Query["id"]);
+    }
+
 
     public void getSinodales()
     {
@@ -46,7 +56,8 @@ public class Sinodales : PageModel
                 CorreoElectronico = trabajo.CorreoElectronico,
                 Telefono = trabajo.Telefono,
                 OrganizacionNombre = organizacion.Nombre,
-                SinodalId = trabajo.SinodalDelTrabajoId
+                SinodalId = trabajo.SinodalDelTrabajoId,
+                numeroPersonal = trabajo.NumeroDePersonal
             }));
         foreach (var sinodal in resultadoVista)
         {
@@ -56,6 +67,7 @@ public class Sinodales : PageModel
             sinodalRegistrado.telefono = sinodal.Telefono;
             sinodalRegistrado.organizacion = sinodal.OrganizacionNombre;
             sinodalRegistrado.id = sinodal.SinodalId;
+            sinodalRegistrado.numeroPersonal = sinodal.numeroPersonal.ToString();
             sinodales.Add(sinodalRegistrado);
         }
     }

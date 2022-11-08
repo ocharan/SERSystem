@@ -7,4 +7,6 @@ public class SinodalVista
     public string correo { get; set; }
     public string telefono { get; set; }
     public string? organizacion { get; set; }
+    
+    public  string? numeroPersonal { get; set; }
 }

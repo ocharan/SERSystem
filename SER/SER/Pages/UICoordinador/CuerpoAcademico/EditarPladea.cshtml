@@ -130,8 +130,15 @@
         </div>
     </div>
     <textarea itemid="idPladeaObjetivo" asp-for="@Model.pladeaRegistrar.ObjetivoGeneral" class="form-control" style="width: 100%; margin-top: 20px" placeholder="Objetivo general" rows="8" required></textarea>
+    <form method="get">
+        <div class="input-group mb-3" style="margin-top: 50px">
+            <label style="margin-right: 20px">Archivo subido:</label>
+            <a asp-page-handler="file" asp-route-id="@Request.Query["id"]">@Model.ArchivoPladea.NombreArchivo</a>
+        </div>
+    </form>
+
     <div class="input-group mb-3" style="margin-top: 50px">
-        <input class="form-control" type="file" id="formFile">
+        <input class="form-control" asp-for="ArchivoPladea" type="file" id="formFile">
     </div>
     <div class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
@@ -159,7 +166,6 @@
          setTimeout(() => { window.location.href = 'ProyectosdeInvestigacion' }, 2000);
     </script>
 }
-
 
 
 @section Scripts
@@ -194,8 +200,7 @@
                                                         </li>
                                                         <li class="nav-item active" style="font-size: 25px">
                                                             <a class="nav-link" onclick="window.location.reload()">Editar pladea</a>
-                                                        </li>`
-                                                                                                                         
+                                                        </li>`                                            
                                                                                    }
                                                                                    </script>
                                                              }

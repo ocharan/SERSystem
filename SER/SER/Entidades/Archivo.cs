@@ -9,5 +9,7 @@ namespace SER.Entidades
         public int IdArchivo { get; set; }
         public string? Direccion { get; set; }
         public int IdFuente { get; set; }
+        
+        public string? TipoContenido { get; set; }
     }
 }
