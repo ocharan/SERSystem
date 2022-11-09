@@ -59,7 +59,6 @@ public class RegistroProyectoDeInvestigacion : PageModel
         {
             TempData["ExceptionMessage"] = e.Message;   
         }
-
     }
     
     public void cargarCuerpos()
@@ -75,7 +74,7 @@ public class RegistroProyectoDeInvestigacion : PageModel
             CuerpoAcademicos.Add(cuerpoNuevo);
         }
     }
-
+    
     public void cargarLgacs()
     {
         var listaLgacs = _context.Lgacs.ToList();

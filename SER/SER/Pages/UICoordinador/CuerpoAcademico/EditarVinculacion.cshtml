@@ -6,7 +6,7 @@
 }
 
 
-<form id="editarVinculacionForm" method="post">
+<form id="editarVinculacionForm" enctype="multipart/form-data" method="post">
     <div class="container p-2 h-50" style="margin-top: 20px">
         <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
             <h3 style="font-size: 20px">EDITAR PROYECTO VINCULACIÓN</h3>
@@ -32,11 +32,23 @@
         </div>
     </div>
     <div class="input-group mb-3" style="margin-top: 50px">
-        <input class="form-control" type="file" id="formFile">
+        <label style="margin-top: 6px" for="btnFile">Archivo subido:</label>
+        @if (Model.ArchivoVinculacion!=null)
+        {
+            <button id="btnFile" class="btn btn-link" asp-page-handler="file" type="submit" asp-route-id="@Request.Query["id"]">@Model.ArchivoVinculacion.NombreArchivo</button>
+        }
+        else
+        {
+            <label style="margin-top: 7px; margin-left: 20px" for="btnFile">Sin archivos subidos</label>
+        }
+    </div>
+    <div class="input-group mb-3" style="margin-top: 50px">
+        <input class="form-control" name="fileVinculacion" accept="application/msword, application/pdf, application/vnd.ms-powerpoint"  
+               type="file" id="formFile">
     </div>
     <div class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
-            <input type="submit" class="btn btn-success" id="btnGuardarVinculacion" value="Guardar registro"/>
+            <input type="submit" class="btn btn-success" asp-page-handler="update" asp-route-id="@Model.Request.Query["id"]" id="btnGuardarVinculacion" value="Guardar registro"/>
         </div>
     </div>
 </form>

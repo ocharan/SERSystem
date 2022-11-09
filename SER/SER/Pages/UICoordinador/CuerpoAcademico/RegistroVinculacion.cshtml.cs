@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.DBContext;
 using SER.Entidades;
@@ -9,14 +10,19 @@ public class RegistroVinculacion : PageModel
 
     private readonly MySERContext _context;
 
+    private Archivo ArchivoVinculacion { get; set; }
     public Vinculacion Vinculacion { get; set; }
     public List<Organizacion> OrganizacionesList { get; set; }
 
-    public RegistroVinculacion(MySERContext context)
+    private IWebHostEnvironment Environment;
+    
+    public RegistroVinculacion(MySERContext context, IWebHostEnvironment _environment)
     {
         _context = context;
         OrganizacionesList = new List<Organizacion>();
         Vinculacion = new Vinculacion();
+        ArchivoVinculacion = new Archivo();
+        Environment = _environment;
     }
     
     public void OnGet()
@@ -24,7 +30,7 @@ public class RegistroVinculacion : PageModel
         cargarOrganizaciones();
     }
 
-    public void OnPost()
+    public async Task<IActionResult> OnPost(IFormFile? fileVinculacion)
     {
         try
         {
@@ -35,6 +41,23 @@ public class RegistroVinculacion : PageModel
             {
                 _context.Vinculacions.Add(Vinculacion);
                 _context.SaveChanges();
+                if (fileVinculacion != null)
+                {
+                    string fecha = DateTime.Now.ToString().Replace("/", "");
+                    string fileName = "VINCULACION_" + fecha.Replace(" ", "").Replace(":", "");
+                    var archivo = Path.Combine(Environment.WebRootPath, "Archivos", fileName);
+                    using (var fileStream = new FileStream(archivo, FileMode.Create))
+                    {
+                        await fileVinculacion.CopyToAsync(fileStream);
+                    }
+
+                    ArchivoVinculacion.NombreArchivo = fileName +"."+fileVinculacion.ContentType.Split("/")[1];
+                    ArchivoVinculacion.IdFuente = Vinculacion.VinculacionId;
+                    ArchivoVinculacion.Direccion = "Archivos/" + fileName;
+                    ArchivoVinculacion.TipoContenido = fileVinculacion.ContentType;
+                    _context.Archivos.Add(ArchivoVinculacion);
+                    _context.SaveChanges();
+                }
                 TempData["SuccessMessage"] = "Registro completado correctamente";
             }
             else
@@ -46,6 +69,8 @@ public class RegistroVinculacion : PageModel
         {
             TempData["ErrorMessage"] = "Error al registrar el proyecto vinculación " + e.Message;
         }
+        cargarOrganizaciones();
+        return Page();
     }
     
     public void cargarOrganizaciones()

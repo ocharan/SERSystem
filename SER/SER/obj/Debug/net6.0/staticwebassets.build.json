@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U8h+bZ7EM/6AtwNSILO3EolKNlbO1RYt4Vj80iBtYdY=",
+  "Hash": "wsUvrW7Asx1jxQhEltJ4x0ykU3vtEOyUp62Eh3a02lM=",
   "Source": "SER",
   "BasePath": "_content/SER",
   "Mode": "Default",
@@ -816,12 +816,12 @@
       "OriginalItemSpec": "wwwroot/Archivos/PLADEA_07112022065446"
     },
     {
-      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/PLADEA_08112022050143",
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/PLADEA_08112022070317",
       "SourceId": "SER",
       "SourceType": "Discovered",
       "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
       "BasePath": "_content/SER",
-      "RelativePath": "Archivos/PLADEA_08112022050143",
+      "RelativePath": "Archivos/PLADEA_08112022070317",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -830,7 +830,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/Archivos/PLADEA_08112022050143"
+      "OriginalItemSpec": "wwwroot/Archivos/PLADEA_08112022070317"
+    },
+    {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/PLADEA_08112022070748",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/PLADEA_08112022070748",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/PLADEA_08112022070748"
+    },
+    {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/VINCULACION_09112022105356",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/VINCULACION_09112022105356",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/VINCULACION_09112022105356"
     },
     {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/css/site.css",

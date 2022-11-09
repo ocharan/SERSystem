@@ -27,7 +27,6 @@ public class EditarPladea : PageModel
         pladeaRegistrar = new Pladeafei();
         fechaInicio = "";
         fechaFin = "";
-        ArchivoPladea = new Archivo();
         Environment = _environment;
     }
 
@@ -85,6 +84,7 @@ public class EditarPladea : PageModel
                 
                 if (filePladea != null)
                 {
+                    ArchivoPladea = new Archivo();
                     borrarArchivoPladea(Int32.Parse(idPladea));
                     string fecha = DateTime.Now.ToString().Replace("/", "");
                     string fileName = "PLADEA_" + fecha.Replace(" ", "").Replace(":", "");
@@ -126,10 +126,13 @@ public class EditarPladea : PageModel
 
     public void borrarArchivoPladea(int idPladea)
     {
-        var archivo = _context.Archivos.First(a => a.IdFuente == idPladea);
-        System.IO.File.Delete(Environment.WebRootPath+"/"+archivo.Direccion);
-        _context.Remove(archivo);
-        _context.SaveChanges();
+        var archivo = _context.Archivos.FirstOrDefault(a => a.IdFuente == idPladea);
+        if (archivo!=null)
+        {
+            System.IO.File.Delete(Environment.WebRootPath+"/"+archivo.Direccion);
+            _context.Remove(archivo);
+            _context.SaveChanges();
+        }
     }
     public void obtenerPladea()
     {
@@ -143,6 +146,7 @@ public class EditarPladea : PageModel
         pladeaRegistrar.ObjetivoGeneral = pladea.ObjetivoGeneral;
         if (archivoPladea != null)
         {
+            ArchivoPladea = new Archivo();
             ArchivoPladea.NombreArchivo = archivoPladea.NombreArchivo;
             ArchivoPladea.Direccion = archivoPladea.Direccion;
         }

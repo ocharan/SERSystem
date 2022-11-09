@@ -132,7 +132,14 @@
     <textarea itemid="idPladeaObjetivo" asp-for="@Model.pladeaRegistrar.ObjetivoGeneral" class="form-control" style="width: 100%; margin-top: 20px" placeholder="Objetivo general" rows="8" required></textarea>
     <div class="input-group mb-3" style="margin-top: 50px">
         <label style="margin-top: 6px" for="btnFile">Archivo subido:</label>
-        <button id="btnFile" class="btn btn-link" asp-page-handler="file" type="submit" asp-route-id="@Request.Query["id"]">@Model.ArchivoPladea.NombreArchivo</button>
+        @if (Model.ArchivoPladea!=null)
+        {
+            <button id="btnFile" class="btn btn-link" asp-page-handler="file" type="submit" asp-route-id="@Request.Query["id"]">@Model.ArchivoPladea.NombreArchivo</button>
+        }
+        else
+        {
+            <label style="margin-top: 7px; margin-left: 20px" for="btnFile">Sin archivos subidos</label>
+        }
     </div>
     <div class="input-group mb-3" style="margin-top: 50px">
         <input type="file" class="form-control" accept="application/msword, application/pdf, application/vnd.ms-powerpoint" 
