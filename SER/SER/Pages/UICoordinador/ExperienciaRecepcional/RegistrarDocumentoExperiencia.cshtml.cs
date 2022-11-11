@@ -40,7 +40,7 @@ public class RegistrarDocumentoExperiencia : PageModel
                     documento.TrabajoRecepcionalId = Int32.Parse(id);
                     string fecha = DateTime.Now.ToString().Replace("/", "");
                     string fileName = "ER_" + fecha.Replace(" ", "").Replace(":", "") + id;
-                    var archivo = Path.Combine(Environment.ContentRootPath, "Archivos", fileName);
+                    var archivo = Path.Combine(Environment.WebRootPath, "Archivos", fileName);
                     using (var fileStream = new FileStream(archivo, FileMode.Create))
                     {
                         await fileExperiencia.CopyToAsync(fileStream);

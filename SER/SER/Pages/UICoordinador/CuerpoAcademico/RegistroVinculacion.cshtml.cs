@@ -54,6 +54,7 @@ public class RegistroVinculacion : PageModel
                     ArchivoVinculacion.NombreArchivo = fileName +"."+fileVinculacion.ContentType.Split("/")[1];
                     ArchivoVinculacion.IdFuente = Vinculacion.VinculacionId;
                     ArchivoVinculacion.Direccion = "Archivos/" + fileName;
+                    ArchivoVinculacion.Fuente = "proyectos";
                     ArchivoVinculacion.TipoContenido = fileVinculacion.ContentType;
                     _context.Archivos.Add(ArchivoVinculacion);
                     _context.SaveChanges();

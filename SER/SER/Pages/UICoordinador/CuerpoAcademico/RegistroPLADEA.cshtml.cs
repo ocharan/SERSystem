@@ -67,6 +67,7 @@ public class RegistroPLADEA : PageModel
                             ArchivoPladea.IdFuente = pladeaRegistrar.PladeafeiId;
                             ArchivoPladea.Direccion = "Archivos/" + fileName;
                             ArchivoPladea.TipoContenido = file.ContentType;
+                            ArchivoPladea.Fuente = "proyectos";
                             _context.Archivos.Add(ArchivoPladea);
                             _context.SaveChanges();
 

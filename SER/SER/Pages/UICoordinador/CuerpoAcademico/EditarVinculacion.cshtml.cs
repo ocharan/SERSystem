@@ -76,6 +76,7 @@ public class EditarVinculacion : PageModel
                 ArchivoVinculacion.IdFuente = Int32.Parse(idVinculacion);
                 ArchivoVinculacion.Direccion = "Archivos/" + fileName;
                 ArchivoVinculacion.TipoContenido = fileVinculacion.ContentType;
+                ArchivoVinculacion.Fuente = "proyectos";
                 _context.Archivos.Add(ArchivoVinculacion);
                 _context.SaveChanges();
                 TempData["SuccessMessage"] = "Vinculación actualizada correctamente con vinculacion";
@@ -108,7 +109,7 @@ public class EditarVinculacion : PageModel
     {
         idVinculacion = Request.Query["id"];
         var vinculacion = _context.Vinculacions.FirstOrDefault(v => v.VinculacionId == Int32.Parse(idVinculacion));
-        var archivoVinculacion = _context.Archivos.FirstOrDefault(a => a.IdFuente == Int32.Parse(idVinculacion));
+        var archivoVinculacion = _context.Archivos.FirstOrDefault(a => a.IdFuente == Int32.Parse(idVinculacion) && a.Fuente.Equals("proyectos"));
         Vinculacion.OrganizacionIid = vinculacion.OrganizacionIid;
         Vinculacion.FechaDeInicioDeConvenio = vinculacion.FechaDeInicioDeConvenio;
         if (archivoVinculacion != null)
@@ -121,7 +122,7 @@ public class EditarVinculacion : PageModel
     
     public void borrarArchivoVinculacion(int idVinculacion)
     {
-        var archivo = _context.Archivos.FirstOrDefault(a => a.IdFuente == idVinculacion);
+        var archivo = _context.Archivos.FirstOrDefault(a => a.IdFuente == idVinculacion && a.Fuente.Equals("proyectos"));
         if (archivo!=null)
         {
             System.IO.File.Delete(Environment.WebRootPath+"/"+archivo.Direccion);

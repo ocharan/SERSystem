@@ -98,6 +98,7 @@ public class EditarPladea : PageModel
                     ArchivoPladea.IdFuente = Int32.Parse(idPladea);
                     ArchivoPladea.Direccion = "Archivos/" + fileName;
                     ArchivoPladea.TipoContenido = filePladea.ContentType;
+                    ArchivoPladea.Fuente = "proyectos";
                     _context.Archivos.Add(ArchivoPladea);
                     _context.SaveChanges();
                     TempData["Success"] = "Pladea modificada correctamente con archivo";
@@ -138,7 +139,7 @@ public class EditarPladea : PageModel
     {
         idPladea = Request.Query["id"];
         var pladea = _context.Pladeafeis.FirstOrDefault(p => p.PladeafeiId == Int32.Parse(idPladea));
-        var archivoPladea = _context.Archivos.FirstOrDefault(a => a.IdFuente == Int32.Parse(idPladea));
+        var archivoPladea = _context.Archivos.FirstOrDefault(a => a.IdFuente == Int32.Parse(idPladea) && a.Fuente.Equals("proyectos"));
         pladeaRegistrar.Accion = pladea.Accion;
         string[] fecha = pladea.Periodo.Split("-");
         fechaInicio = fecha[0].Trim();

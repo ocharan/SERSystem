@@ -10,6 +10,8 @@ namespace SER.Entidades
         public string? Direccion { get; set; }
         public int IdFuente { get; set; }
         
+        public string? Fuente { get; set; }
+        
         public string? TipoContenido { get; set; }
     }
 }

@@ -172,6 +172,10 @@ namespace SER.DBContext
                     .HasMaxLength(100)
                     .IsUnicode(false);
                 
+                entity.Property(e => e.Fuente)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+                
                 entity.Property(e => e.TipoContenido)
                     .HasMaxLength(100)
                     .IsUnicode(false);
