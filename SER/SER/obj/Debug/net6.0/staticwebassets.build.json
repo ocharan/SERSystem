@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gwrcvjUbxVSnFfPgEH1gHNYfV/eQF1llb9n7K4IfOeU=",
+  "Hash": "1ggE9f7ICR85Nj1zOUNBtl5RCbzXQyUttDqjOVl6RjU=",
   "Source": "SER",
   "BasePath": "_content/SER",
   "Mode": "Default",
@@ -867,23 +867,6 @@
       "OriginalItemSpec": "wwwroot/Archivos/38081_11112022044639"
     },
     {
-      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/38082_11112022051955",
-      "SourceId": "SER",
-      "SourceType": "Discovered",
-      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
-      "BasePath": "_content/SER",
-      "RelativePath": "Archivos/38082_11112022051955",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/Archivos/38082_11112022051955"
-    },
-    {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/67676_11112022052009",
       "SourceId": "SER",
       "SourceType": "Discovered",
@@ -1001,6 +984,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/Archivos/PLADEA_10112022060013"
+    },
+    {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/PLADEA_11112022052644",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/PLADEA_11112022052644",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/PLADEA_11112022052644"
     },
     {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/VINCULACION_09112022105356",

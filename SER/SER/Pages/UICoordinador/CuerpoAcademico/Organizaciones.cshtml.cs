@@ -31,6 +31,31 @@ public class Organizaciones : PageModel
         var id = Request.Query["id"];
         return Redirect("EditarOrganizacion?id="+id);
     }
+
+    public IActionResult OnPostEliminar(int idEliminar)
+    {
+        try
+        {
+            var registroProyectos = _context.Vinculacions.Any(v => v.OrganizacionIid == idEliminar);
+            var registroSinodales = _context.SinodalDelTrabajos.Any(s => s.OrganizacionId == idEliminar);
+            if (!registroProyectos && !registroSinodales)
+            {
+                var org = _context.Organizacions.FirstOrDefault(o => o.OrganizacionId == idEliminar);
+                _context.Organizacions.Remove(org);
+                _context.SaveChanges();
+                return new JsonResult(new { success = true, responseText = "Organizacion registrada correctamente" });
+            }
+            else
+            {
+                return new JsonResult(new { success = false, responseText = "Existen registros vinculados" });
+            }
+        }
+        catch (Exception e)
+        {
+            return new JsonResult(new { success = false, responseText = "Error al eliminar" });
+
+        }
+    }
     
     public void CargarOrganizaciones()
     {
