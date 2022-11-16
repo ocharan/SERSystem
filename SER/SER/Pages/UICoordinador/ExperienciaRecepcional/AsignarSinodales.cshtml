@@ -17,14 +17,12 @@
         </div>
     </div>
     <div class="input-group mb-2" style="margin-top: 20px;">
-            
         <div class="table-responsive" style="width: 50%; margin-right: 50px; margin-left: 60px; max-height: 500px">
-            <h3>Docentes disponibles</h3>
-            <table id="tbldocentes" class="table table-bordered">
+            <h3>Sinodales disponibles</h3>
+            <table id="tblsinodales" class="table table-bordered">
                 <thead class="thead-dark">
                 <tr>
                     <th>Nombre</th>
-                    <th>Numero de personal</th>
                     <th>Asignación</th>
                 </tr>
                 </thead>
@@ -33,8 +31,8 @@
             </table>
         </div>
         <div class="table-responsive table-bordered" style="width: 35%; margin-left: 80px; max-height: 500px">
-            <h3>Integrantes</h3>
-            <table id="tbldocentesAsignados" class="table table-hover">
+            <h3>Sinodales asignados</h3>
+            <table id="tblsinodalesAsignados" class="table table-hover">
                 <thead>
                 <tr>
                     <th>Nombre</th>
@@ -43,21 +41,27 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach (var sinodal in @Model.SinodalAsignados)
+                {
+                    <tr>
+                        <td>@sinodal.nombre</td>
+                        <td>@sinodal.tipo</td>
+                        <td><button id="btn_eliminar"  class="btn btn-danger eliminar">Eliminar</button></td>
+                    </tr>
+                }
                 </tbody>
             </table>
         </div>
     </div>
     <div style="width: 30%; margin-left: 80px; float: left">
-        <div id="seleccionInvalid" class="alert alert-danger" hidden>
-            El profesor que intenta asignar ya es integrante de un cuerpo academico, puedes asignarlo solo como colaborador
-        </div>
         <div id="seleccionError"  class="alert alert-danger" hidden>
-            Debe seleccionar un tipo de integrante
+            Debe seleccionar un tipo de sinodal
         </div>
         <select id="select_tipo"  class="form-select" style="border-radius: 5px; float: left">
-            <option selected disabled="disabled">Selecciona tipo de integrante</option>
-            <option value="Integrante">Integrante</option>
-            <option value="Colaborador">Colaborador</option>
+            <option value="" selected disabled="disabled">Selecciona tipo de sinodal</option>
+            <option value="Director">Director</option>
+            <option value="Co-director">Co-director</option>
+            <option value="Sinodal">Sinodal</option>
         </select>
     </div>
     <br/>
@@ -82,7 +86,7 @@
                     <h5 class="modal-title">Datos guardados</h5>
                 </div>
                 <div class="modal-body">
-                    <p>Datos de los integrantes guardados correctamente</p>
+                    <p>Sinodales asignados correctamente</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" onclick="confirmarRegistro()" class="btn btn-success">Confirmar</button>
@@ -109,3 +113,171 @@
         </div>
     </div>
 </div>
+
+
+@section Scripts
+{
+    <script>
+    const valores = window.location.search;
+    const params = new URLSearchParams(valores)
+    let idTrabajo = params.get('id');
+    
+    let tabla_sinodales = document.getElementById("tblsinodales");
+    let tabla_sinodalesAsignados = document.getElementById("tblsinodalesAsignados");
+    let listaSinodalesAsignar = new Array();
+    let listaSinodalesDisponibles = new Array();
+    
+    
+    function asignarSinodal(idSinodal){
+        let combo_tipo = document.getElementById("select_tipo").value;
+        let sinodalAsignar = getSinodal(idSinodal);
+        if (combo_tipo != ""){
+            document.getElementById("seleccionError").hidden = true;
+            if (sinodalAsignar!=null){
+                sinodalAsignar.tipo = combo_tipo;
+                sinodalAsignar.idTrabajo = idTrabajo;
+                let row = `<tr class="table-bordered" id="${sinodalAsignar.SinodalDelTrabajoId}"><td>${sinodalAsignar.Nombre}</td>
+                            <td>${combo_tipo.toString()}</td>
+                            <td><button id="btn_eliminar" onclick="eliminarIntegrante('${encodeURIComponent(JSON.stringify(sinodalAsignar))}')" 
+                            class="btn btn-danger eliminar">Eliminar</button></td><tr>`;
+                listaSinodalesAsignar.push(sinodalAsignar);
+                recargarTabla(sinodalAsignar.SinodalDelTrabajoId);
+                llenarTabla(listaSinodalesDisponibles);
+                tabla_sinodalesAsignados.innerHTML += row;
+            }
+        }else{
+            document.getElementById("seleccionError").hidden = false;
+        }
+    }
+    
+     function recargarTabla(sinodalId){
+               let index;
+               for (let i=0; i<listaSinodalesDisponibles.length; i++){
+                   if (sinodalId == listaSinodalesDisponibles[i].SinodalDelTrabajoId){
+                       index = i;
+                       listaSinodalesDisponibles.splice(index,1);
+                       $('#tblsinodales > tbody').empty();
+                   }
+               }
+        }
+    
+    function getSinodal(idSinodal){
+        for (let i = 0; i<listaSinodalesDisponibles.length;i++){
+            if (idSinodal == listaSinodalesDisponibles[i].SinodalDelTrabajoId){
+                 return listaSinodalesDisponibles[i];
+            }
+        }
+    }
+    
+    function eliminarIntegrante(profesorSeleccionado){
+            var sinodal = JSON.parse(decodeURIComponent(profesorSeleccionado));
+            listaSinodalesAsignar.pop(sinodal);
+            listaSinodalesDisponibles.push(sinodal);
+            recargarEliminados();
+            llenarTabla(listaSinodalesDisponibles);
+    }
+    
+     function recargarEliminados(){
+            let index;
+            $('#tblsinodales > tbody').empty();
+       }
+       
+    var tid = "";
+    $(document).on('click', '.eliminar', function(event){
+        tid = $(this).parents('tr').attr('id');
+        $('#'+tid).remove();
+    })   
+    
+    function cargarSinodales(){
+        $.ajax({
+            url: "?handler=ObtenerSinodales",
+            type: "GET",
+            data: {idProyecto: idTrabajo},
+            headers: {
+                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+            },  
+            success: function (data){
+                listaSinodalesDisponibles = JSON.parse(data);
+                llenarTabla(listaSinodalesDisponibles);
+            },
+            error: function (data){
+                console.log("Error");
+            }
+        }) 
+    }
+    
+    function llenarTabla(listaSinodales){
+        //listaSinodalesDisponibles = listaSinodales;
+        for (var i=0; i<listaSinodales.length;i++){
+            let row = `<tr id='lista'>
+                        <td>${listaSinodales[i].Nombre}</td>
+                        <td><button id="btn_asignar" onclick="asignarSinodal(${listaSinodales[i].SinodalDelTrabajoId})" class="btn btn-primary">Asignar</button></td>
+                        </tr>`
+                tabla_sinodales.innerHTML += row;
+            }     
+    }
+    
+    function guardarRegistro(){
+        var cambios = true;
+            if (cambios){
+                for (let i = 0;i<listaSinodalesAsignar.length;i++){
+                    $.ajax({
+                    url: "?handler=GuardarRegistro",
+                    type: "POST",
+                    data: {SinodalId: listaSinodalesAsignar[i].SinodalDelTrabajoId, 
+                    idTrabajo: listaSinodalesAsignar[i].idTrabajo, Tipo: listaSinodalesAsignar[i].tipo},
+                    headers: {
+                        RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (res){
+                        if(res.success){
+                            $("#modal").modal('show');
+                        }else{
+                            console.log(res.responseText);
+                        }
+                    },
+                    error: function (){
+                                                                  
+                    }
+                    })}
+            }else{
+                //document.getElementById("cambiosFalse").hidden = false;
+            }
+       }
+    
+    //Sección para mostrar la información
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  
+  window.onload = function (){
+      cargarSinodales();
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                      <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                            <a class="nav-link" href="../UIExperienciaRecepcional">Experiencia recepcional</a>
+                                        </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" href="TrabajosRecepcionales">Trabajos recepcionales</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" onclick="window.location.reload()">Asignar sinodales</a>
+                                    </li>`
+                                        
+  }
+  </script>
+}

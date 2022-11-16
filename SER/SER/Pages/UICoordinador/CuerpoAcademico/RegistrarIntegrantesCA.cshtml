@@ -139,7 +139,7 @@
     let listaDocentes;
     let idIntegranteEliminar;
     let listaDocentesDisponibles;
-    let listaIntegrantes= new Array();
+    let listaIntegrantes = new Array();
     const valores = window.location.search;
     const params = new URLSearchParams(valores)
     let idAcademia = params.get('id');
@@ -150,7 +150,6 @@
     let navigation = document.getElementById("navigation");
     let listaNavegacion = document.getElementById("element-list");
     let cambios = false;
-                 
                  window.onload = function (){
                      cargarDocentes(idAcademia);
                      navPrincipal.hidden = false;
@@ -307,7 +306,6 @@
    }
    
     function recargarTabla(profesorId){
-        
            let index;
            for (let i=0; i<listaDocentesDisponibles.length; i++){
                if (profesorId == listaDocentesDisponibles[i].ProfesorId){

@@ -47,12 +47,12 @@ public class Organizaciones : PageModel
             }
             else
             {
-                return new JsonResult(new { success = false, responseText = "Existen registros vinculados" });
+                return new JsonResult(new { success = false, responseText = "No se ha podido eliminar debido a que existen registros vinculados." });
             }
         }
         catch (Exception e)
         {
-            return new JsonResult(new { success = false, responseText = "Error al eliminar" });
+            return new JsonResult(new { success = false, responseText = "Error al eliminar"+e.Message });
 
         }
     }
