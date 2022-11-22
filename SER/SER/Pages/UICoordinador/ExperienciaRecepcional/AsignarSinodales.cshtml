@@ -73,7 +73,11 @@
     <div id="cambiosFalse"  class="alert alert-danger" hidden>
         No hay cambios por guardar
     </div>
-
+    
+    <div id="errorAlert"  class="alert alert-danger" hidden>
+        Error al guardar los cambios.
+    </div>
+    
     <div id="modal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -90,19 +94,18 @@
         </div>
     </div>
     
-    <div id="modalEliminar" class="modal" tabindex="-1" role="dialog">
+    <div id="modalEliminarSinodal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Eliminar integrante</h5>
+                    <h5 class="modal-title">Eliminar sinodal</h5>
                 </div>
                 <div class="modal-body">
-                    <p>¿Deseas confirmar la eliminación?</p>
-                    <p>Con esta acción se perderán los datos de los integrantes que aún no han sido registrados al cuerpo academico</p>
+                    <p>¿Deseas confirmar la eliminación del sinodal?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="confirmarEliminacion()" class="btn btn-danger">Comfirmar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" onclick="confirmarEliminacionSinodal()" class="btn btn-danger">Comfirmar</button>
+                    <button type="button" class="btn btn-secondary" onclick="cerrarModal()" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -116,13 +119,17 @@
     const valores = window.location.search;
     const params = new URLSearchParams(valores)
     let idTrabajo = params.get('id');
- 
+    let idSinodalEliminar;
+    let cambios = false;
     let tabla_sinodales = document.getElementById("tblsinodales");
     let tabla_sinodalesAsignados = document.getElementById("tblsinodalesAsignados");
     let listaSinodalesAsignar = new Array();
     let listaSinodalesDisponibles = new Array();
     let listaSinodalesAsignados = new Array();
     
+    function cerrarModal(){
+        $('#modalEliminarSinodal').modal('hide');
+    }
     
     function asignarSinodal(idSinodal){
         let combo_tipo = document.getElementById("select_tipo").value;
@@ -133,7 +140,7 @@
             if (sinodalAsignar!=null){
                 sinodalAsignar.tipo = combo_tipo;
                 sinodalAsignar.idTrabajo = idTrabajo;
-                if (!validarDirector(sinodalAsignar)){
+                if (!validarDirectorAsignar(sinodalAsignar) && !validarDirectorAsignados(sinodalAsignar)){
                     let row = `<tr class="table-bordered" id="${sinodalAsignar.SinodalDelTrabajoId}"><td>${sinodalAsignar.Nombre}</td>
                                                 <td>${combo_tipo.toString()}</td>
                                                 <td><button id="btn_eliminarSinodal" onclick="eliminarSinodalAsignado('${encodeURIComponent(JSON.stringify(sinodalAsignar))}')" 
@@ -145,13 +152,14 @@
                 }else{
                     document.getElementById("errorDirector").hidden = false;
                 }
+                cambios = true;
             }
         }else{
             document.getElementById("seleccionError").hidden = false;
         }
     }
     
-    function validarDirector(sinodalAsignar){
+    function validarDirectorAsignados(sinodalAsignar){
         for(let i=0; i<listaSinodalesAsignados.length;i++){
             if (sinodalAsignar.tipo == listaSinodalesAsignados[i].tipo && sinodalAsignar.tipo == "Director"){
                 return true;
@@ -159,6 +167,9 @@
                 return false;
             }
         }
+    }
+    
+    function validarDirectorAsignar(sinodalAsignar){
         for (let i=0; i<listaSinodalesAsignar.length;i++){
             if (sinodalAsignar.tipo == listaSinodalesAsignar[i].tipo && sinodalAsignar.tipo == "Director"){
                 return true;
@@ -196,22 +207,35 @@
                llenarTabla(listaSinodalesDisponibles);
                $('#tblsinodalesAsignados').find('#'+sinodal.SinodalDelTrabajoId).remove();
     }
+    
+    function eliminarSinodalAsignadoGuardado(idSinodal){
+        idSinodalEliminar = idSinodal;
+        $('#modalEliminarSinodal').modal('show')
+    }
         
-    
-    function mostrarAsignados(){
-        console.log("ASIGNADOS");
-        for(let i=0;i<listaSinodalesAsignar.length;i++){
-            console.log(listaSinodalesAsignar[i]);
-        }
+    function confirmarEliminacionSinodal(){
+        $.ajax({
+            url: "?handler=EliminarSinodal",
+            type: "POST",
+            data: {idSinodal: idSinodalEliminar, idTrabajo: idTrabajo},
+            headers: {
+                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+            },
+            success: function (res){
+                if(res.success){
+                    document.location.reload();
+                    cambios = true;
+                }else{
+                    $('#errorAlert').hidden = false;
+                }
+                },
+                error: function (){
+                $('#errorAlert').hidden = false;
+
+            }
+        })
     }
-    
-    function mostrarDisponibles(){
-        console.log("DIPONIBLES");
-        for(let i=0;i<listaSinodalesDisponibles.length;i++){
-            console.log(listaSinodalesDisponibles[i]);
-        }
-    }
-    
+        
      function recargarEliminados(){
          $('#tblsinodales > tbody').empty();
      }
@@ -230,7 +254,7 @@
                       llenarTablaAsignados(listaSinodalesAsignados);
                   },
                   error: function (data){
-                      console.log("Error");
+                      $('#errorAlert').hidden = false;
                   }
               })   
     }
@@ -249,21 +273,23 @@
                 llenarTabla(listaSinodalesDisponibles);
             },
             error: function (data){
-                console.log("Error");
+                $('#errorAlert').hidden = false;
             }
         }) 
     }
     
     function llenarTablaAsignados(listaAsignados){
         for (var i=0; i<listaAsignados.length;i++){
-                    let row = `<tr id='${listaAsignados[i].SinodalDelTrabajoId}'>
+                    let row = `<tr id='${listaAsignados[i].idSinodal}'>
                                 <td>${listaAsignados[i].nombre}</td>
                                 <td>${listaAsignados[i].tipo}</td>
-                                <td><button id="btn_eliminar" onclick="eliminarSinodalAsignado(${listaAsignados[i].SinodalDelTrabajoId})" class="btn btn-danger">Eliminar</button></td>
+                                <td><button id="btn_eliminar" onclick="eliminarSinodalAsignadoGuardado(${listaAsignados[i].idSinodal})" class="btn btn-danger">Eliminar</button></td>
                                 </tr>`
                         tabla_sinodalesAsignados.innerHTML += row;
                     }   
     }
+    
+    
     
     function llenarTabla(listaSinodales){
         listaSinodalesDisponibles = listaSinodales;
@@ -277,7 +303,6 @@
     }
     
     function guardarRegistro(){
-        var cambios = true;
             if (cambios){
                 for (let i = 0;i<listaSinodalesAsignar.length;i++){
                     $.ajax({
@@ -296,17 +321,17 @@
                         }
                     },
                     error: function (){
-                                                                  
+                        $('#errorAlert').hidden = false;                                                            
                     }
                     })}
             }else{
-                //document.getElementById("cambiosFalse").hidden = false;
+                document.getElementById("cambiosFalse").hidden = false;
             }
        }
     
-        function confirmarRegistro(){
-               window.open("TrabajosRecepcionales", "_self");
-          }
+       function confirmarRegistro(){
+            window.open("TrabajosRecepcionales", "_self");
+       }
        
    
           //Sección para mostrar la información

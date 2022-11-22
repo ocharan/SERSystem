@@ -26,6 +26,23 @@ public class AsignarSinodales : PageModel
         cargarSinodales(Request.Query["id"]);
     }
 
+    public JsonResult OnPostEliminarSinodal(string idSinodal, string idTrabajo)
+    {
+        try
+        {
+            var sinodal = _context.TrabajoRecepcionalSinodalDelTrabajos.FirstOrDefault(t =>
+                t.SinodalDelTrabajoId == Int32.Parse(idSinodal) &&
+                t.TrabajoRecepcionalId == Int32.Parse(idTrabajo));
+            _context.Remove(sinodal);
+            _context.SaveChanges();
+            return new JsonResult(new { success = true, responseText = "Sinodal eliminado correctamente." });
+        }
+        catch (Exception e)
+        {
+            return new JsonResult(new { success = false, responseText = "Ocurrió un error al eliminar el sinodal." });
+        }
+    }
+
     public void cargarSinodalesAsignados(string idProyecto)
     {
         var listaSinodales = _context.SinodalDelTrabajos.ToList();
