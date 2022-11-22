@@ -23,11 +23,10 @@ public class AsignarSinodales : PageModel
     
     public void OnGet()
     {
-        cargarSinodalesAsignados();
         cargarSinodales(Request.Query["id"]);
     }
 
-    public void cargarSinodalesAsignados()
+    public void cargarSinodalesAsignados(string idProyecto)
     {
         var listaSinodales = _context.SinodalDelTrabajos.ToList();
         var listaSinodalesTrabajo = _context.TrabajoRecepcionalSinodalDelTrabajos.ToList();
@@ -42,15 +41,24 @@ public class AsignarSinodales : PageModel
             }));
         foreach (var sinodalAsignado in listaSinodalesAsignados)
         {
-            SinodalAsignado sinodal = new SinodalAsignado()
+            if (sinodalAsignado.idTrabajo == Int32.Parse(idProyecto))
             {
-                nombre = sinodalAsignado.Nombre,
-                tipo = sinodalAsignado.Tipo,
-                trabajoId = sinodalAsignado.idTrabajo,
-                idSinodal = sinodalAsignado.idSinodal
-            };
-            SinodalAsignados.Add(sinodal);
+                SinodalAsignado sinodal = new SinodalAsignado()
+                {
+                    nombre = sinodalAsignado.Nombre,
+                    tipo = sinodalAsignado.Tipo,
+                    trabajoId = sinodalAsignado.idTrabajo,
+                    idSinodal = sinodalAsignado.idSinodal
+                };
+                SinodalAsignados.Add(sinodal);
+            }
         }
+    }
+
+    public JsonResult OnGetObtenerSinodalesAsignados(string idProyecto)
+    {
+        cargarSinodalesAsignados(idProyecto);
+        return new JsonResult(SinodalAsignados.ToJson());
     }
 
     public JsonResult OnGetObtenerSinodales(string idProyecto)

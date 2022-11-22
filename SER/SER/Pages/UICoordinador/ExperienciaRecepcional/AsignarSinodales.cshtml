@@ -41,21 +41,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach (var sinodal in @Model.SinodalAsignados)
-                {
-                    <tr>
-                        <td>@sinodal.nombre</td>
-                        <td>@sinodal.tipo</td>
-                        <td><button id="btn_eliminar"  class="btn btn-danger eliminar">Eliminar</button></td>
-                    </tr>
-                }
                 </tbody>
             </table>
         </div>
     </div>
     <div style="width: 30%; margin-left: 80px; float: left">
         <div id="seleccionError"  class="alert alert-danger" hidden>
-            Debe seleccionar un tipo de sinodal
+            Debe seleccionar un tipo de sinodal.
+        </div>
+        <div id="errorDirector"  class="alert alert-danger" hidden>
+            Ya hay un director registrado en este trabajo recepcional.
         </div>
         <select id="select_tipo"  class="form-select" style="border-radius: 5px; float: left">
             <option value="" selected disabled="disabled">Selecciona tipo de sinodal</option>
@@ -121,11 +116,12 @@
     const valores = window.location.search;
     const params = new URLSearchParams(valores)
     let idTrabajo = params.get('id');
-    
+ 
     let tabla_sinodales = document.getElementById("tblsinodales");
     let tabla_sinodalesAsignados = document.getElementById("tblsinodalesAsignados");
     let listaSinodalesAsignar = new Array();
     let listaSinodalesDisponibles = new Array();
+    let listaSinodalesAsignados = new Array();
     
     
     function asignarSinodal(idSinodal){
@@ -133,20 +129,42 @@
         let sinodalAsignar = getSinodal(idSinodal);
         if (combo_tipo != ""){
             document.getElementById("seleccionError").hidden = true;
+            document.getElementById("errorDirector").hidden = true;                    
             if (sinodalAsignar!=null){
                 sinodalAsignar.tipo = combo_tipo;
                 sinodalAsignar.idTrabajo = idTrabajo;
-                let row = `<tr class="table-bordered" id="${sinodalAsignar.SinodalDelTrabajoId}"><td>${sinodalAsignar.Nombre}</td>
-                            <td>${combo_tipo.toString()}</td>
-                            <td><button id="btn_eliminar" onclick="eliminarIntegrante('${encodeURIComponent(JSON.stringify(sinodalAsignar))}')" 
-                            class="btn btn-danger eliminar">Eliminar</button></td><tr>`;
-                listaSinodalesAsignar.push(sinodalAsignar);
-                recargarTabla(sinodalAsignar.SinodalDelTrabajoId);
-                llenarTabla(listaSinodalesDisponibles);
-                tabla_sinodalesAsignados.innerHTML += row;
+                if (!validarDirector(sinodalAsignar)){
+                    let row = `<tr class="table-bordered" id="${sinodalAsignar.SinodalDelTrabajoId}"><td>${sinodalAsignar.Nombre}</td>
+                                                <td>${combo_tipo.toString()}</td>
+                                                <td><button id="btn_eliminarSinodal" onclick="eliminarSinodalAsignado('${encodeURIComponent(JSON.stringify(sinodalAsignar))}')" 
+                                                class="btn btn-danger eliminarSinodal">Eliminar</button></td><tr>`;
+                                    listaSinodalesAsignar.push(sinodalAsignar);
+                                    recargarTabla(sinodalAsignar.SinodalDelTrabajoId);
+                                    llenarTabla(listaSinodalesDisponibles);
+                                    tabla_sinodalesAsignados.innerHTML += row;
+                }else{
+                    document.getElementById("errorDirector").hidden = false;
+                }
             }
         }else{
             document.getElementById("seleccionError").hidden = false;
+        }
+    }
+    
+    function validarDirector(sinodalAsignar){
+        for(let i=0; i<listaSinodalesAsignados.length;i++){
+            if (sinodalAsignar.tipo == listaSinodalesAsignados[i].tipo && sinodalAsignar.tipo == "Director"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        for (let i=0; i<listaSinodalesAsignar.length;i++){
+            if (sinodalAsignar.tipo == listaSinodalesAsignar[i].tipo && sinodalAsignar.tipo == "Director"){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
     
@@ -159,7 +177,7 @@
                        $('#tblsinodales > tbody').empty();
                    }
                }
-        }
+     }
     
     function getSinodal(idSinodal){
         for (let i = 0; i<listaSinodalesDisponibles.length;i++){
@@ -169,24 +187,54 @@
         }
     }
     
-    function eliminarIntegrante(profesorSeleccionado){
-            var sinodal = JSON.parse(decodeURIComponent(profesorSeleccionado));
-            listaSinodalesAsignar.pop(sinodal);
-            listaSinodalesDisponibles.push(sinodal);
-            recargarEliminados();
-            llenarTabla(listaSinodalesDisponibles);
+        
+    function eliminarSinodalAsignado(profesorSeleccionado){
+               var sinodal = JSON.parse(decodeURIComponent(profesorSeleccionado));
+               listaSinodalesAsignar.pop(sinodal);
+               listaSinodalesDisponibles.push(sinodal);
+               recargarEliminados();
+               llenarTabla(listaSinodalesDisponibles);
+               $('#tblsinodalesAsignados').find('#'+sinodal.SinodalDelTrabajoId).remove();
+    }
+        
+    
+    function mostrarAsignados(){
+        console.log("ASIGNADOS");
+        for(let i=0;i<listaSinodalesAsignar.length;i++){
+            console.log(listaSinodalesAsignar[i]);
+        }
+    }
+    
+    function mostrarDisponibles(){
+        console.log("DIPONIBLES");
+        for(let i=0;i<listaSinodalesDisponibles.length;i++){
+            console.log(listaSinodalesDisponibles[i]);
+        }
     }
     
      function recargarEliminados(){
-            let index;
-            $('#tblsinodales > tbody').empty();
-       }
+         $('#tblsinodales > tbody').empty();
+     }
        
-    var tid = "";
-    $(document).on('click', '.eliminar', function(event){
-        tid = $(this).parents('tr').attr('id');
-        $('#'+tid).remove();
-    })   
+           
+    function cargarSinodalesAsignados(){
+      $.ajax({
+                  url: "?handler=ObtenerSinodalesAsignados",
+                  type: "GET",
+                  data: {idProyecto: idTrabajo},
+                  headers: {
+                      RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                  },  
+                  success: function (data){
+                      listaSinodalesAsignados = JSON.parse(data);
+                      llenarTablaAsignados(listaSinodalesAsignados);
+                  },
+                  error: function (data){
+                      console.log("Error");
+                  }
+              })   
+    }
+    
     
     function cargarSinodales(){
         $.ajax({
@@ -206,10 +254,21 @@
         }) 
     }
     
+    function llenarTablaAsignados(listaAsignados){
+        for (var i=0; i<listaAsignados.length;i++){
+                    let row = `<tr id='${listaAsignados[i].SinodalDelTrabajoId}'>
+                                <td>${listaAsignados[i].nombre}</td>
+                                <td>${listaAsignados[i].tipo}</td>
+                                <td><button id="btn_eliminar" onclick="eliminarSinodalAsignado(${listaAsignados[i].SinodalDelTrabajoId})" class="btn btn-danger">Eliminar</button></td>
+                                </tr>`
+                        tabla_sinodalesAsignados.innerHTML += row;
+                    }   
+    }
+    
     function llenarTabla(listaSinodales){
-        //listaSinodalesDisponibles = listaSinodales;
+        listaSinodalesDisponibles = listaSinodales;
         for (var i=0; i<listaSinodales.length;i++){
-            let row = `<tr id='lista'>
+            let row = `<tr id='${listaSinodales[i].SinodalDelTrabajoId}'>
                         <td>${listaSinodales[i].Nombre}</td>
                         <td><button id="btn_asignar" onclick="asignarSinodal(${listaSinodales[i].SinodalDelTrabajoId})" class="btn btn-primary">Asignar</button></td>
                         </tr>`
@@ -245,7 +304,12 @@
             }
        }
     
-    //Sección para mostrar la información
+        function confirmarRegistro(){
+               window.open("TrabajosRecepcionales", "_self");
+          }
+       
+   
+          //Sección para mostrar la información
   let headerUV = document.getElementById("uv_header");
   let navPrincipal = document.getElementById("nav-principal");
   let sectionButtons = document.getElementById("section-buttons");
@@ -255,6 +319,7 @@
   
   window.onload = function (){
       cargarSinodales();
+      cargarSinodalesAsignados();
     navPrincipal.hidden = false;
     listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
                                       <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>

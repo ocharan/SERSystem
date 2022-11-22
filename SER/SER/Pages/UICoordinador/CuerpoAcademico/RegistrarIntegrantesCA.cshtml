@@ -266,6 +266,7 @@
         tid = $(this).parents('tr').attr('id');
         $('#'+tid).remove();
     })
+    
    function guardarRegistro(){
         if (cambios){
             for (let i = 0;i<listaIntegrantes.length;i++){
@@ -300,7 +301,6 @@
    }
    
    function recargarEliminados(){
-        let index;
         $('#tbldocentes > tbody').empty();
 
    }
