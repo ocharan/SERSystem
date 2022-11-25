@@ -1,11 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SER.DBContext;
+using SER.Context;
+using SER.Entities;
 using System.IO;
 using SER.DTO;
-using SER.Entidades;
-using Lgac = SER.Entidades.Lgac;
+using Lgac = SER.Entities.Lgac;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 

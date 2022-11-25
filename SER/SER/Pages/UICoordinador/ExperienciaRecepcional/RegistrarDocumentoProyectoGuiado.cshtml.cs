@@ -1,8 +1,8 @@
 using System.Dynamic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SER.DBContext;
-using SER.Entidades;
+using SER.Context;
+using SER.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace SER.Pages

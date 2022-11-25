@@ -2,8 +2,8 @@ using System.Data.Entity.Core.Objects;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Internal;
-using SER.DBContext;
-using SER.Entidades;
+using SER.Context;
+using SER.Entities;
 using Lgac = SER.DTO.Lgac;
 
 

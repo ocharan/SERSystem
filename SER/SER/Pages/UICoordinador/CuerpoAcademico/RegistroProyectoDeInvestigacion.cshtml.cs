@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SER.DBContext;
+using SER.Context;
+using SER.Entities;
 using SER.DTO;
-using SER.Entidades;
-using Lgac = SER.Entidades.Lgac;
+using Lgac = SER.Entities.Lgac;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -14,14 +14,14 @@ public class RegistroProyectoDeInvestigacion : PageModel
     
     [BindProperty]
     public ProyectoDeInvestigacion ProyectoDeInvestigacion { get; set; }
-    public List<Entidades.CuerpoAcademico> CuerpoAcademicos { get; set; }
+    public List<Entities.CuerpoAcademico> CuerpoAcademicos { get; set; }
     
     public List<Lgac> Lgacs { get; set; }
 
     public RegistroProyectoDeInvestigacion(MySERContext context)
     {
         _context = context;
-        CuerpoAcademicos = new List<Entidades.CuerpoAcademico>();
+        CuerpoAcademicos = new List<Entities.CuerpoAcademico>();
         Lgacs = new List<Lgac>();
     }
     
@@ -66,7 +66,7 @@ public class RegistroProyectoDeInvestigacion : PageModel
         var listaCuerpos = _context.CuerpoAcademicos.ToList();
         foreach (var cuerpo in listaCuerpos)
         {
-            Entidades.CuerpoAcademico cuerpoNuevo = new Entidades.CuerpoAcademico()
+            Entities.CuerpoAcademico cuerpoNuevo = new Entities.CuerpoAcademico()
             {
                 Nombre = cuerpo.Nombre,
                 CuerpoAcademicoId = cuerpo.CuerpoAcademicoId

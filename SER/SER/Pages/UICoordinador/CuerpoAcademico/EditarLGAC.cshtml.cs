@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SER.DBContext;
-using SER.Entidades;
+using SER.Context;
+using SER.Entities;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -9,7 +9,7 @@ public class EditarLGAC : PageModel
 {
 
     private readonly MySERContext _context;
-    public List<Entidades.CuerpoAcademico> CuerpoAcademicos { get; set; }
+    public List<Entities.CuerpoAcademico> CuerpoAcademicos { get; set; }
     
     
     [BindProperty]
@@ -19,7 +19,7 @@ public class EditarLGAC : PageModel
     {
         _context = context;
         lgacNuevo = new Lgac();
-        CuerpoAcademicos = new List<Entidades.CuerpoAcademico>();
+        CuerpoAcademicos = new List<Entities.CuerpoAcademico>();
     }
     public void OnGet()
     {
@@ -79,7 +79,7 @@ public class EditarLGAC : PageModel
         var cuerposRegistrados = _context.CuerpoAcademicos.ToList();
         foreach (var cuerpoAcademico in cuerposRegistrados)
         {
-            Entidades.CuerpoAcademico cuerpo = new Entidades.CuerpoAcademico()
+            Entities.CuerpoAcademico cuerpo = new Entities.CuerpoAcademico()
             {
                 Nombre = cuerpoAcademico.Nombre,
                 CuerpoAcademicoId = cuerpoAcademico.CuerpoAcademicoId

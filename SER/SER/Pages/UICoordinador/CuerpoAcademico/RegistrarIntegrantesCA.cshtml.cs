@@ -5,9 +5,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualBasic.CompilerServices;
 using Newtonsoft.Json;
 using NuGet.Protocol;
-using SER.DBContext;
+using SER.Context;
+using SER.Entities;
 using SER.DTO;
-using SER.Entidades;
+
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -114,7 +115,7 @@ public class RegistrarIntegrantesCA : PageModel
         return Page();
     }
 
-    public Entidades.CuerpoAcademico obtenerCuerpo(int idCuerpo, List<Entidades.CuerpoAcademico> listaCuerpos)
+    public Entities.CuerpoAcademico obtenerCuerpo(int idCuerpo, List<Entities.CuerpoAcademico> listaCuerpos)
     {
         foreach (var cuerpo in listaCuerpos)
         {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SER.DBContext;
-using SER.Entidades;
+using SER.Context;
+using SER.Entities;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -10,7 +10,7 @@ public class RegistrarCuerpoAcademico : PageModel
     private readonly MySERContext _context;
     
     [BindProperty] 
-    public Entidades.CuerpoAcademico _cuerpoAcademico { get; set; }
+    public Entities.CuerpoAcademico _cuerpoAcademico { get; set; }
     
     public List<Integrante> Integrantes { get; set; }
     public List<Profesor> Profesors { get; set; }

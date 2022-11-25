@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Remotion.Linq.Clauses;
-using SER.DBContext;
+using SER.Context;
+using SER.Entities;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -12,11 +13,11 @@ public class EditarCuerpoAcademico : PageModel
     public readonly MySERContext _Context;
 
     [BindProperty]
-    public Entidades.CuerpoAcademico _cuerpoAcademico { get; set; }
+    public Entities.CuerpoAcademico _cuerpoAcademico { get; set; }
     public EditarCuerpoAcademico(MySERContext context)
     {
         _Context = context;
-        _cuerpoAcademico = new Entidades.CuerpoAcademico();
+        _cuerpoAcademico = new Entities.CuerpoAcademico();
     }
     public void OnGet()
     {

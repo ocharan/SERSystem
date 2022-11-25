@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SER.DBContext;
-using SER.Entidades;
+using SER.Context;
+using SER.Entities;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -11,14 +11,14 @@ public class EditarProyectoDeInvestigacion : PageModel
     private readonly MySERContext _context;
     
     public string idProyecto { get; set; }
-    public List<Entidades.CuerpoAcademico> CuerposAcademicosList { get; set; }
+    public List<Entities.CuerpoAcademico> CuerposAcademicosList { get; set; }
 
     [BindProperty]
     public ProyectoDeInvestigacion ProyectodeInvestigacion { get; set; }
     public EditarProyectoDeInvestigacion(MySERContext context)
     {
         _context = context;
-        CuerposAcademicosList = new List<Entidades.CuerpoAcademico>();
+        CuerposAcademicosList = new List<Entities.CuerpoAcademico>();
         ProyectodeInvestigacion = new ProyectoDeInvestigacion();
     }
 
@@ -81,7 +81,7 @@ public class EditarProyectoDeInvestigacion : PageModel
         var listaCuerpos = _context.CuerpoAcademicos.ToList();
         foreach (var cuerpo in listaCuerpos)
         {
-            Entidades.CuerpoAcademico cuerpoNuevo = new Entidades.CuerpoAcademico()
+            Entities.CuerpoAcademico cuerpoNuevo = new Entities.CuerpoAcademico()
             {
                 Nombre = cuerpo.Nombre,
                 CuerpoAcademicoId = cuerpo.CuerpoAcademicoId

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SER.DBContext;
-using SER.Entidades;
+using SER.Context;
+using SER.Entities;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
@@ -11,7 +11,7 @@ public class CuerposAcademicos : PageModel
     private readonly MySERContext _context;
 
     [BindProperty] public string idAcademico { get; set; }
-    public List<Entidades.CuerpoAcademico> CuerpoAcademicos { get; set; }
+    public List<Entities.CuerpoAcademico> CuerpoAcademicos { get; set; }
     
     //Paginación
     
@@ -31,7 +31,7 @@ public class CuerposAcademicos : PageModel
     public CuerposAcademicos(MySERContext context)
     {
         _context = context;
-        CuerpoAcademicos = new List<Entidades.CuerpoAcademico>();
+        CuerpoAcademicos = new List<Entities.CuerpoAcademico>();
 
     }
     
@@ -56,7 +56,7 @@ public class CuerposAcademicos : PageModel
         var query = Request.Form["query"];
         try
         {
-            IQueryable<Entidades.CuerpoAcademico> resultadoBusqueda;
+            IQueryable<Entities.CuerpoAcademico> resultadoBusqueda;
             if (query == "" )
             {
                 resultadoBusqueda = _context.CuerpoAcademicos;
@@ -70,7 +70,7 @@ public class CuerposAcademicos : PageModel
                 CuerpoAcademicos.Clear();
                 foreach (var cuerpoCA in resultadoBusqueda)
                 {
-                    Entidades.CuerpoAcademico cuerpo = new Entidades.CuerpoAcademico()
+                    Entities.CuerpoAcademico cuerpo = new Entities.CuerpoAcademico()
                     {
                         Nombre = cuerpoCA.Nombre,
                         CuerpoAcademicoId = cuerpoCA.CuerpoAcademicoId,
@@ -107,7 +107,7 @@ public class CuerposAcademicos : PageModel
             var listaCuerpos = _context.CuerpoAcademicos.ToList();
             foreach (var cuerpoCA in listaCuerpos)
             {
-                Entidades.CuerpoAcademico cuerpo = new Entidades.CuerpoAcademico()
+                Entities.CuerpoAcademico cuerpo = new Entities.CuerpoAcademico()
                 {
                     Nombre = cuerpoCA.Nombre,
                     CuerpoAcademicoId = cuerpoCA.CuerpoAcademicoId,

@@ -20,7 +20,7 @@
             
         <div class="table-responsive" style="width: 50%; margin-right: 50px; margin-left: 60px; max-height: 500px">
             <h3>Estudiantes disponibles</h3>
-            <table id="tbldocentes" class="table table-bordered">
+            <table id="tblEstudiantes" class="table table-bordered">
                 <thead class="thead-dark">
                 <tr>
                     <th>Nombre</th>
@@ -46,25 +46,23 @@
             </table>
         </div>
     </div>
+    <br/>
+    <br/>
     <div style="width: 30%; margin-left: 80px; float: left">
-        <div id="seleccionInvalid" class="alert alert-danger" hidden>
-            El profesor que intenta asignar ya es integrante de un cuerpo academico, puedes asignarlo solo como colaborador
+        <div id="integrantesInvalidos" class="alert alert-danger" hidden>
+            Solo se admiten 3 integrantes para un solo trabajo recepcional.
         </div>
-        <div id="seleccionError"  class="alert alert-danger" hidden>
-            Debe seleccionar un tipo de integrante
-        </div>
-        <select id="select_tipo"  class="form-select" style="border-radius: 5px; float: left">
-            <option selected disabled="disabled">Selecciona tipo de integrante</option>
-            <option value="Integrante">Integrante</option>
-            <option value="Colaborador">Colaborador</option>
-        </select>
     </div>
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
-    <br/>
+    <div id="textJustificacion" class="mb-3" hidden="hidden">
+        <label for="exampleFormControlTextarea1" class="form-label">Justificación de 3 integrantes.</label>
+        <textarea class="form-control" id="textAreaJusticacion" rows="3"></textarea>
+    </div>
+
     <div style="margin-top: 40px" class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
             <input type="button" id="btn_Guardar" onclick="guardarRegistro()" class="btn btn-success" value="Guardar registro"/>
@@ -72,6 +70,10 @@
     </div>
     <div id="cambiosFalse"  class="alert alert-danger" hidden>
         No hay cambios por guardar
+    </div>
+    
+    <div id="errorRegistro" class="alert alert-danger" hidden>
+        Ha ocurrido un error al guardar la información.
     </div>
 
     <div id="modal" class="modal" tabindex="-1" role="dialog">
@@ -81,7 +83,7 @@
                     <h5 class="modal-title">Datos guardados</h5>
                 </div>
                 <div class="modal-body">
-                    <p>Datos de los integrantes guardados correctamente</p>
+                    <p>Datos de los estudiantes vinculados correctamente.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" onclick="confirmarRegistro()" class="btn btn-success">Confirmar</button>
@@ -90,19 +92,19 @@
         </div>
     </div>
     
-    <div id="modalEliminar" class="modal" tabindex="-1" role="dialog">
+    <div id="modalEliminarEstudiante" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Eliminar integrante</h5>
+                    <h5 class="modal-title">Eliminar estudiante</h5>
                 </div>
                 <div class="modal-body">
                     <p>¿Deseas confirmar la eliminación?</p>
-                    <p>Con esta acción se perderán los datos de los integrantes que aún no han sido registrados al cuerpo academico</p>
+                    <p>Con esta acción se perderán los datos de los estudiantes que aún no han sido vinculados al trabajo recepcional</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="confirmarEliminacion()" class="btn btn-danger">Comfirmar</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" onclick="confirmarEliminacionEstudiante()" class="btn btn-danger">Comfirmar</button>
+                    <button type="button" class="btn btn-secondary" onclick="cerrarModal()" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -112,6 +114,194 @@
 @section Scripts
 {
     <script show>
+    const valores = window.location.search;
+    const params = new URLSearchParams(valores)
+    let idTrabajo = params.get('id');
+    let tablaEstudiantes = document.getElementById('tblEstudiantes');
+    let tablaEstudiantesAsignados = document.getElementById('tblEstudiantesAsignados');
+    let cambios = false;
+    let espaciosDisponibles = 0;
+    let listaEstudiantesDisponibles = new Array();
+    let listaEstudiantesAsignados = new Array();
+    let listaEstudiantesPorAsignar = new Array();
+    let matriculaEliminar = "";
+    
+    function cerrarModal(){
+        $('#modalEliminarEstudiante').modal('hide');
+    }
+    
+    function confirmarEliminacionEstudiante(){
+        $.ajax({
+            url: "?handler=EliminarEstudianteAsignado",
+            type: "POST",
+            data: {matriculaEstudiante: matriculaEliminar, trabajoId: idTrabajo},
+            headers: {
+                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+            },
+            success: function (res){
+                if(res.success){
+                    document.location.reload();
+                    cambios = true;
+                }else{
+                    document.getElementById('errorRegistro').hidden = false;
+                }
+                },
+            });
+        }
+    
+    function confirmarRegistro(){
+        window.open("TrabajosRecepcionales", "_self");
+    }
+    
+    function guardarRegistro(){
+        if (cambios){
+            let justificacion = document.getElementById('textAreaJusticacion').value;
+            for (let i = 0;i<listaEstudiantesPorAsignar.length;i++){
+                $.ajax({
+                url: "?handler=GuardarRegistroEstudiantes",
+                type: "POST",
+                data: {nombreEstudiante: listaEstudiantesPorAsignar[i].Nombre, 
+                matriculaEstudiante: listaEstudiantesPorAsignar[i].Matricula, trabajoId: idTrabajo, justificacionIntegrantes: justificacion},
+                headers: {
+                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },
+                success: function (res){
+                    if(res.success){
+                        $("#modal").modal('show');
+                    }else{
+                        document.getElementById('errorRegistro').hidden = false;
+                    }
+                }
+                })}
+        }else{
+            document.getElementById("cambiosFalse").hidden = false;
+        }
+    }
+    
+    
+    function eliminarEstudianteAsignadoGuardado(matricula){
+        matriculaEliminar = matricula;
+        $('#modalEliminarEstudiante').modal('show')
+    }
+    
+    function eliminarAlumnoAsignado(alumnoEliminar){
+        document.getElementById('textJustificacion').hidden = true;
+        document.getElementById("integrantesInvalidos").hidden = true;
+        var alumno = JSON.parse(decodeURIComponent(alumnoEliminar));
+        listaEstudiantesPorAsignar.pop(alumno);
+        listaEstudiantesDisponibles.push(alumno);
+        recargarEliminados();
+        llenarTabla(listaEstudiantesDisponibles);
+        $('#tblEstudiantesAsignados').find('#'+alumno.Matricula).remove();
+        espaciosDisponibles--;
+    }
+    
+    function recargarEliminados(){
+        $('#tblEstudiantes > tbody').empty();
+    }
+    
+    function asignarEstudiante(Matricula){
+        let alumnoAsignar = getAlumno(Matricula);
+        if (alumnoAsignar!=null){
+            if (espaciosDisponibles < 3){
+                console.log(espaciosDisponibles)
+                let row = `<tr class="table-bordered" id="${alumnoAsignar.Matricula}"><td>${alumnoAsignar.Nombre}</td>
+                            <td><button id="btn_eliminarSinodal" onclick="eliminarAlumnoAsignado('${encodeURIComponent(JSON.stringify(alumnoAsignar))}')" 
+                            class="btn btn-danger eliminarSinodal">Eliminar</button></td><tr>`;
+                listaEstudiantesPorAsignar.push(alumnoAsignar);
+                recargarTabla(alumnoAsignar.Matricula);
+                llenarTabla(listaEstudiantesDisponibles);
+                tablaEstudiantesAsignados.innerHTML += row;
+                espaciosDisponibles++;
+            }else{
+                document.getElementById("integrantesInvalidos").hidden = false;
+            }
+            if (espaciosDisponibles == 3){ document.getElementById('textJustificacion').hidden = false; }
+            cambios = true;
+        }
+    }
+    
+    function recargarTabla(matricula){
+        let index;
+        for (let i=0; i<listaEstudiantesDisponibles.length; i++){
+            if (matricula == listaEstudiantesDisponibles[i].Matricula){
+                index = i;
+                listaEstudiantesDisponibles.splice(index,1);
+                $('#tblEstudiantes > tbody').empty();
+            }
+        }
+    }
+    
+    function getAlumno(matricula){
+         for (let i = 0; i<listaEstudiantesDisponibles.length;i++){
+             if (matricula == listaEstudiantesDisponibles[i].Matricula){
+                 return listaEstudiantesDisponibles[i];
+             }
+         }
+    }
+    
+    function cargarEstudiantesDisponibles(){
+        $.ajax({
+            url: "?handler=ObtenerEstudiantesDisponibles",
+            type: "GET",
+            headers: {
+                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },  
+                success: function (data){
+                listaEstudiantesDisponibles = JSON.parse(data);
+                llenarTabla(listaEstudiantesDisponibles);
+                },
+                error: function (data){
+                $('#errorAlert').hidden = false;
+            }
+        }) 
+    }
+    
+    function cargarEstudiantesAsignados(){
+          $.ajax({
+            url: "?handler=ObtenerEstudiantesAsignados",
+            type: "GET",
+            data: {idProyecto: idTrabajo},
+            headers: {
+                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                },  
+            success: function (data){
+                listaEstudiantesAsignados = JSON.parse(data);
+                espaciosDisponibles = listaEstudiantesAsignados.length;
+                llenarTablaAsignados(listaEstudiantesAsignados);
+                },
+                error: function (data){
+                    $('#errorAlert').hidden = false;
+            }
+          });   
+        }
+        
+        
+    function llenarTablaAsignados(listaAsignados){
+        for (var i=0; i<listaAsignados.length;i++){
+            let row = `<tr id='${listaAsignados[i].AlumnoId}'>
+                        <td>${listaAsignados[i].Nombre}</td>
+                        <td><button id="btn_eliminar" onclick="eliminarEstudianteAsignadoGuardado('${listaAsignados[i].AlumnoId}')" class="btn btn-danger">Eliminar</button></td>
+                        </tr>`
+            tablaEstudiantesAsignados.innerHTML += row;
+        }   
+    }
+    
+    function llenarTabla(listaEstudiantes){
+        listaEstudiantesDisponibles = listaEstudiantes;
+        for (var i=0; i<listaEstudiantes.length;i++){
+            let row = `<tr id='${listaEstudiantes[i].Matricula}'>
+                        <td>${listaEstudiantes[i].Nombre}</td>
+                        <td>${listaEstudiantes[i].Matricula}</td>
+                        <td><button id="btn_asignar" onclick="asignarEstudiante('${listaEstudiantes[i].Matricula}')" class="btn btn-primary">Asignar</button></td>
+                        </tr>`
+            tablaEstudiantes.innerHTML += row;
+        }     
+    }
+    
+    
+    
+    //Mostrar menú de navegación
     let headerUV = document.getElementById("uv_header");
     let navPrincipal = document.getElementById("nav-principal");
     let sectionButtons = document.getElementById("section-buttons");
@@ -120,6 +310,8 @@
     let listaNavegacion = document.getElementById("element-list");
   
   window.onload = function (){
+    cargarEstudiantesAsignados()
+    cargarEstudiantesDisponibles();
     navPrincipal.hidden = false;
     listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
                                       <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
@@ -140,7 +332,7 @@
                                         <a class="nav-link">></a>
                                     </li>
                                     <li class="nav-item" style="font-size: 25px">
-                                         <a class="nav-link" href="AsignarAlumnos">Asignar alumnos</a>
+                                         <a class="nav-link" onclick="window.location.reload()">Asignar alumnos</a>
                                     </li>`
                                         
   }

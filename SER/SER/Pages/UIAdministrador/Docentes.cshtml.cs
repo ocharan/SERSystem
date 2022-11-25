@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SER.DBContext;
-using SER.Entidades;
+using SER.Context;
+using SER.Entities;
 
 namespace SER.Pages.UIAdministrador;
 
@@ -9,7 +9,7 @@ public class Docentes : PageModel
 {
 
     private readonly MySERContext _context;
-    public List<Entidades.Profesor> Profesors { get; set; }
+    public List<Entities.Profesor> Profesors { get; set; }
 
     public Docentes(MySERContext context)
     {

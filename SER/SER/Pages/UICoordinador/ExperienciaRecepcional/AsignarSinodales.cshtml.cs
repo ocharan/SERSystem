@@ -1,16 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NuGet.Protocol;
-using SER.DBContext;
+using SER.Context;
+using SER.Entities;
 using SER.DTO;
-using SER.Entidades;
 
 namespace SER.Pages.UICoordinador.ExperienciaRecepcional;
 
 public class AsignarSinodales : PageModel
 {
     private readonly MySERContext _context;
-    
     public List<SinodalDelTrabajo> SinodalesList { get; set; }
     [BindProperty] public List<SinodalAsignado> SinodalAsignados { get; set; }
 

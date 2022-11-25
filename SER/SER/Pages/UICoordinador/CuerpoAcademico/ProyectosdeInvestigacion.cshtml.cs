@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NuGet.Protocol;
-using SER.DBContext;
+using SER.Context;
+using SER.Entities;
 using SER.DTO;
-using SER.Entidades;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 

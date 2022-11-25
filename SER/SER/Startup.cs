@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using SER.DBContext;
+using SER.Context;
 namespace SER
 {
     public class Startup

@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using SER.DBContext;
-using SER.Entidades;
+using SER.Context;
+using SER.Entities;
 using SER.Pages.Shared;
 
 namespace SER.Pages
