@@ -71,15 +71,20 @@ public class AsignarAlumnos : PageModel
     {
         try
         {
+            var listaAsignados = _context.AlumnoTrabajoRecepcionals.ToList();
             var listaAlumnos = _context.Alumnos.ToList();
+
             foreach (var alumno in listaAlumnos)
             {
-                Alumno alumnoDisponible = new Alumno()
+                if (!listaAsignados.Any(a => a.AlumnoId == alumno.Matricula))
                 {
-                    Matricula = alumno.Matricula,
-                    Nombre = alumno.Nombre,
-                };
-                Alumnos.Add(alumnoDisponible);
+                    Alumno alumnoDisponible = new Alumno()
+                    {
+                        Matricula = alumno.Matricula,
+                        Nombre = alumno.Nombre,
+                    };
+                    Alumnos.Add(alumnoDisponible);
+                }
             }
             return new JsonResult(Alumnos.ToJson());
         }
