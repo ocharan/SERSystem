@@ -17,6 +17,12 @@ public class TrabajosRecepcionales : PageModel
         trabajoRecepcionals = new List<TrabajoRecepcional>();
 
     }
+    
+    public IActionResult OnPostModificarTrabajo()
+    {
+        return Redirect("ModificarTrabajoRecepcional?id="+Request.Query["id"]);
+    }
+    
     public void OnGet()
     {
         try

@@ -20,22 +20,32 @@
         </div>
     </div>
     
-    <div id="seleccionarAlumnos">
-        <hr />
+    <div id="experientes">
         <div class="form-group">
             <div class="table-responsive">
-                <table id="tbltrabajosrecepcionales" class="table table-hover">
+                <table id="tblExpedientes" class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Nombre del trabajo</th>
                         <th>Alumno</th>
+                        <th>Nombre del trabajo</th>
                         <th>Modalidad</th>
-                        <th>Duración</th>
                         <th>Estado</th>
+                        <th>ver expediente</th>
                     </tr>
                     </thead>
                     <tbody>
-                            
+                    @foreach (var expediente in Model.ExpedientesList)
+                    {
+                        <tr>
+                            <td>@expediente.NombreAlumno</td>
+                            <td>@expediente.Nombre</td>
+                            <td>@expediente.Modalidad</td>
+                            <td>@expediente.Estado</td>
+                            <td>
+                                <button class="btn btn-primary" asp-page-handler="modificarInterno" asp-route-id="@expediente.Matricula">Ver expediente</button>
+                            </td>
+                        </tr>
+                    }
                     </tbody>
                 </table>
             </div>
