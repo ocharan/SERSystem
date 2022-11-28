@@ -59,6 +59,11 @@
             <option value="Sinodal">Sinodal</option>
         </select>
     </div>
+    <div style="width: 30%; margin-left: 80px; float: left">
+        <div id="sinodalesInvalidos" class="alert alert-danger" hidden>
+            Solo se admiten 3 sinodales por trabajo recepcional.
+        </div>
+    </div>
     <br/>
     <br/>
     <br/>
@@ -121,6 +126,7 @@
     let idTrabajo = params.get('id');
     let idSinodalEliminar;
     let cambios = false;
+    let totalSinodales = 0;
     let tabla_sinodales = document.getElementById("tblsinodales");
     let tabla_sinodalesAsignados = document.getElementById("tblsinodalesAsignados");
     let listaSinodalesAsignar = new Array();
@@ -135,24 +141,29 @@
         let combo_tipo = document.getElementById("select_tipo").value;
         let sinodalAsignar = getSinodal(idSinodal);
         if (combo_tipo != ""){
-            document.getElementById("seleccionError").hidden = true;
-            document.getElementById("errorDirector").hidden = true;                    
-            if (sinodalAsignar!=null){
-                sinodalAsignar.tipo = combo_tipo;
-                sinodalAsignar.idTrabajo = idTrabajo;
-                if (!validarDirectorAsignar(sinodalAsignar) && !validarDirectorAsignados(sinodalAsignar)){
-                    let row = `<tr class="table-bordered" id="${sinodalAsignar.SinodalDelTrabajoId}"><td>${sinodalAsignar.Nombre}</td>
-                                                <td>${combo_tipo.toString()}</td>
-                                                <td><button id="btn_eliminarSinodal" onclick="eliminarSinodalAsignado('${encodeURIComponent(JSON.stringify(sinodalAsignar))}')" 
-                                                class="btn btn-danger eliminarSinodal">Eliminar</button></td><tr>`;
-                                    listaSinodalesAsignar.push(sinodalAsignar);
-                                    recargarTabla(sinodalAsignar.SinodalDelTrabajoId);
-                                    llenarTabla(listaSinodalesDisponibles);
-                                    tabla_sinodalesAsignados.innerHTML += row;
-                }else{
-                    document.getElementById("errorDirector").hidden = false;
+            if (totalSinodales < 3){
+                document.getElementById("seleccionError").hidden = true;
+                document.getElementById("errorDirector").hidden = true;                    
+                if (sinodalAsignar!=null){
+                    sinodalAsignar.tipo = combo_tipo;
+                    sinodalAsignar.idTrabajo = idTrabajo;
+                    if (!validarDirectorAsignar(sinodalAsignar) && !validarDirectorAsignados(sinodalAsignar)){
+                        let row = `<tr class="table-bordered" id="${sinodalAsignar.SinodalDelTrabajoId}"><td>${sinodalAsignar.Nombre}</td>
+                                    <td>${combo_tipo.toString()}</td>
+                                    <td><button id="btn_eliminarSinodal" onclick="eliminarSinodalAsignado('${encodeURIComponent(JSON.stringify(sinodalAsignar))}')" 
+                                    class="btn btn-danger eliminarSinodal">Eliminar</button></td><tr>`;
+                        listaSinodalesAsignar.push(sinodalAsignar);
+                        recargarTabla(sinodalAsignar.SinodalDelTrabajoId);
+                        llenarTabla(listaSinodalesDisponibles);
+                        tabla_sinodalesAsignados.innerHTML += row;
+                        totalSinodales++;
+                    }else{
+                        document.getElementById("errorDirector").hidden = false;
+                    }
+                    cambios = true;
                 }
-                cambios = true;
+            }else{
+                document.getElementById("sinodalesInvalidos").hidden = false;
             }
         }else{
             document.getElementById("seleccionError").hidden = false;
@@ -200,12 +211,14 @@
     
         
     function eliminarSinodalAsignado(profesorSeleccionado){
-               var sinodal = JSON.parse(decodeURIComponent(profesorSeleccionado));
-               listaSinodalesAsignar.pop(sinodal);
-               listaSinodalesDisponibles.push(sinodal);
-               recargarEliminados();
-               llenarTabla(listaSinodalesDisponibles);
-               $('#tblsinodalesAsignados').find('#'+sinodal.SinodalDelTrabajoId).remove();
+        totalSinodales--;
+        document.getElementById("integrantesInvalidos").hidden = true;        
+        var sinodal = JSON.parse(decodeURIComponent(profesorSeleccionado));
+        listaSinodalesAsignar.pop(sinodal);
+        listaSinodalesDisponibles.push(sinodal);
+        recargarEliminados();
+        llenarTabla(listaSinodalesDisponibles);
+        $('#tblsinodalesAsignados').find('#'+sinodal.SinodalDelTrabajoId).remove();
     }
     
     function eliminarSinodalAsignadoGuardado(idSinodal){
@@ -225,6 +238,7 @@
                 if(res.success){
                     document.location.reload();
                     cambios = true;
+                    totalSinodales--;
                 }else{
                     $('#errorAlert').hidden = false;
                 }
@@ -251,6 +265,7 @@
                   },  
                   success: function (data){
                       listaSinodalesAsignados = JSON.parse(data);
+                      totalSinodales = listaSinodalesAsignados.length;
                       llenarTablaAsignados(listaSinodalesAsignados);
                   },
                   error: function (data){
