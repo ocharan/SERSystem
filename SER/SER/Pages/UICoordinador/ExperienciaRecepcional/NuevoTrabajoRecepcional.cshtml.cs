@@ -21,20 +21,28 @@ public class NuevoTrabajoRecepcional : PageModel
     public List<Vinculacion> Vinculacions { get; set; }
     
     public List<ProyectoDeInvestigacion> ProyectoDeInvestigacions { get; set; }
+
+    private IWebHostEnvironment _environment;
     
-    public NuevoTrabajoRecepcional(MySERContext context)
+    public Archivo archivoTrabajo { get; set; }
+    
+    public Documento Documento { get; set; }
+    
+    public NuevoTrabajoRecepcional(MySERContext context, IWebHostEnvironment environment)
     {
         _context = context;
         Pladeafeis = new List<Pladeafei>();
         Vinculacions = new List<Vinculacion>();
         ProyectoDeInvestigacions = new List<ProyectoDeInvestigacion>();
+        _environment = environment;
+        archivoTrabajo = new Archivo();
     }
     
     public void OnGet()
     {
     }
 
-    public void OnPost()
+    public async Task<IActionResult> OnPost(IFormFile fileTrabajoRecepcional)
     {
         if (proyectoAsociado == "vinculacion")
         {
@@ -49,12 +57,53 @@ public class NuevoTrabajoRecepcional : PageModel
         }
         try
         {
-            TrabajoRecepcional.Estado = "Activo";
+            TrabajoRecepcional.Estado = "En proceso";
             bool existe = _context.TrabajoRecepcionals.Any(t => t.Nombre == TrabajoRecepcional.Nombre);
             if (!existe)
             {
                 _context.TrabajoRecepcionals.Add(TrabajoRecepcional);
                 _context.SaveChanges();
+                if (fileTrabajoRecepcional != null)
+                {
+                    string fecha = DateTime.Now.ToString().Replace("/", "");
+                    string fileName = "Anteproyecto_"+TrabajoRecepcional.TrabajoRecepcionalId+ fecha.Replace(" ", "").Replace(":", "");
+                    var archivo = Path.Combine(_environment.WebRootPath, "Archivos", fileName);
+                    using (var fileStream = new FileStream(archivo, FileMode.Create))
+                    {
+                        await fileTrabajoRecepcional.CopyToAsync(fileStream);
+                    }
+
+                    Documento = new Documento();
+                    Documento.TrabajoRecepcionalId = TrabajoRecepcional.TrabajoRecepcionalId;
+                    var Tipo = _context.TipoDocumentos.FirstOrDefault(t => t.NombreDocumento.Equals("Anteproyecto"));
+                    if (Tipo != null)
+                    {
+                        Documento.TipoDocumentoId = Tipo.IdTipo;
+                        _context.Documentos.Add(Documento);
+                        _context.SaveChanges();
+                    }
+                    else
+                    {
+                        TipoDocumento tipoDocumento = new TipoDocumento()
+                        {
+                            NombreDocumento = "Anteproyecto",
+                            ExperienciaEducativa = "Experiencia Recepcional"
+                        };
+                        _context.TipoDocumentos.Add(tipoDocumento);
+                        _context.SaveChanges();
+                        Documento.TipoDocumentoId = tipoDocumento.IdTipo;
+                        _context.Add(Documento);
+                        _context.SaveChanges();
+                    }
+                    archivoTrabajo.NombreArchivo = fileName +"."+fileTrabajoRecepcional.ContentType.Split("/")[1];
+                    archivoTrabajo.IdFuente = TrabajoRecepcional.TrabajoRecepcionalId;
+                    archivoTrabajo.Direccion = "Archivos/" + fileName;
+                    archivoTrabajo.Fuente = "Anteproyecto";
+                    archivoTrabajo.TipoContenido = fileTrabajoRecepcional.ContentType;
+                    _context.Archivos.Add(archivoTrabajo);
+                    _context.SaveChanges();
+                    TempData["Success"] = "Trabajo recepcional registrado correctamente";
+                }
                 TempData["Success"] = "Trabajo recepcional registrado correctamente";
             }
             else
@@ -66,6 +115,7 @@ public class NuevoTrabajoRecepcional : PageModel
         {
             TempData["Error"] = "Ha ocurrido un error durante el registro " + e.Message;
         }
+        return Page();
     }
 
     public JsonResult OnGetObtenerPladea()

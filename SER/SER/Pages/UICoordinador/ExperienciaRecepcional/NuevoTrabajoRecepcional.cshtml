@@ -5,7 +5,7 @@
     ViewData["Title"] = "Registrar nuevo trabajo recepcional";
 }
 
-<form id="registrarTrabajoForm" method="post">
+<form id="registrarTrabajoForm"  enctype="multipart/form-data" method="post">
     <div class="tab">
         <div class="container">
             <div class="input-group mb-3" style="margin-top: 50px">
@@ -47,8 +47,12 @@
             </div>
         </div>
         <div class="container">
-            <div class="input-group mb-3" style="margin-top: 50px">
-                <input class="form-control" type="file" id="formFile">
+            <div class="input-group mb-3" style="margin-top: 30px">
+                <label style="margin-top: 7px; margin-left: 20px" for="formFile">Selecciona el archivo del anteproyecto</label>
+            </div>
+            <div class="input-group mb-3">
+                <input class="form-control" name="fileTrabajoRecepcional"
+                       accept="application/msword, application/pdf, application/vnd.ms-powerpoint" type="file" id="formFile">
             </div>
         </div>
         <div class="container" style="align-content: center">
