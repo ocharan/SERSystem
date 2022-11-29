@@ -11,6 +11,7 @@ public class RegistrarDocumentoExperiencia : PageModel
     private readonly MySERContext _context;
     public List<TipoDocumento> TipoDocumentos { get; set; }
     [BindProperty] public Documento documento { get; set; }
+    
     public Archivo archivoExperiencia { get; set; }
     private IWebHostEnvironment Environment;
     public RegistrarDocumentoExperiencia(MySERContext context,  IWebHostEnvironment _environment)
@@ -32,14 +33,16 @@ public class RegistrarDocumentoExperiencia : PageModel
         try
         {
             var id = Request.Query["id"];
-            bool existe = _context.Documentos.Any(d => d.TipoDocumentoId == documento.TipoDocumentoId && d.TrabajoRecepcionalId == Int32.Parse(id));
+            var tipo = _context.TipoDocumentos.FirstOrDefault(t => t.IdTipo == Int32.Parse(Request.Form["tipo"]));
+            bool existe = _context.Documentos.Any(d => d.TipoDocumentoId == tipo.IdTipo && d.TrabajoRecepcionalId == Int32.Parse(id));
             if (!existe)
             {
                 if (fileExperiencia != null)
                 {
+                    var nombreDocumento = tipo.NombreDocumento.Replace(" ", "");
                     documento.TrabajoRecepcionalId = Int32.Parse(id);
                     string fecha = DateTime.Now.ToString().Replace("/", "");
-                    string fileName = "ER_" + fecha.Replace(" ", "").Replace(":", "") + id;
+                    string fileName = nombreDocumento+"_" + fecha.Replace(" ", "").Replace(":", "") + id;
                     var archivo = Path.Combine(Environment.WebRootPath, "Archivos", fileName);
                     using (var fileStream = new FileStream(archivo, FileMode.Create))
                     {
@@ -47,7 +50,10 @@ public class RegistrarDocumentoExperiencia : PageModel
                     }
                     archivoExperiencia.NombreArchivo = fileName;
                     archivoExperiencia.IdFuente = Int32.Parse(id);
-                    archivoExperiencia.Direccion = archivo;
+                    archivoExperiencia.Direccion = "Archivos/" + fileName;
+                    archivoExperiencia.Fuente = tipo.NombreDocumento;
+                    archivoExperiencia.TipoContenido = fileExperiencia.ContentType;
+                    documento.TipoDocumentoId = tipo.IdTipo;
                     _context.Documentos.Add(documento);
                     _context.Archivos.Add(archivoExperiencia);
                     _context.SaveChanges();
