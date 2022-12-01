@@ -47,7 +47,14 @@
                                 }
                                 <td>@exp.Periodo</td>
                                 <td>
-                                    <button type="submit" asp-page-handler="asignar" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Asignar alumnos</button>
+                                    @if (exp.EstadoAbierto == 1)
+                                    {
+                                        <button type="submit" asp-page-handler="asignar" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Asignar alumnos</button>
+                                    }
+                                    else
+                                    {
+                                        <button type="submit" class="btn btn-primary" disabled>Asignar alumnos</button>
+                                    }
                                 </td>
                                 <td>
                                     <button type="submit" asp-page-handler="editar" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Editar</button>

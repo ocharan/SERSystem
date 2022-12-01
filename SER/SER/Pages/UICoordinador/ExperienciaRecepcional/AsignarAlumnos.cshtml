@@ -2,7 +2,7 @@
 @model SER.Pages.UICoordinador.ExperienciaRecepcional.AsignarAlumnos
 
 @{
-    ViewData["Title"] = "Asignar estudiantes";
+    ViewData["Title"] = "Asignar alumnos";
 }
 
 @Html.AntiForgeryToken()
@@ -145,7 +145,7 @@
                 }
                 },
             });
-        }
+    }
     
     function confirmarRegistro(){
         window.open("TrabajosRecepcionales", "_self");
@@ -272,7 +272,7 @@
                     $('#errorAlert').hidden = false;
             }
           });   
-        }
+    }
         
         
     function llenarTablaAsignados(listaAsignados){

@@ -46,13 +46,12 @@ public class AsignarAlumnos : PageModel
         {
             var estudiante = _context.AlumnoTrabajoRecepcionals.First(a =>
                 a.AlumnoId == matriculaEstudiante && a.TrabajoRecepcionalId == Int32.Parse(trabajoId));
-            _context.Remove(estudiante);
+            _context.AlumnoTrabajoRecepcionals.Remove(estudiante);
             _context.SaveChanges();
             return new JsonResult(new { success = true});
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.StackTrace);
             return new JsonResult(new { success = false});
         }
     }
@@ -72,18 +71,21 @@ public class AsignarAlumnos : PageModel
         try
         {
             var listaAsignados = _context.AlumnoTrabajoRecepcionals.ToList();
+            var listaInscritos = _context.AlumnoExperienciaEducativas.ToList();
             var listaAlumnos = _context.Alumnos.ToList();
-
             foreach (var alumno in listaAlumnos)
             {
                 if (!listaAsignados.Any(a => a.AlumnoId == alumno.Matricula))
                 {
-                    Alumno alumnoDisponible = new Alumno()
+                    if (listaInscritos.Any(i=>i.AlumnoId == alumno.Matricula))
                     {
-                        Matricula = alumno.Matricula,
-                        Nombre = alumno.Nombre,
-                    };
-                    Alumnos.Add(alumnoDisponible);
+                        Alumno alumnoDisponible = new Alumno()
+                        {
+                            Matricula = alumno.Matricula,
+                            Nombre = alumno.Nombre,
+                        };
+                        Alumnos.Add(alumnoDisponible);
+                    }
                 }
             }
             return new JsonResult(Alumnos.ToJson());
