@@ -30,7 +30,7 @@
 @if (TempData["ErrorMessage"] != null)
 {
     <div class="alert alert-danger">
-        <strong>Error de registro</strong> @TempData["ErrorMessage"]
+        @TempData["ErrorMessage"]
     </div>
 }
 

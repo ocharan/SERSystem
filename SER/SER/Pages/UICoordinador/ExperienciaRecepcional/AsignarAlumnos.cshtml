@@ -307,11 +307,11 @@
     let navigation = document.getElementById("navigation");
     let listaNavegacion = document.getElementById("element-list");
   
-  window.onload = function (){
-    cargarEstudiantesAsignados()
-    cargarEstudiantesDisponibles();
-    navPrincipal.hidden = false;
-    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+    window.onload = function (){
+        cargarEstudiantesAsignados()
+        cargarEstudiantesDisponibles();
+        navPrincipal.hidden = false;
+        listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
                                       <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
                                     </li>
                                     <li class="nav-item" style="font-size: 25px">
@@ -331,8 +331,7 @@
                                     </li>
                                     <li class="nav-item" style="font-size: 25px">
                                          <a class="nav-link" onclick="window.location.reload()">Asignar alumnos</a>
-                                    </li>`
-                                        
-  }
+                                    </li>`                                    
+    }
   </script>
 }

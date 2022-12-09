@@ -22,7 +22,14 @@ public class Organizaciones : PageModel
     
     public void OnGet()
     {
-        CargarOrganizaciones();
+        try
+        {
+            CargarOrganizaciones();
+        }
+        catch (Exception e)
+        {
+            TempData["ErrorMessage"] = "Ha ocurrido un error al cargar las organizaciones";
+        }
     }
 
     

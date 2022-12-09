@@ -34,11 +34,11 @@ public class AsignarSinodales : PageModel
                 t.TrabajoRecepcionalId == Int32.Parse(idTrabajo));
             _context.Remove(sinodal);
             _context.SaveChanges();
-            return new JsonResult(new { success = true, responseText = "Sinodal eliminado correctamente." });
+            return new JsonResult(new { success = true});
         }
         catch (Exception e)
         {
-            return new JsonResult(new { success = false, responseText = "Ocurrió un error al eliminar el sinodal." });
+            return new JsonResult(new { success = false});
         }
     }
 
@@ -95,11 +95,11 @@ public class AsignarSinodales : PageModel
             };
             _context.TrabajoRecepcionalSinodalDelTrabajos.Add(sinodalAsignado);
             _context.SaveChanges();
-            return new JsonResult(new { success = true, responseText = "Sinodales registrados correctamente" });
+            return new JsonResult(new { success = true});
         }
         catch (Exception e)
         {
-            return new JsonResult(new { success = false, responseText = "Ha ocurrido un erorr al registrar la información, "+e.Message });
+            return new JsonResult(new { success = false});
         }
     }
 

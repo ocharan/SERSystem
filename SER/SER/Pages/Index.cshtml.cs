@@ -71,7 +71,6 @@ namespace SER.Pages
                 TempData["Error"] = "Error al tratar de establecer conexón con el servidor";
                 return Page();
             }
-
             return Page();
         }
     }

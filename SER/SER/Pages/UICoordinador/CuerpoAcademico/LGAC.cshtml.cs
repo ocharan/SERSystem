@@ -28,7 +28,7 @@ public class LGAC : PageModel
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            TempData["ErrorMessage"] = "Error al cargar LGACs";
         }
     }
     

@@ -175,14 +175,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0FzaWduYXJTaW5vZGFsZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/EditarSinodal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0VkaXRhclNpbm9kYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/EditarTrabajoRecepcional.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0VkaXRhclRyYWJham9SZWNlcGNpb25hbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL0V4cGVkaWVudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -37,12 +37,19 @@ public class CuerposAcademicos : PageModel
     
     public void OnGet(int currentPage)
     {
-        getCuerposAcademicos();
-        CurrentPage = currentPage == 0 ? 1 : currentPage;
-        Count = CuerpoAcademicos.Count;
-        if (CurrentPage > TotalPages)
-            CurrentPage = TotalPages;
-        CuerpoAcademicos = CuerpoAcademicos.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+        try
+        {
+            getCuerposAcademicos();
+            CurrentPage = currentPage == 0 ? 1 : currentPage;
+            Count = CuerpoAcademicos.Count;
+            if (CurrentPage > TotalPages)
+                CurrentPage = TotalPages;
+            CuerpoAcademicos = CuerpoAcademicos.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+        }
+        catch (Exception e)
+        {
+            TempData["Error"] = "Ha ocurrido un error al cargar los cuerpos académicos, "+e.Message;
+        }
     }
 
     public IActionResult OnPostModificar()
@@ -117,7 +124,7 @@ public class CuerposAcademicos : PageModel
         }
         catch (Exception e)
         {
-            TempData["ExceptionMessage"] = "Error al cargar los cuerpos academicos";
+            TempData["Error"] = "Error al cargar los cuerpos academicos";
         }
     }
     

@@ -30,7 +30,7 @@ public class Sinodales : PageModel
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            TempData["ErrorMessage"] = "Ha ocurrido un error al cargar los sinodales, "+ex.Message;
         }
     }
 

@@ -61,9 +61,16 @@ public class EditarProyectoDeInvestigacion : PageModel
     
     public void OnGet()
     {
-        idProyecto = Request.Query["id"];
-        cargarCuerpos();
-        obtenerProyecto();
+        try
+        {
+            idProyecto = Request.Query["id"];
+            cargarCuerpos();
+            obtenerProyecto();
+        }
+        catch (Exception e)
+        {
+            TempData["ErrorMessage"] = "Ha ocurrido un error al cargar la información del proyecto de investigación.";
+        }
     }
 
     public void obtenerProyecto()

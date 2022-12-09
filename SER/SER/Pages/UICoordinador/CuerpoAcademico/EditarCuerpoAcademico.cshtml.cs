@@ -21,8 +21,15 @@ public class EditarCuerpoAcademico : PageModel
     }
     public void OnGet()
     {
-        idCuerpo = Request.Query["id"];
-        getCuerpo();
+        try
+        {
+            idCuerpo = Request.Query["id"];
+            getCuerpo();
+        }
+        catch (Exception e)
+        {
+            TempData["ErrorMessage"] = "Ha ocurrido un error al cargar la información de registro, "+e.Message;
+        }
     }
 
     public void OnPost()

@@ -24,8 +24,15 @@ public class RegistrarSinodalInterno : PageModel
     
     public void OnGet()
     {
-        cargarOrganizaciones();
-        cargarProfesores();
+        try
+        {
+            cargarOrganizaciones();
+            cargarProfesores();
+        }
+        catch (Exception e)
+        {
+            TempData["ErrorMessage"] = "Ha ocurrido un error al cargar la información de registro, "+e.Message;
+        }
     }
     
     public void OnPost()

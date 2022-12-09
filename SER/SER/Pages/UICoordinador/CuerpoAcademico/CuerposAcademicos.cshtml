@@ -84,10 +84,10 @@
     </nav>
 </div>
 
-@if (TempData["ExceptionMessage"] != null)
+@if (TempData["Error"] != null)
 {
     <div class="alert alert-danger">
-        <strong>Ha ocurrido un error </strong> @TempData["ExceptionMessage"]
+        @TempData["Error"]
     </div>
 }
 

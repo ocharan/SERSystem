@@ -28,7 +28,14 @@ public class RegistrarSinodalExterno : PageModel
     
     public void OnGet()
     {
-        cargarOrganizaciones();
+        try
+        {
+            cargarOrganizaciones();
+        }
+        catch (Exception e)
+        {
+            TempData["ErrorMessage"] = "Ha ocurrido un error al cargar la información de registro, " + e.Message;
+        }
     }
     
     public void OnPost()

@@ -92,6 +92,17 @@
         No hay cambios por guardar
     </div>
 
+    <div id="errorSolicitud" class="alert alert-danger" hidden>
+        Ha ocurrido un error al cargar la información de registro.
+    </div>
+    
+    <div id="errorGuardado" class="alert alert-danger" hidden>
+        Ha ocurrido un error al guardar la información.
+    </div>
+    
+    <div id="errorEliminacion" class="alert alert-danger" hidden>
+        Error al completar los cambios.
+    </div>
     <div id="modal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -190,7 +201,7 @@
                         llenarTabla(listaDocentes);
                     },
                     error: function (data){
-                        console.log("Error");
+                        document.getElementById('errorSolicitud').hidden = false;
                     }
                 }) 
     }
@@ -282,7 +293,7 @@
                     $("#modal").modal('show');
                 },
                 error: function (){
-                                                              
+                    document.getElementById('errorGuardado').hidden = false;                   
                 }
                 })}
         }else{
@@ -327,7 +338,10 @@
             },  
             success: function (){
             location.reload();
-        }
+            },
+            error: function (){
+                document.getElementById('errorSolicitud').hidden = false;
+            }
         })
    }
     </script>

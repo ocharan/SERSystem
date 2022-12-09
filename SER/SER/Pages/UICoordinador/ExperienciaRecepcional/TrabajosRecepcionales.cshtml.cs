@@ -32,7 +32,7 @@ public class TrabajosRecepcionales : PageModel
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            TempData["ErrorMessage"] = "Ha ocurrido un error al cargar los trabajos recepcionales, "+ex.Message;
         }
     }
 

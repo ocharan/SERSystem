@@ -27,7 +27,15 @@ public class RegistroProyectoDeInvestigacion : PageModel
     
     public void OnGet()
     {
-        cargarCuerpos();
+        try
+        {
+            cargarCuerpos();
+        }
+        catch (Exception e)
+        {
+            TempData["ErrorMessage"] = "Error al cargar la información de registro.";
+
+        }
     }
 
     public void OnPost()

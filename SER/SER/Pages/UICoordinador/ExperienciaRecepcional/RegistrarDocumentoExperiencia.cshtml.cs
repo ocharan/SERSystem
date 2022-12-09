@@ -25,7 +25,14 @@ public class RegistrarDocumentoExperiencia : PageModel
 
     public void OnGet()
     {
-        getTiposDocumento();
+        try
+        {
+            getTiposDocumento();
+        }
+        catch (Exception e)
+        {
+            TempData["Error"] = "Ha ocurrido un error al cargar la información de registro,"+e.Message;
+        }
     }
 
     public async Task<IActionResult> OnPost(IFormFile fileExperiencia)

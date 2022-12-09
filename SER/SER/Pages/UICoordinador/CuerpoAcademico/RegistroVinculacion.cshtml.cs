@@ -27,7 +27,14 @@ public class RegistroVinculacion : PageModel
     
     public void OnGet()
     {
-        cargarOrganizaciones();
+        try
+        {
+            cargarOrganizaciones();
+        }
+        catch (Exception e)
+        {
+            TempData["ErrorMessage"] = "Error al cargar la información de registro";
+        }
     }
 
     public async Task<IActionResult> OnPost(IFormFile? fileVinculacion)

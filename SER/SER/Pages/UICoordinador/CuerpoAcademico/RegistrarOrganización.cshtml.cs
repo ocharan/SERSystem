@@ -25,7 +25,6 @@ public class RegistrarOrganización : PageModel
     
     public void OnPost()
     {
-        Console.WriteLine(Organizacion.Nombre);
         try
         {
             var listaOrganizaciones = _context.Organizacions.ToList();
