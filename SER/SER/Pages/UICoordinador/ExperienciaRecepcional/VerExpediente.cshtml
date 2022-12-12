@@ -1,0 +1,175 @@
+@page
+@model SER.Pages.UICoordinador.ExperienciaRecepcional.VerExpediente
+
+@{
+    ViewData["Title"] = "Ver expediente";
+}
+
+<div class="container" style="padding: 20px">
+    <form method="post">
+        <div class="container" >
+                <div class="infoProyecto" style="border: 1px solid #d6d0d0; padding: 20px; border-radius: 10px">
+                    <div>
+                        <div>
+                            <label style="font-size: 25px; font-weight: bold" class="col-form-label">Trabajo recepcional</label>
+                            <button class="btn btn-primary" asp-page-handler="modificarTrabajo" asp-route-id="@Model.expediente.TrabajoRecepcionalId" style="float: right; font-size: 18px; width: 100px">Modificar</button>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="nombreTrabajo" style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Nombre:</label>
+                        <div class="col-sm-10">
+                            <div type="text" readonly class="form-control-plaintext" style="font-size: 25px" id="nombreTrabajo">@Model.expediente.Nombre</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="estadoTrabajo" style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Estado:</label>
+                        <div class="col-sm-10">
+                            <div type="text" readonly class="form-control-plaintext" style="font-size: 25px" id="estadoTrabajo">@Model.expediente.Estado</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Linea de investigacion: </label>
+                        <div class="col-sm-10">
+                            <div type="text" readonly class="form-control-plaintext" style="font-size: 25px; margin-top: 37px" id="lineaTrabajo">@Model.expediente.LineaDeInvestigacion</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="modalidadTrabajo" style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Modalidad:</label>
+                        <div class="col-sm-10">
+                            <div type="text" readonly class="form-control-plaintext" style="font-size: 25px" id="modalidadTrabajo">@Model.expediente.Modalidad</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="infoAlumnos" style="border: 1px solid #d6d0d0; padding: 20px; border-radius: 10px; margin-top: 20px">
+                    <div>
+                        <div>
+                            <label style="font-size: 25px; font-weight: bold" class="col-form-label">Alumno</label>
+                            <button class="btn btn-primary" asp-page-handler="asignarAlumnos" asp-route-id="@Model.expediente.TrabajoRecepcionalId" style="float: right; font-size: 18px; width: 100px">Asignar</button>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="nombreAlumno" style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Nombre:</label>
+                        <div class="col-sm-10">
+                            <div type="text" readonly class="form-control-plaintext" style="font-size: 25px" id="nombreAlumno">@Model.expediente.NombreAlumno</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="matriculaAlumno" style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Matricula:</label>
+                        <div class="col-sm-10">
+                            <div type="text" readonly class="form-control-plaintext" style="font-size: 25px" id="matriculaAlumno">@Model.expediente.Matricula</div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="correoAlumno" style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Correo electrónico:</label>
+                        <div class="col-sm-10">
+                            <div type="text" readonly class="form-control-plaintext" style="font-size: 25px; margin-top: 37px" id="correoAlumno">@Model.expediente.CorreoElectronico</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="infoSinodales" style="border: 1px solid #d6d0d0; padding: 20px; border-radius: 10px; margin-top: 20px">
+                    <div>
+                        <div>
+                            <label style="font-size: 25px; font-weight: bold" class="col-form-label">Sinodal(es)</label>
+                            <button class="btn btn-primary" asp-page-handler="asignarSinodales" asp-route-id="@Model.expediente.TrabajoRecepcionalId" style="float: right; font-size: 18px; width: 100px">Asignar</button>
+                        </div>
+                    </div>
+                    @if (Model.sinodalesAsignados.Any())
+                    {
+                        foreach (var sinodal in Model.sinodalesAsignados)
+                        {
+                            <div class="mb-3 row">
+                                <label style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Nombre:</label>
+                                <div class="col-sm-10">
+                                    <div type="text" readonly class="form-control-plaintext" style="font-size: 25px">@sinodal.nombre</div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Tipo de sinodal:</label>
+                                <div class="col-sm-10">
+                                    <div type="text" readonly class="form-control-plaintext" style="font-size: 25px">@sinodal.tipo</div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            <div>
+                                <div type="text" readonly class="form-control-plaintext" style="font-size: 25px; text-align: center">No hay sinodales asignados a este trabajo</div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                
+                <div class="infoAlumnos" style="border: 1px solid #d6d0d0; padding: 20px; border-radius: 10px; margin-top: 20px">
+                    <div>
+                        <div>
+                            <label style="font-size: 25px; font-weight: bold" class="col-form-label">Documentos registrados</label>
+                            <button class="btn btn-primary" asp-page-handler="registrarDocumento" asp-route-id="@Model.expediente.TrabajoRecepcionalId" style="float: right; font-size: 18px;">Registrar documento</button>
+                        </div>
+                    </div>
+                    @if (Model.documentosRegistrados.Any())
+                    {
+                        foreach (var doc in Model.documentosRegistrados)
+                        {
+                            <div class="mb-3 row">
+                                <label style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Nombre:</label>
+                                <div class="col-sm-10">
+                                    <button id="btnFile" class="btn btn-link" style="font-size: 25px" asp-page-handler="verDocumento" asp-route-id="@Model.expediente.TrabajoRecepcionalId" asp-route-tipo="@doc.nombreTipo" type="submit" >@doc.nombreTipo</button>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            <div>
+                                <div type="text" readonly class="form-control-plaintext" style="font-size: 25px; text-align: center">No hay documentos registrados en este trabajo</div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+    </form>
+</div>
+
+
+@section Scripts
+{
+<script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item" style="font-size: 25px">
+                                      <a class="nav-link" href="/Menus/UICoordinador">Coordinación</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                        <li class="nav-item" style="font-size: 25px">
+                                            <a class="nav-link" href="../UIExperienciaRecepcional">Experiencia recepcional</a>
+                                        </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" href="Expedientes">Expedientes</a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                        <a class="nav-link">></a>
+                                    </li>
+                                    <li class="nav-item" style="font-size: 25px">
+                                         <a class="nav-link" onclick="window.location.reload()">Ver expediente</a>
+                                    </li>`
+                                        
+  }
+  </script>
+}

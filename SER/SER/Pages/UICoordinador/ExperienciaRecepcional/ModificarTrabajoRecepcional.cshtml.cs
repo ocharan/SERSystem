@@ -51,7 +51,8 @@ public class ModificarTrabajoRecepcional : PageModel
             trabajoModificar.Fechadeinicio = DateTime.Parse(Request.Form["FechaTrabajo"]);
             trabajoModificar.LineaDeInvestigacion = Request.Form["LineaTrabajo"];
             trabajoModificar.Modalidad = Request.Form["ModalidadTrabajo"];
-            trabajoModificar.Estado = Request.Form["estadoTrabajo"];   
+            trabajoModificar.Estado = Request.Form["estadoTrabajo"];
+            trabajoModificar.ExperienciaActual = Request.Form["experienciaEstado"];
             var tipoTrabajo = Request.Form["TipoTrabajo"];
             if (tipoTrabajo == "vinculacion")
             {
@@ -159,6 +160,7 @@ public class ModificarTrabajoRecepcional : PageModel
         TrabajoRecepcional.Fechadeinicio = trabajo.Fechadeinicio;
         TrabajoRecepcional.LineaDeInvestigacion = trabajo.LineaDeInvestigacion;
         TrabajoRecepcional.Modalidad = trabajo.Modalidad;
+        TrabajoRecepcional.ExperienciaActual = trabajo.ExperienciaActual;
         if (trabajo.PladeafeiId > -1)
         {
             proyectoAsociado = "pladea";

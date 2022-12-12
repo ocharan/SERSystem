@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
 using SER.Entities;
@@ -37,5 +38,10 @@ public class Expedientes : PageModel
             };
             ExpedientesList.Add(exp);
         }
+    }
+
+    public IActionResult OnPostExpediente()
+    {
+        return Redirect("VerExpediente?id="+Request.Query["id"]);
     }
 }

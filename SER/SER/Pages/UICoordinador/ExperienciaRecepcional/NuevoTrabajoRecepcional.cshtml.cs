@@ -58,6 +58,7 @@ public class NuevoTrabajoRecepcional : PageModel
         try
         {
             TrabajoRecepcional.Estado = "En proceso";
+            TrabajoRecepcional.ExperienciaActual = Request.Form["experienciaEstado"];
             bool existe = _context.TrabajoRecepcionals.Any(t => t.Nombre == TrabajoRecepcional.Nombre);
             if (!existe)
             {

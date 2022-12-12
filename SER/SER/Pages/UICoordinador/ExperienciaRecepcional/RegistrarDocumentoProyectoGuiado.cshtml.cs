@@ -29,6 +29,7 @@ namespace SER.Pages
             try
             {
                 var id = Request.Query["id"];
+                var tipo = _context.TipoDocumentos.FirstOrDefault(t => t.IdTipo == Int32.Parse(Request.Form["tipo"]));
                 bool existe = _context.Documentos.Any(d => d.TipoDocumentoId == documento.TipoDocumentoId && d.TrabajoRecepcionalId == Int32.Parse(id));
                 if (!existe)
                 {
@@ -44,7 +45,8 @@ namespace SER.Pages
                         }
                         archivoPg.NombreArchivo = fileName;
                         archivoPg.IdFuente = Int32.Parse(id);
-                        archivoPg.Direccion = archivo;
+                        archivoPg.Direccion = "Archivos/" + fileName;
+                        archivoPg.Fuente = tipo.NombreDocumento;
                         _context.Documentos.Add(documento);
                         _context.Archivos.Add(archivoPg);
                         _context.SaveChanges();

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "46GERm/2b7PK64jll7h2AH2pqnGda0bsLZNTjHI9XsU=",
+  "Hash": "mjExKFLPTRf6VjzTyWfRV9OauxJcVlljiPGv6Cf/MIU=",
   "Source": "SER",
   "BasePath": "_content/SER",
   "Mode": "Default",
@@ -1037,12 +1037,12 @@
       "OriginalItemSpec": "wwwroot/Archivos/Anteproyecto_101129112022062437"
     },
     {
-      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/Anteproyecto_101229112022063021",
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/Anteproyecto_101209122022095017",
       "SourceId": "SER",
       "SourceType": "Discovered",
       "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
       "BasePath": "_content/SER",
-      "RelativePath": "Archivos/Anteproyecto_101229112022063021",
+      "RelativePath": "Archivos/Anteproyecto_101209122022095017",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1051,7 +1051,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/Archivos/Anteproyecto_101229112022063021"
+      "OriginalItemSpec": "wwwroot/Archivos/Anteproyecto_101209122022095017"
     },
     {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/Anteproyecto_291120220603041010",
@@ -1173,6 +1173,23 @@
       "OriginalItemSpec": "wwwroot/Archivos/PG_101120220505371004"
     },
     {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/PG_121220221207061004",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/PG_121220221207061004",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/PG_121220221207061004"
+    },
+    {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/PLADEA_07112022065446",
       "SourceId": "SER",
       "SourceType": "Discovered",
@@ -1256,6 +1273,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/Archivos/PLADEA_11112022052644"
+    },
+    {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/Primerapresentacióndeavances_121220221208381010",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/Primerapresentacióndeavances_121220221208381010",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/Primerapresentacióndeavances_121220221208381010"
+    },
+    {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/Primerapresentacióndeavances_121220221216131011",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/Primerapresentacióndeavances_121220221216131011",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/Primerapresentacióndeavances_121220221216131011"
     },
     {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/TR_100929112022042026",
