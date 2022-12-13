@@ -33,6 +33,11 @@ public class ExperienciasEducativas : PageModel
     {
         return Redirect("EditarExperienciaEducativa?id=" + Request.Query["id"]);
     }
+
+    public IActionResult OnPostAsignarProfesor()
+    {
+        return Redirect("AsignarProfesor?id=" + Request.Query["id"]);
+    }
     
     public void cargarExperiencias()
     {

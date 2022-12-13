@@ -97,7 +97,23 @@
         let listaInvestigacion;
         let listaVinculacion;
         let listaPladea;
-        
+            let btnCerrarSesion = document.getElementById("btnCerrarSesion")
+              btnCerrarSesion.onclick = function (){
+                  $.ajax({
+                  url: "?handler=CerrarSesion",
+                  type: "POST",
+                  data: "",
+                  headers: {
+                      RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+                  },
+                  success: function (res){
+                      console.log(res)
+                      if (res.succes === true){
+                          window.open("../../Index", "_self");
+                      }
+                  }
+                  });
+            }
         
         selectTipo.addEventListener('change', function (){
             obtenerProyecto(selectTipo.value)

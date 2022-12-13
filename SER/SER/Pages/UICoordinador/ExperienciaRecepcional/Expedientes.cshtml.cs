@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -22,6 +24,13 @@ public class Expedientes : PageModel
         cargarExpedientes();
     }
 
+    [HttpPost]
+    public async Task<IActionResult> OnPostCerrarSesion()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return new JsonResult(new { succes = true });
+    }
+    
     public void cargarExpedientes()
     {
         var listaExpedientes = _context.Expedientes.ToList();

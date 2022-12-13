@@ -28,6 +28,7 @@
                             <th>Estado</th>
                             <th>Periodo</th>
                             <th>Asignar alumnos</th>
+                            <th>Asignar profesor</th>
                             <th>Editar</th>
                         </tr>
                         </thead>
@@ -55,6 +56,9 @@
                                     {
                                         <button type="submit" class="btn btn-primary" disabled>Asignar alumnos</button>
                                     }
+                                </td>
+                                <td>
+                                    <button type="submit" asp-page-handler="asignarProfesor" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Asignar profesor</button>
                                 </td>
                                 <td>
                                     <button type="submit" asp-page-handler="editar" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Editar</button>

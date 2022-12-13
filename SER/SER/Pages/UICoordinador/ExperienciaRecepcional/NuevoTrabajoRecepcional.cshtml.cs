@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NuGet.Protocol;
@@ -42,6 +44,13 @@ public class NuevoTrabajoRecepcional : PageModel
     {
     }
 
+    
+    [HttpPost]
+    public async Task<IActionResult> OnPostCerrarSesion()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return new JsonResult(new { succes = true });
+    }
     public async Task<IActionResult> OnPost(IFormFile fileTrabajoRecepcional)
     {
         if (proyectoAsociado == "vinculacion")

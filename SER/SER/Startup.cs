@@ -29,8 +29,8 @@ namespace SER
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
             {
                 option.LoginPath = "/Index";
-                option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
                 option.AccessDeniedPath = "/Index";
+                option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
             });
 
             services.AddDbContext<MySERContext>(options =>

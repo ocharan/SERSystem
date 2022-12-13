@@ -25,7 +25,7 @@ namespace SER.Pages
         {
             
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> OnPost()
         {
@@ -51,6 +51,9 @@ namespace SER.Pages
                         }else if (usuarioObtenido.Tipo.Equals("Administrador"))
                         {
                             return RedirectToPage("/Menus/UIAdministración");
+                        }else if (usuarioObtenido.Tipo.Equals("Maestro"))
+                        {
+                            return RedirectToPage("/Menus/UIMaestro");
                         }
                     }
                     else

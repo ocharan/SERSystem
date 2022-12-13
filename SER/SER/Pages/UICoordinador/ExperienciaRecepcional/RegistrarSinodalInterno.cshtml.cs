@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -20,6 +22,13 @@ public class RegistrarSinodalInterno : PageModel
         _context = context;
         Organizacions = new List<Organizacion>();
         Profesors = new List<Profesor>();
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> OnPostCerrarSesion()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return new JsonResult(new { succes = true });
     }
     
     public void OnGet()

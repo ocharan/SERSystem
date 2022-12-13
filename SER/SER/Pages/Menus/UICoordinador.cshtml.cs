@@ -1,11 +1,13 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SER.Pages.Menus;
 
 public class UICoordinador : PageModel
 {
-    public void OnGet()
+    [HttpPost]
+    public void OnPostCerrarSesion()
     {
-        
+        Console.WriteLine("Cerrar sesion");
     }
 }

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -116,6 +118,14 @@ public class VerExpediente : PageModel
     public IActionResult OnPostAsignarSinodales()
     {
         return Redirect("AsignarSinodales?id=" + Request.Query["id"]);
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> OnPostCerrarSesion()
+    {
+        
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return new JsonResult(new { success = true });
     }
 
     public IActionResult OnPostRegistrarDocumento()

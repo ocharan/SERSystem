@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -26,6 +28,13 @@ public class ModificarSinodalExterno : PageModel
         Organizacions = new List<Organizacion>();
     }
 
+    [HttpPost]
+    public async Task<IActionResult> OnPostCerrarSesion()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return new JsonResult(new { succes = true });
+    }
+    
     public void OnPost()
     {
         try

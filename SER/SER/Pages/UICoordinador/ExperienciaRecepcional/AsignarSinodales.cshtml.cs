@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NuGet.Protocol;
@@ -23,6 +25,13 @@ public class AsignarSinodales : PageModel
     public void OnGet()
     {
         cargarSinodales(Request.Query["id"]);
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> OnPostCerrarSesion()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return new JsonResult(new { succes = true });
     }
 
     public JsonResult OnPostEliminarSinodal(string idSinodal, string idTrabajo)

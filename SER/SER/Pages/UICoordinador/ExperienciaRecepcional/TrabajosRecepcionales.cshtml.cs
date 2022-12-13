@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -21,6 +23,13 @@ public class TrabajosRecepcionales : PageModel
     public IActionResult OnPostModificarTrabajo()
     {
         return Redirect("ModificarTrabajoRecepcional?id="+Request.Query["id"]);
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> OnPostCerrarSesion()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return new JsonResult(new { succes = true });
     }
     
     public void OnGet()

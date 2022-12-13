@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -36,6 +38,13 @@ public class RegistrarSinodalExterno : PageModel
         {
             TempData["ErrorMessage"] = "Ha ocurrido un error al cargar la información de registro, " + e.Message;
         }
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> OnPostCerrarSesion()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return new JsonResult(new { succes = true });
     }
     
     public void OnPost()
