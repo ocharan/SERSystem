@@ -47,7 +47,6 @@
                             <th>Fecha de inicio</th>
                             <th>Asignar estudiantes</th>
                             <th>Asignar sinodales</th>
-                            <th>Documentos</th>
                             <th>Modificar</th>
                         </tr>
                         </thead>
@@ -70,9 +69,6 @@
                                 </td>
                                 <td>
                                     <button asp-page-handler="sinodales" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Asignar sinodales</button>
-                                </td>
-                                <td>
-                                    <button asp-page-handler="documento" asp-route-id="@trabajo.TrabajoRecepcionalId" asp-route-experiencia="@trabajo.ExperienciaActual" class="btn btn-success">Registrar documento</button>
                                 </td>
                                 <td>
                                     <button asp-page-handler="modificarTrabajo" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Modificar</button>

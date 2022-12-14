@@ -9,10 +9,7 @@
     <form method="post">
       <div class="row">
         <div class="col-md-4">
-          <button class="btnPanel" onclick="window.open('../UIMaestro/Expdientes', '_self')">Expedientes</button>
-        </div>
-        <div class="col-md-4">
-          <button class="btnPanel" onclick="window.open('../UICoordinador/UICuerpoAcademico','_self')">Trabajos recepcionales</button>
+          <button class="btnPanel" asp-page-handler="expedientes" asp-route-id="@Request.Query["id"]">Expedientes</button>
         </div>
         <div class="col-md-4">
           <button class="btnPanel" asp-page-handler="experiencias" asp-route-id="@Request.Query["id"]">Mis experiencias</button>

@@ -199,14 +199,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL051ZXZvVHJhYmFqb1JlY2VwY2lvbmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoExperiencia.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1JlZ2lzdHJhckRvY3VtZW50b0V4cGVyaWVuY2lhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoProyectoGuiado.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1JlZ2lzdHJhckRvY3VtZW50b1Byb3llY3RvR3VpYWRvLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlDb29yZGluYWRvci9FeHBlcmllbmNpYVJlY2VwY2lvbmFsL1JlZ2lzdHJhclNpbm9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -253,6 +245,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIMaestro/Experiencias.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlNYWVzdHJvL0V4cGVyaWVuY2lhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIMaestro/RegistrarDocumentoExperiencia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlNYWVzdHJvL1JlZ2lzdHJhckRvY3VtZW50b0V4cGVyaWVuY2lhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIMaestro/RegistrarDocumentoProyectoGuiado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlNYWVzdHJvL1JlZ2lzdHJhckRvY3VtZW50b1Byb3llY3RvR3VpYWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/UIMaestro/VerExpediente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVUlNYWVzdHJvL1ZlckV4cGVkaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/_ViewImports.cshtml]

@@ -2,18 +2,87 @@
 @model SER.Pages.UIMaestro.Expedientes
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Ver expedientes";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
+<div class="container">
+    <form method="post">
+        <div class="container">
+            <div class="input-group mb-3" style="margin-top: 50px">
+                <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar trabajo recepcional">
+                <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 30%;">Búscar</button>
+                <label style="font-size: 20px">Filtrar por:</label>
+                <select class="form-select" style="float: right; border-radius: 5px; margin-left: 5px" >
+                    <option selected>Modalidad</option>
+                </select>
+                <select class="form-select" style="float: right; border-radius: 5px; margin-left: 5px" >
+                    <option selected>Estado</option>
+                </select>
+            </div>
+        </div>
+        <div id="experientes">
+            <div class="form-group">
+                <div class="table-responsive">
+                    <table id="tblExpedientes" class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Alumno</th>
+                            <th>Nombre del trabajo</th>
+                            <th>Modalidad</th>
+                            <th>Estado</th>
+                            <th>Registrar documento</th>
+                            <th>Ver expediente</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var expediente in Model.listaExpedientes)
+                        {
+                            <tr>
+                                <td>@expediente.NombreAlumno</td>
+                                <td>@expediente.Nombre</td>
+                                <td>@expediente.Modalidad</td>
+                                <td>@expediente.Estado</td>
+                                <td>
+                                    <button class="btn btn-primary" asp-page-handler="registrarDocumento" asp-route-id="@expediente.TrabajoRecepcionalId">Registrar documento</button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary" asp-page-handler="expediente" asp-route-id="@expediente.Matricula">Ver expediente</button>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
-</body>
-</html>
+
+
+@section Scripts
+{
+    <script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  const valores = window.location.search;
+  const params = new URLSearchParams(valores)
+  let idMaestro = params.get('id');
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link" onclick="window.open('../Menus/UIMaestro?id='+idMaestro, '_self')">Maestro</a>
+                                        </li>
+                                    <li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link">></a>
+                                        </li>
+                                        <li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link" onclick="window.location.reload()">Expedientes</a>
+                                        </li>`
+  }
+  </script>
+}
