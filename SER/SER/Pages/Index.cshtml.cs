@@ -47,13 +47,13 @@ namespace SER.Pages
                             new ClaimsPrincipal(claimsIdentity));
                         if (usuarioObtenido.Tipo.Equals("Coordinador"))
                         {
-                            return RedirectToPage("/Menus/UICoordinador");
+                            return Redirect("/Menus/UICoordinador");
                         }else if (usuarioObtenido.Tipo.Equals("Administrador"))
                         {
-                            return RedirectToPage("/Menus/UIAdministración");
+                            return Redirect("/Menus/UIAdministración");
                         }else if (usuarioObtenido.Tipo.Equals("Maestro"))
                         {
-                            return RedirectToPage("/Menus/UIMaestro");
+                            return Redirect("/Menus/UIMaestro?id="+usuarioObtenido.NombreUsuario);
                         }
                     }
                     else

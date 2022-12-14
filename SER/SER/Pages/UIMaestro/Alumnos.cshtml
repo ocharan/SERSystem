@@ -2,18 +2,81 @@
 @model SER.Pages.UIMaestro.Alumnos
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Ver alumnos";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
+<div class="container">
+    <form method="post">
+        <div class="container">
+            <div class="input-group mb-3" style="margin-top: 50px">
+                <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar experiencia recepcional">
+                <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 30%;">Búscar</button>
+            </div>
+        </div>
+        <div id="alumnos">
+            <div class="form-group">
+                <div class="table-responsive">
+                    <table id="tblalumnos" class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Nombre del alumno</th>
+                            <th>Matricula</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var alumno in Model.alumnosAdscritos)
+                        {
+                            <tr>
+                                <td>@alumno.AlumnoId</td>
+                                <td>@alumno.Nombre</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
-</body>
-</html>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@section Scripts
+{
+    <script show>
+  let headerUV = document.getElementById("uv_header");
+  let navPrincipal = document.getElementById("nav-principal");
+  let sectionButtons = document.getElementById("section-buttons");
+  let titleNav = document.getElementById("title-nav");
+  let navigation = document.getElementById("navigation");
+  let listaNavegacion = document.getElementById("element-list");
+  const valores = window.location.search;
+  const params = new URLSearchParams(valores)
+  let idMaestro = sessionStorage.getItem('idMaestro');
+  
+  window.onload = function (){
+    navPrincipal.hidden = false;
+    listaNavegacion.innerHTML += `<li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link" onclick="window.open('../Menus/UIMaestro?id='+idMaestro, '_self')">Maestro</a>
+                                        </li>
+                                    <li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link">></a>
+                                        </li>
+                                        <li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link" onclick="window.open('Experiencias?id='+idMaestro, '_self')">Mis experiencias</a>
+                                        </li>
+                                        <li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link">></a>
+                                        </li>
+                                        <li class="nav-item active" style="font-size: 25px">
+                                            <a class="nav-link" onclick="window.location.reload()">Mis alumnos</a>
+                                        </li>`
+  }
+  </script>
+}

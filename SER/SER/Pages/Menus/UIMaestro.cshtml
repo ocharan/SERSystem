@@ -6,17 +6,19 @@
 
 <div class="mainbody">
   <div class="mainpaneler container text-center">
-    <div class="row">
-      <div class="col-md-4">
-        <button class="btnPanel" onclick="window.open('../UIMaestro/Expdientes', '_self')">Expedientes</button>
+    <form method="post">
+      <div class="row">
+        <div class="col-md-4">
+          <button class="btnPanel" onclick="window.open('../UIMaestro/Expdientes', '_self')">Expedientes</button>
+        </div>
+        <div class="col-md-4">
+          <button class="btnPanel" onclick="window.open('../UICoordinador/UICuerpoAcademico','_self')">Trabajos recepcionales</button>
+        </div>
+        <div class="col-md-4">
+          <button class="btnPanel" asp-page-handler="experiencias" asp-route-id="@Request.Query["id"]">Mis experiencias</button>
+        </div>
       </div>
-      <div class="col-md-4">
-        <button class="btnPanel" onclick="window.open('../UICoordinador/UICuerpoAcademico','_self')">Trabajos recepcionales</button>
-      </div>
-      <div class="col-md-4">
-        <button class="btnPanel" onclick="window.open('../UIMaestro/Alumnos','_self')">Mis alumnos</button>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
 
@@ -29,12 +31,15 @@
   let titleNav = document.getElementById("title-nav");
   let navigation = document.getElementById("navigation");
   let listaNavegacion = document.getElementById("element-list");
-  
+  const valores = window.location.search;
+  const params = new URLSearchParams(valores)
+  let idMaestro = params.get('id');
+  sessionStorage.setItem('idMaestro', idMaestro);
   
   window.onload = function (){
     navPrincipal.hidden = false;
     listaNavegacion.innerHTML += `<li class="nav-item active" style="font-size: 25px">
-                                            <a class="nav-link" href="UIMaestro">Maestro</a>
+                                            <a class="nav-link" onclick="window.location.reload()">Maestro</a>
                                         </li>`
   }
   </script>

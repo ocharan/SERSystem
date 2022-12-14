@@ -21,7 +21,14 @@ public class Expedientes : PageModel
     
     public void OnGet()
     {
-        cargarExpedientes();
+        try
+        {
+            cargarExpedientes();
+        }
+        catch (Exception e)
+        {
+            TempData["Error"] = "Ha ocurrido un error al cargar la información solicitada";
+        }
     }
 
     [HttpPost]

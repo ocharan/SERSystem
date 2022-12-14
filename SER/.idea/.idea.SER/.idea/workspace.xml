@@ -6,56 +6,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f0def88-da15-4586-9adc-5db840f06807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/AsignarProfesor.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/AsignarProfesor.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SER/Pages/UIMaestro/Alumnos.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SER/Pages/UIMaestro/Alumnos.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SER/Pages/UIMaestro/Expedientes.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SER/Pages/UIMaestro/Expedientes.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133154171866800000.xel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/errorlog.66" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/log_65.trc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133154171884610000.xel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Artefactos/Diagramas/Diagramas.EAP" beforeDir="false" afterPath="$PROJECT_DIR$/../Artefactos/Diagramas/Diagramas.EAP" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SER/DTO/ExperienciaAlumno.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SER/Pages/UIMaestro/Experiencias.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SER/Pages/UIMaestro/Experiencias.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133155055152170000.xel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/errorlog.67" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/log_66.trc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133155055211120000.xel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/Menus/UICoordinador.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Menus/UICoordinador.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/Menus/UICoordinador.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Menus/UICoordinador.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/Pages/Menus/UIMaestro.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Menus/UIMaestro.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarSinodales.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarSinodales.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarSinodales.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarSinodales.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalExterno.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalExterno.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalExterno.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalExterno.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalInterno.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalInterno.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalInterno.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalInterno.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarTrabajoRecepcional.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarTrabajoRecepcional.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarTrabajoRecepcional.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarTrabajoRecepcional.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/NuevoTrabajoRecepcional.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/NuevoTrabajoRecepcional.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/NuevoTrabajoRecepcional.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/NuevoTrabajoRecepcional.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoExperiencia.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoExperiencia.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoExperiencia.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoExperiencia.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoProyectoGuiado.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoProyectoGuiado.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoProyectoGuiado.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarDocumentoProyectoGuiado.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalExterno.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalExterno.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalExterno.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalExterno.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalInterno.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalInterno.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalInterno.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalInterno.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/TrabajosRecepcionales.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/TrabajosRecepcionales.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/TrabajosRecepcionales.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/TrabajosRecepcionales.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/VerExpediente.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/VerExpediente.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/VerExpediente.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/VerExpediente.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/Menus/UIMaestro.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Menus/UIMaestro.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIMaestro/Alumnos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIMaestro/Alumnos.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIMaestro/Alumnos.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIMaestro/Alumnos.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" afterDir="false" />
@@ -71,11 +34,9 @@
       <change beforePath="$PROJECT_DIR$/data/mastlog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/mastlog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/model.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/model.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/modellog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/modellog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/msdbdata.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/msdbdata.mdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/msdblog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/tempdb.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/templog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133123731112260000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133124801906870000.xel" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.10" afterDir="false" />
@@ -139,13 +100,12 @@
       <change beforePath="$PROJECT_DIR$/logs/errorlog.63" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.63" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.64" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.64" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.65" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.65" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/errorlog.66" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.66" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_60.trc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_64.trc" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log_64.trc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133138423611220000.xel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133153325796730000.xel" beforeDir="false" afterPath="$PROJECT_DIR$/logs/system_health_0_133153325796730000.xel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log_61.trc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133141015173410000.xel" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,6 +227,7 @@
       <workItem from="1670599179634" duration="5712000" />
       <workItem from="1670858918806" duration="16130000" />
       <workItem from="1670943072002" duration="13265000" />
+      <workItem from="1671031512727" duration="6218000" />
     </task>
     <servers />
   </component>

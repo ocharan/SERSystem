@@ -8,5 +8,10 @@ namespace SER.Pages.Menus
         public void OnGet()
         {
         }
+
+        public IActionResult OnPostExperiencias()
+        {
+            return Redirect("../UIMaestro/Experiencias?id=" + Request.Query["id"]);
+        }
     }
 }
