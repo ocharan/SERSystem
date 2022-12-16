@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
 using SER.Entities;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 using SER.DTO;
 using Lgac = SER.Entities.Lgac;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
-
+[Authorize(Roles = "Coordinador")]
 public class RegistroPLADEA : PageModel
 {
 

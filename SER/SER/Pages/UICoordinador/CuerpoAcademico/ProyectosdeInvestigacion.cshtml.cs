@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NuGet.Protocol;
@@ -6,7 +7,7 @@ using SER.Entities;
 using SER.DTO;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
-
+[Authorize(Roles = "Coordinador")]
 public class ProyectosdeInvestigacion : PageModel
 {
     private readonly MySERContext _context;

@@ -8,8 +8,10 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using SER.Context;
 namespace SER
 {
@@ -25,14 +27,15 @@ namespace SER
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
             {
                 option.LoginPath = "/Index";
                 option.AccessDeniedPath = "/Index";
-                option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
-            });
+                option.ExpireTimeSpan = TimeSpan.FromMinutes(1);
 
+            });
+            services.AddAuthorization();
+            services.AddRazorPages();
             services.AddDbContext<MySERContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ApplicationContext")));
 
@@ -54,10 +57,8 @@ namespace SER
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
             app.UseAuthentication();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

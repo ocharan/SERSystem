@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -6,7 +7,7 @@ using SER.DTO;
 using Lgac = SER.Entities.Lgac;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
-
+[Authorize(Roles = "Coordinador")]
 public class RegistroProyectoDeInvestigacion : PageModel
 {
 

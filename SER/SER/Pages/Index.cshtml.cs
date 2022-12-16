@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SER.Context;
 using SER.Entities;
@@ -13,7 +15,7 @@ namespace SER.Pages
     public class IndexModel : PageModel
     {
         private readonly MySERContext _context;
-        
+
         [BindProperty]
         public Usuario Usuario { set; get; }
         public IndexModel(MySERContext context)
@@ -23,34 +25,42 @@ namespace SER.Pages
 
         public void OnGet()
         {
-            
         }
         
+
         [HttpPost]
         public async Task<IActionResult> OnPost()
         {
             try
             {
+                
                 var usuarios = _context.Usuarios.ToList();
                 var usuarioObtenido = usuarios.FirstOrDefault(usr => usr.NombreUsuario == Usuario.NombreUsuario && usr.Contra == Usuario.Contra);
                 if (Usuario.NombreUsuario != null || Usuario.Contra != null)
                 {
                     if (usuarioObtenido!=null)
                     {
+                        
                         var claims = new List<Claim>
                         {
-                            new Claim(ClaimTypes.Name, usuarioObtenido.NombreUsuario)
+                            new Claim(ClaimTypes.Name, usuarioObtenido.NombreUsuario),
+                            new Claim(ClaimTypes.Role, usuarioObtenido.Tipo)
                         };
-                        claims.Add(new Claim(ClaimTypes.Role, usuarioObtenido.Tipo));
+                        
+                        
                         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                             new ClaimsPrincipal(claimsIdentity));
+                        Console.WriteLine("Maestro: "+User.IsInRole("Maestro"));
+                        Console.WriteLine("Coordinador: "+User.IsInRole("Coordinador"));
+                        Console.WriteLine("Administrador: "+User.IsInRole("Administrador"));
+
                         if (usuarioObtenido.Tipo.Equals("Coordinador"))
                         {
-                            return Redirect("/Menus/UICoordinador");
+                            return RedirectToPage("/Menus/UICoordinador");
                         }else if (usuarioObtenido.Tipo.Equals("Administrador"))
                         {
-                            return Redirect("/Menus/UIAdministración");
+                            return RedirectToPage("/Menus/UIAdministración");
                         }else if (usuarioObtenido.Tipo.Equals("Maestro"))
                         {
                             return Redirect("/Menus/UIMaestro?id="+usuarioObtenido.NombreUsuario);
@@ -71,10 +81,13 @@ namespace SER.Pages
             }
             catch (Exception e)
             {
-                TempData["Error"] = "Error al tratar de establecer conexón con el servidor";
+                TempData["Error"] = "Error al tratar de establecer conexón con el servidor"+e.StackTrace;
                 return Page();
             }
             return Page();
         }
+
+
+    
     }
 }

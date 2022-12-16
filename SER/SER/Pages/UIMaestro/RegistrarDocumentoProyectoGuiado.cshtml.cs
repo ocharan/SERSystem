@@ -1,6 +1,7 @@
 using System.Dynamic;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SER.Pages
 {
+    [Authorize(Roles = "Maestro")]
     [IgnoreAntiforgeryToken]
     public class RegistrarDocumentoProyectoGuiadoModel : PageModel
     {

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Remotion.Linq.Clauses;
@@ -6,6 +7,7 @@ using SER.Entities;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
+[Authorize(Roles = "Coordinador")]
 public class EditarCuerpoAcademico : PageModel
 {
     public string idCuerpo { get; set; }

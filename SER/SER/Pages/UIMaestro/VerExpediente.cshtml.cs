@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -7,7 +8,7 @@ using SER.DTO;
 using SER.Entities;
 
 namespace SER.Pages.UIMaestro;
-
+[Authorize(Roles = "Maestro")]
 public class VerExpediente : PageModel
 {
     private readonly MySERContext Context;
@@ -104,21 +105,6 @@ public class VerExpediente : PageModel
         }
 
     }
-
-    public IActionResult OnPostModificarTrabajo()
-    {
-        return Redirect("ModificarTrabajoRecepcional?id=" + Request.Query["id"]);
-    }
-
-    public IActionResult OnPostAsignarAlumnos()
-    {
-        return Redirect("AsignarAlumnos?id=" + Request.Query["id"]);
-    }
-
-    public IActionResult OnPostAsignarSinodales()
-    {
-        return Redirect("AsignarSinodales?id=" + Request.Query["id"]);
-    }
     
     [HttpPost]
     public async Task<IActionResult> OnPostCerrarSesion()
@@ -132,7 +118,6 @@ public class VerExpediente : PageModel
     {
         var trabajo =
             Context.TrabajoRecepcionals.FirstOrDefault(t => t.TrabajoRecepcionalId == Int32.Parse(Request.Query["id"]));
-        Console.WriteLine(trabajo.ExperienciaActual);
         if (trabajo.ExperienciaActual.Equals("pg"))
         {
             return Redirect("RegistrarDocumentoProyectoGuiado?id=" + Request.Query["id"]);

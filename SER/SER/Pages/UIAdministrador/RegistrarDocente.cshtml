@@ -7,7 +7,7 @@
 
 <div class="container">
     <form id="registrarLgacform" method="post">
-        <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
+        <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px;margin-top: 50px">
             <h3 style="font-size: 20px">REGISTRAR DOCENTE</h3>
         </div>
         <div class="container p-2 h-100" style="margin-top: 40px">
@@ -29,7 +29,7 @@
 
         <div class="container p-2 h-100" style="margin-top: 40px">
             <div class="d-flex justify-content-center align-content-center h-100">
-                <input type="number" maxlength="5" id="input_numeroPersonal" asp-for="@Model.profesorNuevo.NumeroDePersonal" style="width: 348px;"placeholder="Numero de personal" class="form-control" required="required"/>
+                <input type="number"  id="input_numeroPersonal" pattern="[0-9]{5}" asp-for="@Model.profesorNuevo.NumeroDePersonal" style="width: 348px;"placeholder="Numero de personal" class="form-control" required="required"/>
             </div>
         </div>
         <div class="container p-2 h-100" style="margin-top: 40px">

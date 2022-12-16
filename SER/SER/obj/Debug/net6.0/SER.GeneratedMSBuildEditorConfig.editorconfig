@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = /home/josuecg/Documentos/Repo/SERSystem/SER/SER
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/CerrarSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2VycmFyU2VzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/josuecg/Documentos/Repo/SERSystem/SER/SER/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

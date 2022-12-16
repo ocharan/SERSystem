@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
 using SER.Entities;
 
 namespace SER.Pages.UIAdministrador;
-
+[Authorize(Roles = "Administrador")]
 public class TiposDeDocumento : PageModel
 {
     private readonly MySERContext _context;

@@ -123,23 +123,7 @@
     let listaEstudiantesAsignados = new Array();
     let listaEstudiantesPorAsignar = new Array();
     let matriculaEliminar = "";
-    let btnCerrarSesion = document.getElementById("btnCerrarSesion")
-      btnCerrarSesion.onclick = function (){
-          $.ajax({
-          url: "?handler=CerrarSesion",
-          type: "POST",
-          data: "",
-          headers: {
-              RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
-          },
-          success: function (res){
-              console.log(res)
-              if (res.succes === true){
-                  window.open("../../Index", "_self");
-              }
-          }
-          });
-    }
+   
     
     function cerrarModal(){
         $('#modalEliminarEstudiante').modal('hide');

@@ -1,5 +1,6 @@
 using System.Text.Json.Nodes;
 using Arch.EntityFrameworkCore.Internal;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualBasic.CompilerServices;
@@ -12,6 +13,7 @@ using SER.DTO;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
+[Authorize(Roles = "Coordinador")]
 public class RegistrarIntegrantesCA : PageModel
 {
     private readonly MySERContext _context;

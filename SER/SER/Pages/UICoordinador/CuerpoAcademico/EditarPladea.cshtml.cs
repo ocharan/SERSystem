@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
 using SER.Entities;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
+[Authorize(Roles = "Coordinador")]
 public class EditarPladea : PageModel
 {
 

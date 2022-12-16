@@ -8,7 +8,10 @@
 <div class="container" style="padding: 20px">
     <form method="post">
         <div class="container" >
-                <div class="infoProyecto" style="border: 1px solid #d6d0d0; padding: 20px; border-radius: 10px">
+            <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px; margin-top: 50px;">
+                <h3 style="font-size: 20px">VER EXPEDIENTE</h3>
+            </div>
+            <div class="infoProyecto" style="border: 1px solid #d6d0d0; padding: 20px; border-radius: 10px">
                     <div>
                         <div>
                             <label style="font-size: 25px; font-weight: bold" class="col-form-label">Trabajo recepcional</label>
@@ -145,21 +148,6 @@
   let titleNav = document.getElementById("title-nav");
   let navigation = document.getElementById("navigation");
   let listaNavegacion = document.getElementById("element-list");
-      let btnCerrarSesion = document.getElementById("btnCerrarSesion")
-        btnCerrarSesion.onclick = function (){
-            $.ajax({
-            url: "?handler=CerrarSesion",
-            type: "POST",
-            data: "",
-            headers: {
-                RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
-            },
-            success: function (res){
-                window.location.href = "../../Index"
-            }
-            });
-      }
-  
   
   window.onload = function (){
     navPrincipal.hidden = false;

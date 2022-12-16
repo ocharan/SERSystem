@@ -68,24 +68,6 @@
   const params = new URLSearchParams(valores)
   let idMaestro = sessionStorage.getItem('idMaestro');
     
-  let btnCerrarSesion = document.getElementById("btnCerrarSesion")
-      btnCerrarSesion.onclick = function (){
-          $.ajax({
-          url: "?handler=CerrarSesion",
-          type: "POST",
-          data: "",
-          headers: {
-              RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
-          },
-          success: function (res){
-              console.log(res)
-              if (res.succes === true){
-                  window.open("../../Index", "_self");
-              }
-          }
-          });
-    }  
-  
   
   window.onload = function (){
     navPrincipal.hidden = false;

@@ -1,4 +1,5 @@
 using System.Data.Entity.Core.Objects;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -9,6 +10,7 @@ using Lgac = SER.DTO.Lgac;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
 
+[Authorize(Roles = "Coordinador")]
 public class LGAC : PageModel
 {
     

@@ -8,7 +8,7 @@
 <div class="container">
     <form method="post">
         <div class="container">
-                <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px">
+                <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px; margin-top: 50px;">
                     <h3 style="font-size: 20px">SINODALES REGISTRADOS</h3>
                 </div>
                 <div class="input-group mb-3" style="margin-top: 50px">
@@ -76,23 +76,7 @@
   let titleNav = document.getElementById("title-nav");
   let navigation = document.getElementById("navigation");
   let listaNavegacion = document.getElementById("element-list");
-  let btnCerrarSesion = document.getElementById("btnCerrarSesion")
-  btnCerrarSesion.onclick = function (){
-      $.ajax({
-      url: "?handler=CerrarSesion",
-      type: "POST",
-      data: "",
-      headers: {
-          RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
-      },
-      success: function (res){
-          console.log(res)
-          if (res.succes === true){
-              window.open("../../Index", "_self");
-          }
-      }
-      });
-  }
+  let btnCerrarSesion = document.getElementById("btnCerrarSesion");
   
   
   window.onload = function (){

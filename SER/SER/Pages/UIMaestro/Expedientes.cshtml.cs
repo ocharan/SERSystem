@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -5,6 +6,8 @@ using SER.Entities;
 
 namespace SER.Pages.UIMaestro;
 
+
+[Authorize(Roles = "Maestro")]
 public class Expedientes : PageModel
 {
 

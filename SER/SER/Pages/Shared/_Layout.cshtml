@@ -31,10 +31,29 @@
         </ul>
     </div>
     <div class="form-inline my-2 my-lg-0">
-        <form method="post">
-            <button id="btnCerrarSesion" asp-page-handler="cerrarSesion" class="btn btn-danger my-2 my-sm-0" style="margin-right: 20px" type="button">Cerrar sesión</button>
+        <form method="post" asp-page="/CerrarSesion">
+            <button id="btnCerrarSesion" class="btn btn-danger my-2 my-sm-0" style="margin-right: 20px">Cerrar sesión</button>
         </form>
     </div>
+    <script>
+   /*let btnCerrarSesion = document.getElementById("btnCerrarSesion")
+          btnCerrarSesion.onclick = function (){
+              $.ajax({
+              url: "/../Index?handler=CerrarSesion",
+              type: "POST",
+              data: "",
+              headers: {
+                  RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
+              },
+              success: function (res){
+                  if (res.success === true){
+                      window.location.href = 'https://localhost:7173/';
+                      //window.open("/", "_self");
+                  }
+              } 
+              });
+        }*/
+    </script>
 </nav>
 
 

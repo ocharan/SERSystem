@@ -8,6 +8,9 @@
 <form id="registrarTrabajoForm"  enctype="multipart/form-data" method="post">
     <div class="tab">
         <div class="container">
+            <div class="d-flex justify-content-center align-content-center h-100" style="margin-bottom: 50px; margin-top: 50px;">
+                <h3 style="font-size: 20px">NUEVO TRABAJO RECEPCIONAL</h3>
+            </div>
             <div class="input-group mb-3" style="margin-top: 50px">
                 <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" asp-for="TrabajoRecepcional.Nombre" placeholder="Nombre del trabajo recepcional" required>
                 <select class="form-select" style="float: right; border-radius: 5px; margin-left: 15px" asp-for="TrabajoRecepcional.Duracion" required>
@@ -97,23 +100,6 @@
         let listaInvestigacion;
         let listaVinculacion;
         let listaPladea;
-            let btnCerrarSesion = document.getElementById("btnCerrarSesion")
-              btnCerrarSesion.onclick = function (){
-                  $.ajax({
-                  url: "?handler=CerrarSesion",
-                  type: "POST",
-                  data: "",
-                  headers: {
-                      RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
-                  },
-                  success: function (res){
-                      console.log(res)
-                      if (res.succes === true){
-                          window.open("../../Index", "_self");
-                      }
-                  }
-                  });
-            }
         
         selectTipo.addEventListener('change', function (){
             obtenerProyecto(selectTipo.value)

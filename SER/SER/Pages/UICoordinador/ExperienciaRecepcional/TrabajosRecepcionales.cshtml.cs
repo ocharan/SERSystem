@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Context;
@@ -7,6 +8,7 @@ using SER.Entities;
 
 namespace SER.Pages.UICoordinador.ExperienciaRecepcional;
 
+[Authorize(Roles = "Coordinador")]
 public class TrabajosRecepcionales : PageModel
 {
     

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -6,7 +7,7 @@ using SER.Context;
 using SER.Entities;
 
 namespace SER.Pages.UICoordinador.CuerpoAcademico;
-
+[Authorize(Roles = "Coordinador")]
 public class RegistrarLgac : PageModel
 {
     private readonly MySERContext _context;

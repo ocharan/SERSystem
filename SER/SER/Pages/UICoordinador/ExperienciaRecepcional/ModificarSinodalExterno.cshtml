@@ -82,23 +82,6 @@
       let titleNav = document.getElementById("title-nav");
       let navigation = document.getElementById("navigation");
       let listaNavegacion = document.getElementById("element-list");
-          let btnCerrarSesion = document.getElementById("btnCerrarSesion")
-            btnCerrarSesion.onclick = function (){
-                $.ajax({
-                url: "?handler=CerrarSesion",
-                type: "POST",
-                data: "",
-                headers: {
-                    RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
-                },
-                success: function (res){
-                    console.log(res)
-                    if (res.succes === true){
-                        window.open("../../Index", "_self");
-                    }
-                }
-                });
-          }
       
       
       window.onload = function (){
