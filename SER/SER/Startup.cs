@@ -31,7 +31,7 @@ namespace SER
             {
                 option.LoginPath = "/Index";
                 option.AccessDeniedPath = "/Index";
-                option.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+                option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
 
             });
             services.AddAuthorization();

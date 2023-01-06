@@ -33,7 +33,6 @@ namespace SER.Pages
         {
             try
             {
-                
                 var usuarios = _context.Usuarios.ToList();
                 var usuarioObtenido = usuarios.FirstOrDefault(usr => usr.NombreUsuario == Usuario.NombreUsuario && usr.Contra == Usuario.Contra);
                 if (Usuario.NombreUsuario != null || Usuario.Contra != null)
@@ -51,9 +50,6 @@ namespace SER.Pages
                         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                             new ClaimsPrincipal(claimsIdentity));
-                        Console.WriteLine("Maestro: "+User.IsInRole("Maestro"));
-                        Console.WriteLine("Coordinador: "+User.IsInRole("Coordinador"));
-                        Console.WriteLine("Administrador: "+User.IsInRole("Administrador"));
 
                         if (usuarioObtenido.Tipo.Equals("Coordinador"))
                         {
