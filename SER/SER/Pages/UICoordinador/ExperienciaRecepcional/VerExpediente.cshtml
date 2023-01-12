@@ -107,12 +107,6 @@
                 </div>
                 
                 <div class="infoAlumnos" style="border: 1px solid #d6d0d0; padding: 20px; border-radius: 10px; margin-top: 20px">
-                    <div>
-                        <div>
-                            <label style="font-size: 25px; font-weight: bold" class="col-form-label">Documentos registrados</label>
-                            <button class="btn btn-primary" asp-page-handler="registrarDocumento" asp-route-id="@Model.expediente.TrabajoRecepcionalId" style="float: right; font-size: 18px;">Registrar documento</button>
-                        </div>
-                    </div>
                     @if (Model.documentosRegistrados.Any())
                     {
                         foreach (var doc in Model.documentosRegistrados)

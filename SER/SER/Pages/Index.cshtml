@@ -19,7 +19,7 @@
               <div class="form-outline mb-4">
                 <input type="password" id="inputContraseña" asp-for="Usuario.Contra" placeholder="Contraseña" class="form-control form-control-lg"/>
               </div>
-              <input type="submit" class="btn btn-primary btn-lg btn-block" value="Iniciar sesión" style="background-color: #2957CD"/>
+              <input id="btnIniciarSesion" type="submit" class="btn btn-primary btn-lg btn-block" value="Iniciar sesión" style="background-color: #2957CD"/>
               <br/>
               <br/>
               <a asp-page="#">¿Has olvidado tú contraseña?</a>
@@ -33,7 +33,7 @@
 
 @if (TempData["Error"] != null)
 {
-    <div class="alert alert-danger">
+    <div id="alertMessage" class="alert alert-danger">
         @TempData["Error"]
     </div>
 }
