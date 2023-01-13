@@ -268,7 +268,7 @@
               let row = `<tr id='${listaEstudiantes[i].Matricula}'>
                           <td>${listaEstudiantes[i].Nombre}</td>
                           <td>${listaEstudiantes[i].Matricula}</td>
-                          <td><button id="btn_asignar" onclick="asignarEstudiante('${listaEstudiantes[i].Matricula}')" class="btn btn-primary">Asignar</button></td>
+                          <td><button id="btnAsignar${listaEstudiantes[i].Matricula}" onclick="asignarEstudiante('${listaEstudiantes[i].Matricula}')" class="btn btn-primary">Asignar</button></td>
                           </tr>`
               tablaEstudiantesDisponibles.innerHTML += row;
           }     

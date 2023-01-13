@@ -14,7 +14,7 @@
             <div class="input-group mb-3" style="margin-top: 50px">
                 <input id="inputBuscar" type="text" name="query" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar alumno">
                 <button class="btn btn-primary" type="submit" onclick="buscarAlumno()" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
-                <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarAlumno', '_self')" type="button">Registrar alumno</button>
+                <button id="btnRegistrarAlumno" class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarAlumno', '_self')" type="button">Registrar alumno</button>
             </div>
         </div>
             
@@ -37,7 +37,7 @@
                                 <td>@alumno.Nombre</td>
                                 <td>@alumno.Matricula</td>
                                 <td>
-                                    <button asp-page-handler="modificar" asp-route-id="@alumno.Matricula" class="btn btn-primary" type="submit">Modificar</button>
+                                    <button id="@alumno.Matricula" asp-page-handler="modificar" asp-route-id="@alumno.Matricula" class="btn btn-primary" type="submit">Modificar</button>
                                 </td>
                             </tr>
                         }

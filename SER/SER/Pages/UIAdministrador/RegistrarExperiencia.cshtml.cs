@@ -35,6 +35,7 @@ public class RegistrarExperiencia : PageModel
                 ExperienciaEducativa.EstadoAbierto = 1;
                 _context.ExperienciaEducativas.Add(ExperienciaEducativa);
                 _context.SaveChanges();
+                TempData["Success"] = "Se ha registrado la experiencia edudativa correctamente";
                 if (fileExperiencia != null)
                 {
                     string fecha = DateTime.Now.ToString().Replace("/", "");

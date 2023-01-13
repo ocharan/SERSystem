@@ -7,195 +7,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f0def88-da15-4586-9adc-5db840f06807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySER/obj/MySER.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySER/obj/MySER.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySER/obj/MySER.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySER/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySER/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/MySERTest.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test01.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test02.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Microsoft.TestPlatform.CommunicationUtilities.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Microsoft.TestPlatform.CoreUtilities.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Microsoft.TestPlatform.CrossPlatEngine.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Microsoft.TestPlatform.PlatformAbstractions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Microsoft.TestPlatform.Utilities.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Microsoft.VisualStudio.TestPlatform.Common.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Microsoft.VisualStudio.TestPlatform.ObjectModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/NUnit3.TestAdapter.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/NUnit3.TestAdapter.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/NuGet.Frameworks.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/WebDriver.Support.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/WebDriver.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/chromedriver" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/cs/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/cs/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/cs/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/de/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/de/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/de/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/de/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/de/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/es/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/es/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/es/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/es/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/es/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/fr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/fr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/fr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/geckodriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/it/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/it/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/it/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/it/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/it/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ja/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ja/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ja/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ko/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ko/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ko/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/nunit.engine.api.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/nunit.engine.core.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/nunit.engine.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/nunit.framework.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pl/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pl/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pl/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pt-BR/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pt-BR/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/pt-BR/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ref/MySERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ru/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ru/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ru/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/selenium-manager/linux/selenium-manager" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/selenium-manager/macos/selenium-manager" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/selenium-manager/windows/selenium-manager.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/testcentric.engine.metadata.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/testhost.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/tr/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/tr/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/tr/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hans/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CommunicationUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySER.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySER.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySER.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/ref/MySERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/MySERTest.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/MySERTest.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/MySERTest.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SER.sln.DotSettings.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/SERTest.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/Test01.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/Newtonsoft.Json.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/WebDriver.Support.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/WebDriver.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/ref/SERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/selenium-manager/linux/selenium-manager" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/selenium-manager/macos/selenium-manager" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/selenium-manager/windows/selenium-manager.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/apphost" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/ref/SERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/SERTest.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/SERTest.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/SERTest.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133179032631720000.xel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133179974702230000.xel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/errorlog.73" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/errorlog.74" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/log_72.trc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/log_73.trc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133179032644600000.xel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133179974712110000.xel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test03.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test04.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test05.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test06.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test07.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test08.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test09.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test10.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test11.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test12.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test13.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SER/wwwroot/Archivos/3145_13012023104420" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133180966032780000.xel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/errorlog.75" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/log_74.trc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133180966050370000.xel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER.sln" beforeDir="false" afterPath="$PROJECT_DIR$/SER.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/VerExpediente.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/VerExpediente.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ref/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ref/MySERTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/ref/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/ref/MySERTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/Menus/UIAdministración.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Menus/UIAdministración.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Alumnos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Alumnos.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/AsignarAlumnos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/AsignarAlumnos.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Docentes.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Docentes.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/EditarDocente.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/EditarDocente.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarAlumno.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarAlumno.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarDocente.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarDocente.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.staticwebassets.runtime.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/ref/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/ref/SER.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/obj/SER.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/SER.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/staticwebassets.development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/SER.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/SER.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/SER_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/SER_log.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/master.mdf" afterDir="false" />
@@ -206,9 +63,7 @@
       <change beforePath="$PROJECT_DIR$/data/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/msdblog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/tempdb.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/templog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133130873881850000.xel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133131504064050000.xel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133132590078110000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133135820314030000.xel" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.10" afterDir="false" />
@@ -279,14 +134,13 @@
       <change beforePath="$PROJECT_DIR$/logs/errorlog.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.7" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.70" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.70" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.71" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.71" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/errorlog.72" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.72" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/errorlog.73" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.73" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/errorlog.74" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.74" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_66.trc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_67.trc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_68.trc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133149879078820000.xel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133149978918520000.xel" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133150724969520000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log_69.trc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133153325796730000.xel" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,6 +181,11 @@
     ]
   }
 }</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="private IWebDriver driver;   public IDictionary&lt;string, object&gt; vars {get; private set;}   private IJavaScriptExecutor js;   [SetUp]   public void SetUp() {     driver = new FirefoxDriver();     js = (IJavaScriptExecutor)driver;     vars = new Dictionary&lt;string, object&gt;();   }   [TearDown]   protected void TearDown() {     driver.Quit();   }   [Test]   public void test04() {     driver.Navigate().GoToUrl(&quot;https://localhost:7173/&quot;);     driver.Manage().Window.Size = new System.Drawing.Size(736, 572);     driver.FindElement(By.Id(&quot;inputUsuario&quot;)).Click();     driver.FindElement(By.Id(&quot;inputContraseña&quot;)).SendKeys(&quot;1234&quot;);     driver.FindElement(By.Id(&quot;inputUsuario&quot;)).SendKeys(&quot;josuecapi&quot;);     driver.FindElement(By.Id(&quot;btnIniciarSesion&quot;)).Click();     driver.FindElement(By.Id(&quot;btnExperienciasEducativas&quot;)).Click();     driver.FindElement(By.Id(&quot;btnRegistrarExp&quot;)).Click();     driver.FindElement(By.Id(&quot;nombreList&quot;)).Click();     {       var dropdown = driver.FindElement(By.Id(&quot;nombreList&quot;));       dropdown.FindElement(By.XPath(&quot;//option[. = 'Proyecto guíado']&quot;)).Click();     }     driver.FindElement(By.CssSelector(&quot;#nombreList &gt; option:nth-child(2)&quot;)).Click();     driver.FindElement(By.Id(&quot;inputNRC&quot;)).Click();     driver.FindElement(By.Id(&quot;inputNRC&quot;)).SendKeys(&quot;3345&quot;);     driver.FindElement(By.Id(&quot;seccionList&quot;)).Click();     {       var dropdown = driver.FindElement(By.Id(&quot;seccionList&quot;));       dropdown.FindElement(By.XPath(&quot;//option[. = 'AGO22 - FEB23']&quot;)).Click();     }     driver.FindElement(By.CssSelector(&quot;.d-flex:nth-child(3) option:nth-child(2)&quot;)).Click();     driver.FindElement(By.Id(&quot;registrarProyectoForm&quot;)).Click();     driver.FindElement(By.Name(&quot;ExperienciaEducativa.Seccion&quot;)).Click();     {       var dropdown = driver.FindElement(By.Name(&quot;ExperienciaEducativa.Seccion&quot;));       dropdown.FindElement(By.XPath(&quot;//option[. = '1']&quot;)).Click();     }     driver.FindElement(By.CssSelector(&quot;.d-flex:nth-child(4) option:nth-child(2)&quot;)).Click();     driver.FindElement(By.Id(&quot;btnGuardarExp&quot;)).Click();     driver.FindElement(By.Id(&quot;registrarProyectoForm&quot;)).Click();     driver.FindElement(By.Id(&quot;inputNRC&quot;)).Click();     driver.FindElement(By.Id(&quot;inputNRC&quot;)).SendKeys(&quot;33453&quot;);     driver.FindElement(By.Id(&quot;btnGuardarExp&quot;)).Click();     driver.FindElement(By.Id(&quot;btnGuardarExp&quot;)).Click();     driver.FindElement(By.LinkText(&quot;Experiencias educativas&quot;)).Click();     driver.Close();   }" />
+    </option>
+  </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.SER">
     <configuration name="SERTest" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -436,6 +295,7 @@
       <workItem from="1673343150504" duration="4228000" />
       <workItem from="1673429610322" duration="3726000" />
       <workItem from="1673516065174" duration="11235000" />
+      <workItem from="1673622888967" duration="14922000" />
     </task>
     <servers />
   </component>
@@ -458,5 +318,17 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints">
+          <properties exception="OpenQA.Selenium.NoSuchElementException" isInternal="false" displayValue="NoSuchElementException" namespaceName="OpenQA.Selenium">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
