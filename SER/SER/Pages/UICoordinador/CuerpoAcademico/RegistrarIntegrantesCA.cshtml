@@ -57,7 +57,7 @@
                     <tr>
                         <td>@integrante.Nombre</td>
                         <td>@integrante.Tipo</td>
-                        <td><button id="btn_eliminar" onclick="eliminarRegistro(@integrante.IntegranteId)" class="btn btn-danger eliminar">Eliminar</button></td>
+                        <td><button id="btnEliminar&@integrante.NumeroDePersonal" onclick="eliminarRegistro(@integrante.IntegranteId)" class="btn btn-danger eliminar">Eliminar</button></td>
                     </tr>
                 }
                 </tbody>
@@ -85,7 +85,7 @@
     <br/>
     <div style="margin-top: 40px" class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
-            <input type="button" id="btn_Guardar" onclick="guardarRegistro()" class="btn btn-success" value="Guardar registro"/>
+            <input type="button" id="btnGuardar" onclick="guardarRegistro()" class="btn btn-success" value="Guardar registro"/>
         </div>
     </div>
     <div id="cambiosFalse"  class="alert alert-danger" hidden>
@@ -130,7 +130,7 @@
                     <p>Con esta acción se perderán los datos de los integrantes que aún no han sido registrados al cuerpo academico</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="confirmarEliminacion()" class="btn btn-danger">Comfirmar</button>
+                    <button id="btnConfirmarEliminacion" type="button" onclick="confirmarEliminacion()" class="btn btn-danger">Comfirmar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
@@ -183,7 +183,7 @@
                                                        <a class="nav-link">></a>
                                                    </li>
                                                    <li class="nav-item active" style="font-size: 25px">
-                                                        <a class="nav-link" href="RegistrarIntegrantesCA">Registrar integrantes</a>
+                                                        <a class="nav-link" onclick="window.location.reload()">Registrar integrantes</a>
                                                    </li>`
                                                        
                  }
@@ -213,7 +213,7 @@
                         <td>${listaDocentes[i].Nombre}</td>
                         <td>${listaDocentes[i].NumeroDePersonal}</td>
                         <td>
-                            <button id="asignarMiembro" class="btn btn-primary" onclick="asignarProfesor(${listaDocentes[i].ProfesorId})"  style="border-radius: 5px; margin-left: 5px">Asignar</button>
+                            <button id="btnAsignarMiembro${listaDocentes[i].NumeroDePersonal}" class="btn btn-primary" onclick="asignarProfesor(${listaDocentes[i].ProfesorId})"  style="border-radius: 5px; margin-left: 5px">Asignar</button>
                         </td>
                         </tr>`
             tabla_docentes.innerHTML += row;
@@ -237,7 +237,7 @@
                  if (combo_tipo != "Selecciona tipo de integrante"){
                                                 let row = `<tr class="table-bordered" id="${profesorAsignar.ProfesorId}"><td>${profesorAsignar.Nombre}</td>
                                                                 <td>${combo_tipo.toString()}</td>
-                                                                <td><button id="btn_eliminar" onclick="eliminarIntegrante('${encodeURIComponent(JSON.stringify(profesorAsignar))}')" class="btn btn-danger eliminar">Eliminar</button></td><tr>`;
+                                                                <td><button id="btnEliminar${profesorAsignar.NumeroDePersonal}" onclick="eliminarIntegrante('${encodeURIComponent(JSON.stringify(profesorAsignar))}')" class="btn btn-danger eliminar">Eliminar</button></td><tr>`;
                                                 tabla_integrantes.innerHTML += row;
                                                 listaIntegrantes.push(profesorAsignar);
                                                 recargarTabla(profesorId);

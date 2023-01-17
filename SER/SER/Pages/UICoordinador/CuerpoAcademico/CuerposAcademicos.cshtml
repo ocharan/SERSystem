@@ -44,10 +44,10 @@
                             <tr>
                                 <td>@cuerpo.Nombre</td>
                                 <td>
-                                    <input asp-page-handler="registrar" type="submit" style="color: white" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Asignar integrantes" class="btn btn-primary" id="btn_añadirIntegrante"/>
+                                    <input asp-page-handler="registrar" type="submit" style="color: white" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Asignar integrantes" class="btn btn-primary" id="btnAñadirIntegrante&@cuerpo.CuerpoAcademicoId"/>
                                 </td>
                                 <td>
-                                    <input asp-page-handler="modificar" type="submit" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Editar" class="btn btn-primary" id="btnModificarIntegrante"/>
+                                    <input asp-page-handler="modificar" type="submit" asp-route-id="@cuerpo.CuerpoAcademicoId" value="Editar" class="btn btn-primary" id="btnModificarCuerpo&@cuerpo.CuerpoAcademicoId"/>
                                 </td>
                             </tr>
                         }

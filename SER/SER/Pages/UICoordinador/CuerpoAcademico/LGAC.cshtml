@@ -14,7 +14,7 @@
             <div class="input-group mb-3" style="margin-top: 50px">
                 <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar lgac">
                 <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
-                <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarLgac', '_self')" type="button">Registrar LGAC</button>
+                <button id="btnRegistrarLgac" class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('RegistrarLgac', '_self')" type="button">Registrar LGAC</button>
             </div>
         </div>
             
@@ -37,7 +37,7 @@
                                 <td>@lgac.lgacNombre</td>
                                 <td>@lgac.cuerpoAcademico</td>
                                 <td>
-                                    <button asp-page-handler="modificar" type="submit" asp-route-id="@lgac.lgacId" class="btn btn-primary" style="border-radius: 5px; margin-left: 5px" type="button">Editar</button>
+                                    <button id="btnEditarLgac&@lgac.lgacId" asp-page-handler="modificar" type="submit" asp-route-id="@lgac.lgacId" class="btn btn-primary" style="border-radius: 5px; margin-left: 5px" type="button">Editar</button>
                                 </td>
                             </tr>
                         }
