@@ -2289,7 +2289,6 @@ C:/Users/Mrcap/Desktop/SER/SER/SERWebApplication/SER/obj/Debug/net6.0/SER.genrun
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/bin/Debug/net6.0/SER.deps.json
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/bin/Debug/net6.0/SER.runtimeconfig.json
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/bin/Debug/net6.0/SER.dll
-/home/josuecg/Documentos/Repo/SERSystem/SER/SER/bin/Debug/net6.0/ref/SER.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/bin/Debug/net6.0/SER.pdb
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Antiforgery.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -2857,3 +2856,4 @@ C:/Users/Mrcap/Desktop/SER/SER/SERWebApplication/SER/obj/Debug/net6.0/SER.genrun
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/obj/Debug/net6.0/ref/SER.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/obj/Debug/net6.0/SER.pdb
 /home/josuecg/Documentos/Repo/SERSystem/SER/SER/obj/Debug/net6.0/SER.genruntimeconfig.cache
+/home/josuecg/Documentos/Repo/SERSystem/SER/SER/obj/Debug/net6.0/refint/SER.dll

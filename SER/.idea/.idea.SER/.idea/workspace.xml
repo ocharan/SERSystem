@@ -7,52 +7,364 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f0def88-da15-4586-9adc-5db840f06807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test03.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test04.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test05.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test06.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test07.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test08.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test09.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test10.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test11.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test12.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test13.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SER/wwwroot/Archivos/3145_13012023104420" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133180966032780000.xel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/errorlog.75" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/log_74.trc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133180966050370000.xel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test14.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test15.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test16.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test17.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test18.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test19.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test20.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/refint/SER.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133183360613810000.xel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/errorlog.76" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/log_75.trc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133183360633860000.xel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/MySERTest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/MySERTest.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ref/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/ref/MySERTest.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/ref/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/ref/MySERTest.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/Menus/UIAdministración.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Menus/UIAdministración.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Alumnos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Alumnos.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/MySERTest.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/MySERTest.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySERTest/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SER.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/Menus/UICoordinador.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/Menus/UICoordinador.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/AsignarAlumnos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/AsignarAlumnos.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Docentes.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/Docentes.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/EditarDocente.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/EditarDocente.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/AsignarProfesor.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/AsignarProfesor.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarAlumno.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarAlumno.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarDocente.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarDocente.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarTipoDocumento.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/RegistrarTipoDocumento.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UIAdministrador/TiposDeDocumento.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UIAdministrador/TiposDeDocumento.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/UICuerpoAcademico.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/UICuerpoAcademico.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/SER.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SER/SER.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.staticwebassets.runtime.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/ref/SER.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Antiforgery.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Antiforgery.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.Cookies.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.Cookies.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.OAuth.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.OAuth.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authentication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authorization.Policy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authorization.Policy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authorization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Authorization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.Authorization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.Authorization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.Forms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.Forms.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Components.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Connections.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Connections.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.CookiePolicy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.CookiePolicy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Cors.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Cors.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Cryptography.Internal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Cryptography.Internal.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.DataProtection.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.DataProtection.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.DataProtection.Extensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.DataProtection.Extensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.DataProtection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.DataProtection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Diagnostics.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Diagnostics.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Diagnostics.HealthChecks.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Diagnostics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Diagnostics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.HostFiltering.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.HostFiltering.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Hosting.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Hosting.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Hosting.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Hosting.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Html.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Html.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Connections.Common.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Connections.Common.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Connections.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Connections.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Extensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Extensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Features.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Features.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Results.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.Results.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Http.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.HttpLogging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.HttpLogging.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.HttpOverrides.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.HttpOverrides.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.HttpsPolicy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.HttpsPolicy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Identity.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Identity.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Localization.Routing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Localization.Routing.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Localization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Localization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Metadata.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Metadata.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.ApiExplorer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.ApiExplorer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Cors.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Cors.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.DataAnnotations.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.DataAnnotations.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Formatters.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Formatters.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Formatters.Xml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Localization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Localization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Razor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.Razor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.RazorPages.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.RazorPages.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.TagHelpers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.TagHelpers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.ViewFeatures.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.ViewFeatures.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Mvc.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Razor.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Razor.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Razor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Razor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.ResponseCaching.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.ResponseCaching.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.ResponseCaching.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.ResponseCaching.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.ResponseCompression.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.ResponseCompression.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Rewrite.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Rewrite.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Routing.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Routing.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Routing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Routing.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.HttpSys.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.HttpSys.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.IIS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.IIS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.IISIntegration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.IISIntegration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.Kestrel.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.Kestrel.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.Kestrel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Server.Kestrel.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Session.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.Session.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.SignalR.Common.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.SignalR.Common.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.SignalR.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.SignalR.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.SignalR.Protocols.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.SignalR.Protocols.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.SignalR.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.SignalR.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.StaticFiles.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.StaticFiles.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.WebSockets.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.WebSockets.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.WebUtilities.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.WebUtilities.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.AspNetCore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Caching.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Caching.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Caching.Memory.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Caching.Memory.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Binder.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.CommandLine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.CommandLine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.EnvironmentVariables.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.EnvironmentVariables.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.FileExtensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.FileExtensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Ini.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Ini.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.KeyPerFile.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.KeyPerFile.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.UserSecrets.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.UserSecrets.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Xml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.Xml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.DependencyInjection.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.DependencyInjection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Diagnostics.HealthChecks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Diagnostics.HealthChecks.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Features.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Features.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileProviders.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileProviders.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileProviders.Composite.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileProviders.Composite.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileProviders.Embedded.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileProviders.Embedded.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileProviders.Physical.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileProviders.Physical.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileSystemGlobbing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.FileSystemGlobbing.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Hosting.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Hosting.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Hosting.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Hosting.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Http.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Http.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Identity.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Identity.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Identity.Stores.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Identity.Stores.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Localization.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Localization.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Localization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Localization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.Console.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.Debug.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.Debug.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.EventLog.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.EventLog.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.EventSource.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.EventSource.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.TraceSource.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.TraceSource.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Logging.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.ObjectPool.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.ObjectPool.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Options.ConfigurationExtensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Options.ConfigurationExtensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Options.DataAnnotations.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Options.DataAnnotations.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Options.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Options.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.WebEncoders.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Extensions.WebEncoders.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.JSInterop.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.JSInterop.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Net.Http.Headers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Net.Http.Headers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.VisualBasic.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.VisualBasic.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.VisualBasic.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.VisualBasic.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Win32.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Win32.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Win32.Registry.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/Microsoft.Win32.Registry.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.AppContext.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.AppContext.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Buffers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Buffers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.Concurrent.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.Concurrent.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.Immutable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.Immutable.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.NonGeneric.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.NonGeneric.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.Specialized.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.Specialized.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Collections.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.Annotations.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.Annotations.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.DataAnnotations.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.DataAnnotations.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.EventBasedAsync.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.EventBasedAsync.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.TypeConverter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.TypeConverter.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ComponentModel.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Console.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Data.Common.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Data.Common.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Data.DataSetExtensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Data.DataSetExtensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Contracts.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Contracts.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Debug.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Debug.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.DiagnosticSource.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.EventLog.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.EventLog.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.FileVersionInfo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.FileVersionInfo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Process.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Process.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.StackTrace.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.StackTrace.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.TextWriterTraceListener.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.TextWriterTraceListener.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Tools.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Tools.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.TraceSource.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.TraceSource.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Tracing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Diagnostics.Tracing.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Drawing.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Drawing.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Drawing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Drawing.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Dynamic.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Dynamic.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Formats.Asn1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Formats.Asn1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Globalization.Calendars.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Globalization.Calendars.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Globalization.Extensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Globalization.Extensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Globalization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Globalization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Compression.Brotli.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Compression.Brotli.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Compression.FileSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Compression.FileSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Compression.ZipFile.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Compression.ZipFile.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Compression.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Compression.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.AccessControl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.AccessControl.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.DriveInfo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.DriveInfo.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.Watcher.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.Watcher.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.FileSystem.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.IsolatedStorage.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.IsolatedStorage.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.MemoryMappedFiles.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.MemoryMappedFiles.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Pipelines.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Pipelines.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Pipes.AccessControl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Pipes.AccessControl.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Pipes.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.Pipes.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.UnmanagedMemoryStream.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.UnmanagedMemoryStream.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.IO.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Linq.Expressions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Linq.Expressions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Linq.Parallel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Linq.Parallel.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Linq.Queryable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Linq.Queryable.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Linq.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Linq.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Memory.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Memory.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Http.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Http.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Http.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Http.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.HttpListener.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.HttpListener.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Mail.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Mail.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.NameResolution.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.NameResolution.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.NetworkInformation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.NetworkInformation.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Ping.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Ping.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Requests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Requests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Security.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Security.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.ServicePoint.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.ServicePoint.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Sockets.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.Sockets.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebClient.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebClient.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebHeaderCollection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebHeaderCollection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebProxy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebProxy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebSockets.Client.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebSockets.Client.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebSockets.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.WebSockets.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Net.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Numerics.Vectors.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Numerics.Vectors.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Numerics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Numerics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ObjectModel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ObjectModel.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.DispatchProxy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.DispatchProxy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Emit.ILGeneration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Emit.ILGeneration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Emit.Lightweight.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Emit.Lightweight.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Emit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Emit.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Extensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Extensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Metadata.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Metadata.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.TypeExtensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.TypeExtensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Reflection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Resources.Reader.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Resources.Reader.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Resources.ResourceManager.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Resources.ResourceManager.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Resources.Writer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Resources.Writer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.CompilerServices.Unsafe.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.CompilerServices.Unsafe.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.CompilerServices.VisualC.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.CompilerServices.VisualC.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Extensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Extensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Handles.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Handles.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.InteropServices.RuntimeInformation.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.InteropServices.RuntimeInformation.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.InteropServices.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.InteropServices.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Intrinsics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Intrinsics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Loader.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Loader.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Numerics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Numerics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.Formatters.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.Formatters.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.Xml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.Xml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.Serialization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.AccessControl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.AccessControl.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Claims.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Claims.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Algorithms.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Algorithms.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Cng.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Cng.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Csp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Csp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Encoding.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Encoding.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.OpenSsl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.OpenSsl.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.X509Certificates.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.X509Certificates.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Xml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Cryptography.Xml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Principal.Windows.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Principal.Windows.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Principal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.Principal.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.SecureString.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.SecureString.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Security.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ServiceModel.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ServiceModel.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ServiceProcess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ServiceProcess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Encoding.CodePages.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Encoding.CodePages.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Encoding.Extensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Encoding.Extensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Encoding.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Encoding.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Encodings.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Encodings.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.RegularExpressions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Text.RegularExpressions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Channels.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Channels.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Overlapped.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Overlapped.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Tasks.Dataflow.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Tasks.Dataflow.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Tasks.Extensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Tasks.Extensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Tasks.Parallel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Tasks.Parallel.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Tasks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Tasks.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Thread.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Thread.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.ThreadPool.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.ThreadPool.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Timer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.Timer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Threading.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Transactions.Local.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Transactions.Local.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Transactions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Transactions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ValueTuple.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.ValueTuple.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Web.HttpUtility.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Web.HttpUtility.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Windows.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Windows.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.Linq.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.Linq.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.ReaderWriter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.ReaderWriter.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.Serialization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.Serialization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XDocument.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XDocument.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XPath.XDocument.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XPath.XDocument.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XPath.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XPath.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XmlDocument.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XmlDocument.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XmlSerializer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.XmlSerializer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.Xml.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/System.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/WindowsBase.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/WindowsBase.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/mscorlib.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/mscorlib.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/netstandard.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/refs/netstandard.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/apphost" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/apphost" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/ref/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/ref/SER.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/SER.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/SER.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/SERTest.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/SERTest.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/apphost" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/apphost" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/SERTest.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/SERTest.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SERTest/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/SER.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/SER.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/SER_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/SER_log.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/master.mdf" afterDir="false" />
@@ -63,7 +375,8 @@
       <change beforePath="$PROJECT_DIR$/data/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/msdblog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/tempdb.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/templog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133135820314030000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133138423594180000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133141015158270000.xel" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.10" afterDir="false" />
@@ -137,10 +450,13 @@
       <change beforePath="$PROJECT_DIR$/logs/errorlog.72" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.72" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.73" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.73" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.74" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.74" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/errorlog.75" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.75" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_69.trc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133153325796730000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log_70.trc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log_71.trc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133154171884610000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133155055211120000.xel" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,9 +466,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6818c1ae16684bb6a6533b1e52073ad994de00/e5/5bb2126f/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b2b4ad0bf71f46c9990946f22f2737ce4cc00/9c/e21ec87e/BindPropertyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MySERTest/Test19.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MySERTest/Test20.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="2G00Gs3cQAtIRJ4qtICdetvQ4sc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -162,25 +484,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.4980695&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/josuecg/Documentos/Repo/SERSystem/SER/SER/DBContext&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.4980695",
+    "last_opened_file_path": "/usr/bin/dotnet",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/home/josuecg/.config/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
-      &quot;/home/josuecg/.config/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
-      &quot;/home/josuecg/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/home/josuecg/.config/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/home/josuecg/.config/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/home/josuecg/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="private IWebDriver driver;   public IDictionary&lt;string, object&gt; vars {get; private set;}   private IJavaScriptExecutor js;   [SetUp]   public void SetUp() {     driver = new FirefoxDriver();     js = (IJavaScriptExecutor)driver;     vars = new Dictionary&lt;string, object&gt;();   }   [TearDown]   protected void TearDown() {     driver.Quit();   }   [Test]   public void test04() {     driver.Navigate().GoToUrl(&quot;https://localhost:7173/&quot;);     driver.Manage().Window.Size = new System.Drawing.Size(736, 572);     driver.FindElement(By.Id(&quot;inputUsuario&quot;)).Click();     driver.FindElement(By.Id(&quot;inputContraseña&quot;)).SendKeys(&quot;1234&quot;);     driver.FindElement(By.Id(&quot;inputUsuario&quot;)).SendKeys(&quot;josuecapi&quot;);     driver.FindElement(By.Id(&quot;btnIniciarSesion&quot;)).Click();     driver.FindElement(By.Id(&quot;btnExperienciasEducativas&quot;)).Click();     driver.FindElement(By.Id(&quot;btnRegistrarExp&quot;)).Click();     driver.FindElement(By.Id(&quot;nombreList&quot;)).Click();     {       var dropdown = driver.FindElement(By.Id(&quot;nombreList&quot;));       dropdown.FindElement(By.XPath(&quot;//option[. = 'Proyecto guíado']&quot;)).Click();     }     driver.FindElement(By.CssSelector(&quot;#nombreList &gt; option:nth-child(2)&quot;)).Click();     driver.FindElement(By.Id(&quot;inputNRC&quot;)).Click();     driver.FindElement(By.Id(&quot;inputNRC&quot;)).SendKeys(&quot;3345&quot;);     driver.FindElement(By.Id(&quot;seccionList&quot;)).Click();     {       var dropdown = driver.FindElement(By.Id(&quot;seccionList&quot;));       dropdown.FindElement(By.XPath(&quot;//option[. = 'AGO22 - FEB23']&quot;)).Click();     }     driver.FindElement(By.CssSelector(&quot;.d-flex:nth-child(3) option:nth-child(2)&quot;)).Click();     driver.FindElement(By.Id(&quot;registrarProyectoForm&quot;)).Click();     driver.FindElement(By.Name(&quot;ExperienciaEducativa.Seccion&quot;)).Click();     {       var dropdown = driver.FindElement(By.Name(&quot;ExperienciaEducativa.Seccion&quot;));       dropdown.FindElement(By.XPath(&quot;//option[. = '1']&quot;)).Click();     }     driver.FindElement(By.CssSelector(&quot;.d-flex:nth-child(4) option:nth-child(2)&quot;)).Click();     driver.FindElement(By.Id(&quot;btnGuardarExp&quot;)).Click();     driver.FindElement(By.Id(&quot;registrarProyectoForm&quot;)).Click();     driver.FindElement(By.Id(&quot;inputNRC&quot;)).Click();     driver.FindElement(By.Id(&quot;inputNRC&quot;)).SendKeys(&quot;33453&quot;);     driver.FindElement(By.Id(&quot;btnGuardarExp&quot;)).Click();     driver.FindElement(By.Id(&quot;btnGuardarExp&quot;)).Click();     driver.FindElement(By.LinkText(&quot;Experiencias educativas&quot;)).Click();     driver.Close();   }" />
@@ -296,6 +619,12 @@
       <workItem from="1673429610322" duration="3726000" />
       <workItem from="1673516065174" duration="11235000" />
       <workItem from="1673622888967" duration="14922000" />
+      <workItem from="1673860685708" duration="6620000" />
+      <workItem from="1673874661949" duration="653000" />
+      <workItem from="1673875430058" duration="192000" />
+      <workItem from="1673875665831" duration="83000" />
+      <workItem from="1673876242212" duration="73000" />
+      <workItem from="1673948235829" duration="3366000" />
     </task>
     <servers />
   </component>
@@ -330,5 +659,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

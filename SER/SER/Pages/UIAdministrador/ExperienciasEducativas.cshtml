@@ -61,10 +61,10 @@
                                     }
                                 </td>
                                 <td>
-                                    <button id="@exp.Nrc+btnAsignarProfesor" type="submit" asp-page-handler="asignarProfesor" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Asignar profesor</button>
+                                    <button id="btnAsignarProfesor+@exp.Nrc" type="submit" asp-page-handler="asignarProfesor" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Asignar profesor</button>
                                 </td>
                                 <td>
-                                    <button type="submit" asp-page-handler="editar" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Editar</button>
+                                    <button id="btnEditarExperiencia+@exp.Nrc" type="submit" asp-page-handler="editar" asp-route-id="@exp.ExperienciaEducativaId" class="btn btn-primary">Editar</button>
                                 </td>
                             </tr>
                         }

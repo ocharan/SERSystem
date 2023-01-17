@@ -97,7 +97,7 @@
                     <p>Con esta acción se perderán los datos de los estudiantes que aún no han sido registrados a la experiencia educativa</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="confirmarEliminacionEstudiante()" class="btn btn-danger">Comfirmar</button>
+                    <button id="btnConfirmarEliminacion" type="button" onclick="confirmarEliminacionEstudiante()" class="btn btn-danger">Comfirmar</button>
                     <button type="button" class="btn btn-secondary" onclick="cerrarModal()" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
@@ -196,7 +196,7 @@
           if (alumnoAsignar!=null){
               let row = `<tr class="table-bordered" id="${alumnoAsignar.Matricula}"><td>${alumnoAsignar.Nombre}</td>
                                             <td>${alumnoAsignar.Matricula}</td>
-                                            <td><button id="btn_eliminarSinodal" onclick="eliminarAlumnoAsignado('${encodeURIComponent(JSON.stringify(alumnoAsignar))}')" 
+                                            <td><button id="btnEliminar${alumnoAsignar.Matricula}" onclick="eliminarAlumnoAsignado('${encodeURIComponent(JSON.stringify(alumnoAsignar))}')" 
                                             class="btn btn-danger eliminarSinodal">Eliminar</button></td><tr>`;
               listaEstudiantesPorAsignar.push(alumnoAsignar);
               recargarTabla(alumnoAsignar.Matricula);
@@ -256,7 +256,7 @@
               let row = `<tr id='${listaAsignados[i].AlumnoId}'>
                           <td>${listaAsignados[i].Nombre}</td>
                             <td>${listaAsignados[i].AlumnoId}</td>
-                          <td><button id="btn_eliminar" onclick="eliminarEstudianteAsignadoGuardado('${listaAsignados[i].AlumnoId}')" class="btn btn-danger">Eliminar</button></td>
+                          <td><button id="btnEliminar${listaAsignados[i].AlumnoId}" onclick="eliminarEstudianteAsignadoGuardado('${listaAsignados[i].AlumnoId}')" class="btn btn-danger">Eliminar</button></td>
                           </tr>`
               tablaEstudiantesAsignados.innerHTML += row;
           }   

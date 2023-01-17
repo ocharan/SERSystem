@@ -11,7 +11,6 @@
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/bin/Debug/net6.0/MySERTest.deps.json
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/bin/Debug/net6.0/MySERTest.runtimeconfig.json
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/bin/Debug/net6.0/MySERTest.dll
-/home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/bin/Debug/net6.0/ref/MySERTest.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/bin/Debug/net6.0/MySERTest.pdb
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/bin/Debug/net6.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/bin/Debug/net6.0/Microsoft.TestPlatform.CoreUtilities.dll
@@ -101,3 +100,4 @@
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/obj/Debug/net6.0/ref/MySERTest.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/obj/Debug/net6.0/MySERTest.pdb
 /home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/obj/Debug/net6.0/MySERTest.genruntimeconfig.cache
+/home/josuecg/Documentos/Repo/SERSystem/SER/MySERTest/obj/Debug/net6.0/refint/MySERTest.dll

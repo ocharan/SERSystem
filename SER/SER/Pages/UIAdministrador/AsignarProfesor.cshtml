@@ -43,7 +43,7 @@
                                 <td>@profesor.Nombre</td>
                                 <td>@profesor.NumeroDePersonal</td>
                                 <td>
-                                    <button asp-page-handler="asignar" asp-route-idProfesor="@profesor.ProfesorId" asp-route-id="@Request.Query["id"]" class="btn btn-primary" style="border-radius: 5px; margin-left: 5px" type="input">Asignar profesor</button>
+                                    <button id="btnAsignarProfesor+@profesor.NumeroDePersonal" asp-page-handler="asignar" asp-route-idProfesor="@profesor.ProfesorId" asp-route-id="@Request.Query["id"]" class="btn btn-primary" style="border-radius: 5px; margin-left: 5px" type="input">Asignar profesor</button>
                                 </td>
                             </tr>
                         }
