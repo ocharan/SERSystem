@@ -15,7 +15,7 @@
             <div class="input-group mb-3" style="margin-top: 50px">
                 <input type="text" class="form-control" style="float: left; min-width: 50px; border-radius: 5px;" placeholder="Búscar organización">
                 <button class="btn btn-primary" type="button" style="border-radius: 5px; margin-left: 5px; margin-right: 40%;">Búscar</button>
-                <button class="btn btn-success" onclick="window.open('RegistrarOrganización', '_self')" style="float: right;  border-radius: 5px; margin-left: 5px" id="btn_registrarOrg" type="button">Registrar organización</button>
+                <button class="btn btn-success" onclick="window.open('RegistrarOrganización', '_self')" style="float: right;  border-radius: 5px; margin-left: 5px" id="btnRegistrarOrg" type="button">Registrar organización</button>
             </div>
         </div>
             
@@ -37,7 +37,7 @@
                             <tr>
                                 <td>@org.Nombre</td>
                                 <td>
-                                    <input asp-page-handler="modificar" type="submit" asp-route-id="@org.OrganizacionId" value="Editar" class="btn btn-primary" id="btn_editarOrg"/>
+                                    <input asp-page-handler="modificar" type="submit" asp-route-id="@org.OrganizacionId" value="Editar" class="btn btn-primary" id="btnEditarOrg$@org.OrganizacionId"/>
                                 </td>
                                 <td>
                                     <button type="Button" onclick="mostrarModalElminar(@org.OrganizacionId)" id="btnEliminarOrg" data-toggle="modal" class="btn btn-danger">Eliminar</button>

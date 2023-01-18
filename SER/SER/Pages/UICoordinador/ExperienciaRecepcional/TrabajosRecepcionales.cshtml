@@ -32,7 +32,7 @@
                         <option value="completado">Completado</option>
                         <option value="enTramite">En tramite</option>
                     </select>
-                    <button class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('NuevoTrabajoRecepcional', '_self')" type="button">Registrar trabajo</button>
+                    <button id="btnRegistrarTrabajo" class="btn btn-success" style="float: right; border-radius: 5px; margin-left: 5px" onclick="window.open('NuevoTrabajoRecepcional', '_self')" type="button">Registrar trabajo</button>
                 </div>
             </div>
             
@@ -68,13 +68,13 @@
                                     }
                                 </td>
                                 <td>
-                                    <button asp-page-handler="estudiantes" type="submit" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Asignar estudiantes</button>
+                                    <button id="btnAsinarEstudiantes&@trabajo.TrabajoRecepcionalId" asp-page-handler="estudiantes" type="submit" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Asignar estudiantes</button>
                                 </td>
                                 <td>
-                                    <button asp-page-handler="sinodales" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Asignar sinodales</button>
+                                    <button id="btnAsignarSinodales&@trabajo.TrabajoRecepcionalId" asp-page-handler="sinodales" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Asignar sinodales</button>
                                 </td>
                                 <td>
-                                    <button asp-page-handler="modificarTrabajo" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Modificar</button>
+                                    <button id="btnModificar&@trabajo.TrabajoRecepcionalId" asp-page-handler="modificarTrabajo" asp-route-id="@trabajo.TrabajoRecepcionalId" class="btn btn-primary">Modificar</button>
                                 </td>
                             </tr>
                         }

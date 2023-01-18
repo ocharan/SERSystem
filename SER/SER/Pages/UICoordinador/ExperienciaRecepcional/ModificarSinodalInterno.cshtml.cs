@@ -12,7 +12,6 @@ public class ModificarSinodalInterno : PageModel
 {
 
     private readonly MySERContext _context;
-    
     [BindProperty] public SinodalDelTrabajo SinodalDelTrabajo { get; set; }
     
     [BindProperty] public List<Organizacion> Organizacions { get; set; }
@@ -31,11 +30,11 @@ public class ModificarSinodalInterno : PageModel
         return new JsonResult(new { succes = true });
     }
 
-    public void OnPost()
+    public void OnPostUpdate()
     {
         try
         {
-            var sinodal = _context.SinodalDelTrabajos.First(s => s.SinodalDelTrabajoId == Request.Form["id"]);
+            var sinodal = _context.SinodalDelTrabajos.FirstOrDefault(s => s.SinodalDelTrabajoId == Int32.Parse(Request.Query["id"]));
             sinodal.OrganizacionId = Int32.Parse(Request.Form["orgId"]);
             sinodal.CorreoElectronico = Request.Form["correoInterno"];
             sinodal.Telefono = Request.Form["telefonoInterno"];
@@ -45,6 +44,7 @@ public class ModificarSinodalInterno : PageModel
         catch (Exception e)
         {
             TempData["ErrorMessage"] = "Ha ocurrido un error al actualizar la información del sinodal, " + e.Message;
+            Console.WriteLine(e.StackTrace);
         }
     }
     

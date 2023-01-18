@@ -5,7 +5,6 @@
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/bin/Debug/net6.0/SERTest.deps.json
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/bin/Debug/net6.0/SERTest.runtimeconfig.json
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/bin/Debug/net6.0/SERTest.dll
-/home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/bin/Debug/net6.0/ref/SERTest.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/bin/Debug/net6.0/SERTest.pdb
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/bin/Debug/net6.0/Newtonsoft.Json.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/bin/Debug/net6.0/WebDriver.Support.dll
@@ -20,3 +19,4 @@
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/obj/Debug/net6.0/ref/SERTest.dll
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/obj/Debug/net6.0/SERTest.pdb
 /home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/obj/Debug/net6.0/SERTest.genruntimeconfig.cache
+/home/josuecg/Documentos/Repo/SERSystem/SER/SERTest/obj/Debug/net6.0/refint/SERTest.dll

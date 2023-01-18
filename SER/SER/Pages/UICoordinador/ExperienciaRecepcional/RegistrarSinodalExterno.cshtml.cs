@@ -54,7 +54,7 @@ public class RegistrarSinodalExterno : PageModel
     {
         try
         {
-            SinodalDelTrabajo.Nombre = Request.Form["NombreSinodal"] + " " + apellidoMaterno + " " + apellidoPaterno;
+            SinodalDelTrabajo.Nombre = Request.Form["NombreSinodal"] + " " + apellidoPaterno + " " + apellidoMaterno;
             SinodalDelTrabajo.OrganizacionId = Convert.ToInt32(Request.Form["OrgId"]);
             SinodalDelTrabajo.Nombre = SinodalDelTrabajo.Nombre.ToUpper();
             var sinodalesExistentes = _context.SinodalDelTrabajos.ToList();

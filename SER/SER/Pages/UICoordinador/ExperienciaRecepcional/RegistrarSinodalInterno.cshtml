@@ -30,7 +30,7 @@
                             <td>@profesor.Nombre</td>
                             <td>@profesor.NumeroDePersonal</td>
                             <td>
-                                <button onclick="siguienteSeccion('@profesor.Nombre','@profesor.NumeroDePersonal')" class="btn btn-success" style="border-radius: 5px; margin-left: 5px" type="button">Seleccionar</button>
+                                <button id="btnSeleccionar$@profesor.NumeroDePersonal" onclick="siguienteSeccion('@profesor.Nombre','@profesor.NumeroDePersonal')" class="btn btn-success" style="border-radius: 5px; margin-left: 5px" type="button">Seleccionar</button>
                             </td>
                         </tr>
                     }
@@ -103,7 +103,7 @@
 
 @if (TempData["ErrorMessage"] != null)
 {
-    <div class="alert alert-danger">
+    <div id="alertError" class="alert alert-danger">
         @TempData["ErrorMessage"]
     </div>
     

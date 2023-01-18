@@ -175,7 +175,7 @@
                                 <td>${listaVinculacion[i].fechaConvenio}</td>
                                 <td>${listaVinculacion[i].organizacion}</td>
                                 <td>
-                                    <button onclick="window.open('EditarVinculacion?id='+${listaVinculacion[i].vinculacionId}, '_self')" class="btn btn-primary">Editar</button>
+                                    <button id="btnEditar${listaVinculacion[i].vinculacionId}" onclick="window.open('EditarVinculacion?id='+${listaVinculacion[i].vinculacionId}, '_self')" class="btn btn-primary">Editar</button>
                                 </td>
                                 </tr>`
                             tblVinculacion.innerHTML += row;
@@ -190,7 +190,7 @@
                             <td>${listaPladeas[i].Periodo}</td>
                             <td>${listaPladeas[i].ObjetivoGeneral}</td>
                             <td>
-                                <button  onclick="window.open('EditarPladea?id='+${listaPladeas[i].PladeafeiId}, '_self')" class="btn btn-primary">Editar</button>
+                                <button id="btnEditar${listaPladeas[i].PladeafeiId}" onclick="window.open('EditarPladea?id='+${listaPladeas[i].PladeafeiId}, '_self')" class="btn btn-primary">Editar</button>
                             </td>
                             </tr>`
                 tblPladeas.innerHTML += row;
@@ -204,7 +204,7 @@
                             <td>${listaProyectos[i].nombreProyecto}</td>
                             <td>${listaProyectos[i].fechaInicio}</td>
                             <td>
-                                <button onclick="window.open('EditarProyectoDeInvestigacion?id='+${listaProyectos[i].idProyecto}, '_self')" class="btn btn-primary">Editar</buttton>
+                                <button id="btnEditar${listaProyectos[i].idProyecto}" onclick="window.open('EditarProyectoDeInvestigacion?id='+${listaProyectos[i].idProyecto}, '_self')" class="btn btn-primary">Editar</buttton>
                             </td>
                             </tr>`
                 tblProyectos.innerHTML += row;

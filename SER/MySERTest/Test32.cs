@@ -7,7 +7,7 @@ namespace MySER;
 
 public class Test32
 {
-        private IWebDriver driver;
+    private IWebDriver driver;
     public IDictionary<string, object> vars {get; private set;}
     private IJavaScriptExecutor js;
     [SetUp]

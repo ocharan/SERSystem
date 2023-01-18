@@ -42,7 +42,7 @@
     </div>
     <div class="container p-5 h-100">
         <div class="d-flex justify-content-center align-content-center h-100">
-            <input type="submit" class="btn btn-success" id="btnGuardarSinodal" value="Guardar registro"/>
+            <input type="submit" asp-page-handler="update" asp-route-id="@Request.Query["id"]" class="btn btn-success" id="btnGuardarSinodal" value="Guardar registro"/>
         </div>
     </div>
 </form>
