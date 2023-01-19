@@ -7,27 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f0def88-da15-4586-9adc-5db840f06807" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test34.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test35.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test36.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test37.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test38.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test39.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test40.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test41.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test42.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test43.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test44.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test45.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test46.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MySERTest/Test47.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/refint/SERTest.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133185091178520000.xel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/errorlog.78" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/log_77.trc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133185091199380000.xel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test52.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test53.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test54.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test55.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test56.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test57.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test58.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test59.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test60.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test61.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySERTest/Test62.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133185976005760000.xel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/errorlog.79" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/log_78.trc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/system_health_0_133185976028240000.xel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SER/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySERTest/Test32.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/Test32.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/bin/Debug/net6.0/MySERTest.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.csproj.CoreCompileInputs.cache" afterDir="false" />
@@ -35,18 +30,9 @@
       <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/MySERTest.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/ref/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/ref/MySERTest.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/refint/MySERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MySERTest/obj/Debug/net6.0/refint/MySERTest.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/EditarPladea.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/EditarPladea.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/EditarProyectoDeInvestigacion.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/EditarProyectoDeInvestigacion.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/Organizaciones.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/Organizaciones.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/ProyectosdeInvestigacion.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/ProyectosdeInvestigacion.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarOrganización.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarOrganización.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/RegistroPLADEA.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/RegistroPLADEA.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/RegistroVinculacion.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/CuerpoAcademico/RegistroVinculacion.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalInterno.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalInterno.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalExterno.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalExterno.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalInterno.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalInterno.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/UIExperienciaRecepcional.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/UIExperienciaRecepcional.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarSinodales.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarSinodales.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SER/bin/Debug/net6.0/SER.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/SER.dll" afterDir="false" />
@@ -54,15 +40,6 @@
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/ref/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/ref/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/Debug/net6.0/refint/SER.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/Debug/net6.0/refint/SER.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SER/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/SER/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/SERTest.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/bin/Debug/net6.0/ref/SERTest.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/SERTest.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/ref/SERTest.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SERTest/obj/Debug/net6.0/ref/SERTest.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/SER.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/SER.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/SER_log.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/SER_log.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/master.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/master.mdf" afterDir="false" />
@@ -73,7 +50,7 @@
       <change beforePath="$PROJECT_DIR$/data/msdblog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/msdblog.ldf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/tempdb.mdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/tempdb.mdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templog.ldf" beforeDir="false" afterPath="$PROJECT_DIR$/data/templog.ldf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133141874456240000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/HkEngineEventFile_0_133143631994320000.xel" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.10" afterDir="false" />
@@ -150,10 +127,11 @@
       <change beforePath="$PROJECT_DIR$/logs/errorlog.75" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.75" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.76" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.76" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.77" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.77" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/errorlog.78" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.78" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/errorlog.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/errorlog.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log_72.trc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133155686401220000.xel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log_73.trc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/system_health_0_133156811217550000.xel" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +149,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
@@ -323,7 +302,8 @@
       <workItem from="1673875665831" duration="83000" />
       <workItem from="1673876242212" duration="73000" />
       <workItem from="1673948235829" duration="12824000" />
-      <workItem from="1674034180762" duration="10378000" />
+      <workItem from="1674034180762" duration="12668000" />
+      <workItem from="1674123025055" duration="10233000" />
     </task>
     <servers />
   </component>

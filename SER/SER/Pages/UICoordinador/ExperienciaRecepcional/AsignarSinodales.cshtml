@@ -111,7 +111,7 @@
                     <p>¿Deseas confirmar la eliminación del sinodal?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" onclick="confirmarEliminacionSinodal()" class="btn btn-danger">Comfirmar</button>
+                    <button id="btnConfirmarEliminar" type="button" onclick="confirmarEliminacionSinodal()" class="btn btn-danger">Comfirmar</button>
                     <button type="button" class="btn btn-secondary" onclick="cerrarModal()" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
@@ -156,7 +156,7 @@
                     if (!validarDirectorAsignar(sinodalAsignar) && !validarDirectorAsignados(sinodalAsignar)){
                         let row = `<tr class="table-bordered" id="${sinodalAsignar.SinodalDelTrabajoId}"><td>${sinodalAsignar.Nombre}</td>
                                     <td>${combo_tipo.toString()}</td>
-                                    <td><button id="btn_eliminarSinodal" onclick="eliminarSinodalAsignado('${encodeURIComponent(JSON.stringify(sinodalAsignar))}')" 
+                                    <td><button id="btnEliminar${sinodalAsignar.SinodalDelTrabajoId}" onclick="eliminarSinodalAsignado('${encodeURIComponent(JSON.stringify(sinodalAsignar))}')" 
                                     class="btn btn-danger eliminarSinodal">Eliminar</button></td><tr>`;
                         listaSinodalesAsignar.push(sinodalAsignar);
                         recargarTabla(sinodalAsignar.SinodalDelTrabajoId);
@@ -307,7 +307,7 @@
                     let row = `<tr id='${listaAsignados[i].idSinodal}'>
                                 <td>${listaAsignados[i].nombre}</td>
                                 <td>${listaAsignados[i].tipo}</td>
-                                <td><button id="btn_eliminar" onclick="eliminarSinodalAsignadoGuardado(${listaAsignados[i].idSinodal})" class="btn btn-danger">Eliminar</button></td>
+                                <td><button id="btnEliminar${listaAsignados[i].idSinodal}" onclick="eliminarSinodalAsignadoGuardado(${listaAsignados[i].idSinodal})" class="btn btn-danger">Eliminar</button></td>
                                 </tr>`
                         tablaSinodalesAsignados.innerHTML += row;
                     if (listaAsignados[i].tipo == "Director"){
@@ -322,7 +322,7 @@
         for (var i=0; i<listaSinodales.length;i++){
             let row = `<tr id='${listaSinodales[i].SinodalDelTrabajoId}'>
                         <td>${listaSinodales[i].Nombre}</td>
-                        <td><button id="btn_asignar" onclick="asignarSinodal(${listaSinodales[i].SinodalDelTrabajoId})" class="btn btn-primary">Asignar</button></td>
+                        <td><button id="btnAsignar${listaSinodales[i].SinodalDelTrabajoId}" onclick="asignarSinodal(${listaSinodales[i].SinodalDelTrabajoId})" class="btn btn-primary">Asignar</button></td>
                         </tr>`
                 tablaSinodales.innerHTML += row;
             }     

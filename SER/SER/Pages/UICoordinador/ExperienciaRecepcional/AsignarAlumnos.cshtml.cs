@@ -81,6 +81,9 @@ public class AsignarAlumnos : PageModel
     {
         try
         {
+            var Trabajo = _context.TrabajoRecepcionals.FirstOrDefault(t=>t.TrabajoRecepcionalId == Int32.Parse(Request.Query["id"]));
+            var listaExperienciasAlumno = _context.AlumnoExperienciaEducativas.ToList();
+            
             var listaAsignados = _context.AlumnoTrabajoRecepcionals.ToList();
             var listaInscritos = _context.AlumnoExperienciaEducativas.ToList();
             var listaAlumnos = _context.Alumnos.ToList();
@@ -90,12 +93,13 @@ public class AsignarAlumnos : PageModel
                 {
                     if (listaInscritos.Any(i=>i.AlumnoId == alumno.Matricula))
                     {
-                        Alumno alumnoDisponible = new Alumno()
+                        foreach (var experiencia in listaExperienciasAlumno)
                         {
-                            Matricula = alumno.Matricula,
-                            Nombre = alumno.Nombre,
-                        };
-                        Alumnos.Add(alumnoDisponible);
+                            if (experiencia.AlumnoId == alumno.Matricula)
+                            {
+                                Console.WriteLine("Tiene");
+                            }
+                        }
                     }
                 }
             }
