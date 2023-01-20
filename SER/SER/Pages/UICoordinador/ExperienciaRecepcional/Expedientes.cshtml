@@ -45,7 +45,7 @@
                                 <td>@expediente.Modalidad</td>
                                 <td>@expediente.Estado</td>
                                 <td>
-                                    <button class="btn btn-primary" asp-page-handler="expediente" asp-route-id="@expediente.Matricula">Ver expediente</button>
+                                    <button id="btnVerExpediente&@expediente.Matricula" class="btn btn-primary" asp-page-handler="expediente" asp-route-id="@expediente.Matricula">Ver expediente</button>
                                 </td>
                             </tr>
                         }

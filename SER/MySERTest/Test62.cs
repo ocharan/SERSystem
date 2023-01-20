@@ -41,13 +41,11 @@ public class Test62
         driver.FindElement(By.Id("btnAsignarS18017548")).Click();
         driver.FindElement(By.Id("btnAsignarS19029349")).Click();
         driver.FindElement(By.Id("btnAsignarS22345077")).Click();
-        driver.FindElement(By.Id("btnAsignarS22345077")).Click();
-        {
-            var element = driver.FindElement(By.Id("btn_Guardar"));
-            Actions builder = new Actions(driver);
-            builder.MoveToElement(element).Release().Perform();
-        }
+        driver.FindElement(By.Id("btnAsignarS18019640")).Click();
         
-        driver.FindElement(By.Id("btn_Guardar")).Click();
+        string mensajeRecibido = driver.FindElement(By.Id("integrantesInvalidos")).Text;
+        string mensajeEsperado = "Solo se admiten 3 integrantes para un solo trabajo recepcional.";
+        Assert.AreEqual(mensajeEsperado, mensajeRecibido);
+
     }
 }

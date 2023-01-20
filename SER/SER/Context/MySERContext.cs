@@ -105,6 +105,10 @@ namespace SER.Context
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
+                entity.Property(e => e.NombreExp)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+                
                 entity.HasOne(d => d.Alumno)
                     .WithMany(p => p.AlumnoExperienciaEducativas)
                     .HasForeignKey(d => d.AlumnoId)

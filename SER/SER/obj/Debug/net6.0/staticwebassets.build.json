@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cLovxaebM7Nppr0YvopLMX7dbg451hkh8JDkDblSREw=",
+  "Hash": "1g/QFt2nFoFept+l9+F1Tbh/R1QPCHr6ud/X7v+Vs0I=",
   "Source": "SER",
   "BasePath": "_content/SER",
   "Mode": "Default",
@@ -850,6 +850,23 @@
       "OriginalItemSpec": "wwwroot/Archivos/3145_13012023104420"
     },
     {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/3149_20012023112720",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/3149_20012023112720",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/3149_20012023112720"
+    },
+    {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/37373_11112022051937",
       "SourceId": "SER",
       "SourceType": "Discovered",
@@ -1103,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/Archivos/Anteproyecto_141220221229101017"
+    },
+    {
+      "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/Anteproyecto_200120231136062017",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/",
+      "BasePath": "_content/SER",
+      "RelativePath": "Archivos/Anteproyecto_200120231136062017",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Archivos/Anteproyecto_200120231136062017"
     },
     {
       "Identity": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/wwwroot/Archivos/Anteproyecto_291120220603041010",

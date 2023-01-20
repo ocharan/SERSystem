@@ -24,6 +24,7 @@ public class Test05
   }
   [Test]
   public void test05() {
+    driver.Manage().Window.Size = new System.Drawing.Size(1846, 1053);
     driver.Navigate().GoToUrl("https://localhost:7173/");
     driver.FindElement(By.Id("inputUsuario")).SendKeys("josuecapi");
     driver.FindElement(By.Id("inputContraseña")).SendKeys("1234");
@@ -33,11 +34,11 @@ public class Test05
     driver.FindElement(By.Id("nombreList")).Click();
     {
       var dropdown = driver.FindElement(By.Id("nombreList"));
-      dropdown.FindElement(By.XPath("//option[. = 'Experiencia recepcional']")).Click();
+      dropdown.FindElement(By.XPath("//option[. = 'Experiencia Recepcional']")).Click();
     }
     driver.FindElement(By.CssSelector("#nombreList > option:nth-child(2)")).Click();
     driver.FindElement(By.Id("inputNRC")).Click();
-    driver.FindElement(By.Id("inputNRC")).SendKeys("3145");
+    driver.FindElement(By.Id("inputNRC")).SendKeys("3149");
     driver.FindElement(By.Id("seccionList")).Click();
     {
       var dropdown = driver.FindElement(By.Id("seccionList"));
@@ -50,11 +51,11 @@ public class Test05
       var dropdown = driver.FindElement(By.Name("ExperienciaEducativa.Seccion"));
       dropdown.FindElement(By.XPath("//option[. = '2']")).Click();
     }
+
+
+    IWebElement element = driver.FindElement(By.XPath("//input[@type='file']"));
+    element.SendKeys("/home/josuecg/AUTOMATING_RESTAPI.pdf");
     driver.FindElement(By.Id("btnGuardarExp")).Click();
-    driver.FindElement(By.LinkText("Experiencias educativas")).Click();
-    driver.FindElement(By.Id("formFile")).Click();
-    driver.FindElement(By.Id("formFile")).SendKeys("C:\\fakepath\\CU02_RegistrarDocumentoDeProyectoGuiado_Prototipos.pdf");
-    driver.FindElement(By.Id("btnGuardarExp")).Click();
-    driver.Close();
+
   }
 }

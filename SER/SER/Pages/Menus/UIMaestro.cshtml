@@ -9,10 +9,10 @@
     <form method="post">
       <div class="row">
         <div class="col-md-4">
-          <button class="btnPanel" asp-page-handler="expedientes" asp-route-id="@Request.Query["id"]">Expedientes</button>
+          <button id="btnExpedientes" class="btnPanel" asp-page-handler="expedientes" asp-route-id="@Request.Query["id"]">Expedientes</button>
         </div>
         <div class="col-md-4">
-          <button class="btnPanel" asp-page-handler="experiencias" asp-route-id="@Request.Query["id"]">Mis experiencias</button>
+          <button id="btnExperiencias" class="btnPanel" asp-page-handler="experiencias" asp-route-id="@Request.Query["id"]">Mis experiencias</button>
         </div>
       </div>
     </form>

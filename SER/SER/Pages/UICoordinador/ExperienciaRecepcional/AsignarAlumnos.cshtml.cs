@@ -14,7 +14,6 @@ public class AsignarAlumnos : PageModel
 {
     private readonly MySERContext _context;
     public List<Alumno> Alumnos { get; set; }
-    
     public AsignarAlumnos(MySERContext context)
     {
         _context = context;
@@ -77,13 +76,23 @@ public class AsignarAlumnos : PageModel
             .Where(a => a.TrabajoRecepcionalId == Int32.Parse(idProyecto)).ToList().ToJson());
     }
     
-    public JsonResult OnGetObtenerEstudiantesDisponibles()
+    public JsonResult OnGetObtenerEstudiantesDisponibles(string idProyecto)
     {
         try
         {
-            var Trabajo = _context.TrabajoRecepcionals.FirstOrDefault(t=>t.TrabajoRecepcionalId == Int32.Parse(Request.Query["id"]));
             var listaExperienciasAlumno = _context.AlumnoExperienciaEducativas.ToList();
-            
+            var trabajo =
+                _context.TrabajoRecepcionals.FirstOrDefault(t =>
+                    t.TrabajoRecepcionalId == Int32.Parse(idProyecto));
+            string ExpTrabajo;
+            if (trabajo.ExperienciaActual.Equals("pg"))
+            {
+                ExpTrabajo = "Proyecto guíado";
+            }
+            else
+            {
+                ExpTrabajo = "Experiencia recepcional";
+            }
             var listaAsignados = _context.AlumnoTrabajoRecepcionals.ToList();
             var listaInscritos = _context.AlumnoExperienciaEducativas.ToList();
             var listaAlumnos = _context.Alumnos.ToList();
@@ -93,11 +102,17 @@ public class AsignarAlumnos : PageModel
                 {
                     if (listaInscritos.Any(i=>i.AlumnoId == alumno.Matricula))
                     {
-                        foreach (var experiencia in listaExperienciasAlumno)
+                        var exp = listaExperienciasAlumno.FirstOrDefault(e => e.AlumnoId == alumno.Matricula);
+                        if (exp != null)
                         {
-                            if (experiencia.AlumnoId == alumno.Matricula)
+                            if (exp.NombreExp.Equals(ExpTrabajo))
                             {
-                                Console.WriteLine("Tiene");
+                                Alumno alumnoDisponible = new Alumno()
+                                {
+                                    Nombre = alumno.Nombre,
+                                    Matricula = alumno.Matricula,
+                                };
+                                Alumnos.Add(alumnoDisponible);
                             }
                         }
                     }

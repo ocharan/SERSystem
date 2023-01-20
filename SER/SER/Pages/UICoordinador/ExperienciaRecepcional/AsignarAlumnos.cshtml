@@ -58,7 +58,7 @@
     <br/>
     <div id="textJustificacion" class="mb-3" hidden="hidden">
         <label for="exampleFormControlTextarea1" class="form-label">Justificación de 3 integrantes.</label>
-        <textarea class="form-control" id="textAreaJusticacion" rows="3"></textarea>
+        <textarea class="form-control" id="textAreaJusticacion" rows="3" required="required"></textarea>
     </div>
 
     <div style="margin-top: 40px" class="container p-5 h-100">
@@ -243,6 +243,7 @@
         $.ajax({
             url: "?handler=ObtenerEstudiantesDisponibles",
             type: "GET",
+            data: {idProyecto: idTrabajo},
             headers: {
                 RequestVerificationToken: $('input:hidden[name="__RequestVerificationToken"]').val()
                 },  

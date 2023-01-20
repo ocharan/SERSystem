@@ -118,7 +118,7 @@
                             <div class="mb-3 row">
                                 <label style="font-size: 25px; font-weight: bold" class="col-sm-2 col-form-label">Nombre:</label>
                                 <div class="col-sm-10">
-                                    <button id="btnFile" class="btn btn-link" style="font-size: 25px" asp-page-handler="verDocumento" asp-route-id="@Model.expediente.TrabajoRecepcionalId" asp-route-tipo="@doc.nombreTipo" type="submit" >@doc.nombreTipo</button>
+                                    <button id="btnFile&@doc.idDocumento" class="btn btn-link" style="font-size: 25px" asp-page-handler="verDocumento" asp-route-id="@Model.expediente.TrabajoRecepcionalId" asp-route-tipo="@doc.nombreTipo" type="submit" >@doc.nombreTipo</button>
                                 </div>
                             </div>
                         }

@@ -60,11 +60,14 @@ public class AsignarAlumnos : PageModel
     {
         try
         {
+            var expNombre = _context.ExperienciaEducativas
+                .FirstOrDefault(e => e.ExperienciaEducativaId == Int32.Parse(experienciaId)).Nombre;
             AlumnoExperienciaEducativa alumnoExperienciaEducativa = new AlumnoExperienciaEducativa()
             {
                 Nombre = nombreEstudiante,
                 AlumnoId = matriculaEstudiante,
-                ExperienciaEducativaId = Int32.Parse(experienciaId)
+                ExperienciaEducativaId = Int32.Parse(experienciaId),
+                NombreExp = expNombre
             };
             _context.AlumnoExperienciaEducativas.Add(alumnoExperienciaEducativa);
             _context.SaveChanges();

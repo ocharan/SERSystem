@@ -46,10 +46,10 @@
                                 <td>@expediente.Modalidad</td>
                                 <td>@expediente.Estado</td>
                                 <td>
-                                    <button class="btn btn-primary" asp-page-handler="registrarDocumento" asp-route-id="@expediente.TrabajoRecepcionalId">Registrar documento</button>
+                                    <button id="btnDocumento&@expediente.Matricula" class="btn btn-primary" asp-page-handler="registrarDocumento" asp-route-id="@expediente.TrabajoRecepcionalId">Registrar documento</button>
                                 </td>
                                 <td>
-                                    <button class="btn btn-primary" asp-page-handler="expediente" asp-route-id="@expediente.Matricula">Ver expediente</button>
+                                    <button id="btnExpediente&@expediente.Matricula" class="btn btn-primary" asp-page-handler="expediente" asp-route-id="@expediente.Matricula">Ver expediente</button>
                                 </td>
                             </tr>
                         }
