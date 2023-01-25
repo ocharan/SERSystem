@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/SER.csproj": {}
+    "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\SER.csproj": {}
   },
   "projects": {
-    "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/SER.csproj": {
+    "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\SER.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/SER.csproj",
+        "projectUniqueName": "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\SER.csproj",
         "projectName": "SER",
-        "projectPath": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/SER.csproj",
-        "packagesPath": "/home/josuecg/.nuget/packages/",
-        "outputPath": "/home/josuecg/Documentos/Repo/SERSystem/SER/SER/obj/",
+        "projectPath": "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\SER.csproj",
+        "packagesPath": "C:\\Users\\Mrcap\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/josuecg/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Mrcap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,6 +70,10 @@
               "target": "Package",
               "version": "[6.0.9, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.9, )"
@@ -102,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/josuecg/.dotnet/sdk/6.0.405/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
