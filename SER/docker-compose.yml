@@ -8,13 +8,19 @@ services:
       - .dev.env
     volumes:
       - ./data:/var/opt/mssql/data 
-      - ./logs:/var/opt/mssql/log
   SER_SYSTEM:
-    image: "ser"
+    image: "sersystem"
     ports:
       - 80:80
     env_file:
       - .dev.env
     volumes:
-      - ./data:/var/opt/mssql/data 
-      - ./logs:/var/opt/mssql/log
+      - serdata:/app/wwwroot/Archivos
+
+volumes:
+    serdata:
+      driver: local
+      driver_opts:
+        type: none
+        o: bind
+        device: /data/serdata
