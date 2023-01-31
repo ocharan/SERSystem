@@ -40,15 +40,6 @@ html {
   text-align: left;
 }
 
-.mainpaneler{
-  position: fixed;
-  margin-top: auto;
-  margin-bottom: auto;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
 
 .headerpanel{
   border-bottom: 1px solid;
@@ -60,16 +51,13 @@ html {
   margin-left: 50px;
 }
 
-.mainbody{
- 
-}
 
 .logout-container{
   float: right;
 }
 
-.logout-button{
-  
+#alertError{
+    margin-bottom: 150;
 }
 
 .col{
@@ -83,6 +71,7 @@ html {
 .col-md-4{
   height: 300px;
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .btnPanel{
@@ -101,8 +90,4 @@ html {
 
 .btn-section{
   float: right;
-}
-
-body {
- 
 }

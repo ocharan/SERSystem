@@ -1,5 +1,5 @@
 -- DROP SCHEMA dbo;
-
+CREATE database ser;
 CREATE SCHEMA dbo;
 -- SER.dbo.Academia definition
 
