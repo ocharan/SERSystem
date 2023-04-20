@@ -1,0 +1,17 @@
+﻿:root {
+	--uv-blue-color: #18529d;
+}
+
+.cube-ser-logo {
+	height: 40px;
+}
+
+.font-ser-logo {
+	font-family: "Livvic", sans-serif;
+	color: var(--uv-blue-color);
+}
+
+/* footer {
+	background-color: var(--uv-blue-color);
+	color: white;
+} */

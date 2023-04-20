@@ -1,0 +1,86 @@
+@page
+@model SER.Pages.Student.UpdateModel
+@{
+  ViewData["Title"] = "Actualizar información";
+  Layout = "~/Pages/Shared/_LoginLayout.cshtml";
+}
+
+@section Styles {
+  <link rel="stylesheet" href="~/css/Student/Create.css" />
+}
+
+<div class="row mx-3 mt-4 my-2 mb-4 title-page">
+  <div class="col-md-12">
+    <h2 class="mb-3 d-inline text-black fs-2 ">
+      <a class="text-black" asp-page="./Index">Alumnos</a>
+    </h2>    
+    <h3 class="text-black mb-3 d-inline fs-2">
+      <i class="fs-4 fa-solid fa-chevron-right mx-1 fa-xs"></i>
+      Actualizar información del alumno
+    </h2>
+  </div>
+</div>
+<div class="container shadow-3 pb-4 rounded-9" id="form-update-student">
+  <h5 class="mb-2 text-black fs-4 fw-normal">Formulario de Actualización: <strong>Alumno</strong></h5>
+  <p class="mb-3">Recuerda que, al actualizar la información de un alumno, se actualizarán los datos de todos los registros en los que se encuentre.</p>
+  <form class="px-0" id="form-create-student" method="post" asp-page-handler="UpdateStudent" novalidate>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fas fa-user me-2 icon-input"></i>
+      <div class="form-outline">
+        <input type="text" id="input-fullname" class="form-control form-control-lg" autocomplete="off" asp-for="student!.FullName" required/>
+        <label class="form-label" for="input-fullname">Nombre completo</label>
+      </div>
+    </div>
+    <span asp-validation-for="student!.FullName" class="d-flex text-start text-danger mb-4"></span>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fas fa-id-card me-2 icon-input"></i>
+      <div class="form-outline">
+        <input type="text" id="input-enrollment" class="form-control form-control-lg" autocomplete="off" asp-for="student!.Enrollment" readonly/>
+        <label class="form-label" for="input-enrollment">Matrícula</label>        
+      </div>      
+    </div>
+    <div class="form-text mb-3">
+        La matrícula de un estudiante no puede modicarse.
+      </div>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fas fa-envelope me-2 icon-input"></i>
+      <div class="form-outline">
+        <input type="text" id="input-email" class="form-control form-control-lg" autocomplete="off" asp-for="student!.Email" required/>
+        <label class="form-label" for="input-enrollment">Correo electrónico</label>
+      </div>
+    </div>
+    <span asp-validation-for="student!.Email" class="d-flex text-start text-danger mb-4"></span>
+    <input type="hidden" asp-for="student!.StudentId" />
+    <div class="row d-flex gap-3 justify-content-end mt-5 mx-0">
+      <a role="button" class="col-md-3 btn btn-secondary w-auto" asp-page="./Index">
+        <i class="fas fa-times me-2"></i>
+        Cancelar
+      </a>
+      <button type="submit" class="col-md-3 btn btn-primary w-auto">
+        <i class="fas fa-save me-2"></i>
+        Guardar&nbsp;
+      </button>
+    </div>
+  </form>
+</div>
+<div class="modal fade" id="modal-update-student" tabindex="-1" data-mdb-keyboard="false" data-mdb-backdrop="true" aria-labelledby="modal-title-create-student" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content justify-content-center align-items-center">
+      <div class="modal-header text-center">
+        <h5 class="modal-title text-dark fs-2 display-6" id="modal-title-update-student">
+          Actualizando alumno
+        </h5>
+      </div>
+      <div class="modal-body text-center mx-4">  
+        <i class="fa-solid fa-spinner fa-6x fa-spin-pulse mt-3 mb-4"></i>
+        <p>
+          Se está vericando la información del alumno, por favor espere.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <script src="~/js/Student/Update.js"></script>
+}

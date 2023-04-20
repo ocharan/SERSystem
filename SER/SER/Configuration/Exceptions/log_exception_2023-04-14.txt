@@ -1,0 +1,451 @@
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_String()
+   at lambda_method190(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_String()
+   at lambda_method244(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_String()
+   at lambda_method244(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.String'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_String()
+   at lambda_method362(Closure , QueryContext , DbDataReader , ResultContext , SingleQueryResultCoordinator )
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[SER.Models.DB.CourseRegistration, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[SER.Models.DTO.CourseRegistrationDto, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Type Map configuration:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Destination Member:
+Course
+
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Type Map configuration:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Destination Member:
+Professor
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Professor -> ProfessorDto
+SER.Models.DB.Professor -> SER.Models.DTO.ProfessorDto
+
+Destination Member:
+Professor
+
+   at lambda_method228(Closure , Professor , ProfessorDto , ResolutionContext )
+   at lambda_method123(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method123(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method123(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method123(Closure , Object , List`1 , ResolutionContext )
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\CourseService.cs:line 27
+   at SER.Pages.Student.Read.OnGet(String studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Read.cshtml.cs:line 32
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[SER.Models.DB.CourseRegistration, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[SER.Models.DTO.CourseRegistrationDto, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Type Map configuration:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Destination Member:
+Course
+
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Type Map configuration:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Destination Member:
+Professor
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Professor -> ProfessorDto
+SER.Models.DB.Professor -> SER.Models.DTO.ProfessorDto
+
+Destination Member:
+Professor
+
+   at lambda_method228(Closure , Professor , ProfessorDto , ResolutionContext )
+   at lambda_method123(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method123(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method123(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method123(Closure , Object , List`1 , ResolutionContext )
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[SER.Models.DB.CourseRegistration, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[SER.Models.DTO.CourseRegistrationDto, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Type Map configuration:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Destination Member:
+Course
+
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Type Map configuration:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Destination Member:
+Professor
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Professor -> ProfessorDto
+SER.Models.DB.Professor -> SER.Models.DTO.ProfessorDto
+
+Destination Member:
+Professor
+
+   at lambda_method282(Closure , Professor , ProfessorDto , ResolutionContext )
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\CourseService.cs:line 27
+   at SER.Pages.Student.Read.OnGet(String studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Read.cshtml.cs:line 32
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[SER.Models.DB.CourseRegistration, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[SER.Models.DTO.CourseRegistrationDto, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Type Map configuration:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Destination Member:
+Course
+
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Type Map configuration:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Destination Member:
+Professor
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Professor -> ProfessorDto
+SER.Models.DB.Professor -> SER.Models.DTO.ProfessorDto
+
+Destination Member:
+Professor
+
+   at lambda_method282(Closure , Professor , ProfessorDto , ResolutionContext )
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[SER.Models.DB.CourseRegistration, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[SER.Models.DTO.CourseRegistrationDto, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Type Map configuration:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Destination Member:
+Course
+
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Type Map configuration:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Destination Member:
+Professor
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Professor -> ProfessorDto
+SER.Models.DB.Professor -> SER.Models.DTO.ProfessorDto
+
+Destination Member:
+Professor
+
+   at lambda_method282(Closure , Professor , ProfessorDto , ResolutionContext )
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\CourseService.cs:line 26
+   at SER.Pages.Student.Read.OnGet(String studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Read.cshtml.cs:line 32
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[SER.Models.DB.CourseRegistration, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[SER.Models.DTO.CourseRegistrationDto, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Type Map configuration:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Destination Member:
+Course
+
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Type Map configuration:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Destination Member:
+Professor
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Professor -> ProfessorDto
+SER.Models.DB.Professor -> SER.Models.DTO.ProfessorDto
+
+Destination Member:
+Professor
+
+   at lambda_method282(Closure , Professor , ProfessorDto , ResolutionContext )
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[SER.Models.DB.CourseRegistration, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[SER.Models.DTO.CourseRegistrationDto, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Type Map configuration:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Destination Member:
+Course
+
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Type Map configuration:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Destination Member:
+Professor
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Professor -> ProfessorDto
+SER.Models.DB.Professor -> SER.Models.DTO.ProfessorDto
+
+Destination Member:
+Professor
+
+   at lambda_method282(Closure , Professor , ProfessorDto , ResolutionContext )
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> List`1
+System.Collections.Generic.List`1[[SER.Models.DB.CourseRegistration, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[SER.Models.DTO.CourseRegistrationDto, SER, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Type Map configuration:
+CourseRegistration -> CourseRegistrationDto
+SER.Models.DB.CourseRegistration -> SER.Models.DTO.CourseRegistrationDto
+
+Destination Member:
+Course
+
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Type Map configuration:
+Course -> CourseDto
+SER.Models.DB.Course -> SER.Models.DTO.CourseDto
+
+Destination Member:
+Professor
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Professor -> ProfessorDto
+SER.Models.DB.Professor -> SER.Models.DTO.ProfessorDto
+
+Destination Member:
+Professor
+
+   at lambda_method282(Closure , Professor , ProfessorDto , ResolutionContext )
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method175(Closure , Object , List`1 , ResolutionContext )
+   at SER.Services.CourseService.GetStudentCourses(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\CourseService.cs:line 26
+   at SER.Pages.Student.Read.OnGet(String studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Read.cshtml.cs:line 32
++-------------------------------------------------------------------------------------------------+

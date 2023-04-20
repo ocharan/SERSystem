@@ -1,0 +1,46 @@
+@page
+@model SER.Pages.Course.CreateModel
+@{
+  ViewData["Title"] = "Registrar información";
+  Layout = "~/Pages/Shared/_LoginLayout.cshtml";
+}
+
+@section Styles {
+  <link rel="stylesheet" href="~/css/Student/Create.css" />
+}
+
+<div class="row mx-3 mt-4 my-2 mb-4 title-page">
+  <div class="col-md-12">
+    <h2 class="mb-3 d-inline text-black fs-2 ">
+      <a class="text-black" asp-page="./Index">Cursos</a>
+    </h2>    
+    <h3 class="text-black mb-3 d-inline fs-2">
+      <i class="fs-4 fa-solid fa-chevron-right mx-1 fa-xs"></i>
+      Registrar información del alumno
+    </h2>
+  </div>
+</div>
+<div class="container shadow-3 rounded-9 pb-4" id="form-create-student">
+  
+</div>
+<div class="modal fade" id="modal-create-student" tabindex="-1" data-mdb-keyboard="false" data-mdb-backdrop="true" aria-labelledby="modal-title-create-student" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content justify-content-center align-items-center">
+      <div class="modal-header text-center">
+        <h5 class="modal-title text-dark fs-2 display-6" id="modal-title-create-student">
+          Registrando alumno
+        </h5>
+      </div>
+      <div class="modal-body text-center mx-4">  
+        <i class="fa-solid fa-spinner fa-6x fa-spin-pulse mt-3 mb-4"></i>
+        <p>
+          Se está vericando la información del alumno, por favor espere.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <script src="~/js/Student/Create.js"></script>
+}

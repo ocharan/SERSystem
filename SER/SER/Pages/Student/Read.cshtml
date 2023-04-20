@@ -1,0 +1,130 @@
+@page
+@model SER.Pages.Student.Read
+@{
+  ViewData["Title"] = "Visualizar información";
+  Layout = "~/Pages/Shared/_LoginLayout.cshtml";
+}
+
+@section Styles {
+  <link rel="stylesheet" href="~/css/Student/Read.css" />
+}
+
+<div class="row mx-3 mt-4 title-page">
+  <div class="col-md-12">
+    <h2 class="mb-3 d-inline text-black fs-2 ">
+      <a class="text-black" asp-page="./Index">Alumnos</a>
+    </h2>
+    <h3 class="text-black mb-3 d-inline fs-2">
+      <i class="fs-4 fa-solid fa-chevron-right mx-1 fa-xs"></i>
+      Visualizar información del alumno
+      </h2>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-md-2 g-4 mx-3 mt-2 container-student-information">
+  <div class="col-xxl-4">
+    <div class="card h-100 shadow-3 p-3 card-student-information">
+      <div class="card-body h-100">
+        <h5 class="card-title mb-2 text-black fs-4 fw-normal">Información del alumno</h5>
+        <p class="card-text">
+          La siguiente información es únicamente de consulta, no se puede modificar.
+        </p>
+        <div class="d-grid gap-4">
+          <div class="d-flex">
+            <i class="d-flex align-items-center fas fa-user me-2 icon-input"></i>
+            <div class="form-outline">
+              <input type="text" id="input-fullname" class="form-control form-control-lg" asp-for="student!.FullName"
+                readonly />
+              <label class="form-label" for="input-fullname">Nombre completo</label>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i class="d-flex align-items-center fas fa-id-card me-2 icon-input"></i>
+            <div class="form-outline">
+              <input type="text" id="input-enrollment" class="form-control form-control-lg"
+                asp-for="student!.Enrollment" readonly />
+              <label class="form-label" for="input-enrollment">Matrícula</label>
+            </div>
+          </div>
+          <div class="d-flex">
+            <i class="d-flex align-items-center fas fa-envelope me-2 icon-input"></i>
+            <div class="form-outline">
+              <input type="text" id="input-email" class="form-control form-control-lg" asp-for="student!.Email" readonly />
+              <label class="form-label" for="input-enrollment">Correo electrónico</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xxl-8">
+    <div class="card h-100 shadow-3 p-3 card-student-information">
+      <div class="card-body">
+        <h5 class="card-title mb-2 text-black fs-4 fw-normal mb-4">Lista de cursos asignados</h5>
+        <div class="table-responsive shadow-3 rounded-6">
+          <table class="table table-hover">
+            <thead class="table-secondary text-center">
+              <tr>
+                <th scope="col">Estado</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Calificación</th>
+                <th scope="col">NRC</th>
+                <th scope="col">Período</th>
+                <th scope="col">Sección</th>
+                <th scope="col">Inscripción</th>
+                <th scope="col">Docente</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach (var registration in Model.StudentCourses!)
+              {
+                <tr>
+                  <td>
+                    @if (registration.Course.IsOpen)
+                    {
+                    <span class="badge rounded-pill badge-success">Activo</span>
+                    }
+                    else
+                    {
+                    <span class="badge rounded-pill badge-danger">Inactivo</span>
+                    }
+                  </td>
+                  <td>
+                    <a asp-page="./Read" asp-route-id="@registration.Course.CourseId">
+                      @registration.Course.Name
+                    </a>
+                  </td>
+                  <td class="text-center">
+                    @{                    
+                      if (registration.Score == null)
+                      {
+                        <span class="badge rounded-pill badge-warning">Sin calificación</span>
+                      }
+                      else
+                      {
+                        <span class="badge rounded-pill badge-primary">@registration.Course.Score</span>
+                      }
+                    }
+                  </td>
+                  <td>@registration.Course.Nrc</td>
+                  <td>@registration.Course.Period</td>
+                  <td>@registration.Course.Section</td>
+                  <td>@registration.RegistrationType</td>
+                  <td>
+                    <a asp-page="/Teacher/Read" asp-route-id="@registration.Course.Professor?.ProfessorId">
+                      @registration.Course.Professor?.FullName
+                    </a>
+                </tr>
+              }             
+            </tbody>            
+          </table> 
+        </div>        
+        @if (Model.StudentCourses!.Count == 0)
+        {
+          <div class="d-flex align-items-center justify-content-center mt-4">
+            <span class="text-center badge rounded-pill badge-warning px-4 py-2">@Model.student.FullName<br>no tiene cursos asignados</span>          
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

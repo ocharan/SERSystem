@@ -1,0 +1,79 @@
+:root {
+	--uv-blue-color: #18529d;
+	--sucess-color: #dfe7f6;
+	--danger-color: #f8d7da;
+}
+
+.card-text-number {
+	font-size: 2rem;
+	font-weight: 800;
+	margin-bottom: -15px !important;
+}
+
+.button-hover {
+	transition: 0.7s;
+}
+
+.button-hover:hover {
+	background-color: rgba(0, 0, 0, 0.103) !important;
+	transition-delay: 0.2s;
+}
+
+.text-email {
+	cursor: pointer;
+}
+
+.badge {
+	padding: 0.6rem;
+}
+
+#toast-success {
+	background-color: var(--sucess-color);
+}
+
+#toast-error {
+	background-color: var(--danger-color);
+}
+
+@media (max-width: 778px) {
+	table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	#table-container {
+		margin-bottom: 20px !important;
+	}
+
+	.button-add {
+		width: 100% !important;
+	}
+
+	.card-text-number {
+		font-size: 1.5rem;
+	}
+
+	.card-title {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 767px) {
+	#search-form {
+		padding-left: 0px !important;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	/* .card-title-container {
+		max-width: 90% !important;
+	} */
+
+	.text-button,
+	.card-title {
+		overflow: hidden !important;
+		text-overflow: ellipsis !important;
+		white-space: nowrap !important;
+	}
+}

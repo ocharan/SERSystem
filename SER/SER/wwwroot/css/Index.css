@@ -1,0 +1,30 @@
+:root {
+  --uv-blue-color: #18529D;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  background-color: var(--uv-blue-color);
+}
+
+.form-login-container {
+  width: 480px;
+}
+
+@media (max-width: 768px) {
+  .form-login-container {
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 476px) {
+  .form-login-container {
+    width: 100%;
+  }
+}

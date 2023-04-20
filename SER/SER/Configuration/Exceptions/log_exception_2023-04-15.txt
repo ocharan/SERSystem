@@ -1,0 +1,20 @@
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Pages.Student.Read.OnGet(String studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 121
+   at SER.Pages.Student.Read.OnGet(String studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Read.cshtml.cs:line 30
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 121
+   at SER.Pages.Student.Read.OnGet(String studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Read.cshtml.cs:line 30
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 121
+   at SER.Pages.Student.UpdateModel.OnGet(String studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 24
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 121
+   at SER.Pages.Student.UpdateModel.OnGet(String studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 24
++-------------------------------------------------------------------------------------------------+

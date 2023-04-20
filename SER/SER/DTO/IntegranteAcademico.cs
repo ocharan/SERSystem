@@ -1,9 +1,0 @@
-namespace SER.DTO;
-
-public class IntegranteAcademico
-{
-    public string Nombre { get; set;}
-    public string Tipo { get; set; }
-    public int IntegranteID { get; set;}
-    public string NumeroDePersonal { get; set; }
-}

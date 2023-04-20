@@ -1,0 +1,145 @@
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Usuario'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 26
+ClientConnectionId:57234061-3898-411c-bbc1-e26e57d4783c
+Error Number:208,State:1,Class:16
++-------------------------------------------------------------------------------------------------+
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Usuario'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 26
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 80
+ClientConnectionId:57234061-3898-411c-bbc1-e26e57d4783c
+Error Number:208,State:1,Class:16
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 30
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 30
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 80
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username)
++-------------------------------------------------------------------------------------------------+
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User -> UserDto
+SER.Models.DB.User -> SER.Models.DTO.UserDto
+   at lambda_method91(Closure , Object , UserDto , ResolutionContext )
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 26
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 26
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 80
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 26
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 26
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 80
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 26
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 26
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 80
++-------------------------------------------------------------------------------------------------+

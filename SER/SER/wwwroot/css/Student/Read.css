@@ -1,0 +1,21 @@
+@media (max-width: 690px) {
+	.card-student-information {
+		border: none !important;
+		box-shadow: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.card-body {
+		padding: 0 !important;
+	}
+
+	.icon-input {
+		display: none !important;
+	}
+
+	.container-student-information {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+}

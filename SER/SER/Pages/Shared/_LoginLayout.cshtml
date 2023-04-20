@@ -1,0 +1,148 @@
+
+@using System.Security.Claims
+@{
+  string role = User.FindFirstValue(ClaimTypes.Role);
+  Dictionary<string, List<(string, string)>> navItemsByRole = 
+  new Dictionary<string, List<(string, string)>>()
+  {
+    {"Administrador", new List<(string, string)>()
+      {
+        ("/Menus/Management", "Inicio"),
+        ("/Course/Index", "Cursos"),
+        ("/UIAdministrador/Docentes", "Docentes"),
+        ("/UIAdministrador/TiposDeDocumento", "Documentos"),
+        ("#", "Coordinadores"),
+        ("/Student/Index", "Alumnos")
+      }
+    },
+    {"Coordinador", new List<(string, string)>()
+      {
+        ("/UICoordinador/UICuerpoAcademico", "Docentes"),
+        ("/UICoordinador/UIAcademia", "Tipos de documentos")
+      }
+    },
+    {"Maestro", new List<(string, string)>()
+      {
+        ("", "Expedientes"),
+        ("", "Mis Experiencias Educativas")
+      }
+    }
+  };
+
+  Dictionary<string, string> navIcons = new Dictionary<string, string>()
+  {
+    {"Inicio", "fa-solid fa-house me-3"},
+    {"Cursos", "fa-solid fa-book-open me-3"},
+    {"Docentes", "fa-solid fa-chalkboard-teacher me-3"},
+    {"Documentos", "fa-regular fa-folder-open me-3"},
+    {"Coordinadores", "fa-solid fa-user-tie me-3"},
+    {"Alumnos", "fa-solid fa-users me-3"},
+    {"Expedientes", "fas fa-folder-open fa-fw me-3"}
+    // {"Mis Cursos", "fas fa-book-reader fa-fw me-3"}
+  };
+}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - Sistema de ER</title>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/css/Shared/_LoginLayout.css" />
+  <link rel="stylesheet" href="~/css/Shared/_Layout.css" />
+  <link rel="icon" href="~/favicon.ico" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Livvic&display=swap" rel="stylesheet">
+  @await RenderSectionAsync("Styles", required: false)
+</head>
+
+<body>
+  <header>
+    <nav id="sider-bar-menu" class="collapse d-lg-block sidebar collapse bg-white">
+      <div class="position-sticky nav-options">
+        <div class="list-group list-group-flush mx-3 mt-4">
+          @if (User.Identity!.IsAuthenticated && navItemsByRole.ContainsKey(role))
+          {
+            foreach (var item in navItemsByRole[role])
+            {
+              <a href="@item.Item1" class="anchor-navbar-option list-group-item list-group-item-action py-3 ripple" aria-current="true">                  
+                @foreach (var icon in navIcons)
+                {
+                  if (icon.Key.Equals(item.Item2))
+                  {
+                    <i class="@icon.Value fa-fw"></i>
+                  }
+                }
+                <span>@item.Item2</span>
+              </a>
+            }
+          }
+        </div>
+      </div>
+    </nav>
+    <nav id="main-navbar" class="navbar navbar-expand-lg bg-white navbar-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sider-bar-menu" aria-controls="sider-bar-menu" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <a class="navbar-brand d-flex ms-4" href="#">
+          <img src="~/images/cube-ser-logo.png" class="cube-ser-logo " alt="Sistema de Experiencia Recepcional"
+              loading="lazy" />
+          <p class="font-ser-logo fw-bolder d-flex justify-content-center align-items-center m-0 p-0">
+            SER
+          </p>
+        </a>
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <li class="nav-item dropdown d-flex justify-content-center align-items-center me-2">
+            @if (User.Identity!.IsAuthenticated)
+            {
+              @User.Identity.Name;
+            }          
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false" >
+              <i class="fa-solid fa-circle-user fa-2x"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">My profile</a></li>
+              <li>
+                <form method="post" asp-page="/Index" asp-page-handler="LogOut">
+                  <button type="submit" id="button-log-out" class="dropdown-item">Cerrar sesión<button>
+                </form>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="container-fluid m-0">
+    <main role="main">
+      @RenderBody()
+    </main>
+  </div>
+  <footer class="bg-white">
+    <div class="text-center p-1">
+      @{
+      int DEVELOPMENT_YEAR = 2022;
+      int maintenanceYear = DateTime.Now.Year;
+      }
+      &copy; @DEVELOPMENT_YEAR - @maintenanceYear Universidad Veracruzana. Derechos reservados.
+    </div>
+  </footer>
+  
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+  <script src="~/js/Shared/_LoginLayout.js"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,41 +1,49 @@
 ﻿@page
 @model IndexModel
+
 @{
-    ViewData["Title"] = "Pagina de inicio";
+  ViewData["Title"] = "Inicio de Sesión";
 }
 
-<div class="text-center" style="margin-bottom: 200px">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div>
-          <div class="card-body p-5 text-center">
-            <img src="~/images/SERLogo.png" width="450" style="margin-bottom: 40px"/>
-            <form id="formLogin" method="post">
-              <div class="form-outline mb-4">
-                <input type="text" id="inputUsuario" asp-for="Usuario.NombreUsuario" placeholder="Usuario" class="form-control form-control-lg"/>
-                <span asp-validation-for="Usuario.NombreUsuario" class="text-danger"></span>
-              </div>
-              <div class="form-outline mb-4">
-                <input type="password" id="inputContraseña" asp-for="Usuario.Contra" placeholder="Contraseña" class="form-control form-control-lg"/>
-              </div>
-              <input id="btnIniciarSesion" type="submit" class="btn btn-primary btn-lg btn-block" value="Iniciar sesión" style="background-color: #2957CD"/>
-              <br/>
-              <br/>
-              <a asp-page="#">¿Has olvidado tú contraseña?</a>
-            </form>
-          </div>
-        </div>
+@section Styles {
+  <link rel="stylesheet" href="~/css/Index.css" />
+}
+
+<div class="container d-flex justify-content-center align-items-center text-center p-5 rounded-9 shadow-6 form-login-container">
+  <div>
+    <img src="~/images/ser-logo.png" class="logo-ser img-fluid" alt="Sistema de Experiencia Recepcional" />
+    <h2 class="my-4 text-dark fs-2 display-6">Inicio de Sesión</h2>
+    @if (ViewData["MessageError"] != null) 
+    {
+      <div role="alert" class="alert alert-danger mb-4">
+        @ViewData["MessageError"]
       </div>
-    </div>
+    }
+    <form method="post" asp-page-handler="Login">
+      <div class="form-outline mb-4 d-flex justify-content-end align-items-center">
+        <input type="text" id="input-user" class="form-control form-control-lg" autocomplete="off" asp-for="user!.Username" required/>
+        <label class="form-label" for="input-user">Usuario</label>
+        <i class="fas fa-user-alt fa-lg px-3"></i>
+        <!-- <i class="fa-regular fa-user fa-lg px-3"></i> -->
+      </div>
+      <div class="form-outline mb-4 d-flex justify-content-end align-items-center">
+        <input type="password" id="input-password" class="form-control form-control-lg" asp-for="user!.Password" />
+        <label class="form-label" for="input-password">Contraseña</label>
+        <i role="button" class="fas fa-eye fa-lg px-3 icon-login" id="icon-password" aria-label="Mostrar contraseña"></i>
+        <!-- <i role="button" class="fa-regular fa-eye px-3 icon-login" id="icon-password" aria-label="Mostrar contraseña"></i> -->
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-lg mb-4">
+          Iniciar sesión
+        </button>
+      </div>
+      <a role="button" class="text-decoration" asp-page="/Account/RecoveryPassword">
+        ¿Quieres cambiar o recuperar tu contraseña?
+      </a>
+    </form>
   </div>
 </div>
 
-@if (TempData["Error"] != null)
-{
-    <div id="alertMessage" class="alert alert-danger">
-        @TempData["Error"]
-    </div>
+@section Scripts {
+  <script src="~/js/Index.js"></script>
 }
-
-    

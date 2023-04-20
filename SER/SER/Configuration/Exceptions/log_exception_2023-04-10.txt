@@ -1,0 +1,1435 @@
+System.Exception: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 173
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 186
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 31
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 173
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 186
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 31
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 173
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 186
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 31
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 173
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 186
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 31
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 173
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 186
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 31
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 189
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 191
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 189
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 29
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method314(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method314(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.<OnPostUpdateStudent>d__7.MoveNext()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method333(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method333(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.<OnPostUpdateStudent>d__7.MoveNext()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method349(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method349(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.<OnPostUpdateStudent>d__7.MoveNext()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method365(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method365(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.<OnPostUpdateStudent>d__7.MoveNext()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method373(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method373(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.GetValue(Expression expression, String& parameterName)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Evaluate(Expression expression, Boolean generateParameter)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitLambda[T](Expression`1 node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Linq.Expressions.ExpressionVisitor.VisitUnary(UnaryExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at System.Dynamic.Utils.ExpressionVisitorUtils.VisitArguments(ExpressionVisitor visitor, IArgumentProvider nodes)
+   at System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(MethodCallExpression node)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.Visit(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.Internal.ParameterExtractingExpressionVisitor.ExtractParameters(Expression expression, Boolean clearEvaluatedValues)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.Any[TSource](IQueryable`1 source, Expression`1 predicate)
+   at SER.Services.StudentService.IsStudentExisting(StudentDto studentDto)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.<OnPostUpdateStudent>d__7.MoveNext()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 34
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 34
++-------------------------------------------------------------------------------------------------+
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.Int32.Parse(String s)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 34
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 126
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 169
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 189
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Update.cshtml.cs:line 37
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Ha ocurrido un error. Intente más tarde
+   at SER.Services.StudentService.GetStudent(Int32 studentId)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: The instance of entity type 'Student' cannot be tracked because another instance with the same key value for {'StudentId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Update(TEntity entity)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: The instance of entity type 'Student' cannot be tracked because another instance with the same key value for {'StudentId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Update(TEntity entity)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: The instance of entity type 'Student' cannot be tracked because another instance with the same key value for {'StudentId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Update(TEntity entity)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: The instance of entity type 'Student' cannot be tracked because another instance with the same key value for {'StudentId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Update(TEntity entity)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: The instance of entity type 'Student' cannot be tracked because another instance with the same key value for {'StudentId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Update(TEntity entity)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: The instance of entity type 'Student' cannot be tracked because another instance with the same key value for {'StudentId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Update(TEntity entity)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+
+System.InvalidOperationException: The instance of entity type 'Student' cannot be tracked because another instance with the same key value for {'StudentId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Update(TEntity entity)
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
++-------------------------------------------------------------------------------------------------+
+System.Exception: Error actualizando estudiante.
+   at SER.Services.StudentService.UpdateStudent(StudentDto studentDto)
+   at SER.Pages.Student.UpdateModel.OnPostUpdateStudent()
++-------------------------------------------------------------------------------------------------+

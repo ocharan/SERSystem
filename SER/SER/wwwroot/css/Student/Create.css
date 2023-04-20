@@ -1,0 +1,17 @@
+#form-create-student,
+#form-update-student {
+	max-width: 700px;
+	padding: 3%;
+}
+
+@media (max-width: 690px) {
+	.card-student-information,
+	#form-create-student,
+	#form-update-student {
+		border: none !important;
+		box-shadow: none !important;
+	}
+	.icon-input {
+		display: none !important;
+	}
+}

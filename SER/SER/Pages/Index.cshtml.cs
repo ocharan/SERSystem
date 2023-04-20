@@ -3,87 +3,102 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using SER.Context;
-using SER.Entities;
-using SER.Pages.Shared;
+using SER.Models.DTO;
+using SER.Configuration;
+using SER.Services;
+using AutoMapper;
 
 namespace SER.Pages
 {
-    public class IndexModel : PageModel
+  public class IndexModel : PageModel
+  {
+    private readonly IUserService _userService;
+    private readonly IMapper _mapper;
+    private const string ERROR_MESSAGE = "Usuario y/o contraseña no válidos.";
+    [BindProperty]
+    public UserDto user { set; get; } = null!;
+
+    public IndexModel(IUserService userService, IMapper mapper)
     {
-        private readonly MySERContext _context;
-
-        [BindProperty]
-        public Usuario Usuario { set; get; }
-        public IndexModel(MySERContext context)
-        {
-            _context = context;
-        }
-
-        public void OnGet()
-        {
-        }
-        
-
-        [HttpPost]
-        public async Task<IActionResult> OnPost()
-        {
-            try
-            {
-                var usuarios = _context.Usuarios.ToList();
-                var usuarioObtenido = usuarios.FirstOrDefault(usr => usr.NombreUsuario == Usuario.NombreUsuario && usr.Contra == Usuario.Contra);
-                if (Usuario.NombreUsuario != null || Usuario.Contra != null)
-                {
-                    if (usuarioObtenido!=null)
-                    {
-                        
-                        var claims = new List<Claim>
-                        {
-                            new Claim(ClaimTypes.Name, usuarioObtenido.NombreUsuario),
-                            new Claim(ClaimTypes.Role, usuarioObtenido.Tipo)
-                        };
-                        
-                        
-                        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                            new ClaimsPrincipal(claimsIdentity));
-
-                        if (usuarioObtenido.Tipo.Equals("Coordinador"))
-                        {
-                            return RedirectToPage("/Menus/UICoordinador");
-                        }else if (usuarioObtenido.Tipo.Equals("Administrador"))
-                        {
-                            return RedirectToPage("/Menus/UIAdministración");
-                        }else if (usuarioObtenido.Tipo.Equals("Maestro"))
-                        {
-                            return Redirect("/Menus/UIMaestro?id="+usuarioObtenido.NombreUsuario);
-                        }
-                    }
-                    else
-                    {
-                        TempData["Error"] = "Credenciales incorrectas";
-                        return Page();
-                    }
-                }
-                else
-                {
-                    TempData["Error"] = "Debe ingresar el usuario y contraseña";
-                    return Page();
-                }
-
-            }
-            catch (Exception e)
-            {
-                TempData["Error"] = "Error al tratar de establecer conexón con el servidor"+e.StackTrace;
-                return Page();
-            }
-            return Page();
-        }
-
-
-    
+      _userService = userService;
+      _mapper = mapper;
     }
+
+    public IActionResult OnGet() { return Page(); }
+
+    public async Task SignInUser(UserDto user)
+    {
+      try
+      {
+        List<Claim> claims = new List<Claim> {
+          new Claim(ClaimTypes.Name, user.Username!),
+          new Claim(ClaimTypes.Role, user.Role!),
+        };
+
+        ClaimsIdentity claimsIdentity = new ClaimsIdentity(
+          claims, CookieAuthenticationDefaults.AuthenticationScheme
+        );
+
+        await HttpContext.SignInAsync(
+          CookieAuthenticationDefaults.AuthenticationScheme,
+          new ClaimsPrincipal(claimsIdentity)
+        );
+      }
+      catch (Exception)
+      {
+        throw new Exception("Error al tratar de conectarse con el servidor");
+      }
+    }
+
+    public async Task<IActionResult> OnPostLogOut()
+    {
+      await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+      return RedirectToPage("/Index");
+    }
+
+    public RedirectToPageResult GetPageResult(string userRole, string username)
+    {
+      Dictionary<string, (string Page, object RouteValues)> routes =
+        new Dictionary<string, (string Page, object RouteValues)> {
+          {"Coordinador", ("/Menus/UICoordinador", "")},
+          {"Administrador", ("/Menus/Management", "")},
+          {"Maestro", ("/Menus/UIMaestro", new { id = username })},
+        };
+
+      return RedirectToPage(
+        routes[userRole].Page,
+        routes[userRole].RouteValues
+      );
+    }
+
+    public async Task<IActionResult> OnPostLogin()
+    {
+      try
+      {
+        UserDto obtainedUser = await _userService.GetUserByUsername(user.Username);
+        bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(user.Password, obtainedUser.Password);
+
+        if (isPasswordCorrect)
+        {
+          await SignInUser(obtainedUser);
+
+          return GetPageResult(obtainedUser.Role, obtainedUser.Username);
+        }
+        else
+        {
+          ViewData["MessageError"] = ERROR_MESSAGE;
+        }
+      }
+      catch (Exception ex)
+      {
+        ViewData["MessageError"] = ex.Message.Equals("Usuario no encontrado")
+          ? ERROR_MESSAGE : ex.Message;
+
+        ExceptionLogger.LogException(ex);
+      }
+
+      return Page();
+    }
+  }
 }

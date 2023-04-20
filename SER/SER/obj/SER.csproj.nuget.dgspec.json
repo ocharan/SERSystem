@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\SER.csproj": {}
+    "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\SER.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\SER.csproj": {
+    "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\SER.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\SER.csproj",
+        "projectUniqueName": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\SER.csproj",
         "projectName": "SER",
-        "projectPath": "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\SER.csproj",
-        "packagesPath": "C:\\Users\\Mrcap\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mrcap\\OneDrive\\Escritorio\\SER\\SERSystem\\SER\\SER\\obj\\",
+        "projectPath": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\SER.csproj",
+        "packagesPath": "C:\\Users\\dukec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mrcap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dukec\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,9 +44,29 @@
               "target": "Package",
               "version": "[2.1.15, )"
             },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.101.0, )"
+            },
             "EntityFramework": {
               "target": "Package",
               "version": "[6.4.4, )"
+            },
+            "JWT": {
+              "target": "Package",
+              "version": "[10.0.2, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.6.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -84,11 +104,11 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.2, )"
+              "version": "[13.0.3, )"
             },
             "bootstrap": {
               "target": "Package",
-              "version": "[5.1.3, )"
+              "version": "[5.2.3, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -116,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

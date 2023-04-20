@@ -9,269 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SER
 build_property.RootNamespace = SER
-build_property.ProjectDir = C:\Users\Mrcap\OneDrive\Escritorio\SER\SERSystem\SER\SER\
+build_property.ProjectDir = C:\Users\dukec\Escritorio\SERSystem\SER\SER\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\Mrcap\OneDrive\Escritorio\SER\SERSystem\SER\SER
+build_property.MSBuildProjectDirectory = C:\Users\dukec\Escritorio\SERSystem\SER\SER
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/CerrarSesion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2VycmFyU2VzaW9uLmNzaHRtbA==
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Account/RecoveryPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWNvdmVyeVBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/Index.cshtml]
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Errors/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3JzXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Errors/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3JzXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/Menus/UIAdministración.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudXNcVUlBZG1pbmlzdHJhY2nDs24uY3NodG1s
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Menus/Management.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudXNcTWFuYWdlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/Menus/UICoordinador.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudXNcVUlDb29yZGluYWRvci5jc2h0bWw=
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/Menus/UIMaestro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudXNcVUlNYWVzdHJvLmNzaHRtbA==
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/Alumnos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXEFsdW1ub3MuY3NodG1s
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/AsignarAlumnos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXEFzaWduYXJBbHVtbm9zLmNzaHRtbA==
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/AsignarProfesor.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXEFzaWduYXJQcm9mZXNvci5jc2h0bWw=
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxSZWFkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/Docentes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXERvY2VudGVzLmNzaHRtbA==
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/EditarAlumno.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXEVkaXRhckFsdW1uby5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/EditarDocente.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXEVkaXRhckRvY2VudGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/EditarExperienciaEducativa.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXEVkaXRhckV4cGVyaWVuY2lhRWR1Y2F0aXZhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/EditarTipoDocumento.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXEVkaXRhclRpcG9Eb2N1bWVudG8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/ExperienciasEducativas.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXEV4cGVyaWVuY2lhc0VkdWNhdGl2YXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarAlumno.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXFJlZ2lzdHJhckFsdW1uby5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarDocente.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXFJlZ2lzdHJhckRvY2VudGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarExperiencia.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXFJlZ2lzdHJhckV4cGVyaWVuY2lhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/RegistrarTipoDocumento.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXFJlZ2lzdHJhclRpcG9Eb2N1bWVudG8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIAdministrador/TiposDeDocumento.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlBZG1pbmlzdHJhZG9yXFRpcG9zRGVEb2N1bWVudG8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/CuerposAcademicos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cQ3VlcnBvc0FjYWRlbWljb3MuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarCuerpoAcademico.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cRWRpdGFyQ3VlcnBvQWNhZGVtaWNvLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarLGAC.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cRWRpdGFyTEdBQy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarOrganizacion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cRWRpdGFyT3JnYW5pemFjaW9uLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarPladea.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cRWRpdGFyUGxhZGVhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarProyectoDeInvestigacion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cRWRpdGFyUHJveWVjdG9EZUludmVzdGlnYWNpb24uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/EditarVinculacion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cRWRpdGFyVmluY3VsYWNpb24uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/LGAC.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cTEdBQy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/Organizaciones.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cT3JnYW5pemFjaW9uZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/ProyectosdeInvestigacion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUHJveWVjdG9zZGVJbnZlc3RpZ2FjaW9uLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarCuerpoAcademico.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUmVnaXN0cmFyQ3VlcnBvQWNhZGVtaWNvLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarIntegrantesCA.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUmVnaXN0cmFySW50ZWdyYW50ZXNDQS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarLgac.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUmVnaXN0cmFyTGdhYy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarOrganización.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUmVnaXN0cmFyT3JnYW5pemFjacOzbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistrarProyecto.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUmVnaXN0cmFyUHJveWVjdG8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistroPLADEA.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUmVnaXN0cm9QTEFERUEuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistroProyectoDeInvestigacion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUmVnaXN0cm9Qcm95ZWN0b0RlSW52ZXN0aWdhY2lvbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/CuerpoAcademico/RegistroVinculacion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxDdWVycG9BY2FkZW1pY29cUmVnaXN0cm9WaW5jdWxhY2lvbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarAlumnos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXEFzaWduYXJBbHVtbm9zLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/AsignarSinodales.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXEFzaWduYXJTaW5vZGFsZXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/Expedientes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXEV4cGVkaWVudGVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalExterno.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXE1vZGlmaWNhclNpbm9kYWxFeHRlcm5vLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarSinodalInterno.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXE1vZGlmaWNhclNpbm9kYWxJbnRlcm5vLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/ModificarTrabajoRecepcional.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXE1vZGlmaWNhclRyYWJham9SZWNlcGNpb25hbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/NuevoTrabajoRecepcional.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXE51ZXZvVHJhYmFqb1JlY2VwY2lvbmFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXFJlZ2lzdHJhclNpbm9kYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalExterno.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXFJlZ2lzdHJhclNpbm9kYWxFeHRlcm5vLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/RegistrarSinodalInterno.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXFJlZ2lzdHJhclNpbm9kYWxJbnRlcm5vLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/Sinodales.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXFNpbm9kYWxlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/TrabajosRecepcionales.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXFRyYWJham9zUmVjZXBjaW9uYWxlcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/ExperienciaRecepcional/VerExpediente.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxFeHBlcmllbmNpYVJlY2VwY2lvbmFsXFZlckV4cGVkaWVudGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/UIAcademia.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxVSUFjYWRlbWlhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/UICuerpoAcademico.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxVSUN1ZXJwb0FjYWRlbWljby5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UICoordinador/UIExperienciaRecepcional.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlDb29yZGluYWRvclxVSUV4cGVyaWVuY2lhUmVjZXBjaW9uYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIMaestro/Alumnos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlNYWVzdHJvXEFsdW1ub3MuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIMaestro/Expedientes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlNYWVzdHJvXEV4cGVkaWVudGVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIMaestro/Experiencias.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlNYWVzdHJvXEV4cGVyaWVuY2lhcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIMaestro/RegistrarDocumentoExperiencia.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlNYWVzdHJvXFJlZ2lzdHJhckRvY3VtZW50b0V4cGVyaWVuY2lhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIMaestro/RegistrarDocumentoProyectoGuiado.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlNYWVzdHJvXFJlZ2lzdHJhckRvY3VtZW50b1Byb3llY3RvR3VpYWRvLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/UIMaestro/VerExpediente.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlNYWVzdHJvXFZlckV4cGVkaWVudGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/_ViewImports.cshtml]
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/_ViewStart.cshtml]
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Mrcap/OneDrive/Escritorio/SER/SERSystem/SER/SER/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-qzmkt4p9so
