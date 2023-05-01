@@ -32,12 +32,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Errors/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3JzXEVycm9yLmNzaHRtbA==
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/errors/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZXJyb3JzXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Errors/NotFound.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3JzXE5vdEZvdW5kLmNzaHRtbA==
+[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/errors/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZXJyb3JzXE5vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Index.cshtml]

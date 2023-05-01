@@ -1,13 +1,14 @@
 using SER.Models.DTO;
+using SER.Models.Responses;
 
 namespace SER.Services
 {
   public interface ICourseService
   {
-    (IQueryable<CourseDto> Courses, int OpenCount, int ClosedCount) GetAllCourses(string filter);
+    Task<bool> IsCourseExisting(string nrc);
+    IQueryable<CourseDto> GetAllCourses();
     Task<CourseDto> GetCourse(int courseId);
     Task<List<CourseRegistrationDto>> GetStudentCourses(int studentId);
-    Task<Dictionary<string, bool>> CreateCourse(CourseDto courseDto);
-    Task<Dictionary<string, bool>> UpdateCourse(CourseDto courseDto);
+    Task<Response> CreateCourse(CourseDto courseDto, IFormFile? file = null);
   }
 }

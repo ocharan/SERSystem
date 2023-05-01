@@ -19,8 +19,8 @@ namespace SER.Pages.Student
     public string? CurrentSort { get; set; }
     public string? CurrentSearch { get; set; }
     public string? CurrentFilter { get; set; }
-    public int AssignedCount { get; set; }
-    public int UnassignedCount { get; set; }
+    public int AssignedStudents { get; set; }
+    public int UnassignedStudents { get; set; }
     public PaginatedList<StudentDto> students { get; set; } = null!;
 
     public IndexModel(IStudentService studentService, IConfiguration configuration)
@@ -29,56 +29,89 @@ namespace SER.Pages.Student
       Configuration = configuration;
     }
 
-    public void CheckMessages()
+    public async Task OnGet(string sortOrder, string currentSearch, string searchString, int? pageIndex, string currentFilter)
     {
       if (TempData["MessageSuccess"] != null) { ViewData["MessageSuccess"] = TempData["MessageSuccess"]; }
 
       if (TempData["MessageError"] != null) { ViewData["MessageError"] = TempData["MessageError"]; }
-    }
 
-    public async Task OnGet(string sortOrder, string currentSearch, string searchString, int? pageIndex, string currentFilter)
-    {
-      CheckMessages();
       CurrentSort = sortOrder;
       FullnameSort = String.IsNullOrEmpty(sortOrder) ? "descendant-fullname" : "";
+      int PAGE_SIZE = Configuration.GetValue("PageSize", 10);
 
       if (!String.IsNullOrEmpty(searchString)) { pageIndex = 1; }
       else { searchString = currentSearch; }
 
       CurrentSearch = searchString;
-      CurrentSort = sortOrder ?? CurrentSort;
+      // CurrentSort = sortOrder ?? CurrentSort;
       CurrentFilter = currentFilter ?? CurrentFilter;
 
       var auxiliaryStudents = !String.IsNullOrEmpty(currentFilter)
-        ? _studentService.GetAllStudents(currentFilter)
-        : _studentService.GetAllStudents("default");
-
-      AssignedCount = auxiliaryStudents.AssignedCount;
-      UnassignedCount = auxiliaryStudents.UnassignedCount;
+        ? GetAllStudents(currentFilter)
+        : GetAllStudents();
 
       if (!String.IsNullOrEmpty(searchString))
       {
-        auxiliaryStudents.Students = auxiliaryStudents.Students.Where(student =>
+        auxiliaryStudents = auxiliaryStudents.Where(student =>
           student.FullName!.Contains(searchString)
         );
       }
 
-      int PAGE_SIZE = Configuration.GetValue("PageSize", 10);
-
-      auxiliaryStudents.Students = String.Equals(sortOrder, "descendant-fullname")
-        ? auxiliaryStudents.Students.OrderByDescending(student => student.FullName)
-        : auxiliaryStudents.Students.OrderBy(student => student.FullName);
+      auxiliaryStudents = String.Equals(sortOrder, "descendant-fullname")
+        ? auxiliaryStudents.OrderByDescending(student => student.FullName)
+        : auxiliaryStudents.OrderBy(student => student.FullName);
 
       students = await PaginatedList<StudentDto>.CreateAsync(
-        auxiliaryStudents.Students.AsNoTracking(), pageIndex ?? 1, PAGE_SIZE
+        auxiliaryStudents.AsNoTracking(), pageIndex ?? 1, PAGE_SIZE
       );
+    }
+
+    public IQueryable<StudentDto> GetAllStudents(string filter = "default")
+    {
+      IQueryable<StudentDto> students = new List<StudentDto>().AsQueryable();
+
+      try
+      {
+        students = _studentService.GetAllStudents();
+      }
+      catch (Exception ex)
+      {
+        ExceptionLogger.LogException(ex);
+        throw;
+      }
+
+      AssignedStudents = students
+        .Count(student => student.CourseRegistrations!
+        .Any(registration => registration.Course.IsOpen));
+
+      UnassignedStudents = students
+        .Count(student => !student.CourseRegistrations!
+        .Any(registration => registration.Course.IsOpen));
+
+      if (filter.Equals("assigned"))
+      {
+        students = students
+          .Where(student => student.CourseRegistrations!
+          .Any(registration => registration.Course.IsOpen))
+          .AsQueryable();
+      }
+
+      if (filter.Equals("unassigned"))
+      {
+        students = students
+          .Where(student => !student.CourseRegistrations!
+          .Any(registration => registration.Course.IsOpen))
+          .AsQueryable();
+      }
+
+      return students;
     }
 
     public async Task<FileResult> OnPostExportSpreadsheetData()
     {
       try
       {
-        var students = await _studentService.GetAllStudents("default").Students.ToListAsync();
+        var students = await _studentService.GetAllStudents().ToListAsync();
         XLWorkbook workbook = new XLWorkbook();
         IXLWorksheet worksheet = workbook.Worksheets.Add("Students");
         worksheet.Cell(1, 1).Value = "Full Name";

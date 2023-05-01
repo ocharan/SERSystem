@@ -27,5 +27,6 @@ namespace SER.Models.DTO
     [Required(ErrorMessage = "Campo requerido")]
     [EmailAddress(ErrorMessage = "Correo electrónico inválido")]
     public string Email { get; set; } = null!;
+    public List<CourseRegistrationDto>? CourseRegistrations { get; set; }
   }
 }

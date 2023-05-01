@@ -1,0 +1,15 @@
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'El archivo es demasiado grande')
+   at SER.Pages.Course.CreateModel.OnPostAddCourse() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Course\Create.cshtml.cs:line 41
++-------------------------------------------------------------------------------------------------+
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'El archivo es demasiado grande')
+   at SER.Pages.Course.CreateModel.OnPostAddCourse() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Course\Create.cshtml.cs:line 41
++-------------------------------------------------------------------------------------------------+
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'El archivo es demasiado grande')
+   at SER.Pages.Course.CreateModel.OnPostAddCourse() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Course\Create.cshtml.cs:line 41
++-------------------------------------------------------------------------------------------------+
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'El archivo es demasiado grande')
+   at SER.Pages.Course.CreateModel.OnPostAddCourse() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Course\Create.cshtml.cs:line 42
++-------------------------------------------------------------------------------------------------+
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'El archivo es demasiado grande')
+   at SER.Pages.Course.CreateModel.OnPostAddCourse() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Course\Create.cshtml.cs:line 42
++-------------------------------------------------------------------------------------------------+

@@ -1,0 +1,36 @@
+.form-create,
+.form-update {
+	max-width: 700px !important;
+	margin-top: 15px !important;
+	overflow-y: auto;
+	margin-bottom: calc(68px + 1em) !important;
+}
+
+@media (max-width: 690px) {
+	.container-course-information,
+	.form-create,
+	.form-update {
+		border: none !important;
+		box-shadow: none !important;
+		padding: 3% !important;
+	}
+	.icon-input {
+		display: none !important;
+	}
+}
+
+@media (max-width: 400px) {
+	.row.fixed-bottom .btn {
+		width: 100% !important;
+	}
+}
+
+.row.fixed-bottom {
+	padding: 15px !important;
+	border-top: 1px solid #ddd !important;
+	height: 68px;
+}
+
+.table-responsive {
+	max-height: 50vh;
+}

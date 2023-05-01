@@ -1,17 +1,33 @@
-#form-create-student,
-#form-update-student {
-	max-width: 700px;
-	padding: 3%;
+.form-create,
+.form-update {
+	max-width: 700px !important;
+	margin-top: 30px !important;
 }
 
 @media (max-width: 690px) {
 	.card-student-information,
-	#form-create-student,
-	#form-update-student {
+	.form-create,
+	.form-update {
 		border: none !important;
 		box-shadow: none !important;
+		padding: 3% !important;
 	}
 	.icon-input {
 		display: none !important;
 	}
+}
+
+@media (max-width: 400px) {
+	.row.fixed-bottom .btn {
+		width: 100% !important;
+	}
+}
+
+.row.fixed-bottom {
+	position: fixed !important;
+	padding: 15px !important;
+	border-top: 1px solid #ddd !important;
+	/* box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1) !important; */
+	/* z-index: 1111 !important; */
+	/* margin-bottom: 30px; */
 }

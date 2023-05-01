@@ -33,7 +33,7 @@
         </div>
         <p class="card-text text-black card-text-number">
           @{
-            int totalStudents = @Model.AssignedCount + @Model.UnassignedCount;                        
+            int totalStudents = @Model.AssignedStudents + @Model.UnassignedStudents;                        
           }
           @totalStudents
         </p>
@@ -50,7 +50,7 @@
           <i class="fa-solid fa-user-check text-black fa-lg ms-auto"></i>
         </div>        
         <p class="card-text text-black card-text-number">
-          @Model.AssignedCount
+          @Model.AssignedStudents
         </p>
       </div>
     </div>
@@ -65,13 +65,13 @@
           <i class="fa-solid fa-user-xmark text-black fa-lg ms-auto"></i>
         </div> 
         <p class="card-text text-black card-text-number">
-          @Model.UnassignedCount
+          @Model.UnassignedStudents
         </p>
       </div>
     </div>
   </div>
 </div>
-<article class="row mx-4" id="table-container">
+<section class="row mx-4" id="table-container">
   <aside class="col-md-8 table-options p-0 mb-2">
     <div class="row d-flex gx-3">
       <div class="col-md-3 mb-3">
@@ -212,7 +212,7 @@
       </a>
     </div>
   </div>
-</article>
+</section>
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
   <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-copy">
     <div class="d-flex">

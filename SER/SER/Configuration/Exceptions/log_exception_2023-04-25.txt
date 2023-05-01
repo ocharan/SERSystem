@@ -1,0 +1,20 @@
+AutoMapper.AutoMapperMappingException: Unable to create a map expression from CourseFile.File (SER.Models.DB.Course) to IFormFile.File (Microsoft.AspNetCore.Http.IFormFile)
+
+Mapping types:
+CourseFile -> CourseFileDto
+SER.Models.DB.CourseFile -> SER.Models.DTO.CourseFileDto
+
+Type Map configuration:
+CourseFile -> CourseFileDto
+SER.Models.DB.CourseFile -> SER.Models.DTO.CourseFileDto
+
+Destination Member:
+File
+
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at SER.Services.StudentService.GetAllStudents() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\StudentService.cs:line 48
+   at SER.Pages.Student.IndexModel.GetAllStudents(String filter) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Index.cshtml.cs:line 75
++-------------------------------------------------------------------------------------------------+

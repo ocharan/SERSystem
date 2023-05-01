@@ -15,7 +15,7 @@ for (let i = 0; i < anchorNavbarOptions.length; i++) {
 let currentUrl = window.location.href;
 const namesNavbarOptions = [
 	"Management",
-	"Cursos",
+	"Course",
 	"Docentes",
 	"Documentos",
 	"Coordinadores",

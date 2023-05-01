@@ -9,21 +9,10 @@
   <link rel="stylesheet" href="~/css/Student/Create.css" />
 }
 
-<div class="row mx-3 mt-4 my-2 mb-4 title-page">
-  <div class="col-md-12">
-    <h2 class="mb-3 d-inline text-black fs-2 ">
-      <a class="text-black" asp-page="./Index">Alumnos</a>
-    </h2>    
-    <h3 class="text-black mb-3 d-inline fs-2">
-      <i class="fs-4 fa-solid fa-chevron-right mx-1 fa-xs"></i>
-      Actualizar información del alumno
-    </h2>
-  </div>
-</div>
-<div class="container shadow-3 pb-4 rounded-9" id="form-update-student">
+<div class="container shadow-3 pb-4 rounded-9 form-update p-5">
   <h5 class="mb-2 text-black fs-4 fw-normal">Formulario de Actualización: <strong>Alumno</strong></h5>
   <p class="mb-3">Recuerda que, al actualizar la información de un alumno, se actualizarán los datos de todos los registros en los que se encuentre.</p>
-  <form class="px-0" id="form-create-student" method="post" asp-page-handler="UpdateStudent" novalidate>
+  <form id="form-create-student" method="post" asp-page-handler="UpdateStudent" novalidate>
     <div class="d-flex">
       <i class="d-flex align-items-center fas fa-user me-2 icon-input"></i>
       <div class="form-outline">
@@ -51,7 +40,7 @@
     </div>
     <span asp-validation-for="student!.Email" class="d-flex text-start text-danger mb-4"></span>
     <input type="hidden" asp-for="student!.StudentId" />
-    <div class="row d-flex gap-3 justify-content-end mt-5 mx-0">
+    <div class="row gap-3 justify-content-end mt-5 mx-0 fixed-bottom bg-white">
       <a role="button" class="col-md-3 btn btn-secondary w-auto" asp-page="./Index">
         <i class="fas fa-times me-2"></i>
         Cancelar

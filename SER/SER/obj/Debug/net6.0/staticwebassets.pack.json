@@ -177,6 +177,10 @@
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
     },
     {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\css\\Course\\Create.css",
+      "PackagePath": "staticwebassets\\css\\Course\\Create.css"
+    },
+    {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\css\\Index.css",
       "PackagePath": "staticwebassets\\css\\Index.css"
     },
@@ -209,12 +213,20 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\22222_document.pdf",
+      "PackagePath": "staticwebassets\\files\\22222_document.pdf"
+    },
+    {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\cube-ser-logo.png",
       "PackagePath": "staticwebassets\\images\\cube-ser-logo.png"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\ser-logo.png",
       "PackagePath": "staticwebassets\\images\\ser-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Create.js",
+      "PackagePath": "staticwebassets\\js\\Course\\Create.js"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Index.js",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "j/+xs5k5xnJ1FORhpmxvVTtX3EMUk73leows5gwPFV0=",
+  "Hash": "pqgFagde6EY59RKLuuEv9ApoEIgIag2KmCE61ZxhH0k=",
   "Source": "SER",
   "BasePath": "_content/SER",
   "Mode": "Default",
@@ -765,6 +765,23 @@
       "OriginalItemSpec": "C:\\Users\\dukec\\.nuget\\packages\\bootstrap\\5.2.3\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js.map"
     },
     {
+      "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\css\\Course\\Create.css",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\",
+      "BasePath": "_content/SER",
+      "RelativePath": "css/Course/Create.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Course\\Create.css"
+    },
+    {
       "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\css\\Index.css",
       "SourceId": "SER",
       "SourceType": "Discovered",
@@ -901,6 +918,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\22222_document.pdf",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\",
+      "BasePath": "_content/SER",
+      "RelativePath": "files/22222_document.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\22222_document.pdf"
+    },
+    {
       "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\cube-ser-logo.png",
       "SourceId": "SER",
       "SourceType": "Discovered",
@@ -933,6 +967,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\ser-logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Create.js",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\",
+      "BasePath": "_content/SER",
+      "RelativePath": "js/Course/Create.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Course\\Create.js"
     },
     {
       "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Index.js",

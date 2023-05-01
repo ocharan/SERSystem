@@ -1,10 +1,11 @@
-using ContosoUniversity;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using SER.Models.DTO;
 using SER.Services;
+using SER.Models.DTO;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using ContosoUniversity;
+using Microsoft.AspNetCore.Mvc;
+using SER.Configuration;
 
 namespace SER.Pages.Course
 {
@@ -17,9 +18,9 @@ namespace SER.Pages.Course
     public string? CurrentSort { get; set; }
     public string? CurrentSearch { get; set; }
     public string? CurrentFilter { get; set; }
-    public int OpenCount { get; set; }
-    public int ClosedCount { get; set; }
     public PaginatedList<CourseDto> courses = null!;
+    public int OpenCourses { get; set; }
+    public int ClosedCourses { get; set; }
 
     public Index(ICourseService courseService, IConfiguration configuration)
     {
@@ -29,8 +30,13 @@ namespace SER.Pages.Course
 
     public async Task OnGet(string sortOrder, string currentSearch, string searchString, int? pageIndex, string currentFilter)
     {
+      if (TempData["MessageSuccess"] != null) { ViewData["MessageSuccess"] = TempData["MessageSuccess"]; }
+
+      if (TempData["MessageError"] != null) { ViewData["MessageError"] = TempData["MessageError"]; }
+
       CurrentSort = sortOrder;
       NameSort = String.IsNullOrEmpty(sortOrder) ? "descendant-name" : "";
+      int PAGE_SIZE = Configuration.GetValue("PageSize", 10);
 
       if (!String.IsNullOrEmpty(searchString)) { pageIndex = 1; }
       else { searchString = currentSearch; }
@@ -39,29 +45,42 @@ namespace SER.Pages.Course
       CurrentSort = sortOrder ?? CurrentSort;
       CurrentFilter = currentFilter ?? CurrentFilter;
 
-      var auxiliaryCourses = !String.IsNullOrWhiteSpace(currentFilter)
-        ? _courseService.GetAllCourses(currentFilter)
-        : _courseService.GetAllCourses("default");
+      var auxiliaryCourses = _courseService.GetAllCourses();
 
-      OpenCount = auxiliaryCourses.OpenCount;
-      ClosedCount = auxiliaryCourses.ClosedCount;
+      auxiliaryCourses = !String.IsNullOrEmpty(currentFilter)
+        ? FilterCourses(auxiliaryCourses, currentFilter)
+        : FilterCourses(auxiliaryCourses);
 
       if (!String.IsNullOrEmpty(searchString))
       {
-        auxiliaryCourses.Courses = auxiliaryCourses.Courses.Where(course =>
-          course.Name.Contains(searchString) || course.Nrc.ToString().Contains(searchString)
+        auxiliaryCourses = auxiliaryCourses.Where(course =>
+          course.Name.Contains(searchString) || (Convert.ToString(course.Nrc)).Contains(searchString)
         );
       }
 
-      int PAGE_SIZE = Configuration.GetValue("PageSize", 10);
-
-      auxiliaryCourses.Courses = String.Equals(sortOrder, "descendant-name")
-        ? auxiliaryCourses.Courses.OrderByDescending(course => course.Name)
-        : auxiliaryCourses.Courses.OrderBy(course => course.Name);
+      auxiliaryCourses = String.Equals(sortOrder, "descendant-name")
+        ? auxiliaryCourses.OrderByDescending(course => course.Name)
+        : auxiliaryCourses.OrderBy(course => course.Name);
 
       courses = await PaginatedList<CourseDto>.CreateAsync(
-        auxiliaryCourses.Courses.AsNoTracking(), pageIndex ?? 1, 10
+        auxiliaryCourses, pageIndex ?? 1, PAGE_SIZE
       );
+    }
+
+    public IQueryable<CourseDto> FilterCourses(IQueryable<CourseDto> courses, string filter = "default")
+    {
+      OpenCourses = courses
+        .Where(course => course.IsOpen)
+        .Count();
+
+      ClosedCourses = courses
+        .Where(course => !course.IsOpen)
+        .Count();
+
+      if (filter.Equals("open")) { courses = courses.Where(course => course.IsOpen).AsQueryable(); }
+      if (filter.Equals("closed")) { courses = courses.Where(course => !course.IsOpen).AsQueryable(); }
+
+      return courses;
     }
   }
 }

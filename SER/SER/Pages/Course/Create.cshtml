@@ -6,24 +6,105 @@
 }
 
 @section Styles {
-  <link rel="stylesheet" href="~/css/Student/Create.css" />
+<link rel="stylesheet" href="~/css/Course/Create.css" />
 }
 
-<div class="row mx-3 mt-4 my-2 mb-4 title-page">
-  <div class="col-md-12">
-    <h2 class="mb-3 d-inline text-black fs-2 ">
-      <a class="text-black" asp-page="./Index">Cursos</a>
-    </h2>    
-    <h3 class="text-black mb-3 d-inline fs-2">
-      <i class="fs-4 fa-solid fa-chevron-right mx-1 fa-xs"></i>
-      Registrar información del alumno
-    </h2>
-  </div>
+<div class="container shadow-3 rounded-9 form-create p-5">
+  <h5 class="mb-2 text-black fs-4 fw-normal">Formulario de Registro: <strong>Curso</strong></h5>
+  <p class="mb-3">Por favor, completa el siguiente formulario con la información del curso para registarlo en el SER.
+  </p>
+  <form method="post" enctype="multipart/form-data" asp-page-handler="AddCourse" novalidate>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fas fa-book-open me-2 icon-input"></i>
+      <div class="form-floating w-100">
+        <select class="form-select" id="input-name" aria-label="Nombre del curso" asp-for="course.Name" required>
+          <option selected disabled></option>
+          <option value="Proyecto Guiado">Proyecto Guiado</option>
+          <option value="Experiencia Recepcional">Experiencia Recepcional</option>
+        </select>
+        <label for="input-name">Nombre del curso</label>
+      </div>
+    </div>
+    <span asp-validation-for="course.Name" class="d-flex text-start text-danger mb-4"></span>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fa-solid fa-hashtag me-2 icon-input"></i>
+      <div class="form-outline">
+        <input type="text" id="input-nrc" class="form-control form-control-lg" data-mdb-showcounter="true" maxlength="5"  autocomplete="off" asp-for="course.Nrc" required />
+        <label class="form-label" for="input-nrc">NRC</label>
+        <div class="form-helper"></div>
+      </div>
+    </div>
+    <span asp-validation-for="course.Nrc" class="d-flex text-start text-danger mb-4"></span>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fa-solid fa-forward me-2 icon-input"></i>
+      <div class="form-floating w-100">
+        <select class="form-select" id="input-section" aria-label="Nombre de curso" asp-for="course.Section">
+          <option selected disabled></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <label for="input-section">Sección</label>
+      </div>
+    </div>
+    <span asp-validation-for="course.Section" class="d-flex text-start text-danger mb-4"></span>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fa-solid fa-calendar me-2 icon-input"></i>
+      <div class="form-floating w-100">
+        <select class="form-select" id="input-period" aria-label="Nombre de curso" asp-for="course.Period">
+          <option selected disabled></option>
+          <option value="AGOSTO 2014 - ENERO 2015">AGOSTO 2014 - ENERO 2015</option>
+          <option value="FEBRERO 2015 - JULIO 2015">FEBRERO 2015 - JULIO 2015</option>
+          <option value="AGOSTO 2015 - ENERO 2016">AGOSTO 2015 - ENERO 2016</option>
+          <option value="FEBRERO 2016 - JULIO 2016">FEBRERO 2016 - JULIO 2016</option>
+          <option value="AGOSTO 2016 - ENERO 2017">AGOSTO 2016 - ENERO 2017</option>
+          <option value="FEBRERO 2017 - JULIO 2017">FEBRERO 2017 - JULIO 2017</option>
+          <option value="AGOSTO 2017 - ENERO 2018">AGOSTO 2017 - ENERO 2018</option>
+          <option value="FEBRERO 2018 - JULIO 2018">FEBRERO 2018 - JULIO 2018</option>
+          <option value="AGOSTO 2018 - ENERO 2019">AGOSTO 2018 - ENERO 2019</option>
+          <option value="FEBRERO 2019 - JULIO 2019">FEBRERO 2019 - JULIO 2019</option>
+          <option value="AGOSTO 2019 - ENERO 2020">AGOSTO 2019 - ENERO 2020</option>
+          <option value="FEBRERO 2020 - JULIO 2020">FEBRERO 2020 - JULIO 2020</option>
+          <option value="AGOSTO 2020 - ENERO 2021">AGOSTO 2020 - ENERO 2021</option>
+          <option value="FEBRERO 2021 - JULIO 2021">FEBRERO 2021 - JULIO 2021</option>
+          <option value="AGOSTO 2021 - ENERO 2022">AGOSTO 2021 - ENERO 2022</option>
+          <option value="FEBRERO 2022 - JULIO 2022">FEBRERO 2022 - JULIO 2022</option>
+          <option value="AGOSTO 2022 - ENERO 2023">AGOSTO 2022 - ENERO 2023</option>
+          <option value="FEBRERO 2023 - JULIO 2023">FEBRERO 2023 - JULIO 2023</option>          
+        </select>
+        <label for="input-period">Período</label>
+      </div>
+    </div>
+    <span asp-validation-for="course.Period" class="d-flex text-start text-danger mb-3"></span>
+    <div class="mb-3">
+      <label class="form-label" for="input-course-file">Archivo del curso (PDF)</label>
+      <div class="d-flex">
+        <i class="d-flex align-items-center fa-solid fa-file-pdf me-2 icon-input"></i>
+        <input type="file" class="form-control" id="input-course-file" name="fileUpload" accept=".pdf" asp-for="fileUpload!"/>     
+      </div>
+    </div>
+    <span asp-validation-for="fileUpload!" class="d-flex text-start text-danger mb-4"></span>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="input-is-open" />
+      <label class="form-check-label" id="label-is-open" for="input-is-open">Estado del curso:
+        <strong id="text-is-open">Abierto</strong>
+      </label>
+      <input type="hidden" asp-for="course.IsOpen" id="input-is-open-auxiliary" />
+    </div>
+    <div class="row gap-3 justify-content-end mx-0 fixed-bottom bg-white">
+      <a role="button" class="col-md-3 btn btn-secondary w-auto" asp-page="./Index">
+        <i class="fas fa-times me-2"></i>
+        Cancelar&nbsp;
+      </a>
+      <button type="submit" class="col-md-3 btn btn-primary w-auto">
+        <i class="fas fa-check me-2" id="button-submit-form"></i>
+        Registrar
+      </button>
+    </div>
+  </form>
 </div>
-<div class="container shadow-3 rounded-9 pb-4" id="form-create-student">
-  
-</div>
-<div class="modal fade" id="modal-create-student" tabindex="-1" data-mdb-keyboard="false" data-mdb-backdrop="true" aria-labelledby="modal-title-create-student" aria-hidden="true">
+<div class="modal fade" id="modal-create-student" tabindex="-1" data-mdb-keyboard="false" data-mdb-backdrop="true"
+  aria-labelledby="modal-title-create-student" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content justify-content-center align-items-center">
       <div class="modal-header text-center">
@@ -31,7 +112,7 @@
           Registrando alumno
         </h5>
       </div>
-      <div class="modal-body text-center mx-4">  
+      <div class="modal-body text-center mx-4">
         <i class="fa-solid fa-spinner fa-6x fa-spin-pulse mt-3 mb-4"></i>
         <p>
           Se está vericando la información del alumno, por favor espere.
@@ -42,5 +123,5 @@
 </div>
 
 @section Scripts {
-  <script src="~/js/Student/Create.js"></script>
+<script src="~/js/Course/Create.js"></script>
 }

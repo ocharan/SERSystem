@@ -18,42 +18,6 @@ namespace SER.Services
       _mapper = mapper;
     }
 
-    private IQueryable<StudentDto> GetAssignedStudents()
-    {
-      try
-      {
-        var students = _context.Students
-          .Where(student => _context.CourseRegistrations
-          .Any(registration => (registration.StudentId == student.StudentId) && _context.Courses
-          .Any(course => (course.CourseId == registration.CourseId) && course.IsOpen)));
-
-        return students.ProjectTo<StudentDto>(_mapper.ConfigurationProvider);
-      }
-      catch (ArgumentNullException ex)
-      {
-        ExceptionLogger.LogException(ex);
-        throw;
-      }
-    }
-
-    private IQueryable<StudentDto> GetUnassignedStudents()
-    {
-      try
-      {
-        var students = _context.Students
-          .Where(student => !_context.CourseRegistrations
-          .Any(registration => String.Equals(registration.StudentId, student.StudentId) && _context.Courses
-          .Any(course => String.Equals(course.CourseId, registration.CourseId) && course.IsOpen)));
-
-        return students.ProjectTo<StudentDto>(_mapper.ConfigurationProvider);
-      }
-      catch (ArgumentNullException ex)
-      {
-        ExceptionLogger.LogException(ex);
-        throw;
-      }
-    }
-
     private Dictionary<string, bool> IsStudentExisting(StudentDto studentDto)
     {
       try
@@ -61,10 +25,12 @@ namespace SER.Services
         Dictionary<string, bool> isTaken = new Dictionary<string, bool>();
 
         isTaken.Add("IsEnrollmentTaken", _context.Students
-          .Any(studentFind => String.Equals(studentFind.Enrollment, studentDto.Enrollment.Replace(" ", ""))));
+          .Any(studentFind => studentFind.Enrollment
+          .Equals(studentDto.Enrollment.Replace(" ", ""))));
 
         isTaken.Add("IsEmailTaken", _context.Students
-          .Any(studentFind => String.Equals(studentFind.Email, studentDto.Email.Replace(" ", ""))));
+          .Any(studentFind => studentFind.Email
+          .Equals(studentDto.Email.Replace(" ", ""))));
 
         return isTaken;
       }
@@ -75,41 +41,16 @@ namespace SER.Services
       }
     }
 
-    public (IQueryable<StudentDto> Students, int AssignedCount, int UnassignedCount) GetAllStudents(string filter)
+    public IQueryable<StudentDto> GetAllStudents()
     {
-      IQueryable<StudentDto> students = new List<StudentDto>().AsQueryable();
-
       try
       {
-        switch (filter)
-        {
-          case "assigned":
-            students = GetAssignedStudents();
+        var students = _context.Students
+          .Include(student => student.CourseRegistrations)
+          .ThenInclude(registration => registration.Course)
+          .ProjectTo<StudentDto>(_mapper.ConfigurationProvider);
 
-            return (
-              students,
-              students.Count(),
-              GetUnassignedStudents().Count()
-            );
-
-          case "unassigned":
-            students = GetUnassignedStudents();
-
-            return (
-              students,
-              GetAssignedStudents().Count(),
-              students.Count()
-            );
-
-          default:
-            students = GetAssignedStudents().Concat(GetUnassignedStudents());
-
-            return (
-              students,
-              GetAssignedStudents().Count(),
-              GetUnassignedStudents().Count()
-            );
-        }
+        return students;
       }
       catch (ArgumentNullException ex)
       {
@@ -166,7 +107,7 @@ namespace SER.Services
           Student student = await _context.Students
             .FindAsync(studentDto.StudentId)
             ?? throw new NullReferenceException("Alumno no encontrado");
-          
+
           student!.FullName = studentDto.FullName;
           student.Email = studentDto.Email;
           _context.Students.Update(student);

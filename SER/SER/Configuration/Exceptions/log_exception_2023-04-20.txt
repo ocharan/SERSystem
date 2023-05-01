@@ -1,0 +1,12 @@
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 24
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 79
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\UserService.cs:line 24
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 79
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+

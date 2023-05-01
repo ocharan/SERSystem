@@ -1,9 +1,10 @@
-using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using SER.Models.DB;
 using SER.Models.DTO;
-using SER.Configuration;
+using SER.Models.DB;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using SER.Configuration;
+using SER.Models.Responses;
 
 namespace SER.Services
 {
@@ -11,20 +12,24 @@ namespace SER.Services
   {
     private readonly SERContext _context;
     private readonly IMapper _mapper;
+    private IWebHostEnvironment _environment;
 
-    public CourseService(SERContext context, IMapper mapper)
+    private readonly IFileService _fileService;
+
+    public CourseService(SERContext context, IMapper mapper, IWebHostEnvironment environment, IFileService fileService)
     {
       _context = context;
       _mapper = mapper;
+      _environment = environment;
+      _fileService = fileService;
     }
 
-    private IQueryable<CourseDto> GetOpenCourses()
+    public async Task<bool> IsCourseExisting(string nrc)
     {
       try
       {
-        var courses = _context.Courses.Where(course => course.IsOpen);
-
-        return courses.ProjectTo<CourseDto>(_mapper.ConfigurationProvider);
+        return await _context.Courses
+          .AnyAsync(course => course.Nrc.Equals(nrc));
       }
       catch (ArgumentNullException ex)
       {
@@ -33,75 +38,17 @@ namespace SER.Services
       }
     }
 
-    private IQueryable<CourseDto> GetClosedCourses()
+    public IQueryable<CourseDto> GetAllCourses()
     {
       try
       {
-        var courses = _context.Courses.Where(course => !course.IsOpen);
+        var courses = _context.Courses
+          .Include(course => course.Professor)
+          .Include(course => course.CourseRegistrations)
+          .ThenInclude(registration => registration.Student)
+          .ProjectTo<CourseDto>(_mapper.ConfigurationProvider);
 
-        return courses.ProjectTo<CourseDto>(_mapper.ConfigurationProvider);
-      }
-      catch (ArgumentNullException ex)
-      {
-        ExceptionLogger.LogException(ex);
-        throw;
-      }
-    }
-
-    private Dictionary<string, bool> IsCourseExisting(CourseDto courseDto)
-    {
-      Dictionary<string, bool> isTaken = new();
-
-      try
-      {
-        isTaken.Add("IsNrcTaken", _context.Courses
-          .Any(course => course.Nrc == courseDto.Nrc));
-
-        return isTaken;
-      }
-      catch (ArgumentNullException ex)
-      {
-        ExceptionLogger.LogException(ex);
-        throw;
-      }
-    }
-
-    public (IQueryable<CourseDto> Courses, int OpenCount, int ClosedCount) GetAllCourses(string filter)
-    {
-      IQueryable<CourseDto> courses = new List<CourseDto>().AsQueryable();
-
-      try
-      {
-        switch (filter)
-        {
-          case "open":
-            courses = GetOpenCourses();
-
-            return (
-              courses,
-              GetOpenCourses().Count(),
-              GetClosedCourses().Count()
-            );
-
-          case "closed":
-            courses = GetClosedCourses();
-
-            return (
-              courses,
-              GetOpenCourses().Count(),
-              GetClosedCourses().Count()
-            );
-
-          default:
-            courses = GetOpenCourses();
-            courses.Concat(GetClosedCourses());
-
-            return (
-              courses,
-              GetOpenCourses().Count(),
-              GetClosedCourses().Count()
-            );
-        }
+        return courses;
       }
       catch (ArgumentNullException ex)
       {
@@ -141,65 +88,51 @@ namespace SER.Services
       }
     }
 
-    public async Task<Dictionary<string, bool>> CreateCourse(CourseDto courseDto)
+    public async Task<Response> CreateCourse(CourseDto courseDto, IFormFile? file = null)
     {
       try
       {
-        Course course = _mapper.Map<Course>(courseDto);
-        Dictionary<string, bool> isTaken = IsCourseExisting(courseDto);
+        var course = _mapper.Map<Course>(courseDto);
+        bool isCourseExisting = await IsCourseExisting(course.Nrc);
+        Response response = new Response();
 
-        if (!isTaken["IsNrcTaken"])
+        if (file != null && file.Length > 0)
+        {
+          response = await _fileService.ValidateFile(file);
+
+          if (response.IsSuccess)
+          {
+            string path = await _fileService.SaveFile(file!, courseDto.Nrc);
+            course.File = new CourseFile { Path = path };
+          }
+
+          response.IsSuccess = false;
+        }
+
+        if (isCourseExisting)
+        {
+          response.Errors.Add(new FieldError
+          {
+            FieldName = "course.Nrc",
+            Message = "El NRC ya existe"
+          });
+
+          return response;
+        }
+
+        if (response.Errors.Count == 0)
         {
           await _context.Courses.AddAsync(course);
           await _context.SaveChangesAsync();
-          isTaken.Add("IsCreated", true);
+          response.IsSuccess = true;
         }
 
-        return isTaken;
+        return response;
       }
       catch (OperationCanceledException ex)
       {
         ExceptionLogger.LogException(ex);
         throw new OperationCanceledException("Ha ocurrido un error al crear el curso");
-      }
-    }
-
-    public async Task<Dictionary<string, bool>> UpdateCourse(CourseDto courseDto)
-    {
-      try
-      {
-        Dictionary<string, bool> isTaken = IsCourseExisting(courseDto);
-        int nrc = (await GetCourse(courseDto.CourseId)).Nrc;
-        bool isCurrentNrc = nrc == courseDto.Nrc;
-        bool isNrcTaken = isCurrentNrc ? false : isTaken["IsNrcTaken"];
-
-        if (!isNrcTaken)
-        {
-          Course course = await _context.Courses
-            .FindAsync(courseDto.CourseId)
-            ?? throw new ArgumentNullException("Curso no encontrado");
-
-          course.Name = courseDto.Name;
-          course.Nrc = courseDto.Nrc;
-          course.ProfessorId = courseDto.ProfessorId;
-          course.IsOpen = courseDto.IsOpen;
-          _context.Courses.Update(course);
-          await _context.SaveChangesAsync();
-          isTaken.Add("IsUpdated", true);
-          isTaken["IsNrcTaken"] = false;
-        }
-
-        return isTaken;
-      }
-      catch (NullReferenceException ex)
-      {
-        ExceptionLogger.LogException(ex);
-        throw new NullReferenceException(ex.Message);
-      }
-      catch (OperationCanceledException ex)
-      {
-        ExceptionLogger.LogException(ex);
-        throw new OperationCanceledException("Ha ocurrido un error al actualizar el curso");
       }
     }
   }

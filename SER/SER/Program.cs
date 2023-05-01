@@ -21,11 +21,15 @@ namespace SER
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-              webBuilder.UseStartup<Startup>();
-            });
+      Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
+      {
+        webBuilder.ConfigureKestrel((context, options) =>
+        {
+          // Handle requests up to 1GB
+          options.Limits.MaxRequestBodySize = 1073741824;
+        }).UseStartup<Startup>();
+      }
+    );
   }
 }
 

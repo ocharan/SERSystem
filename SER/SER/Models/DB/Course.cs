@@ -12,12 +12,14 @@ namespace SER.Models.DB
 
         public int CourseId { get; set; }
         public string Name { get; set; } = null!;
-        public int Nrc { get; set; }
+        public string Nrc { get; set; } = null!;
         public string Period { get; set; } = null!;
-        public int Section { get; set; }
+        public string Section { get; set; } = null!;
         public bool IsOpen { get; set; }
         public int? ProfessorId { get; set; }
+        public int? FileId { get; set; }
 
+        public virtual CourseFile? File { get; set; }
         public virtual Professor? Professor { get; set; }
         public virtual ICollection<CourseRegistration> CourseRegistrations { get; set; }
     }

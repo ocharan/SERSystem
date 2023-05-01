@@ -19,8 +19,8 @@ namespace SER.Models.DB
         public virtual DbSet<Academium> Academia { get; set; } = null!;
         public virtual DbSet<AlumnoTrabajoRecepcional> AlumnoTrabajoRecepcionals { get; set; } = null!;
         public virtual DbSet<AlumnoTrabajoRecepcionalProyectoGuiadoView> AlumnoTrabajoRecepcionalProyectoGuiadoViews { get; set; } = null!;
-        public virtual DbSet<Archivo> Archivos { get; set; } = null!;
         public virtual DbSet<Course> Courses { get; set; } = null!;
+        public virtual DbSet<CourseFile> CourseFiles { get; set; } = null!;
         public virtual DbSet<CourseRegistration> CourseRegistrations { get; set; } = null!;
         public virtual DbSet<CuerpoAcademico> CuerpoAcademicos { get; set; } = null!;
         public virtual DbSet<Direccion> Direccions { get; set; } = null!;
@@ -49,7 +49,7 @@ namespace SER.Models.DB
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=localhost; Database=SER; User ID=sa; Password=qwerty*1234;");
+                optionsBuilder.UseSqlServer("Data Source=localhost; Database=SER; User ID=sa;Password=qwerty*1234;");
             }
         }
 
@@ -129,30 +129,6 @@ namespace SER.Models.DB
                 entity.Property(e => e.TrabajoRecepcionalId).HasColumnName("TrabajoRecepcionalID");
             });
 
-            modelBuilder.Entity<Archivo>(entity =>
-            {
-                entity.HasKey(e => e.IdArchivo)
-                    .HasName("NewTable_PK");
-
-                entity.ToTable("Archivo");
-
-                entity.Property(e => e.Direccion)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Fuente)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.NombreArchivo)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.TipoContenido)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<Course>(entity =>
             {
                 entity.ToTable("Course");
@@ -164,14 +140,39 @@ namespace SER.Models.DB
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Period)
-                    .HasMaxLength(50)
+                entity.Property(e => e.Nrc)
+                    .HasMaxLength(5)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Period)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Section)
+                    .HasMaxLength(1)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.File)
+                    .WithMany(p => p.Courses)
+                    .HasForeignKey(d => d.FileId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_Course_CourseFile");
 
                 entity.HasOne(d => d.Professor)
                     .WithMany(p => p.Courses)
                     .HasForeignKey(d => d.ProfessorId)
                     .HasConstraintName("FK_Course_Profesor");
+            });
+
+            modelBuilder.Entity<CourseFile>(entity =>
+            {
+                entity.HasKey(e => e.FileId);
+
+                entity.ToTable("CourseFile");
+
+                entity.Property(e => e.Path)
+                    .HasMaxLength(200)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<CourseRegistration>(entity =>

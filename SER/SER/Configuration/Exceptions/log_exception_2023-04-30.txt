@@ -1,0 +1,8 @@
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.Account.RecoveryPasswordModel.OnPostAssignToken()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.Account.RecoveryPasswordModel.OnPostAssignToken()
++-------------------------------------------------------------------------------------------------+

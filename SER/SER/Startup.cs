@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using SER.Configuration;
 using SER.Services;
 using SER.Models.DB;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.AspNetCore.Server.HttpSys;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SER
 {
@@ -42,12 +46,29 @@ namespace SER
       services.AddTransient<IEmailService, EmailService>();
       services.Configure<TokenSettings>(Configuration.GetSection(nameof(TokenSettings)));
       services.AddTransient<ITokenService, TokenService>();
+      services.AddScoped<IFileService, FileService>();
       services.AddScoped<IUserService, UserService>();
       services.AddScoped<IStudentService, StudentService>();
       services.AddScoped<ICourseService, CourseService>();
+      services.AddScoped<IProfessorService, ProfessorService>();
 
       // Framework services
-      services.AddRazorPages();
+      // services.AddRazorPages();
+      services.AddRazorPages(options =>
+      {
+        options.Conventions.AddPageApplicationModelConvention("/Courses/Create",
+          model =>
+          {
+            model.Filters.Add(new RequestSizeLimitAttribute(107374182));
+          }
+        );
+      });
+
+      // Size file limit    
+      services.Configure<KestrelServerOptions>(options =>
+      {
+        options.Limits.MaxRequestBodySize = 1073741824;
+      });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +86,7 @@ namespace SER
         // app.UseHsts();
       }
 
+      app.UseStatusCodePagesWithReExecute("/errors/NotFound");
       app.UseHttpsRedirection();
       app.UseStaticFiles();
       app.UseRouting();
@@ -75,8 +97,6 @@ namespace SER
       {
         endpoints.MapRazorPages();
       });
-
-      // app.UseStatusCodePagesWithRedirects("Errors/NotFound");
     }
   }
 }
