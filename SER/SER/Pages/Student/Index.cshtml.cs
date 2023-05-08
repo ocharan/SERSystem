@@ -31,10 +31,7 @@ namespace SER.Pages.Student
 
     public async Task OnGet(string sortOrder, string currentSearch, string searchString, int? pageIndex, string currentFilter)
     {
-      if (TempData["MessageSuccess"] != null) { ViewData["MessageSuccess"] = TempData["MessageSuccess"]; }
-
-      if (TempData["MessageError"] != null) { ViewData["MessageError"] = TempData["MessageError"]; }
-
+      CheckStatusCode();
       CurrentSort = sortOrder;
       FullnameSort = String.IsNullOrEmpty(sortOrder) ? "descendant-fullname" : "";
       int PAGE_SIZE = Configuration.GetValue("PageSize", 10);
@@ -43,7 +40,6 @@ namespace SER.Pages.Student
       else { searchString = currentSearch; }
 
       CurrentSearch = searchString;
-      // CurrentSort = sortOrder ?? CurrentSort;
       CurrentFilter = currentFilter ?? CurrentFilter;
 
       var auxiliaryStudents = !String.IsNullOrEmpty(currentFilter)
@@ -52,9 +48,8 @@ namespace SER.Pages.Student
 
       if (!String.IsNullOrEmpty(searchString))
       {
-        auxiliaryStudents = auxiliaryStudents.Where(student =>
-          student.FullName!.Contains(searchString)
-        );
+        auxiliaryStudents = auxiliaryStudents
+          .Where(student => student.FullName!.Contains(searchString));
       }
 
       auxiliaryStudents = String.Equals(sortOrder, "descendant-fullname")
@@ -66,42 +61,41 @@ namespace SER.Pages.Student
       );
     }
 
+    public void CheckStatusCode()
+    {
+      if (TempData["MessageSuccess"] != null)
+      {
+        ViewData["MessageSuccess"] = TempData["MessageSuccess"];
+      }
+
+      if (TempData["MessageError"] != null)
+      {
+        ViewData["MessageError"] = TempData["MessageError"];
+      }
+    }
+
     public IQueryable<StudentDto> GetAllStudents(string filter = "default")
     {
-      IQueryable<StudentDto> students = new List<StudentDto>().AsQueryable();
-
-      try
-      {
-        students = _studentService.GetAllStudents();
-      }
-      catch (Exception ex)
-      {
-        ExceptionLogger.LogException(ex);
-        throw;
-      }
+      var students = _studentService.GetAllStudents();
 
       AssignedStudents = students
-        .Count(student => student.CourseRegistrations!
-        .Any(registration => registration.Course.IsOpen));
+      .Count(student => student.CourseRegistrations!
+      .Any(registration => registration.Course.IsOpen));
 
-      UnassignedStudents = students
-        .Count(student => !student.CourseRegistrations!
-        .Any(registration => registration.Course.IsOpen));
+      UnassignedStudents = students.Count() - AssignedStudents;
 
       if (filter.Equals("assigned"))
       {
         students = students
           .Where(student => student.CourseRegistrations!
-          .Any(registration => registration.Course.IsOpen))
-          .AsQueryable();
+         .Any(registration => registration.Course.IsOpen));
       }
 
       if (filter.Equals("unassigned"))
       {
         students = students
           .Where(student => !student.CourseRegistrations!
-          .Any(registration => registration.Course.IsOpen))
-          .AsQueryable();
+          .Any(registration => registration.Course.IsOpen));
       }
 
       return students;
@@ -111,7 +105,7 @@ namespace SER.Pages.Student
     {
       try
       {
-        var students = await _studentService.GetAllStudents().ToListAsync();
+        var students = await GetAllStudents().ToListAsync();
         XLWorkbook workbook = new XLWorkbook();
         IXLWorksheet worksheet = workbook.Worksheets.Add("Students");
         worksheet.Cell(1, 1).Value = "Full Name";

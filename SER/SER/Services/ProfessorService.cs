@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using SER.Configuration;
 using SER.Models.DB;
 using SER.Models.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace SER.Services
 {
@@ -15,23 +16,6 @@ namespace SER.Services
     {
       _context = context;
       _mapper = mapper;
-    }
-
-    private IQueryable<ProfessorDto> GetAssignedProfessors()
-    {
-      try
-      {
-        var professors = _context.Professors
-          .Where(course => _context.Courses
-          .Any(course => course.IsOpen && course.ProfessorId == course.ProfessorId));
-
-        return professors.ProjectTo<ProfessorDto>(_mapper.ConfigurationProvider);
-      }
-      catch (ArgumentNullException ex)
-      {
-        ExceptionLogger.LogException(ex);
-        throw;
-      }
     }
 
     private IQueryable<ProfessorDto> GetUnassignedProfessors()
@@ -51,39 +35,53 @@ namespace SER.Services
       }
     }
 
-    // private Dictionary<string, bool> IsProfessorExisting(ProfessorDto professorDto)
-    // {
-    //   try
-    //   {
-    //     Dictionary<string, bool> isTaken = new Dictionary<string, bool>();
-
-    //     isTaken.Add("IsIdTaken", _context.Professors
-    //       .Any(professor => professor.Id == professorDto.Id));
-
-    //     return isTaken;
-    //   }
-    //   catch (ArgumentNullException ex)
-    //   {
-    //     ExceptionLogger.LogException(ex);
-    //     throw;
-    //   }
-    // } 
-
-    public (IQueryable<ProfessorDto> Professors, int AssignedCount, int UnassignedCount) GetAllProfessors(string filter)
+    public IQueryable<ProfessorDto> GetAllProfessors()
     {
       IQueryable<ProfessorDto> professors = new List<ProfessorDto>().AsQueryable();
 
       try
       {
-        if (filter == "assigned") { professors = GetAssignedProfessors(); }
-        else if (filter == "unassigned") { professors = GetUnassignedProfessors(); }
-        else { professors = GetAssignedProfessors().Concat(GetUnassignedProfessors()); }
+        return _context.Professors
+          .ProjectTo<ProfessorDto>(_mapper.ConfigurationProvider);
+      }
+      catch (ArgumentNullException ex)
+      {
+        ExceptionLogger.LogException(ex);
+        throw;
+      }
+    }
 
-        return (
-          professors,
-          GetAssignedProfessors().Count(),
-          GetUnassignedProfessors().Count()
-        );
+    public async Task<List<ProfessorDto>> SearchProfessor(string search)
+    {
+      try
+      {
+        var professors = await _context.Professors
+          .Where(professor => professor.FullName.Contains(search) || _context.Users
+            .Any(user => user.UserId == professor.UserId && user.Email.Contains(search)))
+          .ProjectTo<ProfessorDto>(_mapper.ConfigurationProvider)
+          .ToListAsync();
+
+        professors
+          .ForEach(professor => professor.Email = _context.Users
+            .Where(user => user.UserId == professor.UserId)
+            .Select(user => user.Email)
+            .FirstOrDefault()!);
+
+        return professors;
+      }
+      catch (ArgumentNullException ex)
+      {
+        ExceptionLogger.LogException(ex);
+        throw;
+      }
+    }
+
+    public async Task<bool> IsProfessorExisting(int professorId)
+    {
+      try
+      {
+        return await _context.Professors
+          .AnyAsync(professor => professor.ProfessorId == professorId);
       }
       catch (ArgumentNullException ex)
       {

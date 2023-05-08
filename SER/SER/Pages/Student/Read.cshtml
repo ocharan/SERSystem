@@ -7,124 +7,142 @@
 
 @section Styles {
   <link rel="stylesheet" href="~/css/Student/Read.css" />
-  <link rel="stylesheet" href="~/css/Student/Create.css" />
+  <link rel="stylesheet" href="~/css/Course/Create.css" />
 }
 
-<div class="row row-cols-1 row-cols-md-2 g-4 mx-3 mt-2 container-student-information">
-  <div class="col-xxl-4">
-    <div class="card h-100 shadow-3 p-3 card-student-information">
-      <div class="card-body h-100">
-        <h5 class="card-title mb-2 text-black fs-4 fw-normal">Información del alumno</h5>
-        <p class="card-text">
-          La siguiente información es únicamente de consulta y no se puede modificar.
-        </p>
-        <div class="d-grid gap-4">
-          <div class="d-flex">
-            <i class="d-flex align-items-center fas fa-user me-2 icon-input"></i>
-            <div class="form-outline">
-              <input type="text" id="input-fullname" class="form-control form-control-lg bg-white" asp-for="student!.FullName" readonly />
-              <label class="form-label" for="input-fullname">Nombre completo</label>
-            </div>
+<!-- Tabs navs -->
+<div class="d-flex text-center justify-content-center align-items-center mb-4">
+  <ul class="nav nav-tabs " id="student-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="tab-1" data-mdb-toggle="tab" href="#student-information-tab" role="tab"
+        aria-controls="student-information-tab" aria-selected="true">
+        <i class="fas fa-user fa-fw me-2"></i>
+        Alumno
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="tab-2" data-mdb-toggle="tab" href="#student-courses-tab" role="tab"
+        aria-controls="student-courses-tab" aria-selected="false">
+        <i class="fas fa-book-open fa-fw me-2"></i>
+        Cursos
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- Tabs navs -->
+<!-- Tabs content -->
+<div class="tab-content mt-0 pt-0" id="ex-with-icons-content">
+  <div class="tab-pane fade show active container-student-information" id="student-information-tab" role="tabpanel" aria-labelledby="tab-1">
+    <div class="container shadow-3 rounded-9 form-update p-5">
+      <h5 class="mb-2 text-black fs-4 fw-normal">Información del <strong>Alumno</strong></h5>
+      <p>
+        La siguiente información es únicamente de consulta y no se puede modificarse.
+      </p>
+      <div class="d-grid gap-4 mt-4">
+        <div class="d-flex">
+          <i class="d-flex align-items-center fas fa-user me-2 icon-input"></i>
+          <div class="form-outline">
+            <input type="text" id="input-fullname" class="form-control form-control-lg bg-white" asp-for="student!.FullName" readonly />
+            <label class="form-label" for="input-fullname">Nombre completo</label>
           </div>
-          <div class="d-flex">
-            <i class="d-flex align-items-center fas fa-id-card me-2 icon-input"></i>
-            <div class="form-outline">
-              <input type="text" id="input-enrollment" class="form-control form-control-lg bg-white" asp-for="student!.Enrollment" readonly />
-              <label class="form-label" for="input-enrollment">Matrícula</label>
-            </div>
+        </div>
+        <div class="d-flex">
+          <i class="d-flex align-items-center fas fa-id-card me-2 icon-input"></i>
+          <div class="form-outline">
+            <input type="text" id="input-enrollment" class="form-control form-control-lg bg-white" asp-for="student!.Enrollment" readonly />
+            <label class="form-label" for="input-enrollment">Matrícula</label>
           </div>
-          <div class="d-flex">
-            <i class="d-flex align-items-center fas fa-envelope me-2 icon-input"></i>
-            <div class="form-outline">
-              <input type="text" id="input-email" class="form-control form-control-lg bg-white" asp-for="student!.Email" readonly />
-              <label class="form-label" for="input-enrollment">Correo electrónico</label>
-            </div>
+        </div>
+        <div class="d-flex">
+          <i class="d-flex align-items-center fas fa-envelope me-2 icon-input"></i>
+          <div class="form-outline">
+            <input type="text" id="input-email" class="form-control form-control-lg bg-white" asp-for="student!.Email" readonly />
+            <label class="form-label" for="input-enrollment">Correo electrónico</label>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-xxl-8">
-    <div class="card h-100 shadow-3 p-3 card-student-information">
-      <div class="card-body">
-        <h5 class="card-title mb-2 text-black fs-4 fw-normal mb-4">Lista de cursos asignados</h5>
-        <div class="table-responsive shadow-3 rounded-6">
-          <table class="table table-hover">
-            <thead class="table-secondary text-center">
+  <div class="tab-pane fade p-4 container-student-information" id="student-courses-tab" role="tabpanel" aria-labelledby="tab-2">
+    @if (Model.StudentCourses!.Count == 0)
+    {
+      <div class="d-flex flex-column justify-content-center align-items-center no-content">
+        <img src="~/images/no-content-squirrel.svg" class="img-fluid" alt="No hay cursos asignados" />
+        <p class="mt-4 text-muted fw-normal mb-4 text-center">No hay cursos asignados</p>
+      </div>
+    } 
+    else
+    {
+      <h5 class="mb-2 text-black fs-4 fw-normal mb-4 container-movil">Lista de <strong>Cursos</strong> asignados</h5>
+      <div class="table-responsive shadow-3 rounded-6 container-movil">
+        <table class="table table-hover">
+          <thead class="table-secondary text-center">
+            <tr>
+              <th scope="col">Estado</th>
+              <th scope="col">Curso</th>
+              <th scope="col">Calificación</th>
+              <th scope="col">NRC</th>
+              <th scope="col">Período</th>
+              <th scope="col">Sección</th>
+              <th scope="col">Inscripción</th>
+              <th scope="col">Docente</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (var registration in Model.StudentCourses!)
+            {
               <tr>
-                <th scope="col">Estado</th>
-                <th scope="col">Curso</th>
-                <th scope="col">Calificación</th>
-                <th scope="col">NRC</th>
-                <th scope="col">Período</th>
-                <th scope="col">Sección</th>
-                <th scope="col">Inscripción</th>
-                <th scope="col">Docente</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach (var registration in Model.StudentCourses!)
-              {
-                <tr>
-                  <td>
-                    @if (registration.Course.IsOpen)
-                    {
+                <td>
+                  @if (registration.Course.IsOpen)
+                  {
                     <span class="badge rounded-pill badge-success">Activo</span>
+                  }
+                  else
+                  {
+                    <span class="badge rounded-pill badge-danger">Inactivo</span>
+                  }
+                </td>
+                <td>
+                  <a asp-page="./Read" asp-route-id="@registration.Course.CourseId">
+                    @registration.Course.Name
+                  </a>
+                </td>
+                <td class="text-center">
+                  @{                    
+                    if (registration.Score == null)
+                    {
+                      <span class="badge rounded-pill badge-warning">Sin calificación</span>
                     }
                     else
                     {
-                    <span class="badge rounded-pill badge-danger">Inactivo</span>
+                      <span class="badge rounded-pill badge-primary">@registration.Course.Score</span>
                     }
-                  </td>
-                  <td>
-                    <a asp-page="./Read" asp-route-id="@registration.Course.CourseId">
-                      @registration.Course.Name
-                    </a>
-                  </td>
-                  <td class="text-center">
-                    @{                    
-                      if (registration.Score == null)
-                      {
-                        <span class="badge rounded-pill badge-warning">Sin calificación</span>
-                      }
-                      else
-                      {
-                        <span class="badge rounded-pill badge-primary">@registration.Course.Score</span>
-                      }
-                    }
-                  </td>
-                  <td>@registration.Course.Nrc</td>
-                  <td>@registration.Course.Period</td>
-                  <td>@registration.Course.Section</td>
-                  <td>@registration.RegistrationType</td>
-                  <td>
-                    <a asp-page="/Teacher/Read" asp-route-id="@registration.Course.Professor?.ProfessorId">
-                      @registration.Course.Professor?.FullName
-                    </a>
-                </tr>
-              }             
-            </tbody>            
-          </table> 
-        </div>        
-        @if (Model.StudentCourses!.Count == 0)
-        {
-          <div class="d-flex align-items-center justify-content-center mt-4">
-            <span class="text-center badge rounded-pill badge-warning px-4 py-2">@Model.student.FullName<br>no tiene cursos asignados</span>          
-          </div>
-        }
+                  }
+                </td>
+                <td>@registration.Course.Nrc</td>
+                <td class="text-center">@registration.Course.Period</td>
+                <td class="text-center">@registration.Course.Section</td>
+                <td class="text-center">@registration.RegistrationType</td>
+                <td>
+                  <a asp-page="/Teacher/Read" asp-route-id="@registration.Course.Professor?.ProfessorId">
+                    @registration.Course.Professor?.FullName
+                  </a>
+              </tr>
+            }             
+          </tbody>            
+        </table> 
       </div>
-    </div>
-  </div>  
+    }
+  </div>
 </div>
-
-
+<!-- Tabs content -->
 <div class="row gap-3 justify-content-end mx-0 fixed-bottom bg-white">
-  <a role="button" class=" btn btn-secondary w-auto" asp-page="./Index">
+  <a role="button" class=" col-md-3 btn btn-secondary w-auto" asp-page="./Index">
     <i class="fas fa-arrow-left me-2"></i>
     Regresar
   </a>
-  <button class="btn btn-primary w-auto">
-  <i class="fa-solid fa-file-excel me-2"></i>
+  <button class="col-md-3 btn btn-primary w-auto">
+    <i class="fa-solid fa-file-excel me-2"></i>
     Exportar
   </button>
 </div>

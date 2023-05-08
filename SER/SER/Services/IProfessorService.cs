@@ -4,6 +4,8 @@ namespace SER.Services
 {
   public interface IProfessorService
   {
-    (IQueryable<ProfessorDto> Professors, int AssignedCount, int UnassignedCount) GetAllProfessors(string filter);
+    IQueryable<ProfessorDto> GetAllProfessors();    
+    Task<List<ProfessorDto>> SearchProfessor(string search);
+    Task<bool> IsProfessorExisting(int professorId);
   }
 }

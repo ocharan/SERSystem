@@ -1,5 +1,5 @@
 @page
-@model SER.Pages.Course.Index
+@model SER.Pages.Course.IndexModel
 @{
   Layout = "_LoginLayout";
 }
@@ -238,13 +238,26 @@
 @{
   if (ViewData["MessageSuccess"] != null)
   {
-    <div class="toast-container position-fixed top-0 end-0 p-3">
+    <div class="toast-container position-fixed bottom-0 start-0 p-4">
       <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-success" data-bs-autohide="false">
         <div class="d-flex">
-          <div class="toast-body text-primary">
-            <strong>¡Hecho!</strong> @ViewData["MessageSuccess"]
+          <div class="toast-body text-white">
+            <strong>¡Hecho!</strong>
+            @{
+              int statusCode = Convert.ToInt32(ViewData["MessageSuccess"]);
+              
+              if (statusCode == 201)
+              {
+                <span>Se creó un Curso.</span>
+              }
+
+              if (statusCode == 200)
+              {
+                <span>Se modificó un Curso.</span>
+              }
+            }
           </div>
-          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
       </div>
     </div>

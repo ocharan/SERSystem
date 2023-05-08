@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.AspNetCore.Server.HttpSys;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using SER.Hubs;
+
 
 namespace SER
 {
@@ -41,7 +44,7 @@ namespace SER
       // AutoMapper
       services.AddAutoMapper(typeof(Startup));
 
-      // Services
+      // Services API
       services.Configure<EmailSettings>(Configuration.GetSection(nameof(EmailSettings)));
       services.AddTransient<IEmailService, EmailService>();
       services.Configure<TokenSettings>(Configuration.GetSection(nameof(TokenSettings)));
@@ -51,6 +54,9 @@ namespace SER
       services.AddScoped<IStudentService, StudentService>();
       services.AddScoped<ICourseService, CourseService>();
       services.AddScoped<IProfessorService, ProfessorService>();
+
+      // SignalR
+      services.AddSignalR();
 
       // Framework services
       // services.AddRazorPages();
@@ -96,6 +102,8 @@ namespace SER
       app.UseEndpoints(endpoints =>
       {
         endpoints.MapRazorPages();
+        endpoints.MapHub<ProfessorSearchHub>("/professorSearchHub");
+        endpoints.MapHub<StudentSearchHub>("/studentSearchHub");
       });
     }
   }

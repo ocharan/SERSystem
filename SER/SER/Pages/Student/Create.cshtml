@@ -20,7 +20,7 @@
     </h2>
   </div>
 </div> -->
-<div class="container shadow-3 rounded-9 form-create p-5">
+<div class="container shadow-3 rounded-9 form-create p-5 mb-4">
   <div>
     <h5 class="mb-2 text-black fs-4 fw-normal">Formulario de Registro: <strong>Alumno</strong></h5>
     <p class="mb-3">Por favor, completa el siguiente formulario con la información personal del alumno para registrarlo en el SER.
@@ -29,7 +29,7 @@
         <i class="d-flex align-items-center fas fa-user me-2 icon-input"></i>
         <div class="form-outline">
           <input type="text" id="input-fullname" class="form-control form-control-lg" autocomplete="off" asp-for="student!.FullName" required/>
-          <label class="form-label" for="input-fullname">Nombre completo</label>
+          <label class="form-label" for="input-fullname">Nombre completo <span class="text-danger">*</span></label>
         </div>
       </div>
       <span asp-validation-for="student.FullName" class="d-flex text-start text-danger mb-4"></span>
@@ -37,7 +37,7 @@
         <i class="d-flex align-items-center fas fa-id-card me-2 icon-input"></i>
         <div class="form-outline">
           <input type="text" id="input-enrollment" class="form-control form-control-lg text-uppercase" data-mdb-showcounter="true" maxlength="9" autocomplete="off" asp-for="student!.Enrollment" required/>
-          <label class="form-label" for="input-enrollment">Matrícula</label>
+          <label class="form-label" for="input-enrollment">Matrícula <span class="text-danger">*</span></label>
           <div class="form-helper"></div>
         </div>
       </div>
@@ -46,12 +46,12 @@
         <i class="d-flex align-items-center fas fa-envelope me-2 icon-input"></i>
         <div class="form-outline">
           <input type="text" id="input-email" class="form-control form-control-lg" autocomplete="off" asp-for="student!.Email" required/>
-          <label class="form-label" for="input-enrollment">Correo electrónico</label>
+          <label class="form-label" for="input-enrollment">Correo electrónico <span class="text-danger">*</span></label>
         </div>
       </div>
       <span asp-validation-for="student.Email" class="d-flex text-start text-danger"></span>
       <div class="row gap-3 justify-content-end mx-0 fixed-bottom bg-white">
-        <a role="button" class=" btn btn-secondary w-auto" asp-page="./Index">
+        <a role="button" class="btn btn-secondary w-auto" asp-page="./Index">
           <i class="fas fa-times me-2"></i>
           Cancelar&nbsp; 
         </a>

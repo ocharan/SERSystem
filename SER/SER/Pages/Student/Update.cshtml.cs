@@ -4,6 +4,8 @@ using SER.Services;
 using SER.Models.DTO;
 using SER.Configuration;
 using Microsoft.AspNetCore.Authorization;
+using SER.Models.Responses;
+using SER.Models.Enums;
 
 namespace SER.Pages.Student
 {
@@ -11,6 +13,7 @@ namespace SER.Pages.Student
   public class UpdateModel : PageModel
   {
     private readonly IStudentService _studentService;
+    public Response response { get; set; } = null!;
     [BindProperty]
     public StudentDto student { get; set; } = null!;
 
@@ -39,19 +42,7 @@ namespace SER.Pages.Student
 
       try
       {
-        Dictionary<string, bool> result = await _studentService.UpdateStudent(student);
-
-        if (result.ContainsKey("IsUpdated") && result["IsUpdated"])
-        {
-          TempData["MessageSuccess"] = "Se ha verificado la información del alumno y se ha actualizado correctamente.";
-        }
-
-        if (result["IsEmailTaken"])
-        {
-          ModelState.AddModelError("student.Email", "El correo electrónico ya está registrado.");
-
-          return Page();
-        }
+        response = await _studentService.UpdateStudent(student);
       }
       catch (NullReferenceException ex)
       {
@@ -63,6 +54,18 @@ namespace SER.Pages.Student
         ExceptionLogger.LogException(ex);
         TempData["MessageError"] = ex.Message;
       }
+
+      if (response.Errors.Count > 0 && !response.IsSuccess)
+      {
+        foreach (var error in response.Errors)
+        {
+          ModelState.AddModelError(error.FieldName, error.Message);
+        }
+
+        return Page();
+      }
+
+      TempData["MessageSuccess"] = EStatusCodes.Ok;
 
       return RedirectToPage("/Student/Index");
     }

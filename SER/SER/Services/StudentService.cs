@@ -4,6 +4,7 @@ using AutoMapper;
 using SER.Models.DB;
 using AutoMapper.QueryableExtensions;
 using SER.Configuration;
+using SER.Models.Responses;
 
 namespace SER.Services
 {
@@ -18,21 +19,39 @@ namespace SER.Services
       _mapper = mapper;
     }
 
-    private Dictionary<string, bool> IsStudentExisting(StudentDto studentDto)
+    private async Task<Response> CheckRepeatedFields(StudentDto studentDto)
     {
       try
       {
-        Dictionary<string, bool> isTaken = new Dictionary<string, bool>();
+        Response response = new Response();
 
-        isTaken.Add("IsEnrollmentTaken", _context.Students
-          .Any(studentFind => studentFind.Enrollment
-          .Equals(studentDto.Enrollment.Replace(" ", ""))));
+        bool isEnrollmentTaken = await _context.Students
+          .AnyAsync(studentFind => studentFind.Enrollment
+          .Equals(studentDto.Enrollment.Replace(" ", "")));
 
-        isTaken.Add("IsEmailTaken", _context.Students
-          .Any(studentFind => studentFind.Email
-          .Equals(studentDto.Email.Replace(" ", ""))));
+        bool isEmailTaken = await _context.Students
+          .AnyAsync(studentFind => studentFind.Email
+          .Equals(studentDto.Email.Replace(" ", "")));
 
-        return isTaken;
+        if (isEnrollmentTaken)
+        {
+          response.Errors.Add(new FieldError
+          {
+            FieldName = "student.Enrollment",
+            Message = "La matrícula ya está registrada"
+          });
+        }
+
+        if (isEmailTaken)
+        {
+          response.Errors.Add(new FieldError
+          {
+            FieldName = "student.Email",
+            Message = "El correo electrónico ya está registrado."
+          });
+        }
+
+        return response;
       }
       catch (ArgumentNullException ex)
       {
@@ -67,24 +86,22 @@ namespace SER.Services
       return _mapper.Map<StudentDto>(student);
     }
 
-    public async Task<Dictionary<string, bool>> CreateStudent(StudentDto studentDto)
+    public async Task<Response> CreateStudent(StudentDto studentDto)
     {
       try
       {
+        Response response = await CheckRepeatedFields(studentDto);
         Student student = _mapper.Map<Student>(studentDto);
-        Dictionary<string, bool> isTaken = IsStudentExisting(studentDto);
-        bool isEnrollmentTaken = isTaken["IsEnrollmentTaken"];
-        bool isEmailTaken = isTaken["IsEmailTaken"];
 
-        if (!isEnrollmentTaken && !isEmailTaken)
+        if (response.Errors.Count == 0)
         {
           student.Enrollment = student.Enrollment.ToUpper();
           await _context.Students.AddAsync(student);
           await _context.SaveChangesAsync();
-          isTaken.Add("IsCreated", true);
+          response.IsSuccess = true;
         }
 
-        return isTaken;
+        return response;
       }
       catch (OperationCanceledException ex)
       {
@@ -93,14 +110,16 @@ namespace SER.Services
       }
     }
 
-    public async Task<Dictionary<string, bool>> UpdateStudent(StudentDto studentDto)
+    public async Task<Response> UpdateStudent(StudentDto studentDto)
     {
       try
       {
-        Dictionary<string, bool> isTaken = IsStudentExisting(studentDto);
+        Response response = await CheckRepeatedFields(studentDto);
         string studentEmail = (await GetStudent(studentDto.StudentId)).Email;
         bool isCurrentEmail = String.Equals(studentDto.Email, studentEmail);
-        bool isEmailTaken = isCurrentEmail ? false : isTaken["IsEmailTaken"];
+        bool isEmailTaken = isCurrentEmail
+          ? false
+          : response.Errors.Any(error => error.FieldName.Equals("student.Email"));
 
         if (!isEmailTaken)
         {
@@ -112,11 +131,11 @@ namespace SER.Services
           student.Email = studentDto.Email;
           _context.Students.Update(student);
           await _context.SaveChangesAsync();
-          isTaken.Add("IsUpdated", true);
-          isTaken["IsEmailTaken"] = false;
+          response.IsSuccess = true;
+          response.Errors.Clear();
         }
 
-        return isTaken;
+        return response;
       }
       catch (NullReferenceException ex)
       {
@@ -128,6 +147,29 @@ namespace SER.Services
         ExceptionLogger.LogException(ex);
         throw new Exception("Ha ocurrido un error al actualizar el alumno");
       }
+    }
+
+    public async Task<List<StudentDto>> SearchStudent(string search)
+    {
+      var students = await _context.Students
+        .Where(student => student.FullName.Contains(search)
+          || student.Email.Contains(search)
+          || student.Enrollment.Contains(search))
+        .Where(student => !_context.CourseRegistrations
+          .Where(enrollment => enrollment.StudentId == student.StudentId)
+          .Any(enrollment => _context.Courses
+            .Where(course => course.CourseId == enrollment.CourseId)
+            .Any(course => course.IsOpen)))
+        .ProjectTo<StudentDto>(_mapper.ConfigurationProvider)
+        .ToListAsync();
+
+      return students;
+    }
+
+    public async Task<bool> IsStudentExisting(int studentId)
+    {
+      return await _context.Students
+        .AnyAsync(student => student.StudentId == studentId);
     }
   }
 }

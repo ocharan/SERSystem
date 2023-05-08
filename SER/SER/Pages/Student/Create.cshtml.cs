@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Configuration;
 using SER.Models.DTO;
+using SER.Models.Responses;
 using SER.Services;
+using SER.Models.Enums;
 
 namespace SER.Pages.Student
 {
@@ -11,6 +13,7 @@ namespace SER.Pages.Student
   public class CreateModel : PageModel
   {
     private readonly IStudentService _studentService;
+    public Response response { get; set; } = null!;
     [BindProperty]
     public StudentDto student { get; set; } = null!;
 
@@ -24,32 +27,25 @@ namespace SER.Pages.Student
 
       try
       {
-        Dictionary<string, bool> result = await _studentService.CreateStudent(student);
-
-        if (result.ContainsKey("IsCreated") && result["IsCreated"])
-        {
-          TempData["MessageSuccess"] = "Se ha verificado la información del alumno y se ha registrado correctamente.";
-        }
-        else
-        {
-          if (result["IsEnrollmentTaken"])
-          {
-            ModelState.AddModelError("student.Enrollment", "La matrícula ya está registrada.");
-          }
-
-          if (result["IsEmailTaken"])
-          {
-            ModelState.AddModelError("student.Email", "El correo electrónico ya está registrado.");
-          }
-
-          return Page();
-        }
+        response = await _studentService.CreateStudent(student);
       }
       catch (OperationCanceledException ex)
       {
         ExceptionLogger.LogException(ex);
         TempData["MessageError"] = ex.Message;
       }
+
+      if (response.Errors.Count > 0 && !response.IsSuccess)
+      {
+        foreach (var error in response.Errors)
+        {
+          ModelState.AddModelError(error.FieldName, error.Message);
+        }
+
+        return Page();
+      }
+
+      TempData["MessageSuccess"] = EStatusCodes.Created;
 
       return RedirectToPage("/Student/Index");
     }

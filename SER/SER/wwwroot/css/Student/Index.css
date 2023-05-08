@@ -1,6 +1,7 @@
 :root {
 	--uv-blue-color: #18529d;
-	--sucess-color: #dfe7f6;
+	--sucess-secundary-color: #dfe7f6;
+	--sucess-color: #202124;
 	--danger-color: #f8d7da;
 }
 
@@ -33,6 +34,10 @@
 
 #toast-error {
 	background-color: var(--danger-color);
+}
+
+#toast-copy {
+	background-color: var(--sucess-secundary-color);
 }
 
 @media (max-width: 778px) {

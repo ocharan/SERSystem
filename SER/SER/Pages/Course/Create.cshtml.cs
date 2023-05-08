@@ -1,9 +1,12 @@
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Services;
 using SER.Models.DTO;
 using SER.Configuration;
 using SER.Models.Responses;
+using SER.Models.Enums;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SER.Pages.Course
 {
@@ -27,8 +30,14 @@ namespace SER.Pages.Course
 
       try
       {
-        if (fileUpload != null) { response = await _courseService.CreateCourse(course, fileUpload); }
-        else { response = await _courseService.CreateCourse(course); }
+        if (fileUpload != null)
+        {
+          response = await _courseService.CreateCourse(course, fileUpload);
+        }
+        else
+        {
+          response = await _courseService.CreateCourse(course);
+        }
       }
       catch (OperationCanceledException ex)
       {
@@ -36,7 +45,7 @@ namespace SER.Pages.Course
         TempData["MessageError"] = ex.Message;
       }
 
-      if (!response.IsSuccess)
+      if (response.Errors.Count() > 0 && !response.IsSuccess)
       {
         foreach (var error in response.Errors)
         {
@@ -45,10 +54,8 @@ namespace SER.Pages.Course
 
         return Page();
       }
-      else
-      {
-        TempData["MessageSuccess"] = "Se ha verificado la información del curso y se ha registrado correctamente.";
-      }
+
+      TempData["MessageSuccess"] = EStatusCodes.Created;
 
       return RedirectToPage("Index");
     }

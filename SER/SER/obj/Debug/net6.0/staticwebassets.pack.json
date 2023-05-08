@@ -181,6 +181,10 @@
       "PackagePath": "staticwebassets\\css\\Course\\Create.css"
     },
     {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\css\\Course\\Read.css",
+      "PackagePath": "staticwebassets\\css\\Course\\Read.css"
+    },
+    {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\css\\Index.css",
       "PackagePath": "staticwebassets\\css\\Index.css"
     },
@@ -213,12 +217,32 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\22222_document.pdf",
-      "PackagePath": "staticwebassets\\files\\22222_document.pdf"
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\65432_document.pdf",
+      "PackagePath": "staticwebassets\\files\\65432_document.pdf"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\84763_3_ReporteMensual_CamarilloVillaJoseDaniel .pdf",
+      "PackagePath": "staticwebassets\\files\\84763_3_ReporteMensual_CamarilloVillaJoseDaniel .pdf"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\cube-ser-logo.png",
       "PackagePath": "staticwebassets\\images\\cube-ser-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\empty-states-home.svg",
+      "PackagePath": "staticwebassets\\images\\empty-states-home.svg"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\no-content-cat.svg",
+      "PackagePath": "staticwebassets\\images\\no-content-cat.svg"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\no-content-dog.svg",
+      "PackagePath": "staticwebassets\\images\\no-content-dog.svg"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\no-content-squirrel.svg",
+      "PackagePath": "staticwebassets\\images\\no-content-squirrel.svg"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\ser-logo.png",
@@ -227,6 +251,26 @@
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Create.js",
       "PackagePath": "staticwebassets\\js\\Course\\Create.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read.js",
+      "PackagePath": "staticwebassets\\js\\Course\\Read.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read\\CourseRegistrations.js",
+      "PackagePath": "staticwebassets\\js\\Course\\Read\\CourseRegistrations.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read\\ProfessorAsignment.js",
+      "PackagePath": "staticwebassets\\js\\Course\\Read\\ProfessorAsignment.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read\\ProfessorHub.js",
+      "PackagePath": "staticwebassets\\js\\Course\\Read\\ProfessorHub.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read\\StudentHub.js",
+      "PackagePath": "staticwebassets\\js\\Course\\Read\\StudentHub.js"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Index.js",
@@ -251,6 +295,10 @@
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Student\\Update.js",
       "PackagePath": "staticwebassets\\js\\Student\\Update.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.js"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\site.js",
