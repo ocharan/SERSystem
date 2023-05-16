@@ -9,7 +9,7 @@ using SER.Models.Enums;
 
 namespace SER.Pages.Student
 {
-  [Authorize(Roles = "Administrador")]
+  [Authorize(Roles = nameof(ERoles.Administrator))]
   public class CreateModel : PageModel
   {
     private readonly IStudentService _studentService;

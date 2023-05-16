@@ -62,7 +62,7 @@ namespace SER.Pages
       Dictionary<string, (string Page, object RouteValues)> routes =
         new Dictionary<string, (string Page, object RouteValues)> {
           {"Coordinador", ("/Menus/UICoordinador", "")},
-          {"Administrador", ("/Menus/Management", "")},
+          {"Administrator", ("/Menus/Management", "")},
           {"Maestro", ("/Menus/UIMaestro", new { id = username })},
         };
 

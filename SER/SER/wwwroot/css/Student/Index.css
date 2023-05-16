@@ -71,10 +71,6 @@
 }
 
 @media screen and (max-width: 576px) {
-	/* .card-title-container {
-		max-width: 90% !important;
-	} */
-
 	.text-button,
 	.card-title {
 		overflow: hidden !important;

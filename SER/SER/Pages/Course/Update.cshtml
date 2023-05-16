@@ -1,0 +1,209 @@
+@page
+@model SER.Pages.Course.UpdateModel
+@{
+  ViewData["Title"] = "Actualizar información";
+  Layout = "~/Pages/Shared/_LoginLayout.cshtml";
+}
+
+@section Styles {
+  <link rel="stylesheet" href="~/css/Course/Create.css" />
+}
+
+<div class="container shadow-3 rounded-9 form-create p-5">
+  <h5 class="mb-2 text-black fs-4 fw-normal">Formulario de Actualización: <strong>Curso</strong></h5>
+  <p class="mb-3">Recuerda que, al actualizar la información de un curso, se actualizarán los datos de todos los registros que lo contengan.
+  </p>
+  <form method="post" enctype="multipart/form-data" asp-page-handler="UpdateCourse" novalidate>
+    <input type="hidden" asp-for="course.CourseId" />
+    <div class="d-flex">
+      <i class="d-flex align-items-center fas fa-book-open me-2 icon-input"></i>
+      <div class="form-outline">
+        <input type="text" id="input-name" class="form-control form-control-lg bg-white" autocomplete="off" asp-for="course.Name" readonly/>
+        <label class="form-label" for="input-name">Nombre del curso</label>
+        <div class="form-helper"></div>
+      </div>
+    </div>
+    <div class="form-text mb-3">
+      El nombre del curso no puede modicarse.
+    </div>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fa-solid fa-hashtag me-2 icon-input"></i>
+      <div class="form-outline">
+        <input type="text" id="input-nrc" class="form-control form-control-lg" data-mdb-showcounter="true" maxlength="5"  autocomplete="off" asp-for="course.Nrc" required />
+        <label class="form-label" for="input-nrc">NRC <span class="text-danger">*</span></label>
+        <div class="form-helper"></div>
+      </div>
+    </div>
+    <span asp-validation-for="course.Nrc" class="d-flex text-start text-danger mb-4"></span>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fa-solid fa-forward me-2 icon-input"></i>
+      <div class="form-floating w-100">
+        <select class="form-select" id="input-section" aria-label="Nombre de curso" asp-for="course.Section">
+          <option selected disabled></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <label for="input-section">Sección <span class="text-danger">*</span></label>
+      </div>
+    </div>
+    <span asp-validation-for="course.Section" class="d-flex text-start text-danger mb-4"></span>
+    <div class="d-flex">
+      <i class="d-flex align-items-center fa-solid fa-calendar me-2 icon-input"></i>
+      <!-- <div class="form-floating w-100">
+        <select class="form-select" id="input-period" aria-label="Nombre de curso" asp-for="course.Period">
+          <option selected disabled></option>
+          <option value="AGOSTO2014_ENERO2015">AGOSTO 2014 - ENERO 2015</option>
+          <option value="FEBRERO2015_JULIO2015">FEBRERO 2015 - JULIO 2015</option>
+          <option value="AGOSTO2015_ENERO2016">AGOSTO 2015 - ENERO 2016</option>
+          <option value="FEBRERO2016_JULIO2016">FEBRERO 2016 - JULIO 2016</option>
+          <option value="AGOSTO2016_ENERO2017">AGOSTO 2016 - ENERO 2017</option>
+          <option value="FEBRERO2017_JULIO2017">FEBRERO 2017 - JULIO 2017</option>
+          <option value="AGOSTO2017_ENERO2018">AGOSTO 2017 - ENERO 2018</option>
+          <option value="FEBRERO2018_JULIO2018">FEBRERO 2018 - JULIO 2018</option>
+          <option value="AGOSTO2018_ENERO2019">AGOSTO 2018 - ENERO 2019</option>
+          <option value="FEBRERO2019_JULIO2019">FEBRERO 2019 - JULIO 2019</option>
+          <option value="AGOSTO2019_ENERO2020">AGOSTO 2019 - ENERO 2020</option>
+          <option value="FEBRERO2020_JULIO2020">FEBRERO 2020 - JULIO 2020</option>
+          <option value="AGOSTO2020_ENERO2021">AGOSTO 2020 - ENERO 2021</option>
+          <option value="FEBRERO2021_JULIO2021">FEBRERO 2021 - JULIO 2021</option>
+          <option value="AGOSTO2021_ENERO2022">AGOSTO 2021 - ENERO 2022</option>
+          <option value="FEBRERO2022_JULIO2022">FEBRERO 2022 - JULIO 2022</option>
+          <option value="AGOSTO2022_ENERO2023">AGOSTO 2022 - ENERO 2023</option>
+          <option value="FEBRERO2023_JULIO2023">FEBRERO 2023 - JULIO 2023</option>            
+        </select>
+        <label for="input-period" class="text-black">Período <span class="text-danger">*</span></label>
+      </div> -->
+      <div class="form-outline">
+        <input type="text" id="input-name" class="form-control form-control-lg bg-white" autocomplete="off" asp-for="course.Period" readonly/>
+        <label class="form-label" for="input-name">Período</label>
+        <div class="form-helper"></div>
+      </div>
+    </div>
+    <div class="form-text">
+      El Periodo del curso no puede modicarse.
+    </div>
+    <span asp-validation-for="course.Period" class="d-flex text-start text-danger mb-3"></span>
+    <div class="row gap-3 justify-content-end mx-0 fixed-bottom bg-white">
+      <a role="button" class="col-md-3 btn btn-secondary w-auto" asp-page="./Index">
+        <i class="fas fa-times me-2"></i>
+        Cancelar
+      </a>
+      <button type="submit" class="col-md-3 btn btn-primary w-auto">
+         <i class="fas fa-save me-2"></i>
+        Guardar&nbsp;
+      </button>
+    </div>
+    @{
+      if (Model.course.FileId == null) 
+      {
+        <div>
+          <label class="form-label" for="input-course-file">Archivo del curso (PDF)</label>
+          <div class="d-flex">
+            <i class="d-flex align-items-center fa-solid fa-file-pdf me-2 icon-input"></i>
+            <input type="file" class="form-control" id="input-course-file" name="fileUpload" accept=".pdf" asp-for="fileUpload!"/>     
+          </div>
+        </div>
+        <span asp-validation-for="fileUpload!" class="d-flex text-start text-danger"></span>
+      }
+    }
+  </form>
+  <div class="mb-0">
+    @{
+      if (Model.course.FileId != null) 
+      {
+        <label class="form-label" for="input-course-file">Archivo del curso (PDF)</label>
+        <div class="d-flex">          
+          <i class="d-flex align-items-center fa-solid fa-file-pdf me-2 icon-input"></i> 
+          <a target="_blank" class="btn-link d-flex align-items-center" href='@Url.Page("Read", "CourseFile", new { courseId = Model.course.FileId })'>
+            <span data-mdb-toggle="tooltip" title="Ver">
+              @Model.FilePath          
+            </span>
+          </a>
+          <div class="ms-auto">
+            <button class="btn btn-lg btn-floating btn-secondary" data-mdb-toggle="tooltip" title="Eliminar archivo">
+              <span data-mdb-toggle="modal" data-mdb-target="#modal-delete-file">
+                <i class="fab fas fa-trash-alt"></i>
+              </span>
+            </button>
+            <!-- <button class="btn btn-lg btn-floating btn-secondary" data-mdb-toggle="tooltip" title="Nuevo archivo">
+              <span >
+                <i class="fab fa-solid fa-upload"></i>
+              </span>
+            </button> -->
+          </div>
+        </div>                  
+      } 
+    }
+    <span asp-validation-for="fileUpload!" class="d-flex text-start text-danger"></span>
+  </div>
+</div>
+<div class="modal fade" id="modal-create-student" tabindex="-1" data-mdb-keyboard="false" data-mdb-backdrop="true"
+  aria-labelledby="modal-title-create-student" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content justify-content-center align-items-center">
+      <div class="modal-header text-center">
+        <h5 class="modal-title text-dark fs-2 display-6" id="modal-title-create-student">
+          Actualizando curso
+        </h5>
+      </div>
+      <div class="modal-body text-center mx-4">
+        <i class="fa-solid fa-spinner fa-6x fa-spin-pulse mt-3 mb-4"></i>
+        <p>
+          Se está vericando la información del curso, por favor espere.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-delete-file" tabindex="-1" data-mdb-keyboard="false" data-mdb-backdrop="true"
+  aria-labelledby="modal-title-delete-file" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0 mb-0">
+        <h5 class="modal-title text-black fs-4">
+          Eliminar archivo
+        </h5>
+        <span data-mdb-toggle="tooltip" title="Cancelar">
+          <button type="button" class="btn-close text-black" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </span>
+      </div>
+      <div class="modal-body border-0 py-0">
+        <p>
+          Una vez eliminado el archivo, no se podrá volver a recuperar. ¿Estás seguro de que deseas <strong>eliminar</strong> el archivo del curso?
+        </p>
+      </div>            
+      <span class="ms-3 mb-3 fw-bold" id="span-student-name"></span>
+      <div class="modal-footer border-0 mt-0 pt-0">
+        <form method="post" asp-page-handler="DeleteCourseFile" novalidate>
+          <input type="hidden" asp-for="course.FileId" />
+          <input type="hidden" asp-for="course.CourseId" />
+          <button type="submit" class="btn btn-primary">
+            Aceptar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+@{
+  if (TempData["MessageError"] != null)
+  {
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-error" data-bs-autohide="false">
+        <div class="d-flex">
+          <div class="toast-body text-danger">
+            <strong>¡Ups! Ha ocurrido un error: </strong> @TempData["MessageError"]
+          </div>
+          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  }
+}
+
+@section Scripts {
+  <script src="~/js/Course/Update.js"></script>
+}
+
+

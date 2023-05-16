@@ -5,10 +5,13 @@ using Microsoft.AspNetCore.Authorization;
 using ContosoUniversity;
 using Microsoft.AspNetCore.Mvc;
 using SER.Configuration;
+using SER.Models.Enums;
+using Microsoft.EntityFrameworkCore;
+using ClosedXML.Excel;
 
 namespace SER.Pages.Course
 {
-  [Authorize(Roles = "Administrador")]
+  [Authorize(Roles = nameof(ERoles.Administrator))]
   public class IndexModel : PageModel
   {
     private readonly IConfiguration Configuration;
@@ -27,7 +30,8 @@ namespace SER.Pages.Course
       Configuration = configuration;
     }
 
-    public async Task OnGet(string sortOrder, string currentSearch, string searchString, int? pageIndex, string currentFilter)
+    public async Task OnGet(string sortOrder, string currentSearch, string searchString,
+      int? pageIndex, string currentFilter)
     {
       CheckStatusCode();
       CurrentSort = sortOrder;
@@ -48,20 +52,23 @@ namespace SER.Pages.Course
       {
         auxiliaryCourses = auxiliaryCourses
           .Where(course => course.Name.Contains(searchString)
-            || (Convert.ToString(course.Nrc)).Contains(searchString)
-        );
+            || (Convert.ToString(course.Nrc)).Contains(searchString));
       }
 
       auxiliaryCourses = String.Equals(sortOrder, "descendant-name")
         ? auxiliaryCourses.OrderByDescending(course => course.Name)
         : auxiliaryCourses.OrderBy(course => course.Name);
 
-      courses = await PaginatedList<CourseDto>.CreateAsync(
-        auxiliaryCourses, pageIndex ?? 1, PAGE_SIZE
-      );
+      courses = await PaginatedList<CourseDto>
+        .CreateAsync(auxiliaryCourses, pageIndex ?? 1, PAGE_SIZE);
+
+      courses.ForEach(async course =>
+      {
+        course.Period = await FormatCoursePeriod(course.Period);
+      });
     }
 
-    public void CheckStatusCode()
+    private void CheckStatusCode()
     {
       if (TempData["MessageSuccess"] != null)
       {
@@ -71,6 +78,50 @@ namespace SER.Pages.Course
       if (TempData["MessageError"] != null)
       {
         ViewData["MessageError"] = TempData["MessageError"];
+      }
+    }
+
+    public async Task<FileResult> OnPostExportSpreadsheetData()
+    {
+      var courses = await _courseService.GetAllCourses().ToListAsync();
+      XLWorkbook workbook = new XLWorkbook();
+      IXLWorksheet worksheet = workbook.Worksheets.Add("Cursos");
+
+      worksheet.Cell(1, 1).Value = "Abierto";
+      worksheet.Cell(1, 2).Value = "NRC";
+      worksheet.Cell(1, 3).Value = "Nombre";
+      worksheet.Cell(1, 4).Value = "Periodo";
+      worksheet.Cell(1, 5).Value = "Sección";
+      worksheet.Cell(1, 6).Value = "Profesor asignado";
+
+      for (int i = 0; i < courses.Count; i++)
+      {
+        worksheet.Cell(i + 2, 1).Value = courses[i].IsOpen ? "Si" : "No";
+        worksheet.Cell(i + 2, 2).Value = courses[i].Nrc;
+        worksheet.Cell(i + 2, 3).Value = courses[i].Name;
+        worksheet.Cell(i + 2, 4).Value = await FormatCoursePeriod(courses[i].Period);
+        worksheet.Cell(i + 2, 5).Value = courses[i].Section;
+
+        var professor = courses[i].Professor;
+
+        string professorName = professor != null
+          ? courses[i].Professor!.FullName
+          : "Sin asignar";
+
+        worksheet.Cell(i + 2, 6).Value = professorName;
+      }
+
+      using (var stream = new MemoryStream())
+      {
+        workbook.SaveAs(stream);
+        var content = stream.ToArray();
+
+        return File
+        (
+          content,
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Cursos.xlsx"
+        );
       }
     }
 
@@ -89,6 +140,17 @@ namespace SER.Pages.Course
       if (filter.Equals("closed")) { courses = courses.Where(course => !course.IsOpen); }
 
       return courses;
+    }
+
+    private Task<string> FormatCoursePeriod(string period)
+    {
+      string[] dates = period.Split("_");
+      DateTime startDate = DateTime.ParseExact(dates[0], "MMMMyyyy", null);
+      DateTime endDate = DateTime.ParseExact(dates[1], "MMMMyyyy", null);
+
+      string formattedPeriod = $"{startDate.ToString("MMMM yyyy")} - {endDate.ToString("MMMM yyyy")}";
+
+      return Task.FromResult(formattedPeriod);
     }
   }
 }

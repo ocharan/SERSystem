@@ -56,8 +56,7 @@
       <div class="d-flex my-4">
         <i class="d-flex align-items-center fas fa-book-open me-2 icon-input"></i>
         <div class="form-outline">
-          <input type="text" id="input-course-name" class="form-control form-control-lg bg-white" asp-for="course.Name"
-            readonly />
+          <input type="text" id="input-course-name" class="form-control form-control-lg bg-white" asp-for="course.Name" readonly />
           <label class="form-label" for="input-course-name">Nombre</label>
         </div>
       </div>
@@ -73,33 +72,53 @@
       <div class="d-flex mb-4">
         <i class="d-flex align-items-center fa-solid fa-forward me-2 icon-input"></i>
         <div class="form-outline">
-          <input type="text" id="input-section" class="form-control form-control-lg bg-white" asp-for="course.Section"
-            readonly />
+          <input type="text" id="input-section" class="form-control form-control-lg bg-white" asp-for="course.Section" readonly />
           <label class="form-label" for="input-section">Sección</label>
         </div>
       </div>
       <div class="d-flex mb-4">
         <i class="d-flex align-items-center fa-solid fa-calendar me-2 icon-input"></i>
         <div class="form-outline">
-          <input type="text" id="input-period" class="form-control form-control-lg bg-white" asp-for="course.Period"
-            readonly />
+          <input type="text" id="input-period" class="form-control form-control-lg bg-white text-uppercase" asp-for="course.Period" readonly />
           <label class="form-label" for="input-period">Periodo</label>
         </div>
       </div>
       <div>
-        <label class="form-label" for="input-course-file">Archivo del curso (PDF)</label>
-        <div class="d-flex">
-          <i class="d-flex align-items-center fa-solid fa-file-pdf me-2 icon-input"></i>
-          <input type="file" class="form-control form-control-lg bg-white" id="input-course-file" name="fileUpload"
-            accept=".pdf" asp-for="fileUpload!" disabled />
-        </div>
+        @{
+          if (Model.course.FileId != null) 
+          {
+            <label class="form-label" for="input-course-file">Archivo del curso (PDF)</label>
+            <div class="d-flex">
+              <i class="d-flex align-items-center fa-solid fa-file-pdf me-2 icon-input"></i>              
+              <a target="_blank" class="btn-link d-flex align-items-center" href='@Url.Page("Read", "CourseFile", new { courseId = Model.course.FileId })'>
+                <span data-mdb-toggle="tooltip" title="Ver archivo">
+                  @Model.FilePath
+                </span>
+              </a>
+              <a download="@Model.FilePath" class="btn btn-lg btn-floating btn-secondary ms-auto" role="button" href='@Url.Page("Read", "CourseFile", new { courseId = Model.course.FileId })'>
+                <span data-mdb-toggle="tooltip" title="Descargar archivo">
+                  <i class="fas fa-download"></i>
+                </span>
+              </a>                
+            </div>                  
+          } 
+          else
+          {
+            <div class="d-flex">
+              <i class="d-flex align-items-center fa-solid fa-file-pdf me-2 icon-input"></i>
+              <p class="mb-0 text">
+                El curso no tiene ningún <strong>archivo</strong> asignado.
+              </p>    
+            </div>
+          }
+        }
       </div>
     </div>
   </div>
   <div class="tab-pane fade" id="course-members-tab" role="tabpanel" aria-labelledby="tab-2">
-    <div class="container w-75 container-course-information">      
+    <div class="container w-75 container-course-information mt-3">      
       <div class="d-flex align-items-center border-bottom border-primary">
-        <h5 class="text-black fs-4 fw-normal p-2">Profesor</h5>
+        <h5 class="text-black fs-3 fw-normal p-2">Profesor</h5>
         <div class="ms-auto p-2">
           <span data-mdb-toggle="modal" data-mdb-target="#modal-add-professor">
             <a class="btn btn-lg btn-floating btn-secondary" role="button" data-mdb-toggle="tooltip" title="Asignar Profesor">
@@ -111,51 +130,11 @@
       @{
         if (Model.course.Professor != null)
         {
-          <!-- <div class="table-responsive shadow-3 rounded-6 mt-4">
-            <table class="table table-hover">
-              <thead class="table-secondary">
-                <tr>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Correo</th>                 
-              </thead>
-              <tbody>
-                <tr>  
-                  <td>
-                    <a asp-page="../Student/Read" asp-route-studentId="Model.course.Professor.ProfessorId">
-                      @Model.course.Professor.FullName
-                    </a>
-                  </td>
-                  <td>@Model.course.Professor.Email</td>  
-              </tbody>            
-            </table> 
-          </div> -->
-        
-           <!-- <div class="card w-25 mb-4 mt-4">
-            <div class="card-body py-1">
-              <p class="m-0">
-                <strong>@Model.course.Professor.FullName</strong> | @Model.course.Professor.AcademicDegree
-              </p>
-              <p class="m-0">@Model.course.Professor.Email</p>
-            </div>
-          </div>  -->
-
-          <div class="table-responsive shadow-3 rounded-6 mt-4 mb-3">
-            <table class="table table-hover">
-              <thead class="table-secondary">
-                <tr>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Correo</th>                 
-              </thead>
-              <tbody>
-                <tr>  
-                  <td>
-                    <a asp-page="../Student/Read" asp-route-studentId="Model.course.Professor.ProfessorId">
-                      @Model.course.Professor.FullName
-                    </a>
-                  </td>
-                  <td>@Model.course.Professor.Email</td>  
-              </tbody>            
-            </table> 
+          <div class="container my-4">
+            <p class="mt-3 d-inline">
+              <strong>@Model.course.Professor.FullName</strong> |              
+              @Model.course.Professor.Email
+            </p>          
           </div>
         }  
         else 
@@ -163,13 +142,13 @@
           <div class="d-flex flex-column justify-content-center align-items-center no-content h-25 mt-5">
             <img src="~/images/no-content-dog.svg" class="img-fluid" alt="No hay cursos asignados" />
             <p class="mt-2 text-muted fw-normal mb-4 text-center">
-              <small>No hay un profesor asignado</small>
+              <small>No hay un profesor asignado a este curso</small>
             </p>
           </div>
         }
       }
       <div class="d-flex align-items-center border-bottom border-primary">
-        <h5 class="text-black fs-4 fw-normal p-2">Alumnos</h5>
+        <h5 class="text-black fs-3 fw-normal p-2">Alumnos</h5>
         <div class="ms-auto p-2">
           <span data-mdb-toggle="modal" data-mdb-target="#modal-add-student">
             <a class="btn btn-lg btn-floating btn-secondary" role="button" data-mdb-toggle="tooltip" title="Agregar Alumnos">
@@ -182,15 +161,13 @@
         if (Model.course.CourseRegistrations!.Count > 0)
         {
           <div class="table-responsive shadow-3 rounded-6 mt-4">
-            <table class="table table-hover">
-              <thead class="table-secondary">
+            <table class="table table-hover" id="table-students">
+              <thead class="table-light">
                 <tr>
                   <th scope="col">Nombre</th>
-                  <!-- <th scope="col" class="text-center">Matrícula</th> -->
-                  <!-- <th scope="col">Correo</th> -->
-                  <th scope="col">Inscripción</th>
+                  <th scope="col" class="text-center">Inscripción</th>
                   <th scope="col">Calificación</th>
-                  <th scope="col"></th>
+                  <th scope="col" class="text-center">Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -202,9 +179,7 @@
                         @registration.Student.FullName
                       </a>
                     </td>
-                    <!-- <td class="text-center">@registration.Student.Enrollment</td> -->
-                    <!-- <td>@registration.Student.Email</td> -->
-                    <td>@registration.RegistrationType</td>
+                    <td class="text-center">@registration.RegistrationType</td>
                     <td>
                       @if (registration.Score != null)
                       {
@@ -219,23 +194,17 @@
                         </span>
                       }
                     </td>
-                    <td>
-                      <span>
-                        <!-- <a class="btn btn-lg btn-floating btn-secondary shadow-0" role="button" data-mdb-toggle="tooltip" title="Acciones">
-                          <i class="fas fa-solid fa-ellipsis-vertical"></i>
-                        </a> -->
-                        <div class="dropdown">
-                          <a class="dropdown-toggle hidden-arrow" type="button" id="drop-down-menu-icon" data-mdb-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-lg text-dark"></i>
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="drop-down-menu-icon">
-                            <li data-mdb-toggle="modal" data-mdb-target="#modal-remove-student">
-                              <a class="dropdown-item" href="#"> 
-                              <i class="fas fa-trash pe-2"></i>Eliminar</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </span>
+                    <td class="text-center">
+                      @{
+                        if (!registration.RegistrationType.Equals("Baja"))
+                        {
+                          <button type="button" class="btn btn-floating shadow-0 button-remove-student" id="button-icon-remove-student" data-id="@registration.CourseRegistrationId" data-name="@registration.Student.FullName" data-mdb-toggle="tooltip" title="Remover">
+                            <span data-mdb-toggle="modal" data-mdb-target="#modal-remove-student">
+                              <i class="fa-solid fa-user-minus"></i>                            
+                            </span>
+                          </button>                          
+                        }
+                      }
                     </td>
                   </tr>
                 }             
@@ -248,7 +217,7 @@
           <div class="d-flex flex-column justify-content-center align-items-center no-content h-25 mt-5">
             <img src="~/images/no-content-cat.svg" class="img-fluid" alt="No hay cursos asignados" />
             <p class="mt-4 text-muted fw-normal mb-4 text-center">
-              <small>No hay alumnos asignados</small>
+              <small>No hay alumnos asignados a este curso</small>
             </p>
           </div>
         }
@@ -261,7 +230,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content p-2">
       <div class="modal-header border-0 mb-0">
-        <h5 class="modal-title text-black">Asignar profesor</h5>
+        <h5 class="modal-title text-black fs-4">Asignar profesor</h5>
         <span data-mdb-toggle="tooltip" title="Cancelar">
           <button type="button" class="btn-close text-black" data-mdb-dismiss="modal" aria-label="Close" id="button-close-professor"></button>        
         </span>
@@ -271,11 +240,11 @@
         <p>Recuerda que solo puedes hacer la asignación de un profesor por curso.</p>
         <div class="form-outline mb-4">
           <i class="fas fa-search trailing"></i>
-          <input type="text" id="input-professor-search" class="form-control form-control-lg form-icon-trailing" />
+          <input type="text" id="input-professor-search" class="form-control form-control-lg form-icon-trailing" autocomplete="off"/>
           <label class="form-label" for="professor">Escribe el nombre o un correo electrónico</label>
         </div>        
         <hr class="mb-0">
-        <ul class="list-group list-group-light mb-5" id="professor-list"></ul>
+        <ul class="list-group list-group-light rounded-0" id="professor-list"></ul>
         <hr class="mt-0">
       </div>      
       <div class="modal-footer border-0">        
@@ -299,11 +268,11 @@
         <p>Recuerda que un alumno no puede cursar Proyecto Guiado y Experiencia Recepcional al mismo tiempo.</p>
         <div class="form-outline mb-4">
           <i class="fas fa-search trailing"></i>
-          <input type="text" id="input-student-search" class="form-control form-control-lg form-icon-trailing" />
+          <input type="text" id="input-student-search" class="form-control form-control-lg form-icon-trailing" autocomplete="off"/>
           <label class="form-label" for="input-professor-search">Escribe el nombre, correo electrónico o matrícula</label>
         </div>                
         <hr class="mb-0">
-        <ul class="list-group list-group-light" id="student-list">          
+        <ul class="list-group list-group-light rounded-0" id="student-list">          
         </ul>
         <hr class="mt-0">
       </div>            
@@ -317,7 +286,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content p-2">
       <div class="modal-header border-0 mb-0">
-        <h5 class="modal-title text-black">Quitar alumno del curso</h5>
+        <h5 class="modal-title text-black fs-4">Quitar alumno del curso</h5>
         <span data-mdb-toggle="tooltip" title="Cancelar">
           <button type="button" class="btn-close text-black" data-mdb-dismiss="modal" aria-label="Close"></button>        
         </span>
@@ -325,8 +294,9 @@
       <div class="modal-body border-0 py-0">        
         <p>¿Estás seguro de que deseas <strong>quitar</strong> a este alumno del curso?</strong></p>        
       </div>            
+      <span class="ms-3 mb-3 fw-bold" id="span-student-name"></span>
       <div class="modal-footer border-0 mt-0 pt-0">        
-        <button type="button" class="btn btn-primary">Aceptar</button>
+        <button type="button" class="btn btn-primary" id="button-modal-remove-student">Aceptar</button>
       </div>
     </div>
   </div>
@@ -349,11 +319,20 @@
     </div>
   </div>
 </div>
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-error" data-bs-autohide="false">
+    <div class="d-flex">
+      <div class="toast-body text-danger fw-bold" id="toast-error-content"></div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
 
 @section Scripts {
   <script src="~/js/signalr/dist/browser/signalr.js"></script>
-  <script src="~/js/Course/Read/CourseRegistrations.js"></script>
+  <script src="~/js/Course/Read/StudentsAssigned.js"></script>
   <script src="~/js/Course/Read/ProfessorAsignment.js"></script>
   <script src="~/js/Course/Read/ProfessorHub.js"></script>
   <script src="~/js/Course/Read/StudentHub.js"></script>
+  <script src="~/js/Course/Read/WithdrawRegistration.js"></script>  
 }

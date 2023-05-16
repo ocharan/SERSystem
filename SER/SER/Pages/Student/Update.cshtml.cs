@@ -9,7 +9,7 @@ using SER.Models.Enums;
 
 namespace SER.Pages.Student
 {
-  [Authorize(Roles = "Administrador")]
+  [Authorize(Roles = nameof(ERoles.Administrator))]
   public class UpdateModel : PageModel
   {
     private readonly IStudentService _studentService;
@@ -44,12 +44,7 @@ namespace SER.Pages.Student
       {
         response = await _studentService.UpdateStudent(student);
       }
-      catch (NullReferenceException ex)
-      {
-        ExceptionLogger.LogException(ex);
-        TempData["MessageError"] = ex.Message;
-      }
-      catch (OperationCanceledException ex)
+      catch (Exception ex) when (ex is HttpRequestException || ex is TaskCanceledException)
       {
         ExceptionLogger.LogException(ex);
         TempData["MessageError"] = ex.Message;

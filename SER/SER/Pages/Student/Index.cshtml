@@ -128,9 +128,9 @@
       </div>
     </form>
   </article>
-  <div class="table-responsive shadow-3 rounded-6 p-0">
+  <div class="table-responsive shadow-3 rounded-6 p-0 mb-5">
     <table class="table table-hover">
-      <thead class="table-secondary">
+      <thead class="table-light">
         <tr>
           <th scope="col">
             <a asp-page="./Index" asp-route-currentFilter="@Model.CurrentFilter" asp-route-sortOrder="@Model.FullnameSort" asp-route-currentSearch="@Model.CurrentSearch">
@@ -221,7 +221,7 @@
   </div>
 </section>
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-copy">
+  <div class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" id="toast-copy">
     <div class="d-flex">
       <div class="toast-body text-primary">
         ¡Texto copiado en el portapapeles!

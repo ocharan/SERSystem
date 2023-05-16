@@ -9,7 +9,8 @@ connectionProfessor
 	.start()
 	.then()
 	.catch(function (err) {
-		return console.error(err.toString());
+		// return console.error(err.toString());
+		window.location.reload();
 	});
 
 inputProfessorSearch.addEventListener("keyup", function (event) {
@@ -32,6 +33,25 @@ connectionProfessor.on("ReceiveProfessor", function (professors) {
 	);
 	professorList.innerHTML = "";
 
+	if (professors.length === 0) {
+		const pofessorItem = document.createElement("li");
+		pofessorItem.classList.add(
+			"list-group-item",
+			"border-0",
+			"px-3",
+			"py-2",
+			"model-item"
+		);
+		const icon = document.createElement("i");
+		icon.classList.add("fas", "fa-exclamation-triangle", "me-2");
+		const text = document.createTextNode(
+			"No se encontraron profesores registrados con esa búsqueda."
+		);
+		pofessorItem.appendChild(icon);
+		pofessorItem.appendChild(text);
+		professorList.appendChild(pofessorItem);
+	}
+
 	professors.forEach((professor) => {
 		let professorItem = document.createElement("li");
 		let nameSpan = document.createElement("span");
@@ -43,10 +63,21 @@ connectionProfessor.on("ReceiveProfessor", function (professors) {
 		professorItem.appendChild(emailSpan);
 		professorItem.appendChild(document.createElement("br"));
 		professorList.appendChild(professorItem);
-		professorItem.classList.add("list-group-item", "border-0", "px-3", "py-2");
+		professorItem.style.borderRadius = "0";
+		professorItem.classList.add(
+			"list-group-item",
+			"border-0",
+			"px-3",
+			"py-2",
+			"model-item"
+		);
+
+		// if (assignedProfessor.professorId === professor.professorId) {
+		// 	professorItem.classList.add("active");
+		// }
 
 		professorItem.addEventListener("click", function () {
-      assignedProfessor = professor;
+			assignedProfessor = professor;
 			selectedProfessor.innerHTML = "";
 			const span = document.createElement("span");
 			span.classList.add(
@@ -58,6 +89,8 @@ connectionProfessor.on("ReceiveProfessor", function (professors) {
 				"mt-0",
 				"px-3"
 			);
+
+			// professorItem.classList.add("active");
 			const spanText = document.createTextNode(professor.fullName);
 			span.appendChild(spanText);
 			const deleteButton = document.createElement("i");
@@ -69,6 +102,7 @@ connectionProfessor.on("ReceiveProfessor", function (professors) {
 
 			deleteButton.addEventListener("click", function () {
 				selectedProfessor.innerHTML = "";
+				assignedProfessor = {};
 			});
 		});
 	});

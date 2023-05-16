@@ -5,46 +5,32 @@
   Dictionary<string, List<(string, string)>> navItemsByRole = 
   new Dictionary<string, List<(string, string)>>()
   {
-    {"Administrador", new List<(string, string)>()
+    {"Administrator", new List<(string, string)>()
       {
         ("/Menus/Management", "Inicio"),
         ("/Course/Index", "Cursos"),
-        ("/UIAdministrador/Docentes", "Docentes"),
-        ("/UIAdministrador/TiposDeDocumento", "Documentos"),
+        ("#", "Docentes"),
+        ("#", "Documentos"),
         ("#", "Coordinadores"),
         ("/Student/Index", "Alumnos")
-      }
-    },
-    {"Coordinador", new List<(string, string)>()
-      {
-        ("/UICoordinador/UICuerpoAcademico", "Docentes"),
-        ("/UICoordinador/UIAcademia", "Tipos de documentos")
-      }
-    },
-    {"Maestro", new List<(string, string)>()
-      {
-        ("", "Expedientes"),
-        ("", "Mis Experiencias Educativas")
       }
     }
   };
 
   Dictionary<string, string> navIcons = new Dictionary<string, string>()
-  {
-    {"Inicio", "fa-solid fa-house me-3"},
+  {  
+    {"Inicio", "fa-solid fa-home me-3"},
     {"Cursos", "fa-solid fa-book-open me-3"},
     {"Docentes", "fa-solid fa-chalkboard-teacher me-3"},
     {"Documentos", "fa-regular fa-folder-open me-3"},
     {"Coordinadores", "fa-solid fa-user-tie me-3"},
     {"Alumnos", "fa-solid fa-users me-3"},
     {"Expedientes", "fas fa-folder-open fa-fw me-3"}
-    // {"Mis Cursos", "fas fa-book-reader fa-fw me-3"}
   };
 }
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -63,48 +49,41 @@
   @await RenderSectionAsync("Styles", required: false)
 </head>
 
-<body>
-  <header>
-    <nav id="sider-bar-menu" class="collapse d-lg-block sidebar collapse bg-white border">
-      <div class="position-sticky nav-options">
-        <div class="list-group list-group-flush mx-3 mt-4">
-          @if (User.Identity!.IsAuthenticated && navItemsByRole.ContainsKey(role))
-          {
-            foreach (var item in navItemsByRole[role])
-            {
-              <a href="@item.Item1" class="anchor-navbar-option list-group-item list-group-item-action py-3 ripple" aria-current="true">                  
-                @foreach (var icon in navIcons)
+<body class="main-container d-flex">
+  <nav class="sidebar position-fixed bg-white border" id="side-nav">
+    <div class="header-box px-2 py-2 d-flex justify-content-center">      
+       <a class="navbar-brand d-flex mb-2 align-items-center justify-content-center" href="./Index">
+        <img src="~/images/ser-logo.png" class="cube-ser-logo mb-0 mt-2" alt="Sistema de Experiencia Recepcional" loading="lazy" />        
+      </a>
+      <button class="btn-close d-md-none d-block ms-3 mt-2" id="close-button"></button>
+    </div>
+    <ul class="list-unstyled px-3">
+      @if (User.Identity!.IsAuthenticated && navItemsByRole.ContainsKey(role))
+      {
+        foreach (var item in navItemsByRole[role])
+        {
+          <li>
+            <a href="@item.Item1" class="anchor-navbar-option list-group-item list-group-item-action p-3 ripple" aria-current="true">                  
+              @foreach (var icon in navIcons)
+              {
+                if (icon.Key.Equals(item.Item2))
                 {
-                  if (icon.Key.Equals(item.Item2))
-                  {
-                    <i class="@icon.Value fa-fw"></i>
-                  }
+                  <i class="@icon.Value fa-fw"></i>
                 }
-                <span>@item.Item2</span>
-              </a>
-            }
-          }
-        </div>
-      </div>
-    </nav>
-
-    <!-- <nav id="main-navbar" class="navbar navbar-expand-lg bg-white navbar-light shadow-0 border-0">
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sider-bar-menu" aria-controls="sider-bar-menu" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-    </nav>     -->
-
-    <nav id="main-navbar" class="navbar navbar-expand-lg bg-white navbar-light shadow-0 border">
+              }
+              <span>@item.Item2</span>
+            </a>
+          </li>
+        }
+      }
+    </ul>      
+  </nav>
+  <div class="content">
+    <header class="navbar navbar-expand-lg navbar-light bg-white position-fixed w-100 shadow-0 border" id="navbar">
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sider-bar-menu" aria-controls="sider-bar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" id="open-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#sider-bar-menu" aria-controls="sider-bar-menu" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
-        <a class="navbar-brand d-flex ms-4" href="#">
-          <img src="~/images/cube-ser-logo.png" class="cube-ser-logo " alt="Sistema de Experiencia Recepcional"
-              loading="lazy" />
-          <p class="font-ser-logo fw-bolder d-flex justify-content-center align-items-center m-0 p-0">            
-          </p>
-        </a>
         <ul class="navbar-nav ms-auto d-flex flex-row">
           <li class="nav-item dropdown d-flex justify-content-center align-items-center me-2">
             @if (User.Identity!.IsAuthenticated)
@@ -127,22 +106,11 @@
           </li>
         </ul>
       </div>
-    </nav>
-  </header>
-  <div class="container-fluid p-0">
+    </header>
     <main role="main">
       @RenderBody()
     </main>
   </div>
-  <!-- <footer class=" bg-white">
-    <div class="text-center p-1">
-      @{
-      int DEVELOPMENT_YEAR = 2022;
-      int maintenanceYear = DateTime.Now.Year;
-      }
-      &copy; @DEVELOPMENT_YEAR - @maintenanceYear Universidad Veracruzana. Derechos reservados.
-    </div>
-  </footer> -->
   
   <script src="~/lib/jquery/dist/jquery.min.js"></script>
   <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

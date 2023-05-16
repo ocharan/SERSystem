@@ -5,6 +5,7 @@ namespace SER.Services
   public class FileService : IFileService
   {
     private readonly long _fileSizeLimit;
+
     private IWebHostEnvironment _environment;
 
     public FileService(IConfiguration config, IWebHostEnvironment environment)
@@ -13,24 +14,21 @@ namespace SER.Services
       _fileSizeLimit = config.GetValue<long>("FileSizeLimit");
     }
 
-    public async Task<string> SaveFile(IFormFile file, string name)
+    public async Task<string> SaveFile(IFormFile file, string name, string nameFolder)
     {
       string wwwPath = _environment.WebRootPath;
-      string nameFolder = "files";
       string directoryPath = Path.Combine(wwwPath, nameFolder);
       string fileName = name + "_" + file.FileName;
+      string fullPath = $"{directoryPath}\\{fileName}";
 
       if (!Directory.Exists(directoryPath)) { Directory.CreateDirectory(directoryPath); }
-
-      string fullPath = $"{directoryPath}\\{fileName}";
-      string path = fullPath.Substring(fullPath.IndexOf("wwwroot"));
 
       using (var fileStream = new FileStream(fullPath, FileMode.Create))
       {
         await file.CopyToAsync(fileStream);
       }
 
-      return path;
+      return nameFolder + "/" + fileName;
     }
 
     public Task<Response> ValidateFile(IFormFile file)
@@ -61,6 +59,19 @@ namespace SER.Services
       }
 
       return Task.FromResult(response);
+    }
+
+    public string DeleteFile(string path)
+    {
+      string wwwPath = _environment.WebRootPath;
+      string fullPath = Path.Combine(wwwPath, path);
+
+      if (File.Exists(fullPath))
+      {
+        File.Delete(fullPath);
+      }
+
+      return path;
     }
   }
 }

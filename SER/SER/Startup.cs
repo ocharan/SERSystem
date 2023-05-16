@@ -9,7 +9,9 @@ using Microsoft.AspNetCore.Server.HttpSys;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using SER.Hubs;
-
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using SER.Services.Implementations;
+using SER.Services.Contracts;
 
 namespace SER
 {
@@ -54,6 +56,7 @@ namespace SER
       services.AddScoped<IStudentService, StudentService>();
       services.AddScoped<ICourseService, CourseService>();
       services.AddScoped<IProfessorService, ProfessorService>();
+      services.AddScoped<IOfficeDocumentService, OfficeDocumentService>();
 
       // SignalR
       services.AddSignalR();
@@ -75,6 +78,13 @@ namespace SER
       {
         options.Limits.MaxRequestBodySize = 1073741824;
       });
+
+      // // // // 
+      // services.AddDbContext<SERContext>(options =>
+      // {
+      //   options.ConfigureWarnings(warnings =>
+      //     warnings.Throw(RelationalEventId.MultipleCollectionIncludeWarning));
+      // });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

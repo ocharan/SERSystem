@@ -4,10 +4,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Models.DTO;
 using SER.Services;
 using SER.Configuration;
+using SER.Models.Enums;
 
 namespace SER.Pages.Student
 {
-  [Authorize(Roles = "Administrador")]
+  [Authorize(Roles = nameof(ERoles.Administrator))]
   public class Read : PageModel
   {
     private readonly IStudentService _studentService;

@@ -6,14 +6,14 @@
 }
 
 @section Styles {
-<link rel="stylesheet" href="~/css/Course/Create.css" />
+  <link rel="stylesheet" href="~/css/Course/Create.css" />
 }
 
 <div class="container shadow-3 rounded-9 form-create p-5">
   <h5 class="mb-2 text-black fs-4 fw-normal">Formulario de Registro: <strong>Curso</strong></h5>
-  <p class="mb-3">Por favor, completa el siguiente formulario con la información del curso para registarlo en el SER.
+  <p class="mb-4 mt-3">Por favor, completa el siguiente formulario con la información del curso para registarlo en el SER. El <strong>nombre</strong> y el <strong>período</strong> del curso no podrán ser <strong>modificados</strong> una vez registrado.
   </p>
-  <form  method="post" enctype="multipart/form-data" asp-page-handler="AddCourse" novalidate>
+  <form method="post" enctype="multipart/form-data" asp-page-handler="AddCourse" novalidate>
     <div class="d-flex">
       <i class="d-flex align-items-center fas fa-book-open me-2 icon-input"></i>
       <div class="form-floating w-100">
@@ -53,24 +53,24 @@
       <div class="form-floating w-100">
         <select class="form-select" id="input-period" aria-label="Nombre de curso" asp-for="course.Period">
           <option selected disabled></option>
-          <option value="2014-08-01|2015-01-31">AGOSTO 2014 - ENERO 2015</option>
-          <option value="2015-02-01|2015-07-31">FEBRERO 2015 - JULIO 2015</option>
-          <option value="2015-08-01|2016-01-31">AGOSTO 2015 - ENERO 2016</option>
-          <option value="2016-02-01|2016-07-31">FEBRERO 2016 - JULIO 2016</option>
-          <option value="2016-08-01|2017-01-31">AGOSTO 2016 - ENERO 2017</option>
-          <option value="2017-02-01|2017-07-31">FEBRERO 2017 - JULIO 2017</option>
-          <option value="2017-08-01|2018-01-31">AGOSTO 2017 - ENERO 2018</option>
-          <option value="2018-02-01|2018-07-31">FEBRERO 2018 - JULIO 2018</option>
-          <option value="2018-08-01|2019-01-31">AGOSTO 2018 - ENERO 2019</option>
-          <option value="2019-02-01|2019-07-31">FEBRERO 2019 - JULIO 2019</option>
-          <option value="2019-08-01|2020-01-31">AGOSTO 2019 - ENERO 2020</option>
-          <option value="2020-02-01|2020-07-31">FEBRERO 2020 - JULIO 2020</option>
-          <option value="2020-08-01|2021-01-31">AGOSTO 2020 - ENERO 2021</option>
-          <option value="2021-02-01|2021-07-31">FEBRERO 2021 - JULIO 2021</option>
-          <option value="2021-08-01|2022-01-31">AGOSTO 2021 - ENERO 2022</option>
-          <option value="2022-02-01|2022-07-31">FEBRERO 2022 - JULIO 2022</option>
-          <option value="2022-08-01|2023-01-31">AGOSTO 2022 - ENERO 2023</option>
-          <option value="2023-02-01|2023-07-31">FEBRERO 2023 - JULIO 2023</option>          
+          <option value="AGOSTO2014_ENERO2015">AGOSTO 2014 - ENERO 2015</option>
+          <option value="FEBRERO2015_JULIO2015">FEBRERO 2015 - JULIO 2015</option>
+          <option value="AGOSTO2015_ENERO2016">AGOSTO 2015 - ENERO 2016</option>
+          <option value="FEBRERO2016_JULIO2016">FEBRERO 2016 - JULIO 2016</option>
+          <option value="AGOSTO2016_ENERO2017">AGOSTO 2016 - ENERO 2017</option>
+          <option value="FEBRERO2017_JULIO2017">FEBRERO 2017 - JULIO 2017</option>
+          <option value="AGOSTO2017_ENERO2018">AGOSTO 2017 - ENERO 2018</option>
+          <option value="FEBRERO2018_JULIO2018">FEBRERO 2018 - JULIO 2018</option>
+          <option value="AGOSTO2018_ENERO2019">AGOSTO 2018 - ENERO 2019</option>
+          <option value="FEBRERO2019_JULIO2019">FEBRERO 2019 - JULIO 2019</option>
+          <option value="AGOSTO2019_ENERO2020">AGOSTO 2019 - ENERO 2020</option>
+          <option value="FEBRERO2020_JULIO2020">FEBRERO 2020 - JULIO 2020</option>
+          <option value="AGOSTO2020_ENERO2021">AGOSTO 2020 - ENERO 2021</option>
+          <option value="FEBRERO2021_JULIO2021">FEBRERO 2021 - JULIO 2021</option>
+          <option value="AGOSTO2021_ENERO2022">AGOSTO 2021 - ENERO 2022</option>
+          <option value="FEBRERO2022_JULIO2022">FEBRERO 2022 - JULIO 2022</option>
+          <option value="AGOSTO2022_ENERO2023">AGOSTO 2022 - ENERO 2023</option>
+          <option value="FEBRERO2023_JULIO2023">FEBRERO 2023 - JULIO 2023</option>          
         </select>
         <label for="input-period" class="text-black">Período <span class="text-danger">*</span></label>
       </div>
@@ -123,5 +123,5 @@
 </div>
 
 @section Scripts {
-<script src="~/js/Course/Create.js"></script>
+  <script src="~/js/Course/Create.js"></script>
 }

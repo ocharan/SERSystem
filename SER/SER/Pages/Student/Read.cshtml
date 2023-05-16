@@ -83,7 +83,7 @@
               <th scope="col">Calificación</th>
               <th scope="col">NRC</th>
               <th scope="col">Período</th>
-              <th scope="col">Sección</th>
+              <!-- <th scope="col">Sección</th> -->
               <th scope="col">Inscripción</th>
               <th scope="col">Docente</th>
             </tr>
@@ -95,15 +95,15 @@
                 <td>
                   @if (registration.Course.IsOpen)
                   {
-                    <span class="badge rounded-pill badge-success">Activo</span>
+                    <span class="badge rounded-pill badge-success">Abierto</span>
                   }
                   else
                   {
-                    <span class="badge rounded-pill badge-danger">Inactivo</span>
+                    <span class="badge rounded-pill badge-danger">Cerrado</span>
                   }
                 </td>
                 <td>
-                  <a asp-page="./Read" asp-route-id="@registration.Course.CourseId">
+                  <a asp-page="../Course/Read" asp-route-courseId="@registration.Course.CourseId">
                     @registration.Course.Name
                   </a>
                 </td>
@@ -121,7 +121,7 @@
                 </td>
                 <td>@registration.Course.Nrc</td>
                 <td class="text-center">@registration.Course.Period</td>
-                <td class="text-center">@registration.Course.Section</td>
+                <!-- <td class="text-center">@registration.Course.Section</td> -->
                 <td class="text-center">@registration.RegistrationType</td>
                 <td>
                   <a asp-page="/Teacher/Read" asp-route-id="@registration.Course.Professor?.ProfessorId">

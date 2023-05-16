@@ -89,5 +89,15 @@ namespace SER.Services
         throw;
       }
     }
+
+    public async Task<ProfessorDto> GetProfessor(int professorId)
+    {
+      var professor = await _context.Professors
+        .FirstOrDefaultAsync(professor => professor.ProfessorId == professorId)
+        ?? throw new ArgumentNullException("Profesor no encontrado");
+
+      return _mapper.Map<ProfessorDto>(professor);
+
+    }
   }
 }

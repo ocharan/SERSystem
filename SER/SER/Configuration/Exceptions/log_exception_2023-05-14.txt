@@ -1,0 +1,106 @@
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'AGOSTO2022_ENERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'FEBRERO2023_JULIO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'FEBRERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'FEBRERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.FormatException: String 'FEBRERO2023' was not recognized as a valid DateTime.
+   at System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   at SER.Services.CourseService.IsCourseOpen(String period)
++-------------------------------------------------------------------------------------------------+
+System.Collections.Generic.KeyNotFoundException: The given key 'Administrator' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at SER.Pages.IndexModel.GetPageResult(String userRole, String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 69
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 86
++-------------------------------------------------------------------------------------------------+
+System.Collections.Generic.KeyNotFoundException: The given key 'Administrator' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at SER.Pages.IndexModel.GetPageResult(String userRole, String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+System.Collections.Generic.KeyNotFoundException: The given key 'Administrator' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at SER.Pages.IndexModel.GetPageResult(String userRole, String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+System.Collections.Generic.KeyNotFoundException: The given key 'Administrator' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at SER.Pages.IndexModel.GetPageResult(String userRole, String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (2): El sistema no puede encontrar el archivo especificado.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at SER.Services.UserService.GetUserByUsername(String username)
+   at SER.Pages.IndexModel.OnPostLogin()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:2,State:0,Class:20
++-------------------------------------------------------------------------------------------------+

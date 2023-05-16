@@ -1,4 +1,5 @@
-const regex = /^\S.*\S$/;
+// const regex = /^\S.*\S$/;
+const regex = /^\s*.*\S.*\s*$/;
 const inputStudentSearch = document.getElementById("input-student-search");
 let assignedStudents = []; // CourseRegistrations.js
 
@@ -10,7 +11,8 @@ connectionStudent
 	.start()
 	.then()
 	.catch(function (err) {
-		return console.error(err.toString());
+		// return console.error(err.toString());
+		window.location.reload();
 	});
 
 inputStudentSearch.addEventListener("keyup", function (event) {
@@ -41,7 +43,19 @@ connectionStudent.on("ReceiveStudents", function (students) {
 		studentItem.appendChild(emailSpan);
 		studentItem.appendChild(document.createElement("br"));
 		studentList.appendChild(studentItem);
-		studentItem.classList.add("list-group-item", "border-0", "px-3", "py-2");
+		studentItem.style.borderRadius = "0";
+		studentItem.classList.add(
+			"list-group-item",
+			"border-0",
+			"px-3",
+			"py-2",
+			"rounded-0",
+			"model-item"
+		);
+
+		if (assignedStudents.includes(student.studentId)) {
+			studentItem.classList.add("active");
+		}
 
 		studentItem.addEventListener("click", function () {
 			if (assignedStudents.includes(student.studentId)) {
@@ -54,6 +68,7 @@ connectionStudent.on("ReceiveStudents", function (students) {
 				return;
 			}
 
+			studentItem.classList.add("active");
 			assignedStudents.push(student.studentId);
 
 			const span = document.createElement("span");
@@ -82,6 +97,8 @@ connectionStudent.on("ReceiveStudents", function (students) {
 				}
 
 				selectedStudents.removeChild(span);
+
+				studentItem.classList.remove("active");
 			});
 		});
 	});
@@ -91,11 +108,17 @@ connectionStudent.on("ReceiveStudents", function (students) {
 		const icon = document.createElement("i");
 		icon.classList.add("fas", "fa-exclamation-triangle", "me-2");
 		const text = document.createTextNode(
-			"El alumno no se encuentra registrado o ya está asignado a un curso que se encuentra vigente. "
+			"El alumno no se encuentra registrado o ya está asignado a un curso que se encuentra abierto. "
 		);
 		studentItem.appendChild(icon);
 		studentItem.appendChild(text);
-		studentItem.classList.add("list-group-item", "border-0", "px-3", "py-2");
+		studentItem.classList.add(
+			"list-group-item",
+			"border-0",
+			"px-3",
+			"py-2",
+			"model-item"
+		);
 		studentList.appendChild(studentItem);
 	}
 });

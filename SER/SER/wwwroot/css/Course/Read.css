@@ -13,11 +13,27 @@
 
 #container-students {
 	max-height: 11vh;
-	/* height: 11vh !important; */
 	overflow: auto;
 	transition: max-height 0.3s ease;
 }
 
 #toast-success {
 	background-color: var(--sucess-color);
+}
+
+.model-item:hover {
+	border-radius: 0% !important;
+	cursor: pointer;
+}
+
+#toast-success {
+	background-color: var(--sucess-color);
+}
+
+#toast-error {
+	background-color: var(--danger-color);
+}
+
+#toast-copy {
+	background-color: var(--sucess-secundary-color);
 }

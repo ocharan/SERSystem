@@ -65,8 +65,6 @@ namespace SER.Services
       try
       {
         var students = _context.Students
-          .Include(student => student.CourseRegistrations)
-          .ThenInclude(registration => registration.Course)
           .ProjectTo<StudentDto>(_mapper.ConfigurationProvider);
 
         return students;

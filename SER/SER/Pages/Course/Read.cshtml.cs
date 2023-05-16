@@ -3,22 +3,28 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Configuration;
 using SER.Models.DTO;
-using SER.Models.Responses;
 using SER.Services;
+using SER.Models.Enums;
+using System.Net;
 
 namespace SER.Pages.Course
 {
-  [Authorize(Roles = "Administrador")]
+  [Authorize(Roles = nameof(ERoles.Administrator))]
   public class ReadModel : PageModel
   {
     private readonly ICourseService _courseService;
     private readonly IStudentService _studentService;
     private readonly IProfessorService _professorService;
-    // private readonly I
     [BindProperty]
     public CourseDto course { get; set; } = null!;
     [BindProperty]
     public IFormFile? fileUpload { get; set; }
+    public string? FilePath { get; set; }
+    public class ProfessorAssignmentRequest
+    {
+      public int CourseId { get; set; }
+      public int ProfessorId { get; set; }
+    }
 
     public ReadModel(ICourseService courseService, IStudentService studentService, IProfessorService professorService)
     {
@@ -33,6 +39,15 @@ namespace SER.Pages.Course
       {
         int.TryParse(courseId, out int id);
         course = await _courseService.GetCourse(id);
+
+        if (course.FileId != null)
+        {
+          FilePath = (await _courseService.GetCourseFile(course.FileId.Value)).Path
+            .Split("/")
+            .Last();
+        }
+
+        course.Period = await FormatCoursePeriod(course.Period);
       }
       catch (NullReferenceException ex)
       {
@@ -44,38 +59,101 @@ namespace SER.Pages.Course
       return Page();
     }
 
-    public async Task<JsonResult> OnPostCreateCourseRegistrations([FromBody] List<CourseRegistrationDto> registrations)
+    public async Task<FileResult> OnGetCourseFile(string courseId)
     {
+      bool result = int.TryParse(courseId, out int courseIdFind);
+
+      if (!result) { return null!; }
+
       try
       {
-        var response = await _courseService.CreateCourseRegistrations(registrations);
+        FilePath = (await _courseService.GetCourseFile(courseIdFind)).Path;
       }
-      catch (Exception ex)
+      catch (NullReferenceException ex)
       {
         ExceptionLogger.LogException(ex);
       }
 
-      return new JsonResult("ok");
+      string contentType = "application/pdf";
+
+      return File(FilePath!, contentType);
     }
 
-    public class ProfessorAssignmentRequest
+    public async Task<JsonResult> OnPostCreateCourseRegistrations([FromBody] List<CourseRegistrationDto> registrations)
     {
-      public int CourseId { get; set; }
-      public int ProfessorId { get; set; }
+      try
+      {
+        await _courseService.CreateCourseRegistrations(registrations);
+
+        return new JsonResult(new { message = "Success Message" })
+        {
+          StatusCode = StatusCodes.Status200OK
+        };
+      }
+      catch (Exception ex) when (ex is NullReferenceException || ex is OperationCanceledException)
+      {
+        ExceptionLogger.LogException(ex);
+
+        return new JsonResult(new { message = "Error Message" })
+        {
+          StatusCode = StatusCodes.Status400BadRequest
+        };
+      }
     }
 
     public async Task<JsonResult> OnPostCreateProfessorAssignment([FromBody] ProfessorAssignmentRequest request)
     {
       try
       {
-        var response = await _courseService.CreateProfessorAssignment(request.CourseId, request.ProfessorId);
+        await _courseService.CreateProfessorAssignment(request.CourseId, request.ProfessorId);
+
+        return new JsonResult(new { message = "Success Message" })
+        {
+          StatusCode = StatusCodes.Status200OK
+        };
       }
-      catch (Exception ex)
+      catch (Exception ex) when (ex is NullReferenceException || ex is OperationCanceledException)
       {
         ExceptionLogger.LogException(ex);
-      }
 
-      return new JsonResult("ok");
+        return new JsonResult(new { message = "Error Message" })
+        {
+          StatusCode = StatusCodes.Status400BadRequest
+        };
+      }
+    }
+
+    public async Task<IActionResult> OnPostWithdrawCourseRegistration([FromBody] int registrationId)
+    {
+      try
+      {
+        await _courseService.WithdrawCourseRegistration(registrationId);
+
+        return new JsonResult("Success Message")
+        {
+          StatusCode = StatusCodes.Status200OK
+        };
+      }
+      catch (Exception ex) when (ex is NullReferenceException || ex is OperationCanceledException)
+      {
+        ExceptionLogger.LogException(ex);
+
+        return new JsonResult("Error Message")
+        {
+          StatusCode = StatusCodes.Status400BadRequest
+        };
+      }
+    }
+
+    private Task<string> FormatCoursePeriod(string period)
+    {
+      string[] dates = period.Split("_");
+      DateTime startDate = DateTime.ParseExact(dates[0], "MMMMyyyy", null);
+      DateTime endDate = DateTime.ParseExact(dates[1], "MMMMyyyy", null);
+
+      string formattedPeriod = $"{startDate.ToString("MMMM yyyy")} - {endDate.ToString("MMMM yyyy")}";
+
+      return Task.FromResult(formattedPeriod);
     }
   }
 }

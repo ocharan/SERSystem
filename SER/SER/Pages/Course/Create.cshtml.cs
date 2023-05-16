@@ -6,10 +6,11 @@ using SER.Models.DTO;
 using SER.Configuration;
 using SER.Models.Responses;
 using SER.Models.Enums;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SER.Pages.Course
 {
+  [Authorize(Roles = nameof(ERoles.Administrator))]
   [RequestSizeLimit(1073741824)]
   public class CreateModel : PageModel
   {

@@ -7,10 +7,12 @@ using ContosoUniversity;
 using ClosedXML.Excel;
 using Microsoft.AspNetCore.Mvc;
 using SER.Configuration;
+using SER.Models.Enums;
+using SER.Services.Contracts;
 
 namespace SER.Pages.Student
 {
-  [Authorize(Roles = "Administrador")]
+  [Authorize(Roles = nameof(ERoles.Administrator))]
   public class IndexModel : PageModel
   {
     private readonly IConfiguration Configuration;
@@ -79,8 +81,8 @@ namespace SER.Pages.Student
       var students = _studentService.GetAllStudents();
 
       AssignedStudents = students
-      .Count(student => student.CourseRegistrations!
-      .Any(registration => registration.Course.IsOpen));
+        .Count(student => student.CourseRegistrations!
+        .Any(registration => registration.Course.IsOpen));
 
       UnassignedStudents = students.Count() - AssignedStudents;
 
@@ -107,10 +109,12 @@ namespace SER.Pages.Student
       {
         var students = await GetAllStudents().ToListAsync();
         XLWorkbook workbook = new XLWorkbook();
-        IXLWorksheet worksheet = workbook.Worksheets.Add("Students");
-        worksheet.Cell(1, 1).Value = "Full Name";
+        IXLWorksheet worksheet = workbook.Worksheets.Add("Alumnos");
+
+
+        worksheet.Cell(1, 1).Value = "Nombre completo";
         worksheet.Cell(1, 2).Value = "Email";
-        worksheet.Cell(1, 3).Value = "Enrollment";
+        worksheet.Cell(1, 3).Value = "Matrícula";
 
         for (int i = 0; i < students.Count; i++)
         {
@@ -119,15 +123,18 @@ namespace SER.Pages.Student
           worksheet.Cell(i + 2, 3).Value = students[i].Enrollment;
         }
 
-        MemoryStream memoryStream = new MemoryStream();
-        workbook.SaveAs(memoryStream);
-        byte[] content = memoryStream.ToArray();
+        using (var stream = new MemoryStream())
+        {
+          workbook.SaveAs(stream);
+          var content = stream.ToArray();
 
-        return File(
-          content,
-          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-          "students.xlsx"
-        );
+          return File
+          (
+            content,
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "students.xlsx"
+          );
+        }
       }
       catch (Exception ex)
       {

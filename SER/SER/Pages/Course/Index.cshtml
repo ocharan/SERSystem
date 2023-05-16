@@ -126,9 +126,9 @@
       </div>
     </form>
   </article>
-  <div class="table-responsive shadow-3 rounded-6 p-0">
+  <div class="table-responsive shadow-3 rounded-6 p-0 mb-5">
     <table class="table table-hover">
-      <thead class="table-secondary">
+      <thead class="table-light">
         <tr>
           <th scope="col" class="text-center">Estado</th>
           <th scope="col" class="text-center">NRC</th>
@@ -147,7 +147,7 @@
           </th>
           <th scope="col">Período</th>
           <th scope="col" class="text-center">Sección</th>        
-          <th scope="col">Profesor Asignado</th>
+          <th scope="col" class="text-center">Profesor Asignado</th>
           <th class="text-center" colspan="3">Acciones</th>
         </tr>
       </thead>
@@ -169,7 +169,7 @@
             </td>
             <td class="text-center">@course.Nrc</td>
             <td >@course.Name</td>
-            <td>@course.Period</td>
+            <td class="text-uppercase">@course.Period</td>
             <td class="text-center">@course.Section</td>                      
             @{
               if (course.Professor?.FullName != null) 

@@ -1,16 +1,8 @@
-const anchorNavbarOptions = document.getElementsByClassName(
-	"anchor-navbar-option"
-);
+const buttonLogout = document.getElementById("button-log-out");
+const nextButton = buttonLogout.nextElementSibling;
+nextButton.style.display = "none";
 
-for (let i = 0; i < anchorNavbarOptions.length; i++) {
-	anchorNavbarOptions[i].addEventListener("click", () => {
-		for (let j = 0; j < anchorNavbarOptions.length; j++) {
-			anchorNavbarOptions[j].classList.remove("active");
-		}
-
-		anchorNavbarOptions[i].classList.add("active");
-	});
-}
+const sidebarItems = document.querySelectorAll(".sidebar ul li");
 
 let currentUrl = window.location.href;
 const namesNavbarOptions = [
@@ -25,11 +17,19 @@ const namesNavbarOptions = [
 
 namesNavbarOptions.forEach((name, index) => {
 	if (currentUrl.includes(name)) {
-		anchorNavbarOptions[index].classList.add("active");
-		anchorNavbarOptions[index].style.borderRadius = "10px";
+		sidebarItems[index].classList.add("active");
+		sidebarItems[index].style.borderRadius = "10px";
 	}
 });
 
-const buttonLogout = document.getElementById("button-log-out");
-const nextButton = buttonLogout.nextElementSibling;
-nextButton.style.display = "none";
+const openButton = document.getElementById("open-button");
+openButton.addEventListener("click", () => {
+	const sidebar = document.querySelector(".sidebar");
+	sidebar.classList.add("active");
+});
+
+const closeButton = document.getElementById("close-button");
+closeButton.addEventListener("click", () => {
+	const sidebar = document.querySelector(".sidebar");
+	sidebar.classList.remove("active");
+});

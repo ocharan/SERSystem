@@ -1,3 +1,10 @@
+:root {
+	--uv-blue-color: #18529d;
+	--sucess-secundary-color: #dfe7f6;
+	--sucess-color: #202124;
+	--danger-color: #f8d7da;
+}
+
 .form-create,
 .form-update {
 	max-width: 700px !important;
@@ -8,7 +15,7 @@
 .container-course-information,
 .form-create,
 .form-update {
-	margin-bottom: 125px !important;
+	margin-bottom: 120px !important;
 }
 
 @media (max-width: 690px) {
@@ -41,6 +48,6 @@
 	z-index: 500 !important;
 }
 
-.table-responsive {
-	max-height: 50vh;
+#toast-error {
+	background-color: var(--danger-color);
 }

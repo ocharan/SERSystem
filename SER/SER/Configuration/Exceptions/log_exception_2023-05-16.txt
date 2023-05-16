@@ -1,0 +1,4 @@
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'ClosedXML.Excel.XLCellValue'.
+   at SER.Services.Implementations.OfficeDocumentService.CreateSpreadsheet[T](String sheetName, String fileName, String[] headers, List`1 data) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\Implementations\OfficeDocumentService.cs:line 29
+   at SER.Pages.Student.IndexModel.OnPostExportSpreadsheetData() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Student\Index.cshtml.cs:line 132
++-------------------------------------------------------------------------------------------------+

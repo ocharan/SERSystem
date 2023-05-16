@@ -37,7 +37,7 @@
 #tab-2 {
 	border-bottom-width: 0.25rem;
 	border-bottom-style: solid;
-	border-radius: 0 0 0.25rem 0.25rem; /* establecer el radio de borde inferior izquierdo y derecho */
+	border-radius: 0 0 0.25rem 0.25rem;
 	margin-top: -1px;
 }
 
@@ -46,5 +46,5 @@
 }
 
 .no-content img {
-	width: 200px;
+	width: 180px;
 }
