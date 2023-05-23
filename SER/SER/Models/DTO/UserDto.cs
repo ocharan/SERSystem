@@ -12,11 +12,7 @@ namespace SER.Models.DTO
     public string Password { get; set; } = null!;
     [Required(ErrorMessage = "Campo requerido.")]
     [EmailAddress(ErrorMessage = "El correo electrónico no es válido.")]
-    [StringLength(
-      64,
-      ErrorMessage = "El correo electrónico debe tener entre {2} y {1} carácteres.",
-      MinimumLength = 10
-    )]
+    [StringLength(64, ErrorMessage = "El correo electrónico debe tener entre {2} y {1} carácteres.", MinimumLength = 10)]
     public string Email { get; set; } = null!;
     [Required(ErrorMessage = "Campo requerido.")]
     public string Role { get; set; } = null!;

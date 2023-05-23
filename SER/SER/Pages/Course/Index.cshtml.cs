@@ -2,12 +2,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SER.Services;
 using SER.Models.DTO;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using ContosoUniversity;
+using ClosedXML.Excel;
 using Microsoft.AspNetCore.Mvc;
 using SER.Configuration;
 using SER.Models.Enums;
-using Microsoft.EntityFrameworkCore;
-using ClosedXML.Excel;
+using SER.Models.DB;
 
 namespace SER.Pages.Course
 {
@@ -20,9 +21,9 @@ namespace SER.Pages.Course
     public string? CurrentSort { get; set; }
     public string? CurrentSearch { get; set; }
     public string? CurrentFilter { get; set; }
-    public PaginatedList<CourseDto> courses = null!;
     public int OpenCourses { get; set; }
     public int ClosedCourses { get; set; }
+    public PaginatedList<CourseDto> courses { get; set; } = null!;
 
     public IndexModel(ICourseService courseService, IConfiguration configuration)
     {
@@ -33,7 +34,9 @@ namespace SER.Pages.Course
     public async Task OnGet(string sortOrder, string currentSearch, string searchString,
       int? pageIndex, string currentFilter)
     {
-      CheckStatusCode();
+      ViewData["MessageSuccess"] = TempData["MessageSuccess"];
+      ViewData["MessageError"] = TempData["MessageError"];
+
       CurrentSort = sortOrder;
       NameSort = String.IsNullOrEmpty(sortOrder) ? "descendant-name" : "";
       int PAGE_SIZE = Configuration.GetValue("PageSize", 10);
@@ -48,42 +51,22 @@ namespace SER.Pages.Course
         ? FilterCourses(currentFilter)
         : FilterCourses();
 
-      if (!String.IsNullOrEmpty(searchString))
-      {
-        auxiliaryCourses = auxiliaryCourses
-          .Where(course => course.Name.Contains(searchString)
-            || (Convert.ToString(course.Nrc)).Contains(searchString));
-      }
+      auxiliaryCourses = SearchCourse(auxiliaryCourses, searchString);
 
       auxiliaryCourses = String.Equals(sortOrder, "descendant-name")
         ? auxiliaryCourses.OrderByDescending(course => course.Name)
         : auxiliaryCourses.OrderBy(course => course.Name);
 
       courses = await PaginatedList<CourseDto>
-        .CreateAsync(auxiliaryCourses, pageIndex ?? 1, PAGE_SIZE);
+        .CreateAsync(auxiliaryCourses.AsNoTracking(), pageIndex ?? 1, PAGE_SIZE);
 
       courses.ForEach(async course =>
-      {
-        course.Period = await FormatCoursePeriod(course.Period);
-      });
-    }
-
-    private void CheckStatusCode()
-    {
-      if (TempData["MessageSuccess"] != null)
-      {
-        ViewData["MessageSuccess"] = TempData["MessageSuccess"];
-      }
-
-      if (TempData["MessageError"] != null)
-      {
-        ViewData["MessageError"] = TempData["MessageError"];
-      }
+        { course.Period = await FormatCoursePeriod(course.Period); });
     }
 
     public async Task<FileResult> OnPostExportSpreadsheetData()
     {
-      var courses = await _courseService.GetAllCourses().ToListAsync();
+      var courses = await FilterCourses().ToListAsync();
       XLWorkbook workbook = new XLWorkbook();
       IXLWorksheet worksheet = workbook.Worksheets.Add("Cursos");
 
@@ -125,7 +108,7 @@ namespace SER.Pages.Course
       }
     }
 
-    public IQueryable<CourseDto> FilterCourses(string filter = "default")
+    private IQueryable<CourseDto> FilterCourses(string filter = "default")
     {
       var courses = _courseService.GetAllCourses();
 
@@ -151,6 +134,17 @@ namespace SER.Pages.Course
       string formattedPeriod = $"{startDate.ToString("MMMM yyyy")} - {endDate.ToString("MMMM yyyy")}";
 
       return Task.FromResult(formattedPeriod);
+    }
+
+    private IQueryable<CourseDto> SearchCourse(IQueryable<CourseDto> courses, string search)
+    {
+      if (!String.IsNullOrEmpty(search))
+      {
+        courses = courses.Where(course => course.Name.Contains(search)
+          || (Convert.ToString(course.Nrc)).Contains(search));
+      }
+
+      return courses;
     }
   }
 }

@@ -1,4 +1,5 @@
 using SER.Models.DTO;
+using SER.Models.Responses;
 
 namespace SER.Services
 {
@@ -8,5 +9,7 @@ namespace SER.Services
     Task<List<ProfessorDto>> SearchProfessor(string search);
     Task<bool> IsProfessorExisting(int professorId);
     Task<ProfessorDto> GetProfessor(int professorId);
+    Task<Response> CreateProfessor(ProfessorDto professorDto);
+    Task<Response> UpdateProfessor(ProfessorDto professorDto);
   }
 }

@@ -1,5 +1,5 @@
 @page
-@model SER.Pages.Student.Read
+@model SER.Pages.Professor.ReadModel
 @{
   ViewData["Title"] = "Visualizar información";
   Layout = "~/Pages/Shared/_LoginLayout.cshtml";
@@ -17,7 +17,7 @@
       <a class="nav-link active" id="tab-1" data-mdb-toggle="tab" href="#student-information-tab" role="tab"
         aria-controls="student-information-tab" aria-selected="true">
         <i class="fas fa-user fa-fw me-2"></i>
-        Alumno
+        Profesor
       </a>
     </li>
     <li class="nav-item" role="presentation">
@@ -34,7 +34,7 @@
 <div class="tab-content mt-0 pt-0" id="ex-with-icons-content">
   <div class="tab-pane fade show active container-student-information" id="student-information-tab" role="tabpanel" aria-labelledby="tab-1">
     <div class="container shadow-3 rounded-9 form-update p-5">
-      <h5 class="mb-2 text-black fs-4 fw-normal">Información del <strong>Alumno</strong></h5>
+      <h5 class="mb-2 text-black fs-4 fw-normal">Información del <strong>Profesor</strong></h5>
       <p>
         La siguiente información es únicamente de consulta y no se puede modificarse.
       </p>
@@ -42,29 +42,29 @@
         <div class="d-flex">
           <i class="d-flex align-items-center fas fa-user me-2 icon-input"></i>
           <div class="form-outline">
-            <input type="text" id="input-fullname" class="form-control form-control-lg bg-white" asp-for="student!.FullName" readonly />
+            <input type="text" id="input-fullname" class="form-control form-control-lg bg-white" asp-for="professor.FullName" readonly />
             <label class="form-label" for="input-fullname">Nombre completo</label>
           </div>
         </div>
         <div class="d-flex">
-          <i class="d-flex align-items-center fas fa-id-card me-2 icon-input"></i>
+          <i class="d-flex align-items-center fas fa-graduation-cap me-2 icon-input"></i>
           <div class="form-outline">
-            <input type="text" id="input-enrollment" class="form-control form-control-lg bg-white" asp-for="student!.Enrollment" readonly />
-            <label class="form-label" for="input-enrollment">Matrícula</label>
+            <input type="text" id="input-academic-degree" class="form-control form-control-lg bg-white" asp-for="professor.AcademicDegree" readonly />
+            <label class="form-label" for="input-academic-degree">Grado académico</label>
           </div>
         </div>
         <div class="d-flex">
           <i class="d-flex align-items-center fas fa-envelope me-2 icon-input"></i>
           <div class="form-outline">
-            <input type="text" id="input-email" class="form-control form-control-lg bg-white" asp-for="student!.Email" readonly />
-            <label class="form-label" for="input-email">Correo electrónico</label>
+            <input type="text" id="input-email" class="form-control form-control-lg bg-white" asp-for="professor.Email" readonly />
+            <label class="form-label" for="input-email">Correo institucional</label>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="tab-pane fade p-4 container-student-information" id="student-courses-tab" role="tabpanel" aria-labelledby="tab-2">
-    @if (Model.StudentCourses!.Count == 0)
+    @if (Model.professor.Courses!.Count == 0)
     {
       <div class="d-flex flex-column justify-content-center align-items-center no-content">
         <img src="~/images/no-content-squirrel.svg" class="img-fluid" alt="No hay cursos asignados" />
@@ -76,23 +76,21 @@
       <h5 class="mb-2 text-black fs-4 fw-normal mb-4 container-movil">Lista de <strong>Cursos</strong> asignados</h5>
       <div class="table-responsive shadow-3 rounded-6 container-movil">
         <table class="table table-hover">
-          <thead class="table-secondary text-center">
+          <thead class="table-secondary">
             <tr>
-              <th scope="col">Estado</th>
+              <th scope="col" class="text-center">Estado</th>
               <th scope="col">Curso</th>
-              <th scope="col">Calificación</th>
-              <th scope="col">NRC</th>
-              <th scope="col">Período</th>
-              <th scope="col">Inscripción</th>
-              <th scope="col">Docente</th>
+              <th scope="col" class="text-center">NRC</th>
+              <th scope="col" class="text-center">Período</th>
+              <th scope="col" class="text-center">Inscripciones</th>
             </tr>
           </thead>
           <tbody>
-            @foreach (var registration in Model.StudentCourses!)
+            @foreach (var course in Model.professor.Courses)
             {
               <tr>
-                <td>
-                  @if (registration.Course.IsOpen)
+                <td class="text-center">
+                  @if (course.IsOpen)
                   {
                     <span class="badge rounded-pill badge-success">Abierto</span>
                   }
@@ -102,30 +100,13 @@
                   }
                 </td>
                 <td>
-                  <a asp-page="../Course/Read" asp-route-courseId="@registration.Course.CourseId">
-                    @registration.Course.Name
+                  <a asp-page="../Course/Read" asp-route-courseId="@course.CourseId">
+                    @course.Name
                   </a>
                 </td>
-                <td class="text-center">
-                  @{                    
-                    if (registration.Score == null)
-                    {
-                      <span class="badge rounded-pill badge-warning">Sin calificación</span>
-                    }
-                    else
-                    {
-                      <span class="badge rounded-pill badge-primary">@registration.Course.Score</span>
-                    }
-                  }
-                </td>
-                <td>@registration.Course.Nrc</td>
-                <td class="text-center">@registration.Course.Period</td>                
-                <td class="text-center">@registration.RegistrationType</td>
-                <td>
-                  <a asp-page="/Professor/Read" asp-route-professorId="@registration.Course.Professor?.ProfessorId">
-                    @registration.Course.Professor?.FullName
-                  </a>
-                </td>
+                <td class="text-center">@course.Nrc</td>
+                <td class="text-center text-uppercase">@course.Period</td>         
+                <td class="text-center">@course.CourseRegistrations!.Count()</td>         
               </tr>
             }             
           </tbody>            

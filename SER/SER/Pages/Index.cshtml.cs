@@ -63,7 +63,8 @@ namespace SER.Pages
         new Dictionary<string, (string Page, object RouteValues)> {
           {"Coordinador", ("/Menus/UICoordinador", "")},
           {"Administrator", ("/Menus/Management", "")},
-          {"Maestro", ("/Menus/UIMaestro", new { id = username })},
+          {"Professor", ("/Menus/Management", "")}
+          // {"Professor", ("/Menus/UICoordinador", new { id = username })},
         };
 
       return RedirectToPage(

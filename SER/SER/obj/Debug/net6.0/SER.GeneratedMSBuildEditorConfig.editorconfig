@@ -9,85 +9,101 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SER
 build_property.RootNamespace = SER
-build_property.ProjectDir = C:\Users\dukec\Escritorio\SERSystem\SER\SER\
+build_property.ProjectDir = c:\Users\dukec\Escritorio\SERSystem\SER\SER\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\dukec\Escritorio\SERSystem\SER\SER
+build_property.MSBuildProjectDirectory = c:\Users\dukec\Escritorio\SERSystem\SER\SER
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Account/ChangePassword.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Account/RecoveryPassword.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Account/RecoveryPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWNvdmVyeVBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Create.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Index.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Read.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Read.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlXFJlYWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Update.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Course/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/errors/Error.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/errors/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZXJyb3JzXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/errors/NotFound.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/errors/NotFound.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZXJyb3JzXE5vdEZvdW5kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Index.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Menus/Management.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Menus/Management.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudXNcTWFuYWdlbWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_Layout.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Professor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmVzc29yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Professor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmVzc29yXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Professor/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmVzc29yXFJlYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Professor/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmVzc29yXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_LoginLayout.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_LoginLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Create.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Index.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Read.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Read.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxSZWFkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Update.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Student/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudFxVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/_ViewImports.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/_ViewStart.cshtml]
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

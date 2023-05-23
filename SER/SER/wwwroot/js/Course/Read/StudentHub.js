@@ -11,8 +11,8 @@ connectionStudent
 	.start()
 	.then()
 	.catch(function (err) {
-		// return console.error(err.toString());
-		window.location.reload();
+		return console.error(err.toString());
+		// window.location.reload();
 	});
 
 inputStudentSearch.addEventListener("keyup", function (event) {

@@ -50,33 +50,9 @@
     <span asp-validation-for="course.Section" class="d-flex text-start text-danger mb-4"></span>
     <div class="d-flex">
       <i class="d-flex align-items-center fa-solid fa-calendar me-2 icon-input"></i>
-      <!-- <div class="form-floating w-100">
-        <select class="form-select" id="input-period" aria-label="Nombre de curso" asp-for="course.Period">
-          <option selected disabled></option>
-          <option value="AGOSTO2014_ENERO2015">AGOSTO 2014 - ENERO 2015</option>
-          <option value="FEBRERO2015_JULIO2015">FEBRERO 2015 - JULIO 2015</option>
-          <option value="AGOSTO2015_ENERO2016">AGOSTO 2015 - ENERO 2016</option>
-          <option value="FEBRERO2016_JULIO2016">FEBRERO 2016 - JULIO 2016</option>
-          <option value="AGOSTO2016_ENERO2017">AGOSTO 2016 - ENERO 2017</option>
-          <option value="FEBRERO2017_JULIO2017">FEBRERO 2017 - JULIO 2017</option>
-          <option value="AGOSTO2017_ENERO2018">AGOSTO 2017 - ENERO 2018</option>
-          <option value="FEBRERO2018_JULIO2018">FEBRERO 2018 - JULIO 2018</option>
-          <option value="AGOSTO2018_ENERO2019">AGOSTO 2018 - ENERO 2019</option>
-          <option value="FEBRERO2019_JULIO2019">FEBRERO 2019 - JULIO 2019</option>
-          <option value="AGOSTO2019_ENERO2020">AGOSTO 2019 - ENERO 2020</option>
-          <option value="FEBRERO2020_JULIO2020">FEBRERO 2020 - JULIO 2020</option>
-          <option value="AGOSTO2020_ENERO2021">AGOSTO 2020 - ENERO 2021</option>
-          <option value="FEBRERO2021_JULIO2021">FEBRERO 2021 - JULIO 2021</option>
-          <option value="AGOSTO2021_ENERO2022">AGOSTO 2021 - ENERO 2022</option>
-          <option value="FEBRERO2022_JULIO2022">FEBRERO 2022 - JULIO 2022</option>
-          <option value="AGOSTO2022_ENERO2023">AGOSTO 2022 - ENERO 2023</option>
-          <option value="FEBRERO2023_JULIO2023">FEBRERO 2023 - JULIO 2023</option>            
-        </select>
-        <label for="input-period" class="text-black">Período <span class="text-danger">*</span></label>
-      </div> -->
       <div class="form-outline">
-        <input type="text" id="input-name" class="form-control form-control-lg bg-white" autocomplete="off" asp-for="course.Period" readonly/>
-        <label class="form-label" for="input-name">Período</label>
+        <input type="text" id="input-period" class="form-control form-control-lg bg-white text-uppercase" autocomplete="off" asp-for="course.Period" value="@Model.course.Period" readonly />
+        <label class="form-label" for="input-period">Período</label>
         <div class="form-helper"></div>
       </div>
     </div>
@@ -126,16 +102,10 @@
                 <i class="fab fas fa-trash-alt"></i>
               </span>
             </button>
-            <!-- <button class="btn btn-lg btn-floating btn-secondary" data-mdb-toggle="tooltip" title="Nuevo archivo">
-              <span >
-                <i class="fab fa-solid fa-upload"></i>
-              </span>
-            </button> -->
           </div>
         </div>                  
       } 
     }
-    <span asp-validation-for="fileUpload!" class="d-flex text-start text-danger"></span>
   </div>
 </div>
 <div class="modal fade" id="modal-create-student" tabindex="-1" data-mdb-keyboard="false" data-mdb-backdrop="true"
@@ -201,9 +171,30 @@
     </div>
   }
 }
+@{
+  if (ViewData["MessageSuccess"] != null)
+  {
+    <div class="toast-container position-fixed bottom-0 start-0 p-4">
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-success" data-bs-autohide="false">
+        <div class="d-flex">
+          <div class="toast-body text-white">
+            <strong>¡Hecho!</strong>
+            @{
+              int statusCode = Convert.ToInt32(ViewData["MessageSuccess"]);
+                        
+              if (statusCode == 200)
+              {
+                <span>Archivo eliminado correctamente.</span>
+              }
+            }
+          </div>
+          <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  }
+}
 
 @section Scripts {
   <script src="~/js/Course/Update.js"></script>
 }
-
-

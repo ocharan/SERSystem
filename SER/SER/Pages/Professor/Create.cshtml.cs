@@ -7,27 +7,27 @@ using SER.Models.Responses;
 using SER.Services;
 using SER.Models.Enums;
 
-namespace SER.Pages.Student
+namespace SER.Pages.Professor
 {
   [Authorize(Roles = nameof(ERoles.Administrator))]
   public class CreateModel : PageModel
   {
-    private readonly IStudentService _studentService;
+    private readonly IProfessorService _professorService;
     public Response response { get; set; } = null!;
     [BindProperty]
-    public StudentDto student { get; set; } = null!;
+    public ProfessorDto professor { get; set; } = null!;
 
-    public CreateModel(IStudentService studentService) { _studentService = studentService; }
+    public CreateModel(IProfessorService professorService) { _professorService = professorService; }
 
     public IActionResult OnGet() { return Page(); }
 
-    public async Task<IActionResult> OnPostCreateStudent()
+    public async Task<IActionResult> OnPostCreateProfessor()
     {
       if (!ModelState.IsValid) { return Page(); }
 
       try
       {
-        response = await _studentService.CreateStudent(student);
+        response = await _professorService.CreateProfessor(professor);
 
         if (!response.IsSuccess)
         {
@@ -44,7 +44,7 @@ namespace SER.Pages.Student
         TempData["MessageError"] = ex.Message;
       }
 
-      return RedirectToPage("/Student/Index");
+      return RedirectToPage("/Professor/Index");
     }
 
     private void HandleModelErrors(List<FieldError> errors)

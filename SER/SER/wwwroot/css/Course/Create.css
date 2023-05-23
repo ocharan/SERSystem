@@ -51,3 +51,7 @@
 #toast-error {
 	background-color: var(--danger-color);
 }
+
+#toast-success {
+	background-color: var(--sucess-color);
+}

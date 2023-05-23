@@ -7,7 +7,7 @@ using SER.Models.DB;
 
 namespace SER.Pages.Menus
 {
-  [Authorize(Roles = nameof(ERoles.Administrator))]
+  // [Authorize(Roles = nameof(ERoles.Administrator))]
   public class ManagementModel : PageModel
   {
     private readonly SERContext _context;

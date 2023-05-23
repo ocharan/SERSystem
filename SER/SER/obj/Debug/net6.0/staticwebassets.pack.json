@@ -221,14 +221,6 @@
       "PackagePath": "staticwebassets\\files\\courses\\11111_CFP_CONISOFT2023_v3.pdf"
     },
     {
-      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\courses\\33333_CFP_CONISOFT2023_v3.pdf",
-      "PackagePath": "staticwebassets\\files\\courses\\33333_CFP_CONISOFT2023_v3.pdf"
-    },
-    {
-      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\courses\\33333_bubble_sort.pdf",
-      "PackagePath": "staticwebassets\\files\\courses\\33333_bubble_sort.pdf"
-    },
-    {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\cube-ser-logo.png",
       "PackagePath": "staticwebassets\\images\\cube-ser-logo.png"
     },
@@ -279,6 +271,10 @@
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Index.js",
       "PackagePath": "staticwebassets\\js\\Index.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Professor\\Create.js",
+      "PackagePath": "staticwebassets\\js\\Professor\\Create.js"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\RecoveryPassword.js",

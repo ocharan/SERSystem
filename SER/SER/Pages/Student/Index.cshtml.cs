@@ -8,7 +8,7 @@ using ClosedXML.Excel;
 using Microsoft.AspNetCore.Mvc;
 using SER.Configuration;
 using SER.Models.Enums;
-using SER.Services.Contracts;
+using SER.Models.DB;
 
 namespace SER.Pages.Student
 {
@@ -31,9 +31,12 @@ namespace SER.Pages.Student
       Configuration = configuration;
     }
 
-    public async Task OnGet(string sortOrder, string currentSearch, string searchString, int? pageIndex, string currentFilter)
+    public async Task OnGet(string sortOrder, string currentSearch, string searchString,
+      int? pageIndex, string currentFilter)
     {
-      CheckStatusCode();
+      ViewData["MessageSuccess"] = TempData["MessageSuccess"];
+      ViewData["MessageError"] = TempData["MessageError"];
+
       CurrentSort = sortOrder;
       FullnameSort = String.IsNullOrEmpty(sortOrder) ? "descendant-fullname" : "";
       int PAGE_SIZE = Configuration.GetValue("PageSize", 10);
@@ -48,35 +51,17 @@ namespace SER.Pages.Student
         ? GetAllStudents(currentFilter)
         : GetAllStudents();
 
-      if (!String.IsNullOrEmpty(searchString))
-      {
-        auxiliaryStudents = auxiliaryStudents
-          .Where(student => student.FullName!.Contains(searchString));
-      }
+      auxiliaryStudents = SearchStudent(auxiliaryStudents, searchString);
 
       auxiliaryStudents = String.Equals(sortOrder, "descendant-fullname")
         ? auxiliaryStudents.OrderByDescending(student => student.FullName)
         : auxiliaryStudents.OrderBy(student => student.FullName);
 
-      students = await PaginatedList<StudentDto>.CreateAsync(
-        auxiliaryStudents.AsNoTracking(), pageIndex ?? 1, PAGE_SIZE
-      );
+      students = await PaginatedList<StudentDto>
+        .CreateAsync(auxiliaryStudents.AsNoTracking(), pageIndex ?? 1, PAGE_SIZE);
     }
 
-    public void CheckStatusCode()
-    {
-      if (TempData["MessageSuccess"] != null)
-      {
-        ViewData["MessageSuccess"] = TempData["MessageSuccess"];
-      }
-
-      if (TempData["MessageError"] != null)
-      {
-        ViewData["MessageError"] = TempData["MessageError"];
-      }
-    }
-
-    public IQueryable<StudentDto> GetAllStudents(string filter = "default")
+    private IQueryable<StudentDto> GetAllStudents(string filter = "default")
     {
       var students = _studentService.GetAllStudents();
 
@@ -111,7 +96,6 @@ namespace SER.Pages.Student
         XLWorkbook workbook = new XLWorkbook();
         IXLWorksheet worksheet = workbook.Worksheets.Add("Alumnos");
 
-
         worksheet.Cell(1, 1).Value = "Nombre completo";
         worksheet.Cell(1, 2).Value = "Email";
         worksheet.Cell(1, 3).Value = "Matrícula";
@@ -142,6 +126,16 @@ namespace SER.Pages.Student
         TempData["MessageError"] = "Ha ocurrido un error al exportar el archivo";
         throw;
       }
+    }
+
+    private IQueryable<StudentDto> SearchStudent(IQueryable<StudentDto> students, string search)
+    {
+      if (!String.IsNullOrEmpty(search))
+      {
+        students = students.Where(student => student.FullName!.Contains(search));
+      }
+
+      return students;
     }
   }
 }

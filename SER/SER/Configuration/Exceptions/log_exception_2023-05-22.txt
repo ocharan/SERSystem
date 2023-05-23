@@ -1,0 +1,51 @@
+System.Collections.Generic.KeyNotFoundException: The given key 'Professor' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at SER.Pages.IndexModel.GetPageResult(String userRole, String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+System.Collections.Generic.KeyNotFoundException: The given key 'Professor' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at SER.Pages.IndexModel.GetPageResult(String userRole, String username)
+   at SER.Pages.IndexModel.OnPostLogin()
++-------------------------------------------------------------------------------------------------+
+System.Collections.Generic.KeyNotFoundException: The given key 'Professor' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at SER.Pages.IndexModel.GetPageResult(String userRole, String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 69
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 86
++-------------------------------------------------------------------------------------------------+
+System.Collections.Generic.KeyNotFoundException: The given key 'Professor' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at SER.Pages.IndexModel.GetPageResult(String userRole, String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 69
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 86
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Usuario no encontrado
+   at SER.Services.UserService.GetUserByUsername(String username) in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Services\Implementations\UserService.cs:line 34
+   at SER.Pages.IndexModel.OnPostLogin() in C:\Users\dukec\Escritorio\SERSystem\SER\SER\Pages\Index.cshtml.cs:line 80
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Profesor no encontrado
+   at SER.Services.ProfessorService.GetProfessor(Int32 professorId)
+   at SER.Services.ProfessorService.UpdateProfessor(ProfessorDto professorDto)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Profesor no encontrado
+   at SER.Services.ProfessorService.GetProfessor(Int32 professorId)
+   at SER.Services.ProfessorService.UpdateProfessor(ProfessorDto professorDto)
+   at SER.Pages.Professor.UpdateModel.OnPostUpdateProfessor()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Profesor no encontrado
+   at SER.Services.ProfessorService.GetProfessor(Int32 professorId)
+   at SER.Services.ProfessorService.UpdateProfessor(ProfessorDto professorDto)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Profesor no encontrado
+   at SER.Services.ProfessorService.GetProfessor(Int32 professorId)
+   at SER.Services.ProfessorService.UpdateProfessor(ProfessorDto professorDto)
+   at SER.Pages.Professor.UpdateModel.OnPostUpdateProfessor()
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Profesor no encontrado
+   at SER.Services.ProfessorService.GetProfessor(Int32 professorId)
+   at SER.Services.ProfessorService.UpdateProfessor(ProfessorDto professorDto)
++-------------------------------------------------------------------------------------------------+
+System.NullReferenceException: Profesor no encontrado
+   at SER.Services.ProfessorService.GetProfessor(Int32 professorId)
+   at SER.Services.ProfessorService.UpdateProfessor(ProfessorDto professorDto)
+   at SER.Pages.Professor.UpdateModel.OnPostUpdateProfessor()
++-------------------------------------------------------------------------------------------------+

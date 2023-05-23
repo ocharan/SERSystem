@@ -8,7 +8,7 @@ let currentUrl = window.location.href;
 const namesNavbarOptions = [
 	"Management",
 	"Course",
-	"Docentes",
+	"Professor",
 	"Documentos",
 	"Coordinadores",
 	"Student",

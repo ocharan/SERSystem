@@ -65,7 +65,10 @@ namespace SER.Services
       try
       {
         var students = _context.Students
-          .ProjectTo<StudentDto>(_mapper.ConfigurationProvider);
+         .Include(student => student.CourseRegistrations)
+         .ThenInclude(registration => registration.Course)
+         .AsSplitQuery()
+         .ProjectTo<StudentDto>(_mapper.ConfigurationProvider);
 
         return students;
       }
@@ -75,6 +78,7 @@ namespace SER.Services
         throw;
       }
     }
+
 
     public async Task<StudentDto> GetStudent(int studentId)
     {
@@ -114,7 +118,7 @@ namespace SER.Services
       {
         Response response = await CheckRepeatedFields(studentDto);
         string studentEmail = (await GetStudent(studentDto.StudentId)).Email;
-        bool isCurrentEmail = String.Equals(studentDto.Email, studentEmail);
+        bool isCurrentEmail = studentDto.Email.Equals(studentEmail);
         bool isEmailTaken = isCurrentEmail
           ? false
           : response.Errors.Any(error => error.FieldName.Equals("student.Email"));
@@ -125,7 +129,7 @@ namespace SER.Services
             .FindAsync(studentDto.StudentId)
             ?? throw new NullReferenceException("Alumno no encontrado");
 
-          student!.FullName = studentDto.FullName;
+          student.FullName = studentDto.FullName;
           student.Email = studentDto.Email;
           _context.Students.Update(student);
           await _context.SaveChangesAsync();
@@ -143,7 +147,7 @@ namespace SER.Services
       catch (OperationCanceledException ex)
       {
         ExceptionLogger.LogException(ex);
-        throw new Exception("Ha ocurrido un error al actualizar el alumno");
+        throw new OperationCanceledException("Ha ocurrido un error al actualizar el alumno");
       }
     }
 
@@ -158,6 +162,7 @@ namespace SER.Services
           .Any(enrollment => _context.Courses
             .Where(course => course.CourseId == enrollment.CourseId)
             .Any(course => course.IsOpen)))
+        .AsSplitQuery()
         .ProjectTo<StudentDto>(_mapper.ConfigurationProvider)
         .ToListAsync();
 

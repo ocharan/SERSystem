@@ -1,0 +1,91 @@
+@page
+@model SER.Pages.Professor.UpdateModel
+@{
+  ViewData["Title"] = "Registrar información";
+  Layout = "~/Pages/Shared/_LoginLayout.cshtml";
+}
+
+@section Styles {
+  <link rel="stylesheet" href="~/css/Student/Create.css" />
+}
+
+<div class="container shadow-3 rounded-9 form-create p-5 mb-4">
+  <div>
+    <h5 class="mb-2 text-black fs-4 fw-normal">Formulario de Actualización: <strong>Profesor</strong></h5>
+    <p class="mb-4 mt-3">
+      Recuerda que, al actualizar la información de un profesor, se actualizarán los datos de todos los registros en los que se encuentre a excepción de su nombre de usuario.       
+    </p>
+    <form id="form-create-student" method="post" asp-page-handler="UpdateProfessor" novalidate>
+      <div class="d-flex">
+        <i class="d-flex align-items-center fas fa-user me-2 icon-input"></i>
+        <div class="form-outline">
+          <input type="text" id="input-fullname" class="form-control form-control-lg" autocomplete="off" asp-for="professor.FullName" required/>
+          <label class="form-label" for="input-fullname">Nombre completo <span class="text-danger">*</span></label>
+        </div>
+      </div>
+      <span asp-validation-for="professor.FullName" class="d-flex text-start text-danger mb-4"></span>
+      <div class="d-flex">        
+        <i class="d-flex align-items-center fas fa-graduation-cap me-1 icon-input"></i>
+        <div class="form-floating w-100">
+          <select class="form-select" id="input-academic-degree" aria-label="Nombre de curso" asp-for="professor.AcademicDegree">
+            <option selected disabled></option>
+            <option value="Licenciatura">Licenciatura</option>
+            <option value="Maestría">Maestría</option>
+            <option value="Doctorado">Doctorado</option>
+          </select>
+          <label for="input-academic-degree" class="text-black">Grado académico <span class="text-danger">*</span></label>
+        </div>
+      </div>
+      <span asp-validation-for="professor.AcademicDegree" class="d-flex text-start text-danger mb-4"></span>
+      <div class="d-flex">
+        <i class="d-flex align-items-center fa-solid fa-star me-2 icon-input"></i>
+        <div class="form-outline">
+          <input type="text" id="input-study-field" class="form-control form-control-lg" autocomplete="off" asp-for="professor.StudyField" required/>
+          <label class="form-label" for="input-study-field">Especialización <span class="text-danger">*</span></label>
+        </div>
+      </div>
+      <span asp-validation-for="professor.StudyField" class="d-flex text-start text-danger mb-4"></span>
+      <div class="d-flex">
+        <i class="d-flex align-items-center fas fa-envelope me-2 icon-input"></i>
+        <div class="form-outline">
+          <input type="text" id="input-email" class="form-control form-control-lg" autocomplete="off" asp-for="professor.Email" required />
+          <label class="form-label" for="input-email">Correo institucional <span class="text-danger">*</span></label>
+        </div>
+      </div>
+      <span asp-validation-for="professor.Email" class="d-flex text-start text-danger mb-4"></span>
+      <input type="hidden" asp-for="professor.ProfessorId" />
+      <div class="row gap-3 justify-content-end mx-0 fixed-bottom bg-white">
+        <a role="button" class="btn btn-secondary w-auto" asp-page="./Index">
+          <i class="fas fa-times me-2"></i>
+          Cancelar&nbsp; 
+        </a>
+        <button type="submit" class="col-md-3 btn btn-primary w-auto">
+          <i class="fas fa-save me-2"></i>
+          Guardar&nbsp;
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="modal fade" id="modal-create-student" tabindex="-1" data-mdb-keyboard="false" data-mdb-backdrop="true" aria-labelledby="modal-title-create-student" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content justify-content-center align-items-center">
+      <div class="modal-header text-center">
+        <h5 class="modal-title text-dark fs-2 display-6" id="modal-title-create-student">
+          Actualizando profesor
+        </h5>
+      </div>
+      <div class="modal-body text-center mx-4">  
+        <i class="fa-solid fa-spinner fa-6x fa-spin-pulse mt-3 mb-4"></i>
+        <p>
+          Se está vericando la información del profesor, por favor espere.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <script src="~/js/Student/Create.js"></script>
+  <!-- <script src="~/js/Professor/Create.js"></script> -->
+}

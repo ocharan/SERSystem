@@ -8,7 +8,8 @@ namespace SER.Profiles
   {
     public ProfessorProfile()
     {
-      CreateMap<Professor, ProfessorDto>().ReverseMap();
+      CreateMap<Professor, ProfessorDto>()
+        .ReverseMap();
     }
   }
 }

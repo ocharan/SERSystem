@@ -1,27 +1,30 @@
 window.onload = function () {
 	let studentsAssigned = localStorage.getItem("assignedStudents");
 	let professorAssigned = localStorage.getItem("assignedProfessor");
+	let removedStudent = localStorage.getItem("removedStudent");
 
 	if (studentsAssigned) {
-		const toasBody = document.getElementById("toast-content");
-		toasBody.innerHTML = "";
-		const content = document.createTextNode("Alumnos asignados correctamente");
-		toasBody.appendChild(content);
-		toast.show();
-
-		localStorage.removeItem("assignedStudents");
+		showToast("Alumnos asignados correctamente", "assignedStudents");
 	}
 
 	if (professorAssigned) {
-		const toasBody = document.getElementById("toast-content");
-		toasBody.innerHTML = "";
-		const content = document.createTextNode("Profesor asignado correctamente");
-		toasBody.appendChild(content);
-		toast.show();
+		showToast("Profesor asignado correctamente", "assignedProfessor");
+	}
 
-		localStorage.removeItem("assignedProfessor");
+	if (removedStudent) {
+		showToast("Alumno removido correctamente (Baja)", "removedStudent");
 	}
 };
+
+function showToast(message, localStorageItem) {
+	const toasBody = document.getElementById("toast-content");
+	toasBody.innerHTML = "";
+	const content = document.createTextNode(message);
+	toasBody.appendChild(content);
+	toast.show();
+
+	localStorage.removeItem(localStorageItem);
+}
 
 const successToast = document.getElementById("toast-success");
 const errorToast = document.getElementById("toast-error");

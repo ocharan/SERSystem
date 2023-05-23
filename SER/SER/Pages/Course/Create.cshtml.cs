@@ -31,14 +31,16 @@ namespace SER.Pages.Course
 
       try
       {
-        if (fileUpload != null)
+        response = await _courseService.CreateCourse(course, fileUpload);
+
+        if (!response.IsSuccess)
         {
-          response = await _courseService.CreateCourse(course, fileUpload);
+          HandleModelErrors(response.Errors);
+
+          return Page();
         }
-        else
-        {
-          response = await _courseService.CreateCourse(course);
-        }
+
+        TempData["MessageSuccess"] = EStatusCodes.Created;
       }
       catch (OperationCanceledException ex)
       {
@@ -46,19 +48,15 @@ namespace SER.Pages.Course
         TempData["MessageError"] = ex.Message;
       }
 
-      if (response.Errors.Count() > 0 && !response.IsSuccess)
-      {
-        foreach (var error in response.Errors)
-        {
-          ModelState.AddModelError(error.FieldName, error.Message);
-        }
-
-        return Page();
-      }
-
-      TempData["MessageSuccess"] = EStatusCodes.Created;
-
       return RedirectToPage("Index");
+    }
+
+    private void HandleModelErrors(List<FieldError> errors)
+    {
+      foreach (var error in errors)
+      {
+        ModelState.AddModelError(error.FieldName, error.Message);
+      }
     }
   }
 }

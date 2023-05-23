@@ -35,6 +35,9 @@ namespace SER.Pages.Course
             .Split("/")
             .Last();
         }
+
+        course.Period = await FormatCoursePeriod(course.Period);
+        ViewData["MessageSuccess"] = TempData["MessageSuccess"];
       }
       catch (NullReferenceException ex)
       {
@@ -48,25 +51,17 @@ namespace SER.Pages.Course
 
     public async Task<IActionResult> OnPostUpdateCourse()
     {
+      ModelState.Remove("course.Period");
+
       if (!ModelState.IsValid) { return Page(); }
 
       try
       {
-        if (fileUpload != null)
-        {
-          response = await _courseService.UpdateCourse(course, fileUpload);
-        }
-        else
-        {
-          response = await _courseService.UpdateCourse(course);
-        }
+        response = await _courseService.UpdateCourse(course, fileUpload);
 
-        if (response.Errors.Count > 0 && !response.IsSuccess)
+        if (!response.IsSuccess)
         {
-          foreach (var error in response.Errors)
-          {
-            ModelState.AddModelError(error.FieldName, error.Message);
-          }
+          HandleModelErrors(response.Errors);
 
           return Page();
         }
@@ -88,13 +83,8 @@ namespace SER.Pages.Course
       {
         response = await _courseService.DeleteCourseFile(course.FileId!.Value);
 
-        if (response.Errors.Count > 0 && !response.IsSuccess)
-        {
-          foreach (var error in response.Errors)
-          {
-            ModelState.AddModelError(error.FieldName, error.Message);
-          }
-        }
+        if (response.IsSuccess) { TempData["MessageSuccess"] = EStatusCodes.Ok; }
+        else { HandleModelErrors(response.Errors); }
       }
       catch (Exception ex) when (ex is NullReferenceException || ex is OperationCanceledException)
       {
@@ -103,6 +93,25 @@ namespace SER.Pages.Course
       }
 
       return RedirectToPage("/Course/Update", new { courseId = course.CourseId });
+    }
+
+    private Task<string> FormatCoursePeriod(string period)
+    {
+      string[] dates = period.Split("_");
+      DateTime startDate = DateTime.ParseExact(dates[0], "MMMMyyyy", null);
+      DateTime endDate = DateTime.ParseExact(dates[1], "MMMMyyyy", null);
+
+      string formattedPeriod = $"{startDate.ToString("MMMM yyyy")} - {endDate.ToString("MMMM yyyy")}";
+
+      return Task.FromResult(formattedPeriod);
+    }
+
+    private void HandleModelErrors(List<FieldError> errors)
+    {
+      foreach (var error in errors)
+      {
+        ModelState.AddModelError(error.FieldName, error.Message);
+      }
     }
   }
 }

@@ -33,8 +33,8 @@ confirmRemoveStudent.addEventListener("click", function () {
 			).val(),
 		},
 		success: function () {
-			location.reload();
 			localStorage.setItem("removedStudent", "true");
+			location.reload();
 		},
 		error: function () {
 			const toastBody = document.getElementById("toast-error-content");

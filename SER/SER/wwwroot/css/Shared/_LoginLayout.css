@@ -46,7 +46,7 @@ main[role="main"] {
 	min-width: 240px;
 	max-width: 240px;
 	height: 100%;
-	transition: all 0.2s;
+	transition: all 0.4s;
 	/* box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%); */
 }
 
@@ -76,4 +76,12 @@ main[role="main"] {
 	#side-nav.active {
 		margin-left: 0;
 	}
+
+	/* #close-button {
+		visibility: visible !important;
+	} */
 }
+
+/* #close-button {
+	visibility: collapse;
+} */

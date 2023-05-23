@@ -19,6 +19,16 @@ namespace SER.Services
       _tokenService = tokenService;
     }
 
+    public async Task<string> GetUserEmailById(int userId)
+    {
+
+      string email = (await _context.Users
+        .FirstOrDefaultAsync(user => user.UserId == userId))!.Email
+        ?? throw new NullReferenceException("Usuario no encontrado");
+
+      return email;
+    }
+
     public async Task<UserDto> GetUserByUsername(string username)
     {
       User user = await _context.Users
@@ -85,5 +95,7 @@ namespace SER.Services
         throw;
       }
     }
+  
+    // public 
   }
 }

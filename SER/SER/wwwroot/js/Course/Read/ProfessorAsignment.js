@@ -21,8 +21,8 @@ submitProfessor.addEventListener("click", function () {
 				).val(),
 			},
 			success: function () {
-				location.reload();
 				localStorage.setItem("assignedProfessor", "true");
+				location.reload();
 			},
 			error: function () {
 				const toasBody = document.getElementById("toast-error-content");

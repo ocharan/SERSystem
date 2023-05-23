@@ -132,8 +132,10 @@
         {
           <div class="container my-4">
             <p class="mt-3 d-inline">
-              <strong>@Model.course.Professor.FullName</strong> |              
-              @Model.course.Professor.Email
+              <a asp-page="/Professor/Read" asp-route-professorId="@Model.course.Professor.ProfessorId">
+                @Model.course.Professor.FullName
+              </a>
+              <strong>| @Model.course.Professor.Email</strong>              
             </p>          
           </div>
         }  

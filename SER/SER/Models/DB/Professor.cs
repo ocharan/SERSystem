@@ -13,6 +13,7 @@ namespace SER.Models.DB
         public int ProfessorId { get; set; }
         public string FullName { get; set; } = null!;
         public string AcademicDegree { get; set; } = null!;
+        public string StudyField { get; set; } = null!;
         public int UserId { get; set; }
 
         public virtual User User { get; set; } = null!;

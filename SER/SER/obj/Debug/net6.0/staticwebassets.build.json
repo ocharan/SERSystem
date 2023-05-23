@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Dn/kFC7RGUwYP9+vNIlW7aa4sE0B6a+Inxmw0a1ZeRA=",
+  "Hash": "SuyxRgXnvfjyAcaKgZvONQWRZ28q5eImCafIeR2NGm4=",
   "Source": "SER",
   "BasePath": "_content/SER",
   "Mode": "Default",
@@ -952,40 +952,6 @@
       "OriginalItemSpec": "wwwroot\\files\\courses\\11111_CFP_CONISOFT2023_v3.pdf"
     },
     {
-      "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\courses\\33333_bubble_sort.pdf",
-      "SourceId": "SER",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\",
-      "BasePath": "_content/SER",
-      "RelativePath": "files/courses/33333_bubble_sort.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\files\\courses\\33333_bubble_sort.pdf"
-    },
-    {
-      "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\courses\\33333_CFP_CONISOFT2023_v3.pdf",
-      "SourceId": "SER",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\",
-      "BasePath": "_content/SER",
-      "RelativePath": "files/courses/33333_CFP_CONISOFT2023_v3.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\files\\courses\\33333_CFP_CONISOFT2023_v3.pdf"
-    },
-    {
       "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\cube-ser-logo.png",
       "SourceId": "SER",
       "SourceType": "Discovered",
@@ -1205,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Index.js"
+    },
+    {
+      "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Professor\\Create.js",
+      "SourceId": "SER",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\",
+      "BasePath": "_content/SER",
+      "RelativePath": "js/Professor/Create.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Professor\\Create.js"
     },
     {
       "Identity": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\RecoveryPassword.js",

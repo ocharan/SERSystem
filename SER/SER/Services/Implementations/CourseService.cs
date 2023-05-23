@@ -20,8 +20,8 @@ namespace SER.Services
     private IWebHostEnvironment _environment;
     Response response = new Response();
 
-    public CourseService(SERContext context, IMapper mapper, IWebHostEnvironment environment,
-      IFileService fileService, IStudentService studentService, IProfessorService professorService)
+    public CourseService(SERContext context, IMapper mapper, IWebHostEnvironment environment, IProfessorService professorService,
+      IFileService fileService, IStudentService studentService)
     {
       _context = context;
       _studentService = studentService;
@@ -165,6 +165,9 @@ namespace SER.Services
       {
         var courses = _context.Courses
           .Include(course => course.Professor)
+          .Include(course => course.CourseRegistrations)
+          .ThenInclude(registration => registration.Student)
+          .AsSplitQuery()
           .ProjectTo<CourseDto>(_mapper.ConfigurationProvider);
 
         return courses;
@@ -172,7 +175,7 @@ namespace SER.Services
       catch (ArgumentNullException ex)
       {
         ExceptionLogger.LogException(ex);
-        throw new ArgumentNullException("Cursos no encontrados");
+        throw;
       }
     }
 
@@ -230,13 +233,13 @@ namespace SER.Services
       {
         response = await CheckRepeatedFields(courseDto);
         var course = _mapper.Map<Course>(courseDto);
-        bool isUploadedFile = false;
 
         if (file != null && file.Length > 0)
         {
-          isUploadedFile = (await _fileService.ValidateFile(file)).IsSuccess;
+          Response fileResponse = fileResponse = await _fileService.ValidateFile(file);
+          response.Errors.AddRange(fileResponse.Errors);
 
-          if (isUploadedFile)
+          if (fileResponse.IsSuccess)
           {
             string path = await _fileService.SaveFile(file!, courseDto.Nrc, "files/courses");
             course.File = new CourseFile { Path = path };
@@ -357,31 +360,32 @@ namespace SER.Services
       try
       {
         response = await CheckRepeatedFields(courseDto);
+        Response fileResponse = new Response();
         string courseNrc = (await GetCourse(courseDto.CourseId)).Nrc;
         bool isCurrentNrc = courseNrc.Equals(courseDto.Nrc);
-        bool isUploadedFile = false;
         bool isNrcTaken = isCurrentNrc
           ? false
           : response.Errors.Any(error => error.FieldName == "course.Nrc");
 
         if (file != null && file.Length > 0)
         {
-          isUploadedFile = (await _fileService.ValidateFile(file)).IsSuccess;
+          fileResponse = await _fileService.ValidateFile(file);
+          response.Errors.AddRange(fileResponse.Errors);
 
-          if (isUploadedFile)
+          if (fileResponse.IsSuccess)
           {
             string path = await _fileService.SaveFile(file!, courseDto.Nrc, "files/courses");
             courseDto.File = new CourseFileDto { Path = path };
           }
         }
 
-        if (!isNrcTaken)
+        if (!isNrcTaken && fileResponse.Errors.Count() == 0)
         {
           Course course = await _context.Courses
             .FirstOrDefaultAsync(course => course.CourseId == courseDto.CourseId)
             ?? throw new NullReferenceException("Curso no encontrado");
 
-          if (isUploadedFile) { course.File = _mapper.Map<CourseFile>(courseDto.File); }
+          if (fileResponse.IsSuccess) { course.File = _mapper.Map<CourseFile>(courseDto.File); }
 
           course.Section = courseDto.Section;
           course.Nrc = courseDto.Nrc;

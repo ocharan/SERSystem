@@ -1,0 +1,278 @@
+@page
+@model SER.Pages.Professor.IndexModel
+
+@{
+  Layout = "~/Pages/Shared/_LoginLayout.cshtml";
+  ViewData["Title"] = "Profesores";
+}
+
+@section Styles {
+  <link rel="stylesheet" href="~/css/Student/Index.css" />
+}
+
+<article class="row mx-3 mt-4 my-2 title-page">
+  <div class="col-md-4 mb-2">
+    <h2 class="text-black fs-2">Profesores</h2>
+  </div>
+  <div class="col-md-4 offset-md-4 mb-4 d-flex justify-content-end">
+    <a class="btn btn-primary button-add text-button" role="button" asp-page="./Create">
+      <i class="fa-solid fa-plus me-2"></i>
+      Agregar profesor
+    </a>  
+  </div>
+</article>
+<div class="row row-cols-sm-2 row-cols-md-3 g-4 mx-3 mb-4">
+  <div class="col">
+    <div class="card h-100 shadow-3">
+      <div class="card-body">
+        <div class="d-flex align-items-center card-title-container">
+          <h5 class="card-title fw-normal">
+            Total Profesores
+          </h5>                
+          <i class="fa-solid fa-users text-black fa-lg ms-auto"></i>
+        </div>
+        <p class="card-text text-black card-text-number">
+          @{
+            int totalProfessors = @Model.AssignedProfessors + @Model.UnassignedProfessors;            
+          }
+          @totalProfessors
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 shadow-3">
+      <div class="card-body">
+        <div class="d-flex align-items-center card-title-container">
+          <h5 class="card-title fw-normal">
+            Profesores con Cursos
+          </h5>                
+          <i class="fa-solid fa-user-check text-black fa-lg ms-auto"></i>
+        </div>        
+        <p class="card-text text-black card-text-number">
+          @Model.AssignedProfessors
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 shadow-3">
+      <div class="card-body">
+        <div class="d-flex align-items-center card-title-container">
+          <h5 class="card-title fw-normal">
+            Profesores Sin Cursos
+          </h5>                
+          <i class="fa-solid fa-user-xmark text-black fa-lg ms-auto"></i>
+        </div> 
+        <p class="card-text text-black card-text-number">
+          @Model.UnassignedProfessors
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="row mx-4" id="table-container">
+  <aside class="col-md-8 table-options p-0 mb-2">
+    <div class="row d-flex gx-3">
+      <div class="col-md-3 mb-3">
+        <div class="col-md-12 dropdown">
+          <button class="btn btn-outline-dark border dropdown-toggle w-100 button-hover text-button" type="button" data-mdb-toggle="dropdown" aria-expanded="false" id="dropdown-button">
+            <i class="fas fa-filter me-2"></i>
+            <small>Filtros</small>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="Filtros">
+            <li>
+              <a class="dropdown-item dropdown-item-filter" role="button" asp-page="./Index" asp-route-currentFilter="assigned" asp-route-currentSearch="@Model.CurrentSearch">
+                <i class="fa-solid fa-user-check me-2"></i>
+                Profesores con cursos
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item dropdown-item-filter" role="button" asp-page="./Index" asp-route-currentFilter="unassigned" asp-route-currentSearch="@Model.CurrentSearch">
+                <i class="fa-solid fa-user-xmark me-2"></i>
+                Profesores sin cursos
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2 mb-3">
+        <a class="btn btn-outline-dark border w-100 button-hover h-100 text-button text-truncate" id="button-reload-table" role="button" data-mdb-toggle="tooltip" title="Reiniciar tabla" aria-label="Reiniciar tabla" asp-page="./Index">
+          <i class="fab fa-solid fa-rotate me-2"></i>
+          <small>Reiniciar</small>
+        </a>
+      </div>
+      <div class="col-md-2 mb-3">
+        <form method="post" asp-page-handler="ExportSpreadsheetData">
+          <button type="submit" class="btn btn-outline-dark border w-100 h-100 button-hover text-button text-truncate" data-mdb-toggle="tooltip" title="Exportar Profesores a Excel" aria-label="Exportar Profesores a Excel">
+            <i class="fas fa-file-excel me-2"></i>
+            <small>Exportar</small>            
+          </button>
+        </form>                 
+      </div>
+      <div class="col-md-3" id="selected-filter-container"></div>        
+    </div>
+  </aside>    
+  <article class="col-md-4 mb-3 p-0 ps-3" id="search-form">  
+    <form asp-page="./Index" method="get">
+      <div class="input-group">
+        <div class="form-outline">
+          <input type="search" name="SearchString" id="input-search" class="form-control" value="@Model.CurrentSearch"/>
+          <label class="form-label" for="input-search">Buscar por Nombre</label>
+        </div>
+        <input type="hidden" name="sortOrder" value="@Model.CurrentSort" />
+        <input type="hidden" name="currentFilter" value="@Model.CurrentFilter" />
+        <button type="submit" class="btn btn-outline-dark border button-hover" data-mdb-toggle="tooltip" title="Buscar">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </form>
+  </article>
+  <div class="table-responsive shadow-3 rounded-6 p-0 mb-5">
+    <table class="table table-hover">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">
+            <a asp-page="./Index" asp-route-currentFilter="@Model.CurrentFilter" asp-route-sortOrder="@Model.FullnameSort" asp-route-currentSearch="@Model.CurrentSearch">
+              @if (String.Equals(Model.CurrentSort, "descendant-fullname")) 
+              { 
+                <i class="fa-solid fa-arrow-up-short-wide me-1"></i> 
+              }
+              else
+              {
+                <i class="fa-solid fa-arrow-down-short-wide me-1"></i>
+              }  
+              Nombre
+            </a>
+          </th>
+          <th scope="col" class="text-center">Grado académico</th>
+          <th scope="col">Área de especialización</th>
+          <th scope="col">Correo institucional</th>
+          <th class="text-center" colspan="3">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var professor in Model.professors)
+        {
+          <tr>
+            <td>@professor.FullName</td>
+            <td class="text-center">
+              @{
+                var academicDegreeClasses = new Dictionary<string, string>
+                {
+                    { "Licenciatura", "badge-success" },
+                    { "Maestría", "badge-warning" },
+                    { "Doctorado", "badge-danger" }
+                };
+
+                if (academicDegreeClasses.TryGetValue(professor.AcademicDegree, out var academicDegreeClass))
+                {
+                    <span class="badge rounded-pill @academicDegreeClass">@professor.AcademicDegree</span>
+                }
+              }
+            </td>
+            <td>@professor.StudyField</td>
+            <td>  
+              <a  class="text-decoration-none text-primary text-email" data-mdb-toggle="tooltip" title="Copiar en el portapapeles">
+                @professor.Email            
+              </a>
+            </td>
+            <td class="text-center">
+              <div class="btn-group shadow-0" role="group" aria-label="Acciones">
+                <a type="button" class="btn btn-link" data-ripple-color="dark" data-mdb-toggle="tooltip" title="Ver" asp-page="./Read" asp-route-professorId="@professor.ProfessorId">
+                  <i class="fas fa-eye fa-lg"></i>
+                </a>
+                <a type="button" class="btn btn-link" data-ripple-color="dark" data-mdb-toggle="tooltip" title="Actualizar" asp-page="./Update" asp-route-professorId="@professor.ProfessorId">
+                  <i class="fas fa-pen fa-lg"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>      
+    </table>
+    @{
+      var prevDisabled = !Model.professors.HasPreviousPage ? "disabled" : "";
+      var nextDisabled = !Model.professors.HasNextPage ? "disabled" : "";
+    }
+    <div class="row mx-4 mt-2 mb-1">
+      <a asp-page="./Index" asp-route-sortOrder="@Model.CurrentSort" asp-route-pageIndex="@(Model.professors.PageIndex - 1)" asp-route-currentSearch="@Model.CurrentSearch" asp-route-currentFilter="@Model.CurrentFilter" class="col-auto me-auto btn btn-outline-dark btn-floating border button-hover @prevDisabled" data-mdb-toggle="tooltip" title="Anterior" aria-label="Anterior">
+        <i class="fab fa-solid fa-arrow-left fa-lg"></i>
+      </a>
+      @{
+        if (Model.professors.TotalPages == 0) 
+        {
+          <p class="col mt-2 text-center">
+            Sin resultados de búsqueda
+          </p>
+        }
+        else 
+        {
+          <p class="col mt-2 text-center">
+            Página @Model.professors.PageIndex de @Model.professors.TotalPages          
+          </p>
+        }
+      }
+      <a asp-page="./Index" asp-route-sortOrder="@Model.CurrentSort" asp-route-pageIndex="@(Model.professors.PageIndex + 1)" asp-route-currentSearch="@Model.CurrentSearch" asp-route-currentFilter="@Model.CurrentFilter" class="col-auto btn btn-outline-dark btn-floating border button-hover @nextDisabled" data-mdb-toggle="tooltip" title="Siguiente"  aria-label="Siguiente">        
+        <i class="fab fa-solid fa-arrow-right fa-lg"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" id="toast-copy">
+    <div class="d-flex">
+      <div class="toast-body text-primary">
+        ¡Texto copiado en el portapapeles!
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+@{
+  if (ViewData["MessageSuccess"] != null)
+  {
+    <div class="toast-container position-fixed bottom-0 start-0 p-4">
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-success" data-bs-autohide="false">
+        <div class="d-flex">
+          <div class="toast-body text-white">
+            <strong>¡Hecho!</strong>
+            @{
+              int statusCode = Convert.ToInt32(ViewData["MessageSuccess"]);
+              
+              if (statusCode == 201)
+              {
+                <span>Se creó un Professor.</span>
+              }
+
+              if (statusCode == 200)
+              {
+                <span>Se modificó un Professor.</span>
+              }
+            }
+          </div>
+          <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  }
+}
+@{
+  if (ViewData["MessageError"] != null)
+  {
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-error" data-bs-autohide="false">
+        <div class="d-flex">
+          <div class="toast-body text-danger">
+            <strong>¡Ups! Ha ocurrido un error: </strong> @ViewData["MessageError"]
+          </div>
+          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  }
+}
+
+@section Scripts {
+  <script src="~/js/Student/Index.js"></script>
+}

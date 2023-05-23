@@ -1,5 +1,6 @@
 using SER.Models.DTO;
 using SER.Models.Responses;
+using SER.Models.DB;
 
 namespace SER.Services
 {

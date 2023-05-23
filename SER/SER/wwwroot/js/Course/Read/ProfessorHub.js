@@ -9,8 +9,8 @@ connectionProfessor
 	.start()
 	.then()
 	.catch(function (err) {
-		// return console.error(err.toString());
-		window.location.reload();
+		return console.error(err.toString());
+		// window.location.reload();
 	});
 
 inputProfessorSearch.addEventListener("keyup", function (event) {
