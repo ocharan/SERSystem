@@ -7,6 +7,7 @@ namespace SER.Services
   {
     IQueryable<ProfessorDto> GetAllProfessors();
     Task<List<ProfessorDto>> SearchProfessor(string search);
+    Task<List<ProfessorDto>> SearchMember(string search);
     Task<bool> IsProfessorExisting(int professorId);
     Task<ProfessorDto> GetProfessor(int professorId);
     Task<Response> CreateProfessor(ProfessorDto professorDto);

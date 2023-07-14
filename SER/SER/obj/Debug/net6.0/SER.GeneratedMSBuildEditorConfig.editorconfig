@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = c:\Users\dukec\Escritorio\SERSystem\SER\SER
 build_property._RazorSourceGeneratorDebug = 
 
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/AcademicBody/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNhZGVtaWNCb2R5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/AcademicBody/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNhZGVtaWNCb2R5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/AcademicBody/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNhZGVtaWNCb2R5XFJlYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/AcademicBody/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNhZGVtaWNCb2R5XFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/dukec/Escritorio/SERSystem/SER/SER/Pages/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

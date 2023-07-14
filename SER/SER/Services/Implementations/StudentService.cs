@@ -79,7 +79,6 @@ namespace SER.Services
       }
     }
 
-
     public async Task<StudentDto> GetStudent(int studentId)
     {
       Student student = await _context.Students.FindAsync(studentId)

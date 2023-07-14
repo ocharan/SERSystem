@@ -5,6 +5,19 @@
 	--danger-color: #f8d7da;
 }
 
+#form-navbar-search {
+	margin-left: 250px;
+}
+
+#form-navbar-search #input-navbar-search {
+	border-radius: 15px !important;
+	width: 265px;
+}
+
+#input-navbar-search:focus {
+	box-shadow: 0 0 0 0.2rem rgba(24, 82, 157, 0.25) !important;
+}
+
 @media (min-width: 991.98px) {
 	main {
 		padding-left: 240px;
@@ -77,11 +90,7 @@ main[role="main"] {
 		margin-left: 0;
 	}
 
-	/* #close-button {
-		visibility: visible !important;
-	} */
+	#form-navbar-search {
+		margin-left: 10px;
+	}
 }
-
-/* #close-button {
-	visibility: collapse;
-} */

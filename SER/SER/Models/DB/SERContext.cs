@@ -16,19 +16,20 @@ namespace SER.Models.DB
         {
         }
 
+        public virtual DbSet<AcademicBody> AcademicBodies { get; set; } = null!;
+        public virtual DbSet<AcademicBodyLgac> AcademicBodyLgacs { get; set; } = null!;
+        public virtual DbSet<AcademicBodyMember> AcademicBodyMembers { get; set; } = null!;
         public virtual DbSet<Academium> Academia { get; set; } = null!;
         public virtual DbSet<AlumnoTrabajoRecepcional> AlumnoTrabajoRecepcionals { get; set; } = null!;
         public virtual DbSet<AlumnoTrabajoRecepcionalProyectoGuiadoView> AlumnoTrabajoRecepcionalProyectoGuiadoViews { get; set; } = null!;
         public virtual DbSet<Course> Courses { get; set; } = null!;
         public virtual DbSet<CourseFile> CourseFiles { get; set; } = null!;
         public virtual DbSet<CourseRegistration> CourseRegistrations { get; set; } = null!;
-        public virtual DbSet<CuerpoAcademico> CuerpoAcademicos { get; set; } = null!;
         public virtual DbSet<Direccion> Direccions { get; set; } = null!;
         public virtual DbSet<DireccionSinodalDelTrabajo> DireccionSinodalDelTrabajos { get; set; } = null!;
         public virtual DbSet<Documento> Documentos { get; set; } = null!;
         public virtual DbSet<ExamenDefensa> ExamenDefensas { get; set; } = null!;
         public virtual DbSet<Expediente> Expedientes { get; set; } = null!;
-        public virtual DbSet<Integrante> Integrantes { get; set; } = null!;
         public virtual DbSet<Lgac> Lgacs { get; set; } = null!;
         public virtual DbSet<Organizacion> Organizacions { get; set; } = null!;
         public virtual DbSet<Pladeafei> Pladeafeis { get; set; } = null!;
@@ -40,6 +41,7 @@ namespace SER.Models.DB
         public virtual DbSet<Student> Students { get; set; } = null!;
         public virtual DbSet<TipoDocumento> TipoDocumentos { get; set; } = null!;
         public virtual DbSet<TrabajoRecepcional> TrabajoRecepcionals { get; set; } = null!;
+        public virtual DbSet<TrabajoRecepcionalIntegrante> TrabajoRecepcionalIntegrantes { get; set; } = null!;
         public virtual DbSet<TrabajoRecepcionalSinodalDelTrabajo> TrabajoRecepcionalSinodalDelTrabajos { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<Vinculacion> Vinculacions { get; set; } = null!;
@@ -55,6 +57,77 @@ namespace SER.Models.DB
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AcademicBody>(entity =>
+            {
+                entity.ToTable("AcademicBody");
+
+                entity.HasIndex(e => e.AcademicBodyKey, "IX_AcademicBody")
+                    .IsUnique();
+
+                entity.Property(e => e.AcademicBodyKey)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ConsolidationDegree)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Discipline)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Ies)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("IES");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<AcademicBodyLgac>(entity =>
+            {
+                entity.HasKey(e => e.AcademicBodyLgac1);
+
+                entity.ToTable("AcademicBodyLgac");
+
+                entity.Property(e => e.AcademicBodyLgac1).HasColumnName("AcademicBodyLgac");
+
+                entity.HasOne(d => d.AcademicBody)
+                    .WithMany(p => p.AcademicBodyLgacs)
+                    .HasForeignKey(d => d.AcademicBodyId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AcademicBodyLgac_AcademicBody");
+
+                entity.HasOne(d => d.Lgac)
+                    .WithMany(p => p.AcademicBodyLgacs)
+                    .HasForeignKey(d => d.LgacId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AcademicBodyLgac_Lgac");
+            });
+
+            modelBuilder.Entity<AcademicBodyMember>(entity =>
+            {
+                entity.ToTable("AcademicBodyMember");
+
+                entity.Property(e => e.Role)
+                    .HasMaxLength(15)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.AcademicBody)
+                    .WithMany(p => p.AcademicBodyMembers)
+                    .HasForeignKey(d => d.AcademicBodyId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AcademicBodyMember_AcademicBody");
+
+                entity.HasOne(d => d.Professor)
+                    .WithMany(p => p.AcademicBodyMembers)
+                    .HasForeignKey(d => d.ProfessorId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AcademicBodyMember_Professor");
+            });
+
             modelBuilder.Entity<Academium>(entity =>
             {
                 entity.HasKey(e => e.AcademiaId);
@@ -195,21 +268,6 @@ namespace SER.Models.DB
                     .HasConstraintName("FK_CourseRegistration_Student");
             });
 
-            modelBuilder.Entity<CuerpoAcademico>(entity =>
-            {
-                entity.ToTable("CuerpoAcademico");
-
-                entity.Property(e => e.CuerpoAcademicoId).HasColumnName("CuerpoAcademicoID");
-
-                entity.Property(e => e.AcademiaId).HasColumnName("AcademiaID");
-
-                entity.Property(e => e.Nombre)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Objetivogeneral).IsUnicode(false);
-            });
-
             modelBuilder.Entity<Direccion>(entity =>
             {
                 entity.ToTable("Direccion");
@@ -347,62 +405,14 @@ namespace SER.Models.DB
                 entity.Property(e => e.TrabajoRecepcionalId).HasColumnName("TrabajoRecepcionalID");
             });
 
-            modelBuilder.Entity<Integrante>(entity =>
-            {
-                entity.ToTable("Integrante");
-
-                entity.Property(e => e.IntegranteId).HasColumnName("IntegranteID");
-
-                entity.Property(e => e.CuerpoAcademicoId).HasColumnName("CuerpoAcademicoID");
-
-                entity.Property(e => e.Nombre)
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.NumeroDePersonal)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Tipo)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.CuerpoAcademico)
-                    .WithMany(p => p.Integrantes)
-                    .HasForeignKey(d => d.CuerpoAcademicoId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("Integrante_FK");
-
-                entity.HasMany(d => d.TrabajoRecepcionals)
-                    .WithMany(p => p.Integrantes)
-                    .UsingEntity<Dictionary<string, object>>(
-                        "TrabajoRecepcionalIntegrante",
-                        l => l.HasOne<TrabajoRecepcional>().WithMany().HasForeignKey("TrabajoRecepcionalId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_TrabajoRecepcionalIntegrante_TrabajoRecepcional"),
-                        r => r.HasOne<Integrante>().WithMany().HasForeignKey("IntegranteId").OnDelete(DeleteBehavior.ClientSetNull).HasConstraintName("FK_TrabajoRecepcionalIntegrante_Integrante"),
-                        j =>
-                        {
-                            j.HasKey("IntegranteId", "TrabajoRecepcionalId");
-
-                            j.ToTable("TrabajoRecepcionalIntegrante");
-
-                            j.IndexerProperty<int>("IntegranteId").HasColumnName("IntegranteID");
-
-                            j.IndexerProperty<int>("TrabajoRecepcionalId").HasColumnName("TrabajoRecepcionalID");
-                        });
-            });
-
             modelBuilder.Entity<Lgac>(entity =>
             {
                 entity.ToTable("Lgac");
 
-                entity.Property(e => e.LgacId).HasColumnName("LgacID");
+                entity.Property(e => e.Description).IsUnicode(false);
 
-                entity.Property(e => e.CuerpoAcademicoId).HasColumnName("CuerpoAcademicoID");
-
-                entity.Property(e => e.Descripcion).IsUnicode(false);
-
-                entity.Property(e => e.Nombre)
-                    .HasMaxLength(200)
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
             });
 
@@ -473,11 +483,6 @@ namespace SER.Models.DB
                 entity.Property(e => e.PeriodoEscolar)
                     .HasMaxLength(100)
                     .IsUnicode(false);
-
-                entity.HasOne(d => d.Academia)
-                    .WithMany(p => p.PlanDeTrabajos)
-                    .HasForeignKey(d => d.AcademiaId)
-                    .HasConstraintName("FK_PlanDeTrabajo_Academia");
             });
 
             modelBuilder.Entity<Professor>(entity =>
@@ -516,12 +521,6 @@ namespace SER.Models.DB
                 entity.Property(e => e.Nombre)
                     .HasMaxLength(200)
                     .IsUnicode(false);
-
-                entity.HasOne(d => d.CuerpoAcademico)
-                    .WithMany(p => p.ProyectoDeInvestigacions)
-                    .HasForeignKey(d => d.CuerpoAcademicoId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("ProyectoDeInvestigacion_FK");
 
                 entity.HasMany(d => d.Lgacs)
                     .WithMany(p => p.ProyectoDeInvestigacions)
@@ -649,11 +648,6 @@ namespace SER.Models.DB
 
                 entity.Property(e => e.VinculacionId).HasColumnName("VinculacionID");
 
-                entity.HasOne(d => d.Academia)
-                    .WithMany(p => p.TrabajoRecepcionals)
-                    .HasForeignKey(d => d.AcademiaId)
-                    .HasConstraintName("FK_TrabajoRecepcional_Academia");
-
                 entity.HasOne(d => d.Pladeafei)
                     .WithMany(p => p.TrabajoRecepcionals)
                     .HasForeignKey(d => d.PladeafeiId)
@@ -668,6 +662,23 @@ namespace SER.Models.DB
                     .WithMany(p => p.TrabajoRecepcionals)
                     .HasForeignKey(d => d.VinculacionId)
                     .HasConstraintName("FK_TrabajoRecepcional_Vinculacion");
+            });
+
+            modelBuilder.Entity<TrabajoRecepcionalIntegrante>(entity =>
+            {
+                entity.HasKey(e => new { e.IntegranteId, e.TrabajoRecepcionalId });
+
+                entity.ToTable("TrabajoRecepcionalIntegrante");
+
+                entity.Property(e => e.IntegranteId).HasColumnName("IntegranteID");
+
+                entity.Property(e => e.TrabajoRecepcionalId).HasColumnName("TrabajoRecepcionalID");
+
+                entity.HasOne(d => d.TrabajoRecepcional)
+                    .WithMany(p => p.TrabajoRecepcionalIntegrantes)
+                    .HasForeignKey(d => d.TrabajoRecepcionalId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_TrabajoRecepcionalIntegrante_TrabajoRecepcional");
             });
 
             modelBuilder.Entity<TrabajoRecepcionalSinodalDelTrabajo>(entity =>
@@ -708,7 +719,7 @@ namespace SER.Models.DB
                     .IsUnique();
 
                 entity.Property(e => e.Email)
-                    .HasMaxLength(50)
+                    .HasMaxLength(64)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Password)

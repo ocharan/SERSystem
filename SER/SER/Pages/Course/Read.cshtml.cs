@@ -9,7 +9,7 @@ using System.Net;
 
 namespace SER.Pages.Course
 {
-  [Authorize(Roles = nameof(ERoles.Administrator))]
+  [Authorize(Roles = (nameof(ERoles.Administrator)) + "," + (nameof(ERoles.Professor)))]
   public class ReadModel : PageModel
   {
     private readonly ICourseService _courseService;
@@ -79,7 +79,8 @@ namespace SER.Pages.Course
       return File(FilePath!, contentType);
     }
 
-    public async Task<JsonResult> OnPostCreateCourseRegistrations([FromBody] List<CourseRegistrationDto> registrations)
+    public async Task<JsonResult> OnPostCreateCourseRegistrations
+      ([FromBody] List<CourseRegistrationDto> registrations)
     {
       try
       {
@@ -101,7 +102,8 @@ namespace SER.Pages.Course
       }
     }
 
-    public async Task<JsonResult> OnPostCreateProfessorAssignment([FromBody] ProfessorAssignmentRequest request)
+    public async Task<JsonResult> OnPostCreateProfessorAssignment
+      ([FromBody] ProfessorAssignmentRequest request)
     {
       try
       {
@@ -123,11 +125,12 @@ namespace SER.Pages.Course
       }
     }
 
-    public async Task<IActionResult> OnPostWithdrawCourseRegistration([FromBody] int registrationId)
+    public async Task<IActionResult> OnPostDeleteCourseRegistration
+      ([FromBody] int registrationId)
     {
       try
       {
-        await _courseService.WithdrawCourseRegistration(registrationId);
+        await _courseService.DeleteCourseRegistration(registrationId);
 
         return new JsonResult("Success Message")
         {

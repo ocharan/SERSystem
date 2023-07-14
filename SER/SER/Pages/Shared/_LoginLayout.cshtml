@@ -8,9 +8,9 @@
     {"Administrator", new List<(string, string)>()
       {
         ("/Menus/Management", "Inicio"),
-        ("/Course/Index", "Cursos"),
+        ("/AcademicBody/Index", "CA"),
         ("/Professor/Index", "Profesores"),
-        ("#", "Documentos"),
+        ("/Course/Index", "Cursos"),
         ("#", "Coordinadores"),
         ("/Student/Index", "Alumnos")
       }
@@ -20,8 +20,6 @@
         ("/Menus/Management", "Inicio"),
         ("/Course/Index", "Cursos"),
         ("/Professor/Index", "Profesores"),
-        ("#", "Documentos"),
-        ("#", "Coordinadores"),
         ("/Student/Index", "Alumnos")
       }
     }
@@ -32,6 +30,7 @@
     {"Inicio", "fa-solid fa-home me-3"},
     {"Cursos", "fa-solid fa-book-open me-3"},
     {"Profesores", "fa-solid fa-chalkboard-teacher me-3"},
+    {"CA", "fa-solid fa-school me-3"},
     {"Documentos", "fa-regular fa-folder-open me-3"},
     {"Coordinadores", "fa-solid fa-user-tie me-3"},
     {"Alumnos", "fa-solid fa-users me-3"},
@@ -90,12 +89,18 @@
   </nav>
   <div class="content">
     <header class="navbar navbar-expand-lg navbar-light bg-white position-fixed w-100 shadow-0 border" id="navbar">
-      <div class="container-fluid">
+      <div class="container-fluid">        
         <button class="navbar-toggler" id="open-button" type="button" data-mdb-toggle="collapse" data-mdb-target="#sider-bar-menu" aria-controls="sider-bar-menu" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
-        </button>
+        </button>        
+        <div id="form-navbar-search">
+          <form class="d-none d-md-flex input-group w-auto my-auto">
+            <input autocomplete="off" type="search" class="form-control rounded" placeholder='Buscar' id="input-navbar-search" />
+            <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+          </form>        
+        </div>
         <ul class="navbar-nav ms-auto d-flex flex-row">
-          <li class="nav-item dropdown d-flex justify-content-center align-items-center me-2">
+          <li class="nav-item dropdown d-flex justify-content-center align-items-center">
             @if (User.Identity!.IsAuthenticated)
             {
               @User.Identity.Name;
@@ -103,18 +108,26 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false" >
-              <i class="fa-solid fa-circle-user fa-2x"></i>
+              <i class="fa-solid fa-circle-user fa-2x ms-2"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">My profile</a></li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-fw me-3"></i>
+                  Mi perfil
+                </a>
+              </li>
               <li>
                 <form method="post" asp-page="/Index" asp-page-handler="LogOut">
-                  <button type="submit" id="button-log-out" class="dropdown-item">Cerrar sesión<button>
+                  <button type="submit" id="button-log-out" class="dropdown-item">
+                    <i class="fas fa-sign-out-alt fa-fw me-3"></i>
+                    Cerrar sesión
+                  <button>
                 </form>
               </li>
             </ul>
           </li>
-        </ul>
+        </ul>        
       </div>
     </header>
     <main role="main">

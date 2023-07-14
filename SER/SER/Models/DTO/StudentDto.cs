@@ -14,6 +14,7 @@ namespace SER.Models.DTO
     [StringLength(100, ErrorMessage = "El nombre completo debe tener entre {2} y {1} carácteres.", MinimumLength = 10)]
     public string FullName { get; set; } = null!;
     [Required(ErrorMessage = "Campo requerido")]
+    [StringLength(100, ErrorMessage = "El nombre completo debe tener entre {2} y {1} carácteres.", MinimumLength = 10)]
     [EmailAddress(ErrorMessage = "Correo electrónico inválido")]
     public string Email { get; set; } = null!;
     public List<CourseRegistrationDto>? CourseRegistrations { get; set; }

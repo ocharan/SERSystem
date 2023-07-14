@@ -16,7 +16,6 @@ namespace SER.Models.DB
         public int ProyectoDeInvestigacionId { get; set; }
         public int CuerpoAcademicoId { get; set; }
 
-        public virtual CuerpoAcademico CuerpoAcademico { get; set; } = null!;
         public virtual ICollection<TrabajoRecepcional> TrabajoRecepcionals { get; set; }
 
         public virtual ICollection<Lgac> Lgacs { get; set; }

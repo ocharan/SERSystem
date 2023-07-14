@@ -56,6 +56,7 @@ namespace SER
       services.AddScoped<IStudentService, StudentService>();
       services.AddScoped<ICourseService, CourseService>();
       services.AddScoped<IProfessorService, ProfessorService>();
+      services.AddScoped<IAcademicBodyService, AcademicBodyService>();
       services.AddScoped<IOfficeDocumentService, OfficeDocumentService>();
 
       // SignalR
@@ -78,13 +79,6 @@ namespace SER
       {
         options.Limits.MaxRequestBodySize = 1073741824;
       });
-
-      // // // // 
-      // services.AddDbContext<SERContext>(options =>
-      // {
-      //   options.ConfigureWarnings(warnings =>
-      //     warnings.Throw(RelationalEventId.MultipleCollectionIncludeWarning));
-      // });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -114,6 +108,7 @@ namespace SER
         endpoints.MapRazorPages();
         endpoints.MapHub<ProfessorSearchHub>("/professorSearchHub");
         endpoints.MapHub<StudentSearchHub>("/studentSearchHub");
+        endpoints.MapHub<MemberSearchHub>("/memberSearchHub");
       });
     }
   }

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SER.Pages.Course
 {
-  [Authorize(Roles = nameof(ERoles.Administrator))]
+  [Authorize(Roles = (nameof(ERoles.Administrator)) + "," + (nameof(ERoles.Professor)))]
   [RequestSizeLimit(1073741824)]
   public class CreateModel : PageModel
   {

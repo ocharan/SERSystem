@@ -1,4 +1,0 @@
-System.NullReferenceException: Usuario no encontrado
-   at SER.Services.UserService.GetUserByUsername(String username)
-   at SER.Pages.IndexModel.OnPostLogin()
-+-------------------------------------------------------------------------------------------------+

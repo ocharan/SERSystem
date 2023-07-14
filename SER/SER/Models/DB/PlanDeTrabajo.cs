@@ -9,7 +9,5 @@ namespace SER.Models.DB
         public string? PeriodoEscolar { get; set; }
         public int PlanDeTrabajoId { get; set; }
         public int? AcademiaId { get; set; }
-
-        public virtual Academium? Academia { get; set; }
     }
 }

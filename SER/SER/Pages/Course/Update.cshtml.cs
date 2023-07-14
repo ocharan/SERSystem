@@ -7,9 +7,11 @@ using SER.Models.DTO;
 using SER.Configuration;
 using SER.Models.Responses;
 using SER.Models.Enums;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SER.Pages.Course
 {
+  [Authorize(Roles = (nameof(ERoles.Administrator)) + "," + (nameof(ERoles.Professor)))]
   public class UpdateModel : PageModel
   {
     private readonly ICourseService _courseService;

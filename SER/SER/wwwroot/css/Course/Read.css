@@ -11,6 +11,7 @@
 	overflow-y: auto;
 }
 
+#container-selecteed-professor,
 #container-students {
 	max-height: 11vh;
 	overflow: auto;

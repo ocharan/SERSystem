@@ -10,8 +10,8 @@ namespace SER.Models.DB
             AlumnoTrabajoRecepcionals = new HashSet<AlumnoTrabajoRecepcional>();
             Documentos = new HashSet<Documento>();
             ExamenDefensas = new HashSet<ExamenDefensa>();
+            TrabajoRecepcionalIntegrantes = new HashSet<TrabajoRecepcionalIntegrante>();
             TrabajoRecepcionalSinodalDelTrabajos = new HashSet<TrabajoRecepcionalSinodalDelTrabajo>();
-            Integrantes = new HashSet<Integrante>();
         }
 
         public int TrabajoRecepcionalId { get; set; }
@@ -28,15 +28,13 @@ namespace SER.Models.DB
         public string? ExperienciaActual { get; set; }
         public string? JustificacionAlumnos { get; set; }
 
-        public virtual Academium? Academia { get; set; }
         public virtual Pladeafei? Pladeafei { get; set; }
         public virtual ProyectoDeInvestigacion? ProyectoDeInvestigacion { get; set; }
         public virtual Vinculacion? Vinculacion { get; set; }
         public virtual ICollection<AlumnoTrabajoRecepcional> AlumnoTrabajoRecepcionals { get; set; }
         public virtual ICollection<Documento> Documentos { get; set; }
         public virtual ICollection<ExamenDefensa> ExamenDefensas { get; set; }
+        public virtual ICollection<TrabajoRecepcionalIntegrante> TrabajoRecepcionalIntegrantes { get; set; }
         public virtual ICollection<TrabajoRecepcionalSinodalDelTrabajo> TrabajoRecepcionalSinodalDelTrabajos { get; set; }
-
-        public virtual ICollection<Integrante> Integrantes { get; set; }
     }
 }

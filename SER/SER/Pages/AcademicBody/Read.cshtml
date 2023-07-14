@@ -1,0 +1,407 @@
+@page
+@model SER.Pages.AcademicBody.ReadModel
+@{
+  ViewData["Title"] = "Visualizar información";
+  Layout = "~/Pages/Shared/_LoginLayout.cshtml";
+}
+
+@section Styles {
+  <link rel="stylesheet" href="~/css/Student/Read.css" />
+  <link rel="stylesheet" href="~/css/Course/Create.css" />
+  <link rel="stylesheet" href="~/css/Course/Read.css" />
+}
+
+<!-- Tabs navs -->
+<div class="d-flex justify-content-center">
+  <ul class="nav  nav-tabs mb-0" id="ex-with-icons" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="tab-1" data-mdb-toggle="tab" href="#academic-body-information-tab" role="tab"
+        aria-controls="academic-body-information-tab" aria-selected="true">
+        <i class="fas fa-school fa-fw me-2"></i>
+        CA
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="tab-2" data-mdb-toggle="tab" href="#academic-body-lgac-tab" role="tab"
+        aria-controls="academic-body-lgac-tab" aria-selected="false">
+        <i class="fa-solid fa-brain fa-fw me-2"></i>
+        LGAC
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="tab-2" data-mdb-toggle="tab" href="#academic-body-members-tab" role="tab"
+        aria-controls="academic-body-members-tab" aria-selected="false">
+        <i class="fa-solid fa-users fa-fw me-2"></i>
+        Integrantes
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- Tabs content -->
+<div class="tab-content" id="ex-with-icons-content">
+  <!-- CA -->
+  <div class="tab-pane fade show active" id="academic-body-information-tab" role="tabpanel" aria-labelledby="tab-1">
+    <div class="container shadow-3 rounded-9 form-create p-5">
+      <div>
+        <h5 class="mb-2 text-black fs-4 fw-normal d-inline">
+          Información del <strong>Cuerpo Académico</strong>
+        </h5>
+        <p class="mt-2">
+          La siguiente información es únicamente de consulta y no se puede modificarse.
+        </p>      
+      </div>
+      <div class="d-flex mb-4">
+        <i class="d-flex align-items-center fa-solid fa-hashtag me-3 icon-input"></i>
+        <div class="form-outline">
+          <input type="text" id="input-academic-body-key" class="form-control form-control-lg bg-white" asp-for="academicBody.AcademicBodyKey" readonly />
+          <label class="form-label" for="input-academic-body-key">Clave</label>
+        </div>
+      </div>
+      <div class="d-flex mb-4">
+        <i class="d-flex align-items-center fa-solid fa-users me-2 icon-input"></i>
+        <div class="form-outline">
+          <input type="text" id="input-name" class="form-control form-control-lg bg-white" asp-for="academicBody.Name" readonly />
+          <label class="form-label" for="input-name">Nombre</label>
+        </div>
+      </div>
+      <div class="d-flex mb-4">
+        <i class="d-flex align-items-center fa-solid fa-building-columns me-2 icon-input"></i>
+        <div class="form-outline">
+          <input type="text" id="input-ies" class="form-control form-control-lg bg-white" asp-for="academicBody.Ies" readonly />
+          <label class="form-label" for="input-ies">IES <span class="text-danger">*</span></label>
+        </div>
+      </div>
+      <div class="d-flex mb-4">
+        <i class="d-flex align-items-center fa-solid fa-building-columns me-2 icon-input"></i>
+        <div class="form-outline">
+          <input type="text" id="input-consolidation-degree" class="form-control form-control-lg bg-white" asp-for="academicBody.ConsolidationDegree" readonly />
+          <label class="form-label" for="input-consolidation-degree">Grado de consolidación</label>
+        </div>
+      </div>
+      <div class="d-flex mb-4">
+        <i class="d-flex align-items-center fa-solid fa-book-atlas me-2 icon-input"></i>
+        <div class="form-outline">
+          <input type="text" id="input-discipline" class="form-control form-control-lg bg-white" asp-for="academicBody.Discipline" readonly />
+          <label class="form-label" for="input-discipline">Área y Disciplina de especialización</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- LGAC -->
+  <div class="tab-pane fade" id="academic-body-lgac-tab" role="tabpanel" aria-labelledby="tab-2">
+    <div class="container w-75 container-course-information mt-3">      
+      <div class="d-flex align-items-center border-bottom border-primary">
+        <h5 class="text-black fs-3 fw-normal p-2">LGAC</h5>           
+        <div class="ms-auto p-2">
+          <span data-mdb-toggle="modal" data-mdb-target="#modal-add-lgac">
+            <a class="btn btn-lg btn-floating btn-secondary" role="button" data-mdb-toggle="tooltip" title="Agregar LGAC">
+              <i class="fas fa-solid fa-plus"></i>
+            </a>                          
+          </span>
+        </div>          
+      </div>
+      @{
+        if (Model.academicBody.AcademicBodyLgacs!.Count > 0)
+        {
+          <div class="table-responsive shadow-3 rounded-6 mt-4">
+            <table class="table table-hover" id="table-students">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col" class="text-center">Nombre</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col" class="text-center">Acciones</th>          
+                </tr>
+              </thead>
+              <tbody>
+                @foreach (var lgac in Model.academicBody.AcademicBodyLgacs!)
+                {
+                  <tr>                    
+                    <td>@lgac.Lgac.Name</td>                    
+                    <td>@lgac.Lgac.Description</td>
+                    <td class="text-center">
+                      <div class="btn-group shadow-0" role="group" aria-label="Acciones">                        
+                        <a type="button" class="btn btn-link button-update-lgac" data-ripple-color="dark" data-mdb-toggle="tooltip" title="Actualizar" data-lgac-id="@lgac.Lgac.LgacId" data-lgac-name="@lgac.Lgac.Name" data-lgac-description="@lgac.Lgac.Description">
+                          <i class="fas fa-pen fa-lg"></i>
+                        </a>
+                        <a type="button" class="btn btn-link button-delete-lgac" data-ripple-color="dark" data-mdb-toggle="tooltip" title="Eliminar" data-lgac-id="@lgac.Lgac.LgacId" data-lgac-id="@lgac.Lgac.LgacId" data-lgac-name="@lgac.Lgac.Name" data-lgac-description="@lgac.Lgac.Description">
+                          <i class="fas fa-trash-can fa-lg"></i>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>                  
+                }             
+              </tbody>            
+            </table> 
+          </div>
+        }  
+        else 
+        {
+          <div class="d-flex flex-column justify-content-center align-items-center no-content h-25 mt-5">
+            <img src="~/images/no-content-search.svg" class="img-fluid mt-5" alt="No hay cursos asignados" />
+            <p class="mt-4 text-muted fw-normal mb-4 text-center">
+              <small>El Cuerpo Académico no tiene LGAC asignadas</small>
+            </p>
+          </div>
+        }
+      }
+    </div>    
+  </div>
+  <!-- Members -->
+  <div class="tab-pane fade" id="academic-body-members-tab" role="tabpanel" aria-labelledby="tab-2">
+    <div class="container w-75 container-course-information mt-3">      
+      <div class="d-flex align-items-center border-bottom border-primary">
+        <h5 class="text-black fs-3 fw-normal p-2">Integrantes</h5>
+        <div class="ms-auto p-2">
+          <span data-mdb-toggle="modal" data-mdb-target="#modal-add-member">
+            <a class="btn btn-lg btn-floating btn-secondary" role="button" data-mdb-toggle="tooltip" title="Agregar integrante">
+              <i class="fas fa-solid fa-user-plus"></i>
+            </a>                          
+          </span>
+        </div>          
+      </div>   
+      @{
+        if (Model.academicBody.AcademicBodyMembers!.Count > 0) 
+        {
+          <div class="table-responsive shadow-3 rounded-6 mt-4">
+            <table class="table table-hover" id="table-students">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col" class="text-center">Rol</th>
+                  <th scope="col" class="text-center">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach (var member in Model.academicBody.AcademicBodyMembers!)
+                {
+                  <tr>                    
+                    <td>
+                      <a asp-page="../Professor/Read" asp-route-professorId="@member.Professor.ProfessorId">
+                        @member.Professor.FullName
+                      </a>
+                    </td>
+                    <td class="text-center">@member.Role</td>
+                    <td class="text-center">                    
+                      <button type="button" class="btn btn-floating shadow-0 button-remove-member" data-mdb-toggle="tooltip"  data-member-name="@member.Professor.FullName" data-member-id="@member.AcademicBodyMemberId" title="Remover">
+                        <span data-mdb-toggle="modal"  data-mdb-target="#modal-remove-member">
+                          <i class="fas fa-trash-can fa-lg text-primary"></i>
+                        </span>                      
+                      </button>
+                    </td>
+                  </tr>
+                }             
+              </tbody>            
+            </table> 
+          </div>
+        } 
+        else 
+        {
+          <div class="d-flex flex-column justify-content-center align-items-center no-content h-25 mt-5">
+            <img src="~/images/no-content-paper-plane.svg" class="img-fluid mt-5" alt="No hay cursos asignados" />
+            <p class="mt-4 text-muted fw-normal mb-4 text-center">
+              <small>El Cuerpo Académico no tiene miembros asignados</small>
+            </p>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>
+<!-- Add LGAC  -->
+<div class="modal fade" id="modal-add-lgac" tabindex="-1" aria-labelledby="Modal de asignación de LGAC" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0 mb-0">
+        <h5 class="modal-title text-black fs-4">Agregar LGAC</h5>
+        <span data-mdb-toggle="tooltip" title="Cancelar">
+          <button type="button" class="btn-close text-black" data-mdb-dismiss="modal" aria-label="Close" id="button-close-lgac"></button>        
+        </span>
+      </div>
+      <div class="modal-body border-0 pt-0">
+        <div id="container-selecteed-professor"></div>
+        <p>
+          Las líneas de generación y aplicación del conocimiento son el eje que articula los esfuerzos de académicos y estudiantes en la producción de soluciones novedosas a los problemas sociales y del conocimiento. 
+        </p>
+        <form novalidate id="form-create-lgac">
+          <div class="d-flex">
+            <!-- <i class="d-flex align-items-center fa-solid fa-building-columns me-2 icon-input"></i> -->
+            <div class="form-outline">
+              <input type="text" id="input-lgac-name" class="form-control form-control-lg" autocomplete="off" asp-for="lgac.Name" required />
+              <label class="form-label" for="input-lgac-name">Nombre <span class="text-danger">*</span></label>
+              <div class="form-helper"></div>
+            </div>
+          </div>
+          <span asp-validation-for="lgac.Name" class="d-flex text-start text-danger mb-4"></span>
+          <div class="d-flex">
+            <!-- <i class="d-flex align-items-center fa-solid fa-comment-dots me-2 icon-input"></i> -->
+            <div class="form-outline">              
+              <textarea class="form-control" id="input-lgac-description" rows="4" asp-for="lgac.Description" required></textarea>
+              <label class="form-label" for="input-lgac-description">Descripción <span class="text-danger">*</span></label>
+            </div>
+          </div>
+          <span asp-validation-for="lgac.Description" class="d-flex text-start text-danger mb-4"></span>
+          <!-- <p>@Model.academicBody.AcademicBodyId</p> -->
+          <input type="hidden" value="@Model.academicBody.AcademicBodyId" asp-for="lgac.AcademicBodyId" id="input-lgac-adademicbody-id" />
+          <div class="modal-footer border-0 p-0 m-0 mt-4"> 
+            <button type="submit" class="btn btn-primary" id="button-submit-lgac">Asignar</button>            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Update LGAC -->
+<div class="modal fade" id="modal-update-lgac" tabindex="-1" aria-labelledby="Modal de actualización de LGAC" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0 mb-0">
+        <h5 class="modal-title text-black fs-4">Actualizar LGAC</h5>
+        <span data-mdb-toggle="tooltip" title="Cancelar">
+          <button type="button" class="btn-close text-black" data-mdb-dismiss="modal" aria-label="Close" id="button-close-update-lgac"></button>        
+        </span>
+      </div>
+      <div class="modal-body border-0 pt-0">        
+        <form novalidate id="form-update-lgac">
+          <div class="d-flex">
+            <div class="form-outline">
+              <input type="text" id="input-lgac-update-name" class="form-control form-control-lg" autocomplete="off" required />
+              <label class="form-label" for="input-lgac-update-name">Nombre <span class="text-danger">*</span></label>
+              <div class="form-helper"></div>
+            </div>
+          </div>
+          <span class="d-flex text-start text-danger mb-4"></span>
+          <div class="d-flex">
+            <div class="form-outline">              
+              <textarea class="form-control" id="input-lgac-update-description" rows="4" required></textarea>
+              <label class="form-label" for="input-lgac-update-description">Descripción <span class="text-danger">*</span></label>
+            </div>
+          </div>
+          <span class="d-flex text-start text-danger mb-4"></span>
+          <input type="hidden" id="input-lgac-update-id" />
+          <input type="hidden" id="input-academic-body-update-id" value="@Model.academicBody.AcademicBodyId" />
+          <div class="modal-footer border-0 p-0 m-0 mt-4"> 
+            <button type="submit" class="btn btn-primary" id="button-submit-update-lgac">Actualizar</button>            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Delete LGAC -->
+<div class="modal fade" tabindex="-1" aria-labelledby="Modal de confirmación de eliminación de Alumno" aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="false" id="modal-delete-lgac">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0 mb-0">
+        <h5 class="modal-title text-black fs-4">Quitar LGAC del CA</h5>
+        <span data-mdb-toggle="tooltip" title="Cancelar">
+          <button type="button" class="btn-close text-black" data-mdb-dismiss="modal" aria-label="Close"></button>        
+        </span>
+      </div>
+      <div class="modal-body border-0 py-0">        
+        <p>¿Estás seguro de que deseas <strong>quitar</strong> la LGAC del CA?</strong></p>
+        <span id="remove-name-lgac"></span> 
+        <form id="form-delete-lgac" method="post">
+          <input type="hidden" id="input-lgac-delete-id" />
+          <div class="modal-footer border-0 p-0 m-0 mt-4 mb-3"> 
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+          </div>
+        </form>
+      </div>             
+    </div>
+  </div>
+</div>
+<!-- Add Member -->
+<div class="modal fade" id="modal-add-member" tabindex="-1" aria-labelledby="Modal de asignación de profesor" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0 mb-0">
+        <h5 class="modal-title text-black fs-4">Asignar Miembro</h5>
+        <span data-mdb-toggle="tooltip" title="Cancelar">
+          <button type="button" class="btn-close text-black" data-mdb-dismiss="modal" aria-label="Close" id="button-close-professors"></button>        
+        </span>
+      </div>
+      <div class="modal-body border-0 pt-0">
+        <div id="container-professors"></div>
+        <p>Recuerda que un Profesor solo puede pertenece a un Cuerpo Académico a la vez. El rol de asignación puede ser de Integrante o Colabador.</p>
+        <div class="form-outline mb-4">
+          <i class="fas fa-search trailing"></i>
+          <input type="text" id="input-professor-search" class="form-control form-control-lg form-icon-trailing" autocomplete="off"/>
+          <label class="form-label" for="professor">Escribe el nombre o un correo electrónico</label>
+        </div>
+        <div class="d-flex">        
+          <!-- <i class="d-flex align-items-center fas fa-user me-1 icon-input"></i> -->
+          <div class="form-floating">
+            <select class="form-select" id="input-member-rol" aria-label="Rol de la asignación">
+              <!-- <option selected disabled></option> -->
+              <option selected value="Integrante">Integrante</option>
+              <option value="Colaborador">Colaborador</option>
+            </select>
+            <label for="input-member-rol" class="text-black">Rol<span class="text-danger">*</span></label>
+          </div>
+        </div>
+        <hr class="mb-0">
+        <ul class="list-group list-group-light rounded-0" id="professor-list"></ul>
+        <hr class="mt-0">
+      </div>      
+      <div class="modal-footer border-0">        
+        <button type="button" class="btn btn-primary" id="button-submit-members">Asignar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Remove Member -->
+<div class="modal fade" tabindex="-1" aria-labelledby="Modal de confirmación de eliminación de Integrante" aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="false" id="modal-remove-member">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-2">
+      <div class="modal-header border-0 mb-0">
+        <h5 class="modal-title text-black fs-4">Quitar integrante del CA</h5>
+        <span data-mdb-toggle="tooltip" title="Cancelar">
+          <button type="button" class="btn-close text-black" data-mdb-dismiss="modal" aria-label="Close"></button>        
+        </span>
+      </div>
+      <div class="modal-body border-0 py-0">        
+        <p>¿Estás seguro de que deseas <strong>quitar</strong> a este integrante del CA?</strong></p>        
+      </div>            
+      <span class="ms-3 mb-3 fw-bold" id="span-member-name"></span>
+      <div class="modal-footer border-0 mt-0 pt-0">        
+        <button type="button" class="btn btn-primary" id="button-modal-remove-member">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Return button  -->
+<div class="row gap-3 justify-content-end mx-0 fixed-bottom bg-white">
+  <a role="button" class=" btn btn-secondary w-auto" asp-page="./Index">
+    <i class="fas fa-arrow-left me-2"></i>
+    Regresar
+  </a>
+  <!-- <button class="btn btn-primary w-auto">
+    <i class="fa-solid fa-file-excel me-2"></i>
+    Exportar
+  </button> -->
+</div>
+<!-- Sucess and Error Toasts -->
+<div class="toast-container position-fixed bottom-0 start-0 p-4">
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-success" data-bs-autohide="false">
+    <div class="d-flex">
+      <div class="toast-body text-white" id="toast-content"></div>
+      <button type="button" class="btn-close me-2 m-auto btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-error" data-bs-autohide="false">
+    <div class="d-flex">
+      <div class="toast-body text-danger fw-bold" id="toast-error-content"></div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <script src="~/js/signalr/dist/browser/signalr.js"></script>
+  <script src="~/js/AcademicBody/Read/Lgac.js"></script>
+  <script src="~/js/AcademicBody/Read/MemberHub.js"></script>
+  <script src="~/js/AcademicBody/Read/MembersAssigned.js"></script>
+  <script src="~/js/AcademicBody/Read/DeleteMember.js"></script>
+}

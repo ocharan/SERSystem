@@ -6,6 +6,7 @@ using SER.Models.DTO;
 using Microsoft.EntityFrameworkCore;
 using SER.Models.Responses;
 using SER.Models.Enums;
+using SER.Services.Contracts;
 
 namespace SER.Services
 {
@@ -13,6 +14,7 @@ namespace SER.Services
   {
     private readonly SERContext _context;
     private readonly IUserService _userService;
+    // private readonly IAcademicBodyService _academicBodyService;
     private readonly IMapper _mapper;
 
     public ProfessorService(SERContext context, IMapper mapper, IUserService userService)
@@ -20,6 +22,7 @@ namespace SER.Services
       _context = context;
       _mapper = mapper;
       _userService = userService;
+      // _academicBodyService = academicBodyService;
     }
 
     private async Task<Response> CheckRepeatedFields(ProfessorDto professorDto)
@@ -79,6 +82,39 @@ namespace SER.Services
           .AsSplitQuery()
           .ProjectTo<ProfessorDto>(_mapper.ConfigurationProvider)
           .ToListAsync();
+
+        professors
+          .ForEach(professor => professor.Email = _context.Users
+            .Where(user => user.UserId == professor.UserId)
+            .Select(user => user.Email)
+            .FirstOrDefault()!);
+
+        return professors;
+      }
+      catch (ArgumentNullException ex)
+      {
+        ExceptionLogger.LogException(ex);
+        throw;
+      }
+    }
+
+    public async Task<List<ProfessorDto>> SearchMember(string search)
+    {
+      try
+      {
+        var professors = await _context.Professors
+          .Where(professor => professor.FullName.Contains(search) || _context.Users
+            .Any(user => user.UserId == professor.UserId && user.Email.Contains(search)))
+          .AsSplitQuery()
+          .ProjectTo<ProfessorDto>(_mapper.ConfigurationProvider)
+          .ToListAsync();
+
+        var members = _context.AcademicBodyMembers
+          .Select(professor => professor.ProfessorId)
+          .ToList();
+
+        professors = professors.Where(professor => !members.Contains(professor.ProfessorId))
+          .ToList();
 
         professors
           .ForEach(professor => professor.Email = _context.Users

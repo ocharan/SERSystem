@@ -217,10 +217,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\files\\courses\\11111_CFP_CONISOFT2023_v3.pdf",
-      "PackagePath": "staticwebassets\\files\\courses\\11111_CFP_CONISOFT2023_v3.pdf"
-    },
-    {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\cube-ser-logo.png",
       "PackagePath": "staticwebassets\\images\\cube-ser-logo.png"
     },
@@ -237,12 +233,40 @@
       "PackagePath": "staticwebassets\\images\\no-content-dog.svg"
     },
     {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\no-content-paper-plane.svg",
+      "PackagePath": "staticwebassets\\images\\no-content-paper-plane.svg"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\no-content-search.svg",
+      "PackagePath": "staticwebassets\\images\\no-content-search.svg"
+    },
+    {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\no-content-squirrel.svg",
       "PackagePath": "staticwebassets\\images\\no-content-squirrel.svg"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\images\\ser-logo.png",
       "PackagePath": "staticwebassets\\images\\ser-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\AcademicBody\\Read\\DeleteMember.js",
+      "PackagePath": "staticwebassets\\js\\AcademicBody\\Read\\DeleteMember.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\AcademicBody\\Read\\Lgac.js",
+      "PackagePath": "staticwebassets\\js\\AcademicBody\\Read\\Lgac.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\AcademicBody\\Read\\MemberHub.js",
+      "PackagePath": "staticwebassets\\js\\AcademicBody\\Read\\MemberHub.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\AcademicBody\\Read\\MembersAssigned.js",
+      "PackagePath": "staticwebassets\\js\\AcademicBody\\Read\\MembersAssigned.js"
+    },
+    {
+      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read\\DeleteRegistration.js",
+      "PackagePath": "staticwebassets\\js\\Course\\Read\\DeleteRegistration.js"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read\\ProfessorAsignment.js",
@@ -259,10 +283,6 @@
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read\\StudentsAssigned.js",
       "PackagePath": "staticwebassets\\js\\Course\\Read\\StudentsAssigned.js"
-    },
-    {
-      "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Read\\WithdrawRegistration.js",
-      "PackagePath": "staticwebassets\\js\\Course\\Read\\WithdrawRegistration.js"
     },
     {
       "Id": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\wwwroot\\js\\Course\\Update.js",

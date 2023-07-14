@@ -9,10 +9,11 @@ using Microsoft.AspNetCore.Mvc;
 using SER.Configuration;
 using SER.Models.Enums;
 using SER.Models.DB;
+using System.Security.Claims;
 
 namespace SER.Pages.Course
 {
-  [Authorize(Roles = nameof(ERoles.Administrator))]
+  [Authorize(Roles = (nameof(ERoles.Administrator)) + "," + (nameof(ERoles.Professor)))]
   public class IndexModel : PageModel
   {
     private readonly IConfiguration Configuration;
@@ -110,7 +111,11 @@ namespace SER.Pages.Course
 
     private IQueryable<CourseDto> FilterCourses(string filter = "default")
     {
-      var courses = _courseService.GetAllCourses();
+      string userRole = User.FindFirst(ClaimTypes.Role)!.Value;
+
+      var courses = userRole.Equals(nameof(ERoles.Administrator))
+        ? _courseService.GetAllCourses()
+        : _courseService.GetProfessorCourses(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
 
       OpenCourses = courses
         .Where(course => course.IsOpen)

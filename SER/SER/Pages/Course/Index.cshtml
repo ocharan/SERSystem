@@ -1,5 +1,6 @@
 @page
 @model SER.Pages.Course.IndexModel
+@using System.Security.Claims
 @{
   Layout = "_LoginLayout";
 }
@@ -10,7 +11,20 @@
 
 <article class="row mx-3 mt-4 my-2 title-page">
   <div class="col-md-4 mb-2">
-    <h2 class="text-black fs-2">Cursos</h2>
+    <h2 class="text-black fs-2">
+      @{
+        string role = User.FindFirstValue(ClaimTypes.Role);
+
+        Dictionary<string, string> titlesByRole = new Dictionary<string, string>()
+        {
+          {"Administrator", "Cursos"},
+          {"Professor", "Mis Cursos"}
+        };
+
+        string title = titlesByRole[role];        
+      }
+      @title
+    </h2>
   </div>
   <div class="col-md-4 offset-md-4 mb-4 d-flex justify-content-end">
     <a class="btn btn-primary button-add text-button" role="button" asp-page="./Create">

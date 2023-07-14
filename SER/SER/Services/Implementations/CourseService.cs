@@ -179,6 +179,31 @@ namespace SER.Services
       }
     }
 
+    public IQueryable<CourseDto> GetProfessorCourses(string userId)
+    {
+      try
+      {
+        int id = Convert.ToInt32(userId);
+        int professorId = _context.Professors
+          .FirstOrDefault(professor => professor.UserId == id)
+          ?.ProfessorId
+          ?? throw new NullReferenceException("El profesor no existe");
+
+        var courses = _context.Courses
+          .Include(course => course.Professor)
+          .Where(course => course.ProfessorId == professorId)
+          .AsSplitQuery()
+          .ProjectTo<CourseDto>(_mapper.ConfigurationProvider);
+
+        return courses;
+      }
+      catch (ArgumentNullException ex)
+      {
+        ExceptionLogger.LogException(ex);
+        throw;
+      }
+    }
+
     public async Task<CourseDto> GetCourse(int courseId)
     {
       Course courseModel = await _context.Courses
@@ -323,7 +348,7 @@ namespace SER.Services
       }
     }
 
-    public async Task<Response> WithdrawCourseRegistration(int registrationId)
+    public async Task<Response> DeleteCourseRegistration(int registrationId)
     {
       try
       {
@@ -405,7 +430,7 @@ namespace SER.Services
       catch (OperationCanceledException ex)
       {
         ExceptionLogger.LogException(ex);
-        throw new OperationCanceledException("Ha ocurrido un error al crear el curso");
+        throw new OperationCanceledException("Ha ocurrido un error al actulizar el curso");
       }
     }
 

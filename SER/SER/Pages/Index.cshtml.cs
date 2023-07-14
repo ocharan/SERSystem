@@ -33,6 +33,7 @@ namespace SER.Pages
         List<Claim> claims = new List<Claim> {
           new Claim(ClaimTypes.Name, user.Username!),
           new Claim(ClaimTypes.Role, user.Role!),
+          new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
         };
 
         ClaimsIdentity claimsIdentity = new ClaimsIdentity(
@@ -61,10 +62,9 @@ namespace SER.Pages
     {
       Dictionary<string, (string Page, object RouteValues)> routes =
         new Dictionary<string, (string Page, object RouteValues)> {
-          {"Coordinador", ("/Menus/UICoordinador", "")},
+          {"Coordinador", ("/Menus/Management", "")},
           {"Administrator", ("/Menus/Management", "")},
           {"Professor", ("/Menus/Management", "")}
-          // {"Professor", ("/Menus/UICoordinador", new { id = username })},
         };
 
       return RedirectToPage(

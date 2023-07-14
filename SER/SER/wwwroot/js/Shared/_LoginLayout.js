@@ -7,12 +7,11 @@ const sidebarItems = document.querySelectorAll(".sidebar ul li");
 let currentUrl = window.location.href;
 const namesNavbarOptions = [
 	"Management",
-	"Course",
+	"AcademicBody",
 	"Professor",
-	"Documentos",
+	"Course",
 	"Coordinadores",
 	"Student",
-	"Expedientes",
 ];
 
 namesNavbarOptions.forEach((name, index) => {
@@ -32,4 +31,13 @@ const closeButton = document.getElementById("close-button");
 closeButton.addEventListener("click", () => {
 	const sidebar = document.querySelector(".sidebar");
 	sidebar.classList.remove("active");
+});
+
+const searchNavbarInput = document.getElementById("input-navbar-search");
+
+document.addEventListener("keydown", function (event) {
+	if (event.key === "q" && event.ctrlKey) {
+		event.preventDefault();
+		searchNavbarInput.focus();
+	}
 });

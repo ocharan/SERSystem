@@ -92,12 +92,12 @@ connectionStudent.on("ReceiveStudents", function (students) {
 
 			deleteButton.addEventListener("click", function () {
 				const index = assignedStudents.indexOf(student.studentId);
+
 				if (index !== -1) {
 					assignedStudents.splice(index, 1);
 				}
 
 				selectedStudents.removeChild(span);
-
 				studentItem.classList.remove("active");
 			});
 		});

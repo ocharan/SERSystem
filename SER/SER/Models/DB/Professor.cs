@@ -7,6 +7,7 @@ namespace SER.Models.DB
     {
         public Professor()
         {
+            AcademicBodyMembers = new HashSet<AcademicBodyMember>();
             Courses = new HashSet<Course>();
         }
 
@@ -17,6 +18,7 @@ namespace SER.Models.DB
         public int UserId { get; set; }
 
         public virtual User User { get; set; } = null!;
+        public virtual ICollection<AcademicBodyMember> AcademicBodyMembers { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
     }
 }
