@@ -30,10 +30,10 @@ namespace SER.Pages.Professor
         int.TryParse(professorId, out int id);
         professor = await _professorService.GetProfessor(id);
 
-        professor.Courses!.ForEach(async course =>
-        {
-          course.Period = await FormatCoursePeriod(course.Period);
-        });
+        // professor.Courses!.ForEach(async course =>
+        // {
+        //   course.Period = await FormatCoursePeriod(course.Period);
+        // });
       }
       catch (NullReferenceException ex)
       {

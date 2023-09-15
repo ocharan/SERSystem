@@ -32,6 +32,8 @@ namespace SER.Pages.Account
 
     public EmailMessage CreateEmailMessage(string userEmail, string token)
     {
+      // Change a ClientDevUrl to run locally:
+      // string clientUrl = Configuration.GetSection("ClientDevUrl").Value;
       string clientUrl = Configuration.GetSection("ClientUrl").Value;
       string recoveryLink = $"{clientUrl}/Account/ChangePassword?token={token}";
 
@@ -39,8 +41,16 @@ namespace SER.Pages.Account
         to: userEmail,
         subject: "Recuperación de contraseña",
         content:
-        "Para recuperar su contraseña, haga clic en el siguiente enlace: " +
-         $"<a href='{recoveryLink}'>Recuperar contraseña</a>"
+          "<h1>Recuperación de contraseña</h1>" +
+          $"<h2>Estimado usuario: '{username}'</h2>" +
+
+          "<p>Para realizar el restablecimiento de su contraseña debe ingresar a " +
+          $"<a href='{recoveryLink}'>Recuperar contraseña</a></p>" +
+
+          "<p>La vigencia de esta liga es de <b>20 minutos</b> a partir de que fué generada.</p>" +
+          "<p>Bajo ninguna circunstancia la Universidad Veracruzana le solicitarán datos personales a través de este medio. Por favor no envíe datos como contraseñas, tarjetas de crédito o cualquier otra información que pudiera ser usada de forma fraudulenta.</p>" +
+
+          "<p><strong>Sistema de Experiencia Recepcional (SER). Universidad Veracruzana</strong></p>"
       );
 
       return emailMessage;

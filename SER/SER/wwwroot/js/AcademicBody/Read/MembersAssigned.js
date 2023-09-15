@@ -1,26 +1,3 @@
-window.onload = function () {
-	let membersAssigned = localStorage.getItem("assignedMembers");
-	let removedMember = localStorage.getItem("removedMember");
-
-	if (membersAssigned) {
-		showToast("Miembros asignados correctamente", "assignedMembers");
-	}
-
-	if (removedMember) {
-		showToast("Miembro removido correctamente", "removedMember");
-	}
-};
-
-function showToast(message, localStorageItem) {
-	const toasBody = document.getElementById("toast-content");
-	toasBody.innerHTML = "";
-	const content = document.createTextNode(message);
-	toasBody.appendChild(content);
-	toast.show();
-
-	localStorage.removeItem(localStorageItem);
-}
-
 const submitMembers = document.getElementById("button-submit-members");
 
 submitMembers.addEventListener("click", function () {

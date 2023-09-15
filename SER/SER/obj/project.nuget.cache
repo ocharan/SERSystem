@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4W9opl1XEcKJ/tf8BdSgClqn8UTT0bdtA6F0K3LxX/d2JT0MG31B6pEhBvsWyv7Yz1kgHa3trXyOgk/y/d88kw==",
+  "dgSpecHash": "bqd3VufQTYjS0eQZ0XbtX5HDm8kZdh6aRG1EmxkwGy27NAohx8YENC2N6OS3o93nDPgbLJAH5iIzGrRsYpdiAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\SER.csproj",
+  "projectFilePath": "C:\\Users\\dukec\\Documentos\\SERSystem\\SER\\SER\\SER.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dukec\\.nuget\\packages\\arch.entityframeworkcore\\2.1.15\\arch.entityframeworkcore.2.1.15.nupkg.sha512",
     "C:\\Users\\dukec\\.nuget\\packages\\arch.entityframeworkcore.abstractions\\2.1.15\\arch.entityframeworkcore.abstractions.2.1.15.nupkg.sha512",

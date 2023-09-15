@@ -61,8 +61,8 @@ namespace SER.Pages.Course
       courses = await PaginatedList<CourseDto>
         .CreateAsync(auxiliaryCourses.AsNoTracking(), pageIndex ?? 1, PAGE_SIZE);
 
-      courses.ForEach(async course =>
-        { course.Period = await FormatCoursePeriod(course.Period); });
+      // courses.ForEach(async course =>
+      //   { course.Period = await FormatCoursePeriod(course.Period); });
     }
 
     public async Task<FileResult> OnPostExportSpreadsheetData()
@@ -83,7 +83,8 @@ namespace SER.Pages.Course
         worksheet.Cell(i + 2, 1).Value = courses[i].IsOpen ? "Si" : "No";
         worksheet.Cell(i + 2, 2).Value = courses[i].Nrc;
         worksheet.Cell(i + 2, 3).Value = courses[i].Name;
-        worksheet.Cell(i + 2, 4).Value = await FormatCoursePeriod(courses[i].Period);
+        // worksheet.Cell(i + 2, 4).Value = await FormatCoursePeriod(courses[i].Period);
+        worksheet.Cell(i + 2, 4).Value = courses[i].Period;
         worksheet.Cell(i + 2, 5).Value = courses[i].Section;
 
         var professor = courses[i].Professor;

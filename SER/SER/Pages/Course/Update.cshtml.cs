@@ -38,7 +38,7 @@ namespace SER.Pages.Course
             .Last();
         }
 
-        course.Period = await FormatCoursePeriod(course.Period);
+        // course.Period = await FormatCoursePeriod(course.Period);
         ViewData["MessageSuccess"] = TempData["MessageSuccess"];
       }
       catch (NullReferenceException ex)

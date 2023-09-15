@@ -10,6 +10,5 @@ namespace SER.Services
     Task<bool> IsValidUserToken(string token);
     Task<string> GenerateRecoveryToken(string email);
     Task<bool> UpdateUserPassword(string username, string password);
-    // Task<Response> CreateUser(UserDto userDto);
   }
 }

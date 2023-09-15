@@ -1,4 +1,9 @@
 // Success Toasts
+const successToast = document.getElementById("toast-success");
+const errorToast = document.getElementById("toast-error");
+const toast = bootstrap.Toast.getOrCreateInstance(successToast);
+const toastError = bootstrap.Toast.getOrCreateInstance(errorToast);
+
 window.onload = function () {
 	let assignedLgac = localStorage.getItem("assignedLgac");
 	let updateLgac = localStorage.getItem("updateLgac");
@@ -15,12 +20,20 @@ window.onload = function () {
 	if (deleteLgac) {
 		showToast("LGAC eliminada correctamente", "deleteLgac");
 	}
-};
 
-const successToast = document.getElementById("toast-success");
-const errorToast = document.getElementById("toast-error");
-const toast = bootstrap.Toast.getOrCreateInstance(successToast);
-const toastError = bootstrap.Toast.getOrCreateInstance(errorToast);
+	// Member toast
+
+	let membersAssigned = localStorage.getItem("assignedMembers");
+	let removedMember = localStorage.getItem("removedMember");
+
+	if (membersAssigned) {
+		showToast("Miembros asignados correctamente", "assignedMembers");
+	}
+
+	if (removedMember) {
+		showToast("Miembro removido correctamente", "removedMember");
+	}
+};
 
 function showToast(message, localStorageItem) {
 	const toasBody = document.getElementById("toast-content");

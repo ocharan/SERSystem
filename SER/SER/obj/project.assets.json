@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net7.0": {
       "Arch.EntityFrameworkCore/2.1.15": {
         "type": "package",
         "dependencies": {
@@ -12044,7 +12044,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net7.0": [
       "Arch.EntityFrameworkCore.Design >= 2.1.15",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "BCrypt.Net-Next >= 4.0.3",
@@ -12071,26 +12071,24 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\SER.csproj",
+      "projectUniqueName": "C:\\Users\\dukec\\Documentos\\SERSystem\\SER\\SER\\SER.csproj",
       "projectName": "SER",
-      "projectPath": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\SER.csproj",
+      "projectPath": "C:\\Users\\dukec\\Documentos\\SERSystem\\SER\\SER\\SER.csproj",
       "packagesPath": "C:\\Users\\dukec\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dukec\\Escritorio\\SERSystem\\SER\\SER\\obj\\",
+      "outputPath": "C:\\Users\\dukec\\Documentos\\SERSystem\\SER\\SER\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dukec\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\dukec\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {}
         }
       },
@@ -12101,8 +12099,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "dependencies": {
           "Arch.EntityFrameworkCore.Design": {
             "target": "Package",
@@ -12200,7 +12198,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
